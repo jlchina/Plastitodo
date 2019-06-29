@@ -1,0 +1,11 @@
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\bin\Debug\Plastitodo.exe
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\bin\Debug\Plastitodo.pdb
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\bin\Debug\Plastitodo.xml
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\bin\Debug\MySql.Data.DLL
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.vbprojResolveAssemblyReference.cache
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Form1.resources
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Resources.resources
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.vbproj.GenerateResource.Cache
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.exe
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.xml
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.pdb
