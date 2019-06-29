@@ -69,7 +69,7 @@ Partial Class Clientes
         Me.Tab_consulta.Location = New System.Drawing.Point(4, 22)
         Me.Tab_consulta.Name = "Tab_consulta"
         Me.Tab_consulta.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_consulta.Size = New System.Drawing.Size(544, 289)
+        Me.Tab_consulta.Size = New System.Drawing.Size(567, 323)
         Me.Tab_consulta.TabIndex = 0
         Me.Tab_consulta.Text = "Consulta"
         Me.Tab_consulta.UseVisualStyleBackColor = True
@@ -95,7 +95,7 @@ Partial Class Clientes
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(6, 30)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(532, 253)
+        Me.DataGridView1.Size = New System.Drawing.Size(555, 287)
         Me.DataGridView1.TabIndex = 0
         '
         'Btn_cancelarp
@@ -103,7 +103,7 @@ Partial Class Clientes
         Me.Btn_cancelarp.Location = New System.Drawing.Point(38, 296)
         Me.Btn_cancelarp.Name = "Btn_cancelarp"
         Me.Btn_cancelarp.Size = New System.Drawing.Size(105, 23)
-        Me.Btn_cancelarp.TabIndex = 31
+        Me.Btn_cancelarp.TabIndex = 9
         Me.Btn_cancelarp.Text = "Cancelar/Limpiar"
         Me.Btn_cancelarp.UseVisualStyleBackColor = True
         '
@@ -112,7 +112,7 @@ Partial Class Clientes
         Me.Btn_agregarp.Location = New System.Drawing.Point(463, 294)
         Me.Btn_agregarp.Name = "Btn_agregarp"
         Me.Btn_agregarp.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_agregarp.TabIndex = 30
+        Me.Btn_agregarp.TabIndex = 8
         Me.Btn_agregarp.Text = "Agregar"
         Me.Btn_agregarp.UseVisualStyleBackColor = True
         '
@@ -143,49 +143,49 @@ Partial Class Clientes
         Me.Txt_mailc.Location = New System.Drawing.Point(143, 226)
         Me.Txt_mailc.Name = "Txt_mailc"
         Me.Txt_mailc.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_mailc.TabIndex = 27
+        Me.Txt_mailc.TabIndex = 7
         '
         'Txt_telc
         '
         Me.Txt_telc.Location = New System.Drawing.Point(143, 191)
         Me.Txt_telc.Name = "Txt_telc"
         Me.Txt_telc.Size = New System.Drawing.Size(113, 20)
-        Me.Txt_telc.TabIndex = 26
+        Me.Txt_telc.TabIndex = 6
         '
         'Txt_cpc
         '
         Me.Txt_cpc.Location = New System.Drawing.Point(143, 156)
         Me.Txt_cpc.Name = "Txt_cpc"
         Me.Txt_cpc.Size = New System.Drawing.Size(113, 20)
-        Me.Txt_cpc.TabIndex = 25
+        Me.Txt_cpc.TabIndex = 5
         '
         'Txt_ciudadc
         '
         Me.Txt_ciudadc.Location = New System.Drawing.Point(143, 121)
         Me.Txt_ciudadc.Name = "Txt_ciudadc"
         Me.Txt_ciudadc.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_ciudadc.TabIndex = 24
+        Me.Txt_ciudadc.TabIndex = 4
         '
         'Txt_colc
         '
         Me.Txt_colc.Location = New System.Drawing.Point(143, 85)
         Me.Txt_colc.Name = "Txt_colc"
         Me.Txt_colc.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_colc.TabIndex = 23
+        Me.Txt_colc.TabIndex = 3
         '
         'Txt_dirc
         '
         Me.Txt_dirc.Location = New System.Drawing.Point(143, 50)
         Me.Txt_dirc.Name = "Txt_dirc"
         Me.Txt_dirc.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_dirc.TabIndex = 22
+        Me.Txt_dirc.TabIndex = 2
         '
         'txt_nomc
         '
         Me.txt_nomc.Location = New System.Drawing.Point(143, 15)
         Me.txt_nomc.Name = "txt_nomc"
         Me.txt_nomc.Size = New System.Drawing.Size(332, 20)
-        Me.txt_nomc.TabIndex = 21
+        Me.txt_nomc.TabIndex = 1
         '
         'Label5
         '
@@ -193,7 +193,7 @@ Partial Class Clientes
         Me.Label5.Location = New System.Drawing.Point(25, 233)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(96, 13)
-        Me.Label5.TabIndex = 20
+        Me.Label5.TabIndex = 16
         Me.Label5.Text = "Correo electrónico:"
         '
         'Label4
@@ -202,7 +202,7 @@ Partial Class Clientes
         Me.Label4.Location = New System.Drawing.Point(25, 198)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(52, 13)
-        Me.Label4.TabIndex = 19
+        Me.Label4.TabIndex = 15
         Me.Label4.Text = "Telefono:"
         '
         'Label3
@@ -211,7 +211,7 @@ Partial Class Clientes
         Me.Label3.Location = New System.Drawing.Point(25, 163)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(27, 13)
-        Me.Label3.TabIndex = 18
+        Me.Label3.TabIndex = 14
         Me.Label3.Text = "C.P."
         '
         'Label2
@@ -220,7 +220,7 @@ Partial Class Clientes
         Me.Label2.Location = New System.Drawing.Point(25, 128)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
-        Me.Label2.TabIndex = 17
+        Me.Label2.TabIndex = 13
         Me.Label2.Text = "Ciudad:"
         '
         'Label1
@@ -229,7 +229,7 @@ Partial Class Clientes
         Me.Label1.Location = New System.Drawing.Point(25, 92)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 13)
-        Me.Label1.TabIndex = 16
+        Me.Label1.TabIndex = 12
         Me.Label1.Text = "Colonia:"
         '
         'Lb_direccion
@@ -238,7 +238,7 @@ Partial Class Clientes
         Me.Lb_direccion.Location = New System.Drawing.Point(25, 53)
         Me.Lb_direccion.Name = "Lb_direccion"
         Me.Lb_direccion.Size = New System.Drawing.Size(55, 13)
-        Me.Lb_direccion.TabIndex = 15
+        Me.Lb_direccion.TabIndex = 11
         Me.Lb_direccion.Text = "Dirección:"
         '
         'Lb_nom_cte
@@ -247,7 +247,7 @@ Partial Class Clientes
         Me.Lb_nom_cte.Location = New System.Drawing.Point(25, 23)
         Me.Lb_nom_cte.Name = "Lb_nom_cte"
         Me.Lb_nom_cte.Size = New System.Drawing.Size(96, 13)
-        Me.Lb_nom_cte.TabIndex = 14
+        Me.Lb_nom_cte.TabIndex = 10
         Me.Lb_nom_cte.Text = "Nombre de cliente:"
         '
         'Clientes

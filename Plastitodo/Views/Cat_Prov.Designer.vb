@@ -69,7 +69,7 @@ Partial Class Cat_Prov
         Me.Tab_cons_p.Location = New System.Drawing.Point(4, 22)
         Me.Tab_cons_p.Name = "Tab_cons_p"
         Me.Tab_cons_p.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_cons_p.Size = New System.Drawing.Size(555, 260)
+        Me.Tab_cons_p.Size = New System.Drawing.Size(555, 306)
         Me.Tab_cons_p.TabIndex = 0
         Me.Tab_cons_p.Text = "Consulta"
         Me.Tab_cons_p.UseVisualStyleBackColor = True
@@ -95,7 +95,7 @@ Partial Class Cat_Prov
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(0, 28)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(552, 229)
+        Me.DataGridView1.Size = New System.Drawing.Size(552, 275)
         Me.DataGridView1.TabIndex = 0
         '
         'Btn_agregarp
@@ -103,7 +103,7 @@ Partial Class Cat_Prov
         Me.Btn_agregarp.Location = New System.Drawing.Point(447, 268)
         Me.Btn_agregarp.Name = "Btn_agregarp"
         Me.Btn_agregarp.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_agregarp.TabIndex = 28
+        Me.Btn_agregarp.TabIndex = 8
         Me.Btn_agregarp.Text = "Agregar"
         Me.Btn_agregarp.UseVisualStyleBackColor = True
         '
@@ -112,7 +112,7 @@ Partial Class Cat_Prov
         Me.Btn_cancelarp.Location = New System.Drawing.Point(45, 268)
         Me.Btn_cancelarp.Name = "Btn_cancelarp"
         Me.Btn_cancelarp.Size = New System.Drawing.Size(109, 23)
-        Me.Btn_cancelarp.TabIndex = 29
+        Me.Btn_cancelarp.TabIndex = 9
         Me.Btn_cancelarp.Text = "Cancelar/Limpiar"
         Me.Btn_cancelarp.UseVisualStyleBackColor = True
         '
@@ -143,49 +143,49 @@ Partial Class Cat_Prov
         Me.Txt_mailprov.Location = New System.Drawing.Point(131, 219)
         Me.Txt_mailprov.Name = "Txt_mailprov"
         Me.Txt_mailprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_mailprov.TabIndex = 41
+        Me.Txt_mailprov.TabIndex = 7
         '
         'Txt_telprov
         '
         Me.Txt_telprov.Location = New System.Drawing.Point(131, 184)
         Me.Txt_telprov.Name = "Txt_telprov"
         Me.Txt_telprov.Size = New System.Drawing.Size(113, 20)
-        Me.Txt_telprov.TabIndex = 40
+        Me.Txt_telprov.TabIndex = 6
         '
         'Txt_cp_prov
         '
         Me.Txt_cp_prov.Location = New System.Drawing.Point(131, 149)
         Me.Txt_cp_prov.Name = "Txt_cp_prov"
         Me.Txt_cp_prov.Size = New System.Drawing.Size(113, 20)
-        Me.Txt_cp_prov.TabIndex = 39
+        Me.Txt_cp_prov.TabIndex = 5
         '
         'Txt_ciudadprov
         '
         Me.Txt_ciudadprov.Location = New System.Drawing.Point(131, 114)
         Me.Txt_ciudadprov.Name = "Txt_ciudadprov"
         Me.Txt_ciudadprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_ciudadprov.TabIndex = 38
+        Me.Txt_ciudadprov.TabIndex = 4
         '
         'Txt_colprov
         '
         Me.Txt_colprov.Location = New System.Drawing.Point(131, 78)
         Me.Txt_colprov.Name = "Txt_colprov"
         Me.Txt_colprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_colprov.TabIndex = 37
+        Me.Txt_colprov.TabIndex = 3
         '
         'Txt_dirprov
         '
         Me.Txt_dirprov.Location = New System.Drawing.Point(131, 43)
         Me.Txt_dirprov.Name = "Txt_dirprov"
         Me.Txt_dirprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_dirprov.TabIndex = 36
+        Me.Txt_dirprov.TabIndex = 2
         '
         'Txt_nomprov
         '
         Me.Txt_nomprov.Location = New System.Drawing.Point(131, 8)
         Me.Txt_nomprov.Name = "Txt_nomprov"
         Me.Txt_nomprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_nomprov.TabIndex = 35
+        Me.Txt_nomprov.TabIndex = 1
         '
         'Lbl_mailp
         '
@@ -193,7 +193,7 @@ Partial Class Cat_Prov
         Me.Lbl_mailp.Location = New System.Drawing.Point(13, 226)
         Me.Lbl_mailp.Name = "Lbl_mailp"
         Me.Lbl_mailp.Size = New System.Drawing.Size(96, 13)
-        Me.Lbl_mailp.TabIndex = 34
+        Me.Lbl_mailp.TabIndex = 16
         Me.Lbl_mailp.Text = "Correo electrónico:"
         '
         'Lbl_telp
@@ -202,7 +202,7 @@ Partial Class Cat_Prov
         Me.Lbl_telp.Location = New System.Drawing.Point(13, 191)
         Me.Lbl_telp.Name = "Lbl_telp"
         Me.Lbl_telp.Size = New System.Drawing.Size(52, 13)
-        Me.Lbl_telp.TabIndex = 33
+        Me.Lbl_telp.TabIndex = 15
         Me.Lbl_telp.Text = "Telefono:"
         '
         'Lb_cpp
@@ -211,7 +211,7 @@ Partial Class Cat_Prov
         Me.Lb_cpp.Location = New System.Drawing.Point(13, 156)
         Me.Lb_cpp.Name = "Lb_cpp"
         Me.Lb_cpp.Size = New System.Drawing.Size(27, 13)
-        Me.Lb_cpp.TabIndex = 32
+        Me.Lb_cpp.TabIndex = 14
         Me.Lb_cpp.Text = "C.P."
         '
         'Lbl_ciudadp
@@ -220,7 +220,7 @@ Partial Class Cat_Prov
         Me.Lbl_ciudadp.Location = New System.Drawing.Point(13, 121)
         Me.Lbl_ciudadp.Name = "Lbl_ciudadp"
         Me.Lbl_ciudadp.Size = New System.Drawing.Size(43, 13)
-        Me.Lbl_ciudadp.TabIndex = 31
+        Me.Lbl_ciudadp.TabIndex = 13
         Me.Lbl_ciudadp.Text = "Ciudad:"
         '
         'lbl_colp
@@ -229,7 +229,7 @@ Partial Class Cat_Prov
         Me.lbl_colp.Location = New System.Drawing.Point(13, 85)
         Me.lbl_colp.Name = "lbl_colp"
         Me.lbl_colp.Size = New System.Drawing.Size(45, 13)
-        Me.lbl_colp.TabIndex = 30
+        Me.lbl_colp.TabIndex = 12
         Me.lbl_colp.Text = "Colonia:"
         '
         'Lb_direccionp
@@ -238,7 +238,7 @@ Partial Class Cat_Prov
         Me.Lb_direccionp.Location = New System.Drawing.Point(13, 46)
         Me.Lb_direccionp.Name = "Lb_direccionp"
         Me.Lb_direccionp.Size = New System.Drawing.Size(55, 13)
-        Me.Lb_direccionp.TabIndex = 29
+        Me.Lb_direccionp.TabIndex = 11
         Me.Lb_direccionp.Text = "Dirección:"
         '
         'Lb_nomp
@@ -247,7 +247,7 @@ Partial Class Cat_Prov
         Me.Lb_nomp.Location = New System.Drawing.Point(13, 16)
         Me.Lb_nomp.Name = "Lb_nomp"
         Me.Lb_nomp.Size = New System.Drawing.Size(96, 13)
-        Me.Lb_nomp.TabIndex = 28
+        Me.Lb_nomp.TabIndex = 10
         Me.Lb_nomp.Text = "Nombre de cliente:"
         '
         'Cat_Prov
