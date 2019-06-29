@@ -1,15 +1,18 @@
 ﻿Public Class Principal
 
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub btnconect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnconect.Click
-        connection()
-    End Sub
-
     Private Sub ClientesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClientesToolStripMenuItem.Click
-        Clientes.Show()
+        'Clientes.Show()
+        Dim newDichild As New Clientes()
+        newDichild.MdiParent = Me
+        newDichild.Show()
 
+    End Sub
+
+    Private Sub ToolStripStatusLabel1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StatusConexion.Click
+
+    End Sub
+
+    Private Sub Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        connection()
     End Sub
 End Class

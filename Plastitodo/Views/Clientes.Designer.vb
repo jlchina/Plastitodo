@@ -22,8 +22,16 @@ Partial Class Clientes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'Clientes
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Text = "Clientes"
+        Me.ClientSize = New System.Drawing.Size(576, 339)
+        Me.Name = "Clientes"
+        Me.Text = "Catálogo de clientes"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class

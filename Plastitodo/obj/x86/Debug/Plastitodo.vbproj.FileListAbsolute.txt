@@ -9,3 +9,4 @@ C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x8
 C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.xml
 C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.pdb
 C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Principal.resources
+C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Clientes.resources
