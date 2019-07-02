@@ -29,7 +29,7 @@ CREATE TABLE `catalogo_productos` (
   `precio` varchar(45) DEFAULT NULL,
   `marca` tinytext,
   PRIMARY KEY (`codigo_barras`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,7 +58,7 @@ CREATE TABLE `cliente` (
   `telefono` varchar(45) DEFAULT NULL,
   `email` tinytext,
   PRIMARY KEY (`idCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `cuenta_cobrar` (
   `fecha_pago` date DEFAULT NULL,
   `id_cliente` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`folio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cuentas_pagar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = latin1 ;
 CREATE TABLE `cuentas_pagar` (
   `folio_factura` int(11) NOT NULL,
   `fecha_vencimiento` varchar(45) DEFAULT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE `cuentas_pagar` (
   `tipo_pago` varchar(45) DEFAULT NULL,
   `id_proveedor` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`folio_factura`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,14 +131,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `detalle_entrada`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = latin1 ;
 CREATE TABLE `detalle_entrada` (
   `folio` int(11) NOT NULL,
   `id_producto` varchar(45) DEFAULT NULL,
   `costo` varchar(45) DEFAULT NULL,
   `cantidad` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`folio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,14 +156,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `detalle_salida`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = latin1 ;
 CREATE TABLE `detalle_salida` (
   `folio_detalle` int(11) NOT NULL,
   `id_producto` varchar(45) DEFAULT NULL,
   `precio` varchar(45) DEFAULT NULL,
   `cantidad` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`folio_detalle`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,13 +181,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `entradas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = latin1 ;
 CREATE TABLE `entradas` (
   `Folio` int(11) NOT NULL,
   `fecha_entrada` date DEFAULT NULL,
   `id_proveedor` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Folio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -205,7 +205,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `inventario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = latin1 ;
 CREATE TABLE `inventario` (
   `codigo_barras` int(11) NOT NULL,
   `existencia` varchar(45) DEFAULT NULL,
@@ -214,7 +214,7 @@ CREATE TABLE `inventario` (
   `reorden` varchar(45) DEFAULT NULL,
   `activo` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`codigo_barras`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -232,7 +232,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `proveedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = latin1 ;
 CREATE TABLE `proveedor` (
   `idProveedor` int(11) NOT NULL,
   `Nombre` tinytext,
@@ -244,7 +244,7 @@ CREATE TABLE `proveedor` (
   `correo` tinytext,
   `contacto` tinytext,
   PRIMARY KEY (`idProveedor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -262,13 +262,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `salidas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+ SET character_set_client = latin1 ;
 CREATE TABLE `salidas` (
   `folio_salidas` int(11) NOT NULL,
   `fecha_salida` date DEFAULT NULL,
   `id_cliente` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`folio_salidas`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
