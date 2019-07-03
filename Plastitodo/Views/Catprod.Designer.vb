@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Cat_Prov
+Partial Class Catprod
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,7 +24,14 @@ Partial Class Cat_Prov
     Private Sub InitializeComponent()
         Me.Tab_proveedor = New System.Windows.Forms.TabControl()
         Me.Tab_cons_p = New System.Windows.Forms.TabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.TxtMarca = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtProv = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtCodigo = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DGVcatprov = New System.Windows.Forms.DataGridView()
         Me.Tab_alta_p = New System.Windows.Forms.TabPage()
         Me.Pan_prov = New System.Windows.Forms.Panel()
         Me.Txt_mailprov = New System.Windows.Forms.TextBox()
@@ -45,7 +52,7 @@ Partial Class Cat_Prov
         Me.Btn_agregarp = New System.Windows.Forms.Button()
         Me.Tab_proveedor.SuspendLayout()
         Me.Tab_cons_p.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVcatprov, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_alta_p.SuspendLayout()
         Me.Pan_prov.SuspendLayout()
         Me.SuspendLayout()
@@ -57,33 +64,105 @@ Partial Class Cat_Prov
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tab_proveedor.Controls.Add(Me.Tab_cons_p)
         Me.Tab_proveedor.Controls.Add(Me.Tab_alta_p)
-        Me.Tab_proveedor.Location = New System.Drawing.Point(12, 21)
+        Me.Tab_proveedor.Location = New System.Drawing.Point(12, 12)
         Me.Tab_proveedor.Name = "Tab_proveedor"
         Me.Tab_proveedor.SelectedIndex = 0
-        Me.Tab_proveedor.Size = New System.Drawing.Size(563, 332)
-        Me.Tab_proveedor.TabIndex = 0
+        Me.Tab_proveedor.Size = New System.Drawing.Size(809, 330)
+        Me.Tab_proveedor.TabIndex = 1
         '
         'Tab_cons_p
         '
-        Me.Tab_cons_p.Controls.Add(Me.DataGridView1)
+        Me.Tab_cons_p.Controls.Add(Me.BtnBuscar)
+        Me.Tab_cons_p.Controls.Add(Me.TxtMarca)
+        Me.Tab_cons_p.Controls.Add(Me.Label3)
+        Me.Tab_cons_p.Controls.Add(Me.TxtProv)
+        Me.Tab_cons_p.Controls.Add(Me.Label2)
+        Me.Tab_cons_p.Controls.Add(Me.TxtCodigo)
+        Me.Tab_cons_p.Controls.Add(Me.Label1)
+        Me.Tab_cons_p.Controls.Add(Me.DGVcatprov)
         Me.Tab_cons_p.Location = New System.Drawing.Point(4, 22)
         Me.Tab_cons_p.Name = "Tab_cons_p"
         Me.Tab_cons_p.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_cons_p.Size = New System.Drawing.Size(555, 306)
+        Me.Tab_cons_p.Size = New System.Drawing.Size(801, 304)
         Me.Tab_cons_p.TabIndex = 0
         Me.Tab_cons_p.Text = "Consulta"
         Me.Tab_cons_p.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'BtnBuscar
         '
-        Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscar.Location = New System.Drawing.Point(711, 26)
+        Me.BtnBuscar.Name = "BtnBuscar"
+        Me.BtnBuscar.Size = New System.Drawing.Size(84, 23)
+        Me.BtnBuscar.TabIndex = 4
+        Me.BtnBuscar.Text = "Buscar"
+        Me.BtnBuscar.UseVisualStyleBackColor = True
+        '
+        'TxtMarca
+        '
+        Me.TxtMarca.Location = New System.Drawing.Point(550, 29)
+        Me.TxtMarca.Name = "TxtMarca"
+        Me.TxtMarca.Size = New System.Drawing.Size(152, 20)
+        Me.TxtMarca.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(485, 30)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 16)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Marca: "
+        '
+        'TxtProv
+        '
+        Me.TxtProv.Location = New System.Drawing.Point(324, 29)
+        Me.TxtProv.Name = "TxtProv"
+        Me.TxtProv.Size = New System.Drawing.Size(152, 20)
+        Me.TxtProv.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(233, 29)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(85, 16)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Proveedor:"
+        '
+        'TxtCodigo
+        '
+        Me.TxtCodigo.Location = New System.Drawing.Point(75, 29)
+        Me.TxtCodigo.Name = "TxtCodigo"
+        Me.TxtCodigo.Size = New System.Drawing.Size(152, 20)
+        Me.TxtCodigo.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(6, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(62, 16)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Código:"
+        '
+        'DGVcatprov
+        '
+        Me.DGVcatprov.AllowUserToAddRows = False
+        Me.DGVcatprov.AllowUserToDeleteRows = False
+        Me.DGVcatprov.AllowUserToOrderColumns = True
+        Me.DGVcatprov.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 28)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(552, 275)
-        Me.DataGridView1.TabIndex = 0
+        Me.DGVcatprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVcatprov.Location = New System.Drawing.Point(3, 57)
+        Me.DGVcatprov.Name = "DGVcatprov"
+        Me.DGVcatprov.ReadOnly = True
+        Me.DGVcatprov.Size = New System.Drawing.Size(792, 241)
+        Me.DGVcatprov.TabIndex = 0
         '
         'Tab_alta_p
         '
@@ -93,7 +172,7 @@ Partial Class Cat_Prov
         Me.Tab_alta_p.Location = New System.Drawing.Point(4, 22)
         Me.Tab_alta_p.Name = "Tab_alta_p"
         Me.Tab_alta_p.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_alta_p.Size = New System.Drawing.Size(555, 306)
+        Me.Tab_alta_p.Size = New System.Drawing.Size(801, 304)
         Me.Tab_alta_p.TabIndex = 1
         Me.Tab_alta_p.Text = "Alta"
         Me.Tab_alta_p.UseVisualStyleBackColor = True
@@ -250,17 +329,18 @@ Partial Class Cat_Prov
         Me.Btn_agregarp.Text = "Agregar"
         Me.Btn_agregarp.UseVisualStyleBackColor = True
         '
-        'Cat_Prov
+        'Catprod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(577, 353)
+        Me.ClientSize = New System.Drawing.Size(833, 354)
         Me.Controls.Add(Me.Tab_proveedor)
-        Me.Name = "Cat_Prov"
-        Me.Text = "Cat_Prov"
+        Me.Name = "Catprod"
+        Me.Text = "Catprod"
         Me.Tab_proveedor.ResumeLayout(False)
         Me.Tab_cons_p.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Tab_cons_p.PerformLayout()
+        CType(Me.DGVcatprov, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_alta_p.ResumeLayout(False)
         Me.Pan_prov.ResumeLayout(False)
         Me.Pan_prov.PerformLayout()
@@ -270,9 +350,6 @@ Partial Class Cat_Prov
     Friend WithEvents Tab_proveedor As System.Windows.Forms.TabControl
     Friend WithEvents Tab_cons_p As System.Windows.Forms.TabPage
     Friend WithEvents Tab_alta_p As System.Windows.Forms.TabPage
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Btn_cancelarp As System.Windows.Forms.Button
-    Friend WithEvents Btn_agregarp As System.Windows.Forms.Button
     Friend WithEvents Pan_prov As System.Windows.Forms.Panel
     Friend WithEvents Txt_mailprov As System.Windows.Forms.TextBox
     Friend WithEvents Txt_telprov As System.Windows.Forms.TextBox
@@ -288,4 +365,14 @@ Partial Class Cat_Prov
     Friend WithEvents lbl_colp As System.Windows.Forms.Label
     Friend WithEvents Lb_direccionp As System.Windows.Forms.Label
     Friend WithEvents Lb_nomp As System.Windows.Forms.Label
+    Friend WithEvents Btn_cancelarp As System.Windows.Forms.Button
+    Friend WithEvents Btn_agregarp As System.Windows.Forms.Button
+    Friend WithEvents BtnBuscar As System.Windows.Forms.Button
+    Friend WithEvents TxtMarca As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents TxtProv As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents TxtCodigo As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents DGVcatprov As System.Windows.Forms.DataGridView
 End Class

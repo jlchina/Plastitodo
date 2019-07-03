@@ -29,6 +29,7 @@ Partial Class Principal
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.StatusConexion = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Lblconexion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -64,12 +65,12 @@ Partial Class Principal
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusConexion})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusConexion, Me.Lblconexion})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 403)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(818, 22)
@@ -79,8 +80,15 @@ Partial Class Principal
         'StatusConexion
         '
         Me.StatusConexion.Name = "StatusConexion"
-        Me.StatusConexion.Size = New System.Drawing.Size(106, 17)
-        Me.StatusConexion.Text = "Status de conexion"
+        Me.StatusConexion.Size = New System.Drawing.Size(90, 17)
+        Me.StatusConexion.Text = "Conexión a BD: "
+        '
+        'Lblconexion
+        '
+        Me.Lblconexion.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.Lblconexion.Name = "Lblconexion"
+        Me.Lblconexion.Size = New System.Drawing.Size(107, 17)
+        Me.Lblconexion.Text = "--------------------"
         '
         'Principal
         '
@@ -108,5 +116,6 @@ Partial Class Principal
     Friend WithEvents ProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents StatusConexion As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents Lblconexion As System.Windows.Forms.ToolStripStatusLabel
 
 End Class
