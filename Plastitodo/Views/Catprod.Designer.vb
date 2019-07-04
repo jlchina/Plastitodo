@@ -34,14 +34,12 @@ Partial Class Catprod
         Me.DGVcatprov = New System.Windows.Forms.DataGridView()
         Me.Tab_alta_p = New System.Windows.Forms.TabPage()
         Me.Pan_prov = New System.Windows.Forms.Panel()
-        Me.Txt_mailprov = New System.Windows.Forms.TextBox()
-        Me.Txt_telprov = New System.Windows.Forms.TextBox()
-        Me.Txt_cp_prov = New System.Windows.Forms.TextBox()
-        Me.Txt_ciudadprov = New System.Windows.Forms.TextBox()
-        Me.Txt_colprov = New System.Windows.Forms.TextBox()
-        Me.Txt_dirprov = New System.Windows.Forms.TextBox()
-        Me.Txt_nomprov = New System.Windows.Forms.TextBox()
-        Me.Lbl_mailp = New System.Windows.Forms.Label()
+        Me.Cbo_Pres = New System.Windows.Forms.ComboBox()
+        Me.Txt_Cto = New System.Windows.Forms.TextBox()
+        Me.Txt_desc = New System.Windows.Forms.TextBox()
+        Me.Txt_mod = New System.Windows.Forms.TextBox()
+        Me.Txt_marca = New System.Windows.Forms.TextBox()
+        Me.Txt_codbar = New System.Windows.Forms.TextBox()
         Me.Lbl_telp = New System.Windows.Forms.Label()
         Me.Lb_cpp = New System.Windows.Forms.Label()
         Me.Lbl_ciudadp = New System.Windows.Forms.Label()
@@ -50,11 +48,19 @@ Partial Class Catprod
         Me.Lb_nomp = New System.Windows.Forms.Label()
         Me.Btn_cancelarp = New System.Windows.Forms.Button()
         Me.Btn_agregarp = New System.Windows.Forms.Button()
+        Me.TabEditCatProv = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DGV_Edit_CP = New System.Windows.Forms.DataGridView()
+        Me.Btn_filtro = New System.Windows.Forms.Button()
         Me.Tab_proveedor.SuspendLayout()
         Me.Tab_cons_p.SuspendLayout()
         CType(Me.DGVcatprov, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_alta_p.SuspendLayout()
         Me.Pan_prov.SuspendLayout()
+        Me.TabEditCatProv.SuspendLayout()
+        CType(Me.DGV_Edit_CP, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Tab_proveedor
@@ -64,6 +70,7 @@ Partial Class Catprod
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tab_proveedor.Controls.Add(Me.Tab_cons_p)
         Me.Tab_proveedor.Controls.Add(Me.Tab_alta_p)
+        Me.Tab_proveedor.Controls.Add(Me.TabEditCatProv)
         Me.Tab_proveedor.Location = New System.Drawing.Point(12, 12)
         Me.Tab_proveedor.Name = "Tab_proveedor"
         Me.Tab_proveedor.SelectedIndex = 0
@@ -72,6 +79,7 @@ Partial Class Catprod
         '
         'Tab_cons_p
         '
+        Me.Tab_cons_p.Controls.Add(Me.Btn_filtro)
         Me.Tab_cons_p.Controls.Add(Me.BtnBuscar)
         Me.Tab_cons_p.Controls.Add(Me.TxtMarca)
         Me.Tab_cons_p.Controls.Add(Me.Label3)
@@ -180,14 +188,12 @@ Partial Class Catprod
         'Pan_prov
         '
         Me.Pan_prov.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Pan_prov.Controls.Add(Me.Txt_mailprov)
-        Me.Pan_prov.Controls.Add(Me.Txt_telprov)
-        Me.Pan_prov.Controls.Add(Me.Txt_cp_prov)
-        Me.Pan_prov.Controls.Add(Me.Txt_ciudadprov)
-        Me.Pan_prov.Controls.Add(Me.Txt_colprov)
-        Me.Pan_prov.Controls.Add(Me.Txt_dirprov)
-        Me.Pan_prov.Controls.Add(Me.Txt_nomprov)
-        Me.Pan_prov.Controls.Add(Me.Lbl_mailp)
+        Me.Pan_prov.Controls.Add(Me.Cbo_Pres)
+        Me.Pan_prov.Controls.Add(Me.Txt_Cto)
+        Me.Pan_prov.Controls.Add(Me.Txt_desc)
+        Me.Pan_prov.Controls.Add(Me.Txt_mod)
+        Me.Pan_prov.Controls.Add(Me.Txt_marca)
+        Me.Pan_prov.Controls.Add(Me.Txt_codbar)
         Me.Pan_prov.Controls.Add(Me.Lbl_telp)
         Me.Pan_prov.Controls.Add(Me.Lb_cpp)
         Me.Pan_prov.Controls.Add(Me.Lbl_ciudadp)
@@ -199,90 +205,75 @@ Partial Class Catprod
         Me.Pan_prov.Size = New System.Drawing.Size(477, 247)
         Me.Pan_prov.TabIndex = 30
         '
-        'Txt_mailprov
+        'Cbo_Pres
         '
-        Me.Txt_mailprov.Location = New System.Drawing.Point(131, 219)
-        Me.Txt_mailprov.Name = "Txt_mailprov"
-        Me.Txt_mailprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_mailprov.TabIndex = 7
+        Me.Cbo_Pres.FormattingEnabled = True
+        Me.Cbo_Pres.Location = New System.Drawing.Point(131, 147)
+        Me.Cbo_Pres.Name = "Cbo_Pres"
+        Me.Cbo_Pres.Size = New System.Drawing.Size(113, 21)
+        Me.Cbo_Pres.TabIndex = 16
         '
-        'Txt_telprov
+        'Txt_Cto
         '
-        Me.Txt_telprov.Location = New System.Drawing.Point(131, 184)
-        Me.Txt_telprov.Name = "Txt_telprov"
-        Me.Txt_telprov.Size = New System.Drawing.Size(113, 20)
-        Me.Txt_telprov.TabIndex = 6
+        Me.Txt_Cto.Location = New System.Drawing.Point(131, 184)
+        Me.Txt_Cto.Name = "Txt_Cto"
+        Me.Txt_Cto.Size = New System.Drawing.Size(113, 20)
+        Me.Txt_Cto.TabIndex = 6
         '
-        'Txt_cp_prov
+        'Txt_desc
         '
-        Me.Txt_cp_prov.Location = New System.Drawing.Point(131, 149)
-        Me.Txt_cp_prov.Name = "Txt_cp_prov"
-        Me.Txt_cp_prov.Size = New System.Drawing.Size(113, 20)
-        Me.Txt_cp_prov.TabIndex = 5
+        Me.Txt_desc.Location = New System.Drawing.Point(131, 114)
+        Me.Txt_desc.Name = "Txt_desc"
+        Me.Txt_desc.Size = New System.Drawing.Size(332, 20)
+        Me.Txt_desc.TabIndex = 4
         '
-        'Txt_ciudadprov
+        'Txt_mod
         '
-        Me.Txt_ciudadprov.Location = New System.Drawing.Point(131, 114)
-        Me.Txt_ciudadprov.Name = "Txt_ciudadprov"
-        Me.Txt_ciudadprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_ciudadprov.TabIndex = 4
+        Me.Txt_mod.Location = New System.Drawing.Point(131, 78)
+        Me.Txt_mod.Name = "Txt_mod"
+        Me.Txt_mod.Size = New System.Drawing.Size(332, 20)
+        Me.Txt_mod.TabIndex = 3
         '
-        'Txt_colprov
+        'Txt_marca
         '
-        Me.Txt_colprov.Location = New System.Drawing.Point(131, 78)
-        Me.Txt_colprov.Name = "Txt_colprov"
-        Me.Txt_colprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_colprov.TabIndex = 3
+        Me.Txt_marca.Location = New System.Drawing.Point(131, 43)
+        Me.Txt_marca.Name = "Txt_marca"
+        Me.Txt_marca.Size = New System.Drawing.Size(332, 20)
+        Me.Txt_marca.TabIndex = 2
         '
-        'Txt_dirprov
+        'Txt_codbar
         '
-        Me.Txt_dirprov.Location = New System.Drawing.Point(131, 43)
-        Me.Txt_dirprov.Name = "Txt_dirprov"
-        Me.Txt_dirprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_dirprov.TabIndex = 2
-        '
-        'Txt_nomprov
-        '
-        Me.Txt_nomprov.Location = New System.Drawing.Point(131, 8)
-        Me.Txt_nomprov.Name = "Txt_nomprov"
-        Me.Txt_nomprov.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_nomprov.TabIndex = 1
-        '
-        'Lbl_mailp
-        '
-        Me.Lbl_mailp.AutoSize = True
-        Me.Lbl_mailp.Location = New System.Drawing.Point(13, 226)
-        Me.Lbl_mailp.Name = "Lbl_mailp"
-        Me.Lbl_mailp.Size = New System.Drawing.Size(96, 13)
-        Me.Lbl_mailp.TabIndex = 16
-        Me.Lbl_mailp.Text = "Correo electrónico:"
+        Me.Txt_codbar.Location = New System.Drawing.Point(131, 8)
+        Me.Txt_codbar.Name = "Txt_codbar"
+        Me.Txt_codbar.Size = New System.Drawing.Size(332, 20)
+        Me.Txt_codbar.TabIndex = 1
         '
         'Lbl_telp
         '
         Me.Lbl_telp.AutoSize = True
         Me.Lbl_telp.Location = New System.Drawing.Point(13, 191)
         Me.Lbl_telp.Name = "Lbl_telp"
-        Me.Lbl_telp.Size = New System.Drawing.Size(52, 13)
+        Me.Lbl_telp.Size = New System.Drawing.Size(74, 13)
         Me.Lbl_telp.TabIndex = 15
-        Me.Lbl_telp.Text = "Telefono:"
+        Me.Lbl_telp.Text = "Costo unitario:"
         '
         'Lb_cpp
         '
         Me.Lb_cpp.AutoSize = True
         Me.Lb_cpp.Location = New System.Drawing.Point(13, 156)
         Me.Lb_cpp.Name = "Lb_cpp"
-        Me.Lb_cpp.Size = New System.Drawing.Size(27, 13)
+        Me.Lb_cpp.Size = New System.Drawing.Size(69, 13)
         Me.Lb_cpp.TabIndex = 14
-        Me.Lb_cpp.Text = "C.P."
+        Me.Lb_cpp.Text = "Presentación"
         '
         'Lbl_ciudadp
         '
         Me.Lbl_ciudadp.AutoSize = True
         Me.Lbl_ciudadp.Location = New System.Drawing.Point(13, 121)
         Me.Lbl_ciudadp.Name = "Lbl_ciudadp"
-        Me.Lbl_ciudadp.Size = New System.Drawing.Size(43, 13)
+        Me.Lbl_ciudadp.Size = New System.Drawing.Size(66, 13)
         Me.Lbl_ciudadp.TabIndex = 13
-        Me.Lbl_ciudadp.Text = "Ciudad:"
+        Me.Lbl_ciudadp.Text = "Descripción:"
         '
         'lbl_colp
         '
@@ -291,25 +282,25 @@ Partial Class Catprod
         Me.lbl_colp.Name = "lbl_colp"
         Me.lbl_colp.Size = New System.Drawing.Size(45, 13)
         Me.lbl_colp.TabIndex = 12
-        Me.lbl_colp.Text = "Colonia:"
+        Me.lbl_colp.Text = "Modelo:"
         '
         'Lb_direccionp
         '
         Me.Lb_direccionp.AutoSize = True
         Me.Lb_direccionp.Location = New System.Drawing.Point(13, 46)
         Me.Lb_direccionp.Name = "Lb_direccionp"
-        Me.Lb_direccionp.Size = New System.Drawing.Size(55, 13)
+        Me.Lb_direccionp.Size = New System.Drawing.Size(40, 13)
         Me.Lb_direccionp.TabIndex = 11
-        Me.Lb_direccionp.Text = "Dirección:"
+        Me.Lb_direccionp.Text = "Marca:"
         '
         'Lb_nomp
         '
         Me.Lb_nomp.AutoSize = True
         Me.Lb_nomp.Location = New System.Drawing.Point(13, 16)
         Me.Lb_nomp.Name = "Lb_nomp"
-        Me.Lb_nomp.Size = New System.Drawing.Size(96, 13)
+        Me.Lb_nomp.Size = New System.Drawing.Size(90, 13)
         Me.Lb_nomp.TabIndex = 10
-        Me.Lb_nomp.Text = "Nombre de cliente:"
+        Me.Lb_nomp.Text = "Código de barras:"
         '
         'Btn_cancelarp
         '
@@ -329,6 +320,70 @@ Partial Class Catprod
         Me.Btn_agregarp.Text = "Agregar"
         Me.Btn_agregarp.UseVisualStyleBackColor = True
         '
+        'TabEditCatProv
+        '
+        Me.TabEditCatProv.Controls.Add(Me.Button1)
+        Me.TabEditCatProv.Controls.Add(Me.TextBox1)
+        Me.TabEditCatProv.Controls.Add(Me.Label4)
+        Me.TabEditCatProv.Controls.Add(Me.DGV_Edit_CP)
+        Me.TabEditCatProv.Location = New System.Drawing.Point(4, 22)
+        Me.TabEditCatProv.Name = "TabEditCatProv"
+        Me.TabEditCatProv.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabEditCatProv.Size = New System.Drawing.Size(801, 304)
+        Me.TabEditCatProv.TabIndex = 2
+        Me.TabEditCatProv.Text = "Editar"
+        Me.TabEditCatProv.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(692, 22)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(84, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(85, 25)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(152, 20)
+        Me.TextBox1.TabIndex = 6
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(17, 29)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 16)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Código:"
+        '
+        'DGV_Edit_CP
+        '
+        Me.DGV_Edit_CP.AllowUserToAddRows = False
+        Me.DGV_Edit_CP.AllowUserToDeleteRows = False
+        Me.DGV_Edit_CP.AllowUserToOrderColumns = True
+        Me.DGV_Edit_CP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DGV_Edit_CP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Edit_CP.Location = New System.Drawing.Point(6, 57)
+        Me.DGV_Edit_CP.Name = "DGV_Edit_CP"
+        Me.DGV_Edit_CP.Size = New System.Drawing.Size(792, 241)
+        Me.DGV_Edit_CP.TabIndex = 1
+        '
+        'Btn_filtro
+        '
+        Me.Btn_filtro.Location = New System.Drawing.Point(488, 4)
+        Me.Btn_filtro.Name = "Btn_filtro"
+        Me.Btn_filtro.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_filtro.TabIndex = 6
+        Me.Btn_filtro.Text = "Button2"
+        Me.Btn_filtro.UseVisualStyleBackColor = True
+        '
         'Catprod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -344,6 +399,9 @@ Partial Class Catprod
         Me.Tab_alta_p.ResumeLayout(False)
         Me.Pan_prov.ResumeLayout(False)
         Me.Pan_prov.PerformLayout()
+        Me.TabEditCatProv.ResumeLayout(False)
+        Me.TabEditCatProv.PerformLayout()
+        CType(Me.DGV_Edit_CP, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -351,14 +409,11 @@ Partial Class Catprod
     Friend WithEvents Tab_cons_p As System.Windows.Forms.TabPage
     Friend WithEvents Tab_alta_p As System.Windows.Forms.TabPage
     Friend WithEvents Pan_prov As System.Windows.Forms.Panel
-    Friend WithEvents Txt_mailprov As System.Windows.Forms.TextBox
-    Friend WithEvents Txt_telprov As System.Windows.Forms.TextBox
-    Friend WithEvents Txt_cp_prov As System.Windows.Forms.TextBox
-    Friend WithEvents Txt_ciudadprov As System.Windows.Forms.TextBox
-    Friend WithEvents Txt_colprov As System.Windows.Forms.TextBox
-    Friend WithEvents Txt_dirprov As System.Windows.Forms.TextBox
-    Friend WithEvents Txt_nomprov As System.Windows.Forms.TextBox
-    Friend WithEvents Lbl_mailp As System.Windows.Forms.Label
+    Friend WithEvents Txt_Cto As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_desc As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_mod As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_marca As System.Windows.Forms.TextBox
+    Friend WithEvents Txt_codbar As System.Windows.Forms.TextBox
     Friend WithEvents Lbl_telp As System.Windows.Forms.Label
     Friend WithEvents Lb_cpp As System.Windows.Forms.Label
     Friend WithEvents Lbl_ciudadp As System.Windows.Forms.Label
@@ -375,4 +430,11 @@ Partial Class Catprod
     Friend WithEvents TxtCodigo As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents DGVcatprov As System.Windows.Forms.DataGridView
+    Friend WithEvents TabEditCatProv As System.Windows.Forms.TabPage
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents DGV_Edit_CP As System.Windows.Forms.DataGridView
+    Friend WithEvents Cbo_Pres As System.Windows.Forms.ComboBox
+    Friend WithEvents Btn_filtro As System.Windows.Forms.Button
 End Class
