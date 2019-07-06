@@ -12,3 +12,17 @@ C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x8
 C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Clientes.resources
 C:\Users\Luis\Documents\Visual Studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Cat_Prov.resources
 C:\Users\Luis\documents\visual studio 2010\Projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Catprod.resources
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.vbprojResolveAssemblyReference.cache
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Catprod.resources
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Cat_Prov.resources
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Clientes.resources
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Login.resources
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Principal.resources
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.Resources.resources
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.vbproj.GenerateResource.Cache
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.exe
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.xml
+D:\projects\Plastitodo\Plastitodo\obj\x86\Debug\Plastitodo.pdb
+D:\projects\Plastitodo\Plastitodo\bin\Debug\Plastitodo.exe
+D:\projects\Plastitodo\Plastitodo\bin\Debug\Plastitodo.pdb
+D:\projects\Plastitodo\Plastitodo\bin\Debug\Plastitodo.xml

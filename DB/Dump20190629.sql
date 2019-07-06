@@ -16,6 +16,23 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE `usuarios` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `nombre` VARCHAR(150) NOT NULL,
+  `ap_paterno` VARCHAR(100) NOT NULL,
+  `ap_materno` VARCHAR(100) NULL,
+  PRIMARY KEY (`id`))
+COMMENT = 'Tabla de usuarios sistema plastitodo';
+
+INSERT INTO `usuarios` (`username`,`password`,`nombre`,`ap_paterno`) VALUES ('admin','k0hALciYOS16DZX8tiCPXw==','Administrador','Plastitodo')
+
+--
 -- Table structure for table `catalogo_productos`
 --
 
