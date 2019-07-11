@@ -32,38 +32,45 @@ Partial Class Login
         'lbl_user
         '
         Me.lbl_user.AutoSize = True
-        Me.lbl_user.Location = New System.Drawing.Point(59, 58)
+        Me.lbl_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_user.Location = New System.Drawing.Point(54, 132)
         Me.lbl_user.Name = "lbl_user"
-        Me.lbl_user.Size = New System.Drawing.Size(43, 13)
+        Me.lbl_user.Size = New System.Drawing.Size(64, 20)
         Me.lbl_user.TabIndex = 0
         Me.lbl_user.Text = "Usuario"
+        Me.lbl_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txt_user
         '
-        Me.txt_user.Location = New System.Drawing.Point(124, 58)
+        Me.txt_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_user.Location = New System.Drawing.Point(157, 132)
         Me.txt_user.Name = "txt_user"
-        Me.txt_user.Size = New System.Drawing.Size(100, 20)
+        Me.txt_user.Size = New System.Drawing.Size(131, 22)
         Me.txt_user.TabIndex = 1
         '
         'txt_pass
         '
-        Me.txt_pass.Location = New System.Drawing.Point(124, 84)
+        Me.txt_pass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_pass.Location = New System.Drawing.Point(157, 158)
         Me.txt_pass.Name = "txt_pass"
-        Me.txt_pass.Size = New System.Drawing.Size(100, 20)
+        Me.txt_pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_pass.Size = New System.Drawing.Size(131, 22)
         Me.txt_pass.TabIndex = 3
         '
         'lbl_pass
         '
         Me.lbl_pass.AutoSize = True
-        Me.lbl_pass.Location = New System.Drawing.Point(59, 84)
+        Me.lbl_pass.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_pass.Location = New System.Drawing.Point(54, 158)
         Me.lbl_pass.Name = "lbl_pass"
-        Me.lbl_pass.Size = New System.Drawing.Size(61, 13)
+        Me.lbl_pass.Size = New System.Drawing.Size(92, 20)
         Me.lbl_pass.TabIndex = 2
         Me.lbl_pass.Text = "Contraseña"
+        Me.lbl_pass.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Btn_ingresar
         '
-        Me.Btn_ingresar.Location = New System.Drawing.Point(62, 129)
+        Me.Btn_ingresar.Location = New System.Drawing.Point(90, 201)
         Me.Btn_ingresar.Name = "Btn_ingresar"
         Me.Btn_ingresar.Size = New System.Drawing.Size(162, 33)
         Me.Btn_ingresar.TabIndex = 4
@@ -74,14 +81,15 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 202)
+        Me.ClientSize = New System.Drawing.Size(349, 262)
         Me.Controls.Add(Me.Btn_ingresar)
         Me.Controls.Add(Me.txt_pass)
         Me.Controls.Add(Me.lbl_pass)
         Me.Controls.Add(Me.txt_user)
         Me.Controls.Add(Me.lbl_user)
+        Me.MaximizeBox = False
         Me.Name = "Login"
-        Me.Text = "Login"
+        Me.Text = "Autenticación"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

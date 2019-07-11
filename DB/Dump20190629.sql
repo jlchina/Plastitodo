@@ -15,10 +15,80 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+--
+-- Table structure for table `modulos`
+--
+DROP TABLE IF EXISTS `modulos`;
+CREATE TABLE `modulos` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(80) NOT NULL,
+  `descripcion` VARCHAR(80) NOT NULL,
+  `tiene_secciones` TINYINT(4) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`));
+INSERT INTO `modulos` (`nombre`, `descripcion`) VALUES ('Usuarios', 'Modulo de usuarios del sistema');
+INSERT INTO `modulos` (`nombre`, `descripcion`) VALUES ('Perfiles', 'Modulo de perfiles del sistema');
+INSERT INTO `modulos` (`nombre`, `descripcion`, `tiene_secciones`) VALUES ('Clientes', 'Modulo de clientes del sistema', '1');
+INSERT INTO `modulos` (`nombre`, `descripcion`, `tiene_secciones`) VALUES ('Proveedores', 'Modulo de proveedores del sistema', '1');
+INSERT INTO `modulos` (`nombre`, `descripcion`, `tiene_secciones`) VALUES ('Productos', 'Modulo de productos del sistema', '1');
+INSERT INTO `modulos` (`nombre`, `descripcion`, `tiene_secciones`) VALUES ('Inventario', 'Modulo de inventario', '1');
+--
+-- Table structure for table `secciones`
+--
+CREATE TABLE `secciones` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(80) NOT NULL,
+  `descripcion` VARCHAR(80) NOT NULL,
+  `id_modulo` INT(11) NOT NULL,
+  PRIMARY KEY (`id`));
+INSERT INTO `secciones` (`nombre`, `descripcion`, `id_modulo`) VALUES ('Lista', 'Lista de clientes', '3');
+INSERT INTO `secciones` (`nombre`, `descripcion`, `id_modulo`) VALUES ('Crear', 'Crar Nuevo cliente', '3');
+INSERT INTO `secciones` (`nombre`, `descripcion`, `id_modulo`) VALUES ('Lista', 'Lista de proveedores', '4');
+INSERT INTO `secciones` (`nombre`, `descripcion`, `id_modulo`) VALUES ('Crear', 'Crear nuevo proveedor', '4');
+INSERT INTO `secciones` (`nombre`, `descripcion`, `id_modulo`) VALUES ('Lista', 'Lista de productos', '5');
+INSERT INTO `secciones` (`nombre`, `descripcion`, `id_modulo`) VALUES ('Crear', 'Crear nuevo producto', '5');
+--
+-- Table structure for table `perfiles`
+--
+DROP TABLE IF EXISTS `perfiles`;
+CREATE TABLE `perfiles` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(80) NOT NULL,
+  `descripcion` VARCHAR(80) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`));
+  
+INSERT INTO `perfiles` (`nombre`, `descripcion`) VALUES ('Administrador', 'Administrador del sistema');
+--
+-- Table structure for table `relacion_perfiles_modulos`
+--
+CREATE TABLE `relacion_perfiles_modulos` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_perfil` INT(11) NOT NULL,
+  `id_modulo` INT(11) NOT NULL,
+  PRIMARY KEY (`id`));
+INSERT INTO `relacion_perfiles_modulos` (`id_perfil`, `id_modulo`) VALUES ('1', '1');
+INSERT INTO `relacion_perfiles_modulos` (`id_perfil`, `id_modulo`) VALUES ('1', '2');
+INSERT INTO `relacion_perfiles_modulos` (`id_perfil`, `id_modulo`) VALUES ('1', '3');
+INSERT INTO `relacion_perfiles_modulos` (`id_perfil`, `id_modulo`) VALUES ('1', '4');
+INSERT INTO `relacion_perfiles_modulos` (`id_perfil`, `id_modulo`) VALUES ('1', '5');
+INSERT INTO `relacion_perfiles_modulos` (`id_perfil`, `id_modulo`) VALUES ('1', '6');
+--
+-- Table structure for table `relacion_perfiles_modulos`
+--
+CREATE TABLE `relacion_perfiles_secciones` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_perfil` INT(11) NOT NULL,
+  `id_seccion` INT(11) NOT NULL,
+  PRIMARY KEY (`id`));
+INSERT INTO `relacion_perfiles_secciones` (`id_perfil`, `id_seccion`) VALUES ('1', '1');
+INSERT INTO `relacion_perfiles_secciones` (`id_perfil`, `id_seccion`) VALUES ('1', '2');
+INSERT INTO `relacion_perfiles_secciones` (`id_perfil`, `id_seccion`) VALUES ('1', '3');
+INSERT INTO `relacion_perfiles_secciones` (`id_perfil`, `id_seccion`) VALUES ('1', '4');
+INSERT INTO `relacion_perfiles_secciones` (`id_perfil`, `id_seccion`) VALUES ('1', '5');
+INSERT INTO `relacion_perfiles_secciones` (`id_perfil`, `id_seccion`) VALUES ('1', '6');
 --
 -- Table structure for table `usuarios`
 --
-
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -27,11 +97,11 @@ CREATE TABLE `usuarios` (
   `nombre` VARCHAR(150) NOT NULL,
   `ap_paterno` VARCHAR(100) NOT NULL,
   `ap_materno` VARCHAR(100) NULL,
+  `id_perfil` INT(11) NOT NULL,
   PRIMARY KEY (`id`))
 COMMENT = 'Tabla de usuarios sistema plastitodo';
 
-INSERT INTO `usuarios` (`username`,`password`,`nombre`,`ap_paterno`) VALUES ('admin','k0hALciYOS16DZX8tiCPXw==','Administrador','Plastitodo')
-
+INSERT INTO `usuarios` (`username`,`password`,`nombre`,`ap_paterno`,`id_perfil`) VALUES ('admin','k0hALciYOS16DZX8tiCPXw==','Administrador','Plastitodo',1);
 --
 -- Table structure for table `catalogo_productos`
 --

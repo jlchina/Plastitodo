@@ -1,7 +1,7 @@
 ﻿Public Class Principal
 
 
-    Private Sub ClientesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClientesToolStripMenuItem.Click
+    Private Sub ClientesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'Clientes.Show()
         Dim newDichild As New Clientes()
         newDichild.MdiParent = Me
@@ -13,7 +13,7 @@
         connection()
     End Sub
 
-    Private Sub ProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProductosToolStripMenuItem.Click
+    Private Sub ProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim newCatProd As New Catprod()
         newCatProd.MdiParent = Me
         newCatProd.Show()
