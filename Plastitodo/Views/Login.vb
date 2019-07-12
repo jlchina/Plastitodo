@@ -1,4 +1,5 @@
 ﻿Imports Plastitodo.conexion
+Imports Plastitodo.Globales
 Imports System.Security.Cryptography
 Imports MySql.Data.MySqlClient
 Public Class Login
@@ -36,6 +37,7 @@ Public Class Login
                     While dr.Read
                         '--------->Obtener valores de consulta
                         Nombre = dr.Item("nombre")
+                        Id_perfil = dr.Item("id_perfil")
                     End While
                 End If
 
