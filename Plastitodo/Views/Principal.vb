@@ -1,5 +1,6 @@
 ﻿Imports Plastitodo.Globales
 Imports Plastitodo.PrincipalMod
+Imports System
 Public Class Principal
 
 
@@ -41,7 +42,7 @@ Public Class Principal
     End Sub
 
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
-        Dim newUsuariosForm As New UsuariosForm()
+        Dim newUsuariosForm As New EditarUsuariosForm()
         newUsuariosForm.MdiParent = Me
         newUsuariosForm.Show()
     End Sub
@@ -66,5 +67,26 @@ Public Class Principal
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Principal_FormClosing(sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        Dim dlgRes As DialogResult
+        dlgRes = MessageBox.Show("Desea Cerrar y Guardar los Cambios Efectuados?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If e.CloseReason = CloseReason.UserClosing Then
+            If dlgRes = Windows.Forms.DialogResult.Yes Then
+                Me.Dispose()
+            End If
+
+            If dlgRes = Windows.Forms.DialogResult.No Then
+                e.Cancel = True
+            End If
+        End If
+    End Sub
+
+    Private Sub PerfilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerfilesToolStripMenuItem.Click
+        Dim newListaForm As New ListaPerfilesForm()
+        newListaForm.MdiParent = Me
+        newListaForm.Show()
     End Sub
 End Class

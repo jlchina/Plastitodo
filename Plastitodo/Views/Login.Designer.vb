@@ -22,11 +22,14 @@ Partial Class Login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.lbl_user = New System.Windows.Forms.Label()
         Me.txt_user = New System.Windows.Forms.TextBox()
         Me.txt_pass = New System.Windows.Forms.TextBox()
         Me.lbl_pass = New System.Windows.Forms.Label()
         Me.Btn_ingresar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lbl_user
@@ -77,11 +80,22 @@ Partial Class Login
         Me.Btn_ingresar.Text = "&Ingresar"
         Me.Btn_ingresar.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(72, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(206, 95)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(349, 262)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Btn_ingresar)
         Me.Controls.Add(Me.txt_pass)
         Me.Controls.Add(Me.lbl_pass)
@@ -90,6 +104,7 @@ Partial Class Login
         Me.MaximizeBox = False
         Me.Name = "Login"
         Me.Text = "Autenticación"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -100,4 +115,5 @@ Partial Class Login
     Friend WithEvents txt_pass As TextBox
     Friend WithEvents lbl_pass As Label
     Friend WithEvents Btn_ingresar As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

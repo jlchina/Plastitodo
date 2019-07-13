@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Config\conexion.vb" />
     <Compile Include="Config\Globales.vb" />
+    <Compile Include="Controllers\PerfilesMod.vb" />
     <Compile Include="Controllers\PrincipalMod.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
     <Compile Include="Views\Catprod.Designer.vb">
@@ -104,6 +105,18 @@
     <Compile Include="Views\Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Perfiles\EditarPerfilesForm.Designer.vb">
+      <DependentUpon>EditarPerfilesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Perfiles\EditarPerfilesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Perfiles\ListaPerfilesForm.Designer.vb">
+      <DependentUpon>ListaPerfilesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Perfiles\ListaPerfilesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -126,10 +139,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Views\Usuarios\UsuariosForm.Designer.vb">
-      <DependentUpon>UsuariosForm.vb</DependentUpon>
+    <Compile Include="Views\Usuarios\EditarUsuariosForm.Designer.vb">
+      <DependentUpon>EditarUsuariosForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Usuarios\UsuariosForm.vb">
+    <Compile Include="Views\Usuarios\EditarUsuariosForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -146,6 +159,12 @@
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Perfiles\EditarPerfilesForm.resx">
+      <DependentUpon>EditarPerfilesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Perfiles\ListaPerfilesForm.resx">
+      <DependentUpon>ListaPerfilesForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
@@ -155,8 +174,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Usuarios\UsuariosForm.resx">
-      <DependentUpon>UsuariosForm.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Usuarios\EditarUsuariosForm.resx">
+      <DependentUpon>EditarUsuariosForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

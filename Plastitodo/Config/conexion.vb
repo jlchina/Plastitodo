@@ -11,6 +11,7 @@ Module conexion
     Public ccons As String
     Public comando As MySqlCommand
     Public cmd As MySqlCommand
+    Public cmd2 As MySqlCommand
     Public datareader_mysql As MySqlDataReader
 
     Sub connection()

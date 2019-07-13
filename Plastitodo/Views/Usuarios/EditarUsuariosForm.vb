@@ -1,7 +1,7 @@
 ﻿Imports Plastitodo.Globales
-Imports Plastitodo.UsuariosMod
+Imports Plastitodo.PerfilesMod
 Imports System.Security.Cryptography
-Public Class UsuariosForm
+Public Class EditarUsuariosForm
     Private Sub UsuariosForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim ds As DataSet = GetPerfiles()
         CmbPerfil.DataSource = ds.Tables(0)

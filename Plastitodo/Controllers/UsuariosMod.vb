@@ -33,26 +33,4 @@ Module UsuariosMod
 
         Return 1
     End Function
-
-    Function GetPerfiles()
-        Dim ds As DataSet = New DataSet
-        Dim sql = "SELECT id,nombre FROM perfiles"
-        Try
-            '---Abir conexion
-            conn = New MySqlConnection
-            conn.ConnectionString = ConnectionString2
-            conn.Open()
-            'Iniciar comando de conexion
-            cmd = New MySqlCommand(sql, conn)
-            da = New MySqlDataAdapter(cmd)
-            da.Fill(ds)
-
-            conn.Close()
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-        Return ds
-    End Function
 End Module
