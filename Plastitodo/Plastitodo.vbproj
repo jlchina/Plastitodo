@@ -139,6 +139,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Views\Productos\AltaGpoProd.Designer.vb">
+      <DependentUpon>AltaGpoProd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\AltaGpoProd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Productos\Alta_fam_prod.Designer.vb">
+      <DependentUpon>Alta_fam_prod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\Alta_fam_prod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Productos\Cons_prod.Designer.vb">
+      <DependentUpon>Cons_prod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\Cons_prod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Productos\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Productos\ModCatprod.Designer.vb">
+      <DependentUpon>ModCatprod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\ModCatprod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Proveedores\CatalogoProveedor.Designer.vb">
+      <DependentUpon>CatalogoProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Proveedores\CatalogoProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Usuarios\EditarUsuariosForm.Designer.vb">
       <DependentUpon>EditarUsuariosForm.vb</DependentUpon>
     </Compile>
@@ -173,6 +209,24 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\AltaGpoProd.resx">
+      <DependentUpon>AltaGpoProd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\Alta_fam_prod.resx">
+      <DependentUpon>Alta_fam_prod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\Cons_prod.resx">
+      <DependentUpon>Cons_prod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\ModCatprod.resx">
+      <DependentUpon>ModCatprod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Proveedores\CatalogoProveedor.resx">
+      <DependentUpon>CatalogoProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuarios\EditarUsuariosForm.resx">
       <DependentUpon>EditarUsuariosForm.vb</DependentUpon>

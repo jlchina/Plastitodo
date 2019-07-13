@@ -35,6 +35,7 @@ INSERT INTO `modulos` (`nombre`, `descripcion`, `tiene_secciones`) VALUES ('Inve
 --
 -- Table structure for table `secciones`
 --
+DROP TABLE IF EXISTS `secciones`;
 CREATE TABLE `secciones` (
   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(80) NOT NULL,
@@ -102,6 +103,39 @@ CREATE TABLE `usuarios` (
 COMMENT = 'Tabla de usuarios sistema plastitodo';
 
 INSERT INTO `usuarios` (`username`,`password`,`nombre`,`ap_paterno`,`id_perfil`) VALUES ('admin','k0hALciYOS16DZX8tiCPXw==','Administrador','Plastitodo',1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `catalogacion`
+--
+
+CREATE TABLE `catalogacion` (
+  `Gpo_prod` int(4) NOT NULL,
+  `Id_familia` int(2) NOT NULL,
+  `Nom_familia` text NOT NULL,
+  `Id_categoria` int(2) NOT NULL,
+  `Nom_categoria` text NOT NULL
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `catalogacion_familias`
+--
+
+CREATE TABLE `catalogacion_familias` (
+  `id_familia` int(3) NOT NULL,
+  `nom_familia` text NOT NULL
+);
+
+--
+-- Volcado de datos para la tabla `catalogacion_familias`
+--
+
+INSERT INTO `catalogacion_familias` (`id_familia`, `nom_familia`) VALUES
+(1, 'PLATOS Y MOLDES');
+
 --
 -- Table structure for table `catalogo_productos`
 --
@@ -110,12 +144,12 @@ DROP TABLE IF EXISTS `catalogo_productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `catalogo_productos` (
-  `codigo_barras` int(11) NOT NULL,
-  `descripcion` text,
-  `presentacion` text,
-  `precio` varchar(45) DEFAULT NULL,
-  `marca` tinytext,
-  PRIMARY KEY (`codigo_barras`)
+  `codigo_barras` bigint(14) NOT NULL,
+  `Modelo` text COLLATE latin1_general_ci NOT NULL,
+  `descripcion` text COLLATE latin1_general_ci,
+  `presentacion` text COLLATE latin1_general_ci,
+  `precio` varchar(45) COLLATE latin1_general_ci DEFAULT NULL,
+  `marca` tinytext COLLATE latin1_general_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -321,7 +355,7 @@ DROP TABLE IF EXISTS `proveedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = latin1 ;
 CREATE TABLE `proveedor` (
-  `idProveedor` int(11) NOT NULL,
+  `idProveedor` int(11) NOT NULL AUTO_INCREMENT,
   `Nombre` tinytext,
   `Direccion` tinytext,
   `Colonia` tinytext,

@@ -89,4 +89,22 @@ Public Class Principal
         newListaForm.MdiParent = Me
         newListaForm.Show()
     End Sub
+
+    Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
+        Dim newProveedor As New CatalogoProveedor()
+        newProveedor.MdiParent = Me
+        newProveedor.Show()
+    End Sub
+
+    Private Sub ConsultaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaToolStripMenuItem.Click
+        Dim newConsulta As New Cons_prod()
+        newConsulta.MdiParent = Me
+        newConsulta.Show()
+    End Sub
+
+    Private Sub AltaYoEditarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaYoEditarToolStripMenuItem.Click
+        Dim newCatProd As New ModCatprod()
+        newCatProd.MdiParent = Me
+        newCatProd.Show()
+    End Sub
 End Class

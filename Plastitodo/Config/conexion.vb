@@ -16,9 +16,9 @@ Module conexion
 
     Sub connection()
         Try
-            conn = New MySqlConnection
-            conn.ConnectionString = ConnectionString2
-            conn.Open()
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
             Principal.Lblconexion.Text = "Conectado"
         Catch ex As Exception
             Principal.Lblconexion.Text = "Sin conexión"
