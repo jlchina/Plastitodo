@@ -33,18 +33,15 @@ Public Class Principal
             End Select
         Next
 
-        Timer1.Interval = 300000 '5 minutos
-        Timer1.Start()
-
     End Sub
 
     Private Sub ProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim newCatProd As New Catprod_NoUsar()
+        Dim newCatProd As New Catprod()
         newCatProd.MdiParent = Me
         newCatProd.Show()
     End Sub
 
-    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim newUsuariosForm As New EditarUsuariosForm()
         newUsuariosForm.MdiParent = Me
         newUsuariosForm.Show()
@@ -111,19 +108,9 @@ Public Class Principal
         newCatProd.Show()
     End Sub
 
-    Private Sub AltaFamiliaDeProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaFamiliaDeProductosToolStripMenuItem.Click
-        Dim newFamProd As New Alta_fam_prod()
-        newFamProd.MdiParent = Me
-        newFamProd.Show()
-    End Sub
-
-    Private Sub AltaGrupoDeProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaGrupoDeProductosToolStripMenuItem.Click
-        Dim newGpoProd As New AltaGpoProd()
-        newGpoProd.MdiParent = Me
-        newGpoProd.Show()
-    End Sub
-
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        connection()
+    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
+        Dim newListaUsuarios As New ListaUsuariosForm()
+        newListaUsuarios.MdiParent = Me
+        newListaUsuarios.Show()
     End Sub
 End Class
