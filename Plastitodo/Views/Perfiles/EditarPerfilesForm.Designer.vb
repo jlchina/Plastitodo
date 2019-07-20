@@ -28,13 +28,13 @@ Partial Class EditarPerfilesForm
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DgvModulos = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CmbModulo = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BtnAgregarModulo = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NOMBRE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DgvModulos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,6 +88,18 @@ Partial Class EditarPerfilesForm
         Me.DgvModulos.ReadOnly = True
         Me.DgvModulos.Size = New System.Drawing.Size(482, 202)
         Me.DgvModulos.TabIndex = 139
+        '
+        'ID
+        '
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        '
+        'NOMBRE
+        '
+        Me.NOMBRE.HeaderText = "NOMBRE"
+        Me.NOMBRE.Name = "NOMBRE"
+        Me.NOMBRE.ReadOnly = True
         '
         'CmbModulo
         '
@@ -150,18 +162,6 @@ Partial Class EditarPerfilesForm
         Me.BtnGuardar.TabIndex = 144
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        '
-        'NOMBRE
-        '
-        Me.NOMBRE.HeaderText = "NOMBRE"
-        Me.NOMBRE.Name = "NOMBRE"
-        Me.NOMBRE.ReadOnly = True
-        '
         'EditarPerfilesForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -177,6 +177,8 @@ Partial Class EditarPerfilesForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtNombre)
         Me.Controls.Add(Me.Label2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "EditarPerfilesForm"
         Me.Text = "Editar Perfil"
         CType(Me.DgvModulos, System.ComponentModel.ISupportInitialize).EndInit()

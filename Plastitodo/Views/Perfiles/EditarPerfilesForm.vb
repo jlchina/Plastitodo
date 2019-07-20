@@ -1,9 +1,38 @@
 ﻿Imports Plastitodo.Globales
 Imports Plastitodo.PerfilesMod
 Public Class EditarPerfilesForm
-    Dim UltimaFila As Integer
+    Dim id_perfil As Integer
+
+    Private Sub GetData(ByVal Id As String)
+        '--------->Establecer valores obtenidos del GridViewForm id_perfil
+        id_perfil = Id
+    End Sub
+
     Private Sub EditarPerfilesForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        UltimaFila = 1000
+        If (id_perfil) Then
+            Me.Text = "Editar Perfil - ID: " & id_perfil.ToString
+            Dim DataPerfil As DataSet = GetDatosPerfil(id_perfil)
+            Dim DataModulosPerfiles As DataSet = GetDatosModulosPerfil(id_perfil)
+
+            For Each dr As DataRow In DataPerfil.Tables(0).Rows
+                TxtNombre.Text = dr(1)
+                TxtDescripcion.Text = dr(2)
+            Next
+
+            Dim Fila As Integer = 0
+
+            For Each dr As DataRow In DataModulosPerfiles.Tables(0).Rows
+                DgvModulos.Rows.Add()
+                DgvModulos.Rows(Fila).Cells(0).Value = dr(0)
+                DgvModulos.Rows(Fila).Cells(1).Value = dr(1)
+                Fila = Fila + 1
+            Next
+            DgvModulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+
+
+        Else
+            Me.Text = "Nuevo Perfil"
+        End If
         Dim ds As DataSet = GetModulos()
 
         CmbModulo.DisplayMember = "Seleccionar Modulo"
@@ -26,14 +55,6 @@ Public Class EditarPerfilesForm
 
     Private Sub LlenarLista(ByVal Fila As Integer, id As Integer, descripcion As String)
         Try
-            'If Fila = 1000 Then
-            'UltimaFila = 0
-            'Fila = UltimaFila
-            'Else
-            'Fila = UltimaFila + 1
-            'UltimaFila = Fila
-            'End If
-
             DgvModulos.Rows(Fila - 1).Cells(0).Value = id
             DgvModulos.Rows(Fila - 1).Cells(1).Value = descripcion
             DgvModulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
@@ -51,12 +72,28 @@ Public Class EditarPerfilesForm
                 ListaModulos.Add(Dt_Row.Cells("ID").Value)
             Next
 
-            If (InsertPerfil(TxtNombre.Text, TxtDescripcion.Text, ListaModulos.ToArray)) Then
-                Me.Hide()
+            If (TxtNombre.Text <> "" And TxtDescripcion.Text <> "" And DgvModulos.Rows.Count > 0) Then
+                If (id_perfil) Then
+                    If (GuardarPerfil(id_perfil, TxtNombre.Text, TxtDescripcion.Text, ListaModulos.ToArray)) Then
+                        Me.Hide()
+                    End If
+                Else
+                    If (GuardarPerfil(Nothing, TxtNombre.Text, TxtDescripcion.Text, ListaModulos.ToArray)) Then
+                        Me.Hide()
+                    End If
+                End If
+            Else
+                MsgBox("Favor de Llenar todos los campos", MsgBoxStyle.Exclamation, "Información")
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        TxtNombre.Text = ""
+        TxtDescripcion.Text = ""
+        DgvModulos.Rows.Clear()
     End Sub
 End Class

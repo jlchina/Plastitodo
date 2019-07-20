@@ -25,7 +25,6 @@ Partial Class Principal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PerfilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -35,11 +34,11 @@ Partial Class Principal
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaYoEditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.StatusConexion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Lblconexion = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.AltaYoEditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -62,29 +61,22 @@ Partial Class Principal
         '
         'UsuariosToolStripMenuItem
         '
-        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem})
         Me.UsuariosToolStripMenuItem.Enabled = False
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
-        '
-        'NuevoToolStripMenuItem
-        '
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
-        Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'PerfilesToolStripMenuItem
         '
         Me.PerfilesToolStripMenuItem.Enabled = False
         Me.PerfilesToolStripMenuItem.Name = "PerfilesToolStripMenuItem"
-        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PerfilesToolStripMenuItem.Text = "Perfiles"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(119, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem2.Text = "Salir"
         '
         'ModulosToolStripMenuItem
@@ -99,28 +91,28 @@ Partial Class Principal
         Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListaToolStripMenuItem2, Me.CrearToolStripMenuItem2})
         Me.ClientesToolStripMenuItem.Enabled = False
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'ListaToolStripMenuItem2
         '
         Me.ListaToolStripMenuItem2.Enabled = False
         Me.ListaToolStripMenuItem2.Name = "ListaToolStripMenuItem2"
-        Me.ListaToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.ListaToolStripMenuItem2.Size = New System.Drawing.Size(102, 22)
         Me.ListaToolStripMenuItem2.Text = "Lista"
         '
         'CrearToolStripMenuItem2
         '
         Me.CrearToolStripMenuItem2.Enabled = False
         Me.CrearToolStripMenuItem2.Name = "CrearToolStripMenuItem2"
-        Me.CrearToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.CrearToolStripMenuItem2.Size = New System.Drawing.Size(102, 22)
         Me.CrearToolStripMenuItem2.Text = "Crear"
         '
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.Enabled = False
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'ProductosToolStripMenuItem
@@ -128,20 +120,26 @@ Partial Class Principal
         Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaToolStripMenuItem, Me.AltaYoEditarToolStripMenuItem})
         Me.ProductosToolStripMenuItem.Enabled = False
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'ConsultaToolStripMenuItem
         '
         Me.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem"
-        Me.ConsultaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultaToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.ConsultaToolStripMenuItem.Text = "Consulta"
+        '
+        'AltaYoEditarToolStripMenuItem
+        '
+        Me.AltaYoEditarToolStripMenuItem.Name = "AltaYoEditarToolStripMenuItem"
+        Me.AltaYoEditarToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.AltaYoEditarToolStripMenuItem.Text = "Alta y/o Editar"
         '
         'InventariosToolStripMenuItem
         '
         Me.InventariosToolStripMenuItem.Enabled = False
         Me.InventariosToolStripMenuItem.Name = "InventariosToolStripMenuItem"
-        Me.InventariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InventariosToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.InventariosToolStripMenuItem.Text = "Inventarios"
         '
         'StatusStrip1
@@ -165,12 +163,6 @@ Partial Class Principal
         Me.Lblconexion.Name = "Lblconexion"
         Me.Lblconexion.Size = New System.Drawing.Size(107, 17)
         Me.Lblconexion.Text = "--------------------"
-        '
-        'AltaYoEditarToolStripMenuItem
-        '
-        Me.AltaYoEditarToolStripMenuItem.Name = "AltaYoEditarToolStripMenuItem"
-        Me.AltaYoEditarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.AltaYoEditarToolStripMenuItem.Text = "Alta y/o Editar"
         '
         'Principal
         '
@@ -207,7 +199,6 @@ Partial Class Principal
     Friend WithEvents InventariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PerfilesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConsultaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AltaYoEditarToolStripMenuItem As ToolStripMenuItem
 End Class

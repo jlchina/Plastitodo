@@ -2,7 +2,7 @@
 
 Module conexion
     Public ConnectionString As String = "Data Source=127.0.0.1; Port=3306;Database=plastitodo; User id=root"
-    Public ConnectionString2 As String = "server=127.0.0.1;port=3306;userid=root;password=$Obi1Kenobi;database=plastitodo"
+    Public ConnectionString2 As String = "server=127.0.0.1;port=3306;userid=root;database=plastibolsas"
     Public conn As MySqlConnection
     Public con_string As MySqlConnection
     Public dt As DataTable
@@ -12,6 +12,7 @@ Module conexion
     Public comando As MySqlCommand
     Public cmd As MySqlCommand
     Public cmd2 As MySqlCommand
+    Public cmd3 As MySqlCommand
     Public datareader_mysql As MySqlDataReader
 
     Sub connection()

@@ -41,7 +41,7 @@ Public Class Principal
         newCatProd.Show()
     End Sub
 
-    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim newUsuariosForm As New EditarUsuariosForm()
         newUsuariosForm.MdiParent = Me
         newUsuariosForm.Show()
@@ -106,5 +106,11 @@ Public Class Principal
         Dim newCatProd As New ModCatprod()
         newCatProd.MdiParent = Me
         newCatProd.Show()
+    End Sub
+
+    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
+        Dim newListaUsuarios As New ListaUsuariosForm()
+        newListaUsuarios.MdiParent = Me
+        newListaUsuarios.Show()
     End Sub
 End Class
