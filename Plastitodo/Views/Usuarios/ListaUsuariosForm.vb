@@ -18,7 +18,7 @@
 
             DataTable.Rows.Add(DataRow)
         Next
-
+        'nuevo push
         '--------->Agregar botón Ver
         Dim Editar As New DataGridViewButtonColumn()
         Editar.UseColumnTextForButtonValue = True
