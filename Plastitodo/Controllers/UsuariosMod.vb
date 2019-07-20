@@ -4,9 +4,7 @@ Imports MySql.Data.MySqlClient
 Module UsuariosMod
     Function GetUsuarios()
         Dim ds As DataSet = New DataSet
-        Dim sql = "select u.id,u.username, CONCAT(u.nombre, ' ', u.ap_paterno,' ',ifnull(u.ap_materno,'')) as nombre_usuario, p.nombre as perfil
-                    from usuarios u
-                    left join perfiles p on u.id_perfil = p.id"
+        Dim sql = "select u.id,u.username, CONCAT(u.nombre, ' ', u.ap_paterno,' ',ifnull(u.ap_materno,'')) as nombre_usuario, p.nombre as perfil from usuarios u left join perfiles p on u.id_perfil = p.id"
         Try
             '---Abir conexion
             conn = New MySqlConnection

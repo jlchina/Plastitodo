@@ -3,7 +3,7 @@ Imports Plastitodo.PerfilesMod
 Imports System.Security.Cryptography
 Public Class EditarUsuariosForm
     Dim id_usuario As Integer
-    Private Sub GetData(ByVal Id As String)
+    Public Sub GetData(ByVal Id As String)
         '--------->Establecer valores obtenidos del GridViewForm id_perfil
         id_usuario = Id
     End Sub

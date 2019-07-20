@@ -3,7 +3,7 @@ Imports Plastitodo.PerfilesMod
 Public Class EditarPerfilesForm
     Dim id_perfil As Integer
 
-    Private Sub GetData(ByVal Id As String)
+    Public Sub GetData(ByVal Id As String)
         '--------->Establecer valores obtenidos del GridViewForm id_perfil
         id_perfil = Id
     End Sub

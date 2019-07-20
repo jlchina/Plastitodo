@@ -70,10 +70,7 @@ Module PerfilesMod
 
     Function GetDatosModulosPerfil(ByVal id As Integer)
         Dim ds As DataSet = New DataSet
-        Dim sql = "SELECT m.id,m.nombre
-                    FROM relacion_perfiles_modulos rpm
-                    LEFT JOIN modulos m ON rpm.id_modulo = m.id
-                    WHERE rpm.id_perfil = @id_perfil"
+        Dim sql = "SELECT m.id,m.nombre FROM relacion_perfiles_modulos rpm LEFT JOIN modulos m ON rpm.id_modulo = m.id WHERE rpm.id_perfil = @id_perfil"
         Try
             '---Abir conexion
             conn = New MySqlConnection
