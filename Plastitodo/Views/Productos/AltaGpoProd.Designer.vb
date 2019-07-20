@@ -23,7 +23,7 @@ Partial Class AltaGpoProd
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.cmbo_nomfam = New System.Windows.Forms.ComboBox()
-        Me.Btn_agregarp = New System.Windows.Forms.Button()
+        Me.Btn_agregar = New System.Windows.Forms.Button()
         Me.txt_gpoprod = New System.Windows.Forms.TextBox()
         Me.txt_nomcat = New System.Windows.Forms.TextBox()
         Me.txt_cat = New System.Windows.Forms.TextBox()
@@ -33,6 +33,7 @@ Partial Class AltaGpoProd
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btn_validar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'cmbo_nomfam
@@ -41,16 +42,16 @@ Partial Class AltaGpoProd
         Me.cmbo_nomfam.Location = New System.Drawing.Point(459, 29)
         Me.cmbo_nomfam.Name = "cmbo_nomfam"
         Me.cmbo_nomfam.Size = New System.Drawing.Size(172, 21)
-        Me.cmbo_nomfam.TabIndex = 22
+        Me.cmbo_nomfam.TabIndex = 2
         '
-        'Btn_agregarp
+        'Btn_agregar
         '
-        Me.Btn_agregarp.Location = New System.Drawing.Point(556, 246)
-        Me.Btn_agregarp.Name = "Btn_agregarp"
-        Me.Btn_agregarp.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_agregarp.TabIndex = 21
-        Me.Btn_agregarp.Text = "Agregar"
-        Me.Btn_agregarp.UseVisualStyleBackColor = True
+        Me.Btn_agregar.Location = New System.Drawing.Point(556, 246)
+        Me.Btn_agregar.Name = "Btn_agregar"
+        Me.Btn_agregar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_agregar.TabIndex = 21
+        Me.Btn_agregar.Text = "AGREGAR"
+        Me.Btn_agregar.UseVisualStyleBackColor = True
         '
         'txt_gpoprod
         '
@@ -58,28 +59,30 @@ Partial Class AltaGpoProd
         Me.txt_gpoprod.Name = "txt_gpoprod"
         Me.txt_gpoprod.ReadOnly = True
         Me.txt_gpoprod.Size = New System.Drawing.Size(100, 20)
-        Me.txt_gpoprod.TabIndex = 20
+        Me.txt_gpoprod.TabIndex = 5
         '
         'txt_nomcat
         '
         Me.txt_nomcat.Location = New System.Drawing.Point(459, 87)
         Me.txt_nomcat.Name = "txt_nomcat"
         Me.txt_nomcat.Size = New System.Drawing.Size(172, 20)
-        Me.txt_nomcat.TabIndex = 18
+        Me.txt_nomcat.TabIndex = 4
         '
         'txt_cat
         '
         Me.txt_cat.Location = New System.Drawing.Point(157, 87)
         Me.txt_cat.Name = "txt_cat"
+        Me.txt_cat.ReadOnly = True
         Me.txt_cat.Size = New System.Drawing.Size(100, 20)
-        Me.txt_cat.TabIndex = 16
+        Me.txt_cat.TabIndex = 3
         '
         'txt_idfamilia
         '
         Me.txt_idfamilia.Location = New System.Drawing.Point(157, 29)
         Me.txt_idfamilia.Name = "txt_idfamilia"
+        Me.txt_idfamilia.ReadOnly = True
         Me.txt_idfamilia.Size = New System.Drawing.Size(100, 20)
-        Me.txt_idfamilia.TabIndex = 13
+        Me.txt_idfamilia.TabIndex = 1
         '
         'Label5
         '
@@ -126,13 +129,23 @@ Partial Class AltaGpoProd
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Id Familia:"
         '
+        'btn_validar
+        '
+        Me.btn_validar.Location = New System.Drawing.Point(459, 246)
+        Me.btn_validar.Name = "btn_validar"
+        Me.btn_validar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_validar.TabIndex = 22
+        Me.btn_validar.Text = "VALIDAR"
+        Me.btn_validar.UseVisualStyleBackColor = True
+        '
         'AltaGpoProd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(665, 299)
+        Me.Controls.Add(Me.btn_validar)
         Me.Controls.Add(Me.cmbo_nomfam)
-        Me.Controls.Add(Me.Btn_agregarp)
+        Me.Controls.Add(Me.Btn_agregar)
         Me.Controls.Add(Me.txt_gpoprod)
         Me.Controls.Add(Me.txt_nomcat)
         Me.Controls.Add(Me.txt_cat)
@@ -150,7 +163,7 @@ Partial Class AltaGpoProd
     End Sub
 
     Friend WithEvents cmbo_nomfam As ComboBox
-    Friend WithEvents Btn_agregarp As Button
+    Friend WithEvents Btn_agregar As Button
     Friend WithEvents txt_gpoprod As TextBox
     Friend WithEvents txt_nomcat As TextBox
     Friend WithEvents txt_cat As TextBox
@@ -160,4 +173,5 @@ Partial Class AltaGpoProd
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents btn_validar As System.Windows.Forms.Button
 End Class

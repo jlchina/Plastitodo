@@ -15,10 +15,10 @@ Public Class CatalogoProveedor
         CONSULTA.Clear()
         CONSULTA.AppendLine("insert into proveedor(idProveedor, Nombre, Direccion, Colonia,")
         CONSULTA.AppendLine("Cuidad,Codigo_postal,telefono,correo, contacto)")
-        CONSULTA.AppendLine($"values ('{txtidpro.Text}','{Textnombre.Text}',")
-        CONSULTA.AppendLine($"'{Textdire.Text}', '{Textcol.Text}','{Textcuidad.Text}',")
-        CONSULTA.AppendLine($"'{Textcp.Text}' , '{Texttel.Text}',")
-        CONSULTA.AppendLine($"'{Textcorreo.Text}','{Textcontacto.Text}')")
+        CONSULTA.AppendLine("values ('{txtidpro.Text}','{Textnombre.Text}',")
+        CONSULTA.AppendLine("'{Textdire.Text}', '{Textcol.Text}','{Textcuidad.Text}',")
+        CONSULTA.AppendLine("'{Textcp.Text}' , '{Texttel.Text}',")
+        CONSULTA.AppendLine("'{Textcorreo.Text}','{Textcontacto.Text}')")
 
         Dim COMANDO As New MySqlCommand(CONSULTA.ToString(), conexion)
 

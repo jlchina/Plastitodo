@@ -25,9 +25,9 @@ Partial Class Alta_fam_prod
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btn_guardar = New System.Windows.Forms.Button()
-        Me.txt_descfam = New System.Windows.Forms.TextBox()
+        Me.txt_nomfam = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_numfam = New System.Windows.Forms.TextBox()
+        Me.txt_descfam = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -55,9 +55,9 @@ Partial Class Alta_fam_prod
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.btn_guardar)
-        Me.TabPage1.Controls.Add(Me.txt_descfam)
+        Me.TabPage1.Controls.Add(Me.txt_nomfam)
         Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.txt_numfam)
+        Me.TabPage1.Controls.Add(Me.txt_descfam)
         Me.TabPage1.Controls.Add(Me.Label1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -77,39 +77,39 @@ Partial Class Alta_fam_prod
         Me.btn_guardar.Text = "GUARDAR"
         Me.btn_guardar.UseVisualStyleBackColor = True
         '
-        'txt_descfam
+        'txt_nomfam
         '
-        Me.txt_descfam.Location = New System.Drawing.Point(98, 154)
-        Me.txt_descfam.Name = "txt_descfam"
-        Me.txt_descfam.Size = New System.Drawing.Size(334, 20)
-        Me.txt_descfam.TabIndex = 8
+        Me.txt_nomfam.Location = New System.Drawing.Point(191, 25)
+        Me.txt_nomfam.Name = "txt_nomfam"
+        Me.txt_nomfam.Size = New System.Drawing.Size(262, 20)
+        Me.txt_nomfam.TabIndex = 8
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(46, 121)
+        Me.Label2.Location = New System.Drawing.Point(8, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(167, 16)
+        Me.Label2.Size = New System.Drawing.Size(122, 16)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Descripcion de familia:"
+        Me.Label2.Text = "Nombre Familia:"
         '
-        'txt_numfam
+        'txt_descfam
         '
-        Me.txt_numfam.Location = New System.Drawing.Point(98, 65)
-        Me.txt_numfam.Name = "txt_numfam"
-        Me.txt_numfam.Size = New System.Drawing.Size(136, 20)
-        Me.txt_numfam.TabIndex = 6
+        Me.txt_descfam.Location = New System.Drawing.Point(191, 93)
+        Me.txt_descfam.Name = "txt_descfam"
+        Me.txt_descfam.Size = New System.Drawing.Size(262, 20)
+        Me.txt_descfam.TabIndex = 6
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(46, 29)
+        Me.Label1.Location = New System.Drawing.Point(8, 97)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(225, 16)
+        Me.Label1.Size = New System.Drawing.Size(188, 16)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Número de familia de producto:"
+        Me.Label1.Text = "Descripcion de la familia: "
         '
         'TabPage2
         '
@@ -209,9 +209,9 @@ Partial Class Alta_fam_prod
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents btn_guardar As Button
-    Friend WithEvents txt_descfam As TextBox
+    Friend WithEvents txt_nomfam As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txt_numfam As TextBox
+    Friend WithEvents txt_descfam As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Label5 As Label

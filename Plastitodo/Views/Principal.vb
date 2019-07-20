@@ -33,10 +33,13 @@ Public Class Principal
             End Select
         Next
 
+        Timer1.Interval = 300000 '5 minutos
+        Timer1.Start()
+
     End Sub
 
     Private Sub ProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim newCatProd As New Catprod()
+        Dim newCatProd As New Catprod_NoUsar()
         newCatProd.MdiParent = Me
         newCatProd.Show()
     End Sub
@@ -106,5 +109,21 @@ Public Class Principal
         Dim newCatProd As New ModCatprod()
         newCatProd.MdiParent = Me
         newCatProd.Show()
+    End Sub
+
+    Private Sub AltaFamiliaDeProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaFamiliaDeProductosToolStripMenuItem.Click
+        Dim newFamProd As New Alta_fam_prod()
+        newFamProd.MdiParent = Me
+        newFamProd.Show()
+    End Sub
+
+    Private Sub AltaGrupoDeProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaGrupoDeProductosToolStripMenuItem.Click
+        Dim newGpoProd As New AltaGpoProd()
+        newGpoProd.MdiParent = Me
+        newGpoProd.Show()
+    End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        connection()
     End Sub
 End Class

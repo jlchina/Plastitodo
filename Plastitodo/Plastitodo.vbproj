@@ -80,11 +80,12 @@
     <Compile Include="Config\Globales.vb" />
     <Compile Include="Controllers\PerfilesMod.vb" />
     <Compile Include="Controllers\PrincipalMod.vb" />
+    <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
-    <Compile Include="Views\Catprod.Designer.vb">
-      <DependentUpon>Catprod.vb</DependentUpon>
+    <Compile Include="Views\Productos\Catprod_NoUsar.Designer.vb">
+      <DependentUpon>Catprod_NoUsar.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Catprod.vb">
+    <Compile Include="Views\Productos\Catprod_NoUsar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Cat_Prov.Designer.vb">
@@ -157,12 +158,6 @@
     <Compile Include="Views\Productos\Cons_prod.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Productos\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Productos\Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Views\Productos\ModCatprod.Designer.vb">
       <DependentUpon>ModCatprod.vb</DependentUpon>
     </Compile>
@@ -183,8 +178,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Catprod.resx">
-      <DependentUpon>Catprod.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Productos\Catprod_NoUsar.resx">
+      <DependentUpon>Catprod_NoUsar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Cat_Prov.resx">
       <DependentUpon>Cat_Prov.vb</DependentUpon>
@@ -218,9 +213,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\Cons_prod.resx">
       <DependentUpon>Cons_prod.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Productos\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\ModCatprod.resx">
       <DependentUpon>ModCatprod.vb</DependentUpon>

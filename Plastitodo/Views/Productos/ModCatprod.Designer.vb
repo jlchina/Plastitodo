@@ -60,8 +60,8 @@ Partial Class ModCatprod
         'Tab_proveedor
         '
         Me.Tab_proveedor.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tab_proveedor.Controls.Add(Me.Tab_alta_p)
         Me.Tab_proveedor.Controls.Add(Me.TabEditCatProv)
         Me.Tab_proveedor.Location = New System.Drawing.Point(12, 12)
@@ -108,15 +108,15 @@ Partial Class ModCatprod
         'Cbo_gpoprod
         '
         Me.Cbo_gpoprod.FormattingEnabled = True
-        Me.Cbo_gpoprod.Location = New System.Drawing.Point(131, 213)
+        Me.Cbo_gpoprod.Location = New System.Drawing.Point(131, 144)
         Me.Cbo_gpoprod.Name = "Cbo_gpoprod"
-        Me.Cbo_gpoprod.Size = New System.Drawing.Size(113, 21)
+        Me.Cbo_gpoprod.Size = New System.Drawing.Size(176, 21)
         Me.Cbo_gpoprod.TabIndex = 18
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 221)
+        Me.Label2.Location = New System.Drawing.Point(13, 152)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(104, 13)
         Me.Label2.TabIndex = 17
@@ -125,14 +125,14 @@ Partial Class ModCatprod
         'Cbo_Pres
         '
         Me.Cbo_Pres.FormattingEnabled = True
-        Me.Cbo_Pres.Location = New System.Drawing.Point(131, 147)
+        Me.Cbo_Pres.Location = New System.Drawing.Point(131, 177)
         Me.Cbo_Pres.Name = "Cbo_Pres"
         Me.Cbo_Pres.Size = New System.Drawing.Size(113, 21)
         Me.Cbo_Pres.TabIndex = 16
         '
         'Txt_Cto
         '
-        Me.Txt_Cto.Location = New System.Drawing.Point(131, 184)
+        Me.Txt_Cto.Location = New System.Drawing.Point(131, 214)
         Me.Txt_Cto.Name = "Txt_Cto"
         Me.Txt_Cto.Size = New System.Drawing.Size(113, 20)
         Me.Txt_Cto.TabIndex = 6
@@ -168,7 +168,7 @@ Partial Class ModCatprod
         'Lbl_telp
         '
         Me.Lbl_telp.AutoSize = True
-        Me.Lbl_telp.Location = New System.Drawing.Point(13, 191)
+        Me.Lbl_telp.Location = New System.Drawing.Point(13, 221)
         Me.Lbl_telp.Name = "Lbl_telp"
         Me.Lbl_telp.Size = New System.Drawing.Size(74, 13)
         Me.Lbl_telp.TabIndex = 15
@@ -177,7 +177,7 @@ Partial Class ModCatprod
         'Lb_cpp
         '
         Me.Lb_cpp.AutoSize = True
-        Me.Lb_cpp.Location = New System.Drawing.Point(13, 156)
+        Me.Lb_cpp.Location = New System.Drawing.Point(13, 186)
         Me.Lb_cpp.Name = "Lb_cpp"
         Me.Lb_cpp.Size = New System.Drawing.Size(69, 13)
         Me.Lb_cpp.TabIndex = 14
@@ -284,9 +284,10 @@ Partial Class ModCatprod
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(511, 22)
+        Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnBuscar.Location = New System.Drawing.Point(503, 3)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBuscar.Size = New System.Drawing.Size(83, 42)
         Me.BtnBuscar.TabIndex = 8
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -324,8 +325,8 @@ Partial Class ModCatprod
         Me.DGV_Edit_CP.AllowUserToDeleteRows = False
         Me.DGV_Edit_CP.AllowUserToOrderColumns = True
         Me.DGV_Edit_CP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGV_Edit_CP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Edit_CP.Location = New System.Drawing.Point(6, 57)
         Me.DGV_Edit_CP.Name = "DGV_Edit_CP"

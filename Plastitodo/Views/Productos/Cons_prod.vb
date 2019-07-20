@@ -15,6 +15,11 @@ Public Class Cons_prod
     Private Sub Btn_filtro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_filtro.Click
         Dim sql As String = Nothing
         Dim where1 As String = Nothing
+
+        con_string = New MySqlConnection
+        con_string.ConnectionString = ConnectionString2
+        con_string.Open()
+
         Try
             If TxtCodigo.Text <> "" Then
                 where1 = "codigo_barras =" & TxtCodigo.Text & " "
@@ -41,9 +46,10 @@ Public Class Cons_prod
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation, "hubo un error al extraer la información")
         End Try
+        con_string.Close()
     End Sub
 
-    Private Sub BtnCambios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCambios.Click
+    Private Sub BtnCambios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ModCatprod.Show()
         Me.Close()
     End Sub

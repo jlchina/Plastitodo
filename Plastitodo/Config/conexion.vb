@@ -1,8 +1,9 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Module conexion
-    Public ConnectionString As String = "Data Source=127.0.0.1; Port=3306;Database=plastitodo; User id=root"
-    Public ConnectionString2 As String = "server=127.0.0.1;port=3306;userid=root;password=$Obi1Kenobi;database=plastitodo"
+    'Public ConnectionString As String = "Data Source=127.0.0.1; Port=3306;Database=plastitodo; User id=root"
+    'Public ConnectionString2 As String = "server=127.0.0.1;port=3306;userid=root;password=$Obi1Kenobi;database=plastitodo"
+    Public ConnectionString2 As String = "server=127.0.0.1;port=3306;userid=root;database=plastibolsas"
     Public conn As MySqlConnection
     Public con_string As MySqlConnection
     Public dt As DataTable
@@ -20,6 +21,7 @@ Module conexion
             con_string.ConnectionString = ConnectionString2
             con_string.Open()
             Principal.Lblconexion.Text = "Conectado"
+            con_string.Close()
         Catch ex As Exception
             Principal.Lblconexion.Text = "Sin conexión"
         End Try

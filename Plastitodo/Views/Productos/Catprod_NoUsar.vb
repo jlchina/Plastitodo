@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class Catprod
+Public Class Catprod_NoUsar
 
     Private Sub DGVcatprov_RowEnter(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGVcatprov.RowEnter
         ccons = DGVcatprov.Rows(e.RowIndex).Cells(0).Value.ToString
@@ -63,5 +63,13 @@ Public Class Catprod
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Btn_cancelarp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_cancelarp.Click
+        Txt_codbar.Text = String.Empty
+        Txt_marca.Text = String.Empty
+        Txt_mod.Text = String.Empty
+        Txt_desc.Text = String.Empty
+        Txt_Cto.Text = String.Empty
     End Sub
 End Class

@@ -141,17 +141,17 @@ INSERT INTO `catalogacion_familias` (`id_familia`, `nom_familia`) VALUES
 --
 
 DROP TABLE IF EXISTS `catalogo_productos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
 CREATE TABLE `catalogo_productos` (
+   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `codigo_barras` bigint(14) NOT NULL,
-  `Modelo` text COLLATE latin1_general_ci NOT NULL,
-  `descripcion` text COLLATE latin1_general_ci,
-  `presentacion` text COLLATE latin1_general_ci,
-  `precio` varchar(45) COLLATE latin1_general_ci DEFAULT NULL,
-  `marca` tinytext COLLATE latin1_general_ci
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+   `marca` tinytext ,
+  `Modelo` text NOT NULL,
+  `descripcion` text ,
+  `presentacion` text ,
+  `precio` varchar(45) DEFAULT NULL,
+  `id_familia` INT(11) NOT NULL,
+   PRIMARY KEY (`id`))
+)
 
 --
 -- Dumping data for table `catalogo_productos`

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Catprod
+Partial Class Catprod_NoUsar
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,6 +24,7 @@ Partial Class Catprod
     Private Sub InitializeComponent()
         Me.Tab_proveedor = New System.Windows.Forms.TabControl()
         Me.Tab_cons_p = New System.Windows.Forms.TabPage()
+        Me.Btn_filtro = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.TxtMarca = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -53,7 +54,6 @@ Partial Class Catprod
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DGV_Edit_CP = New System.Windows.Forms.DataGridView()
-        Me.Btn_filtro = New System.Windows.Forms.Button()
         Me.Tab_proveedor.SuspendLayout()
         Me.Tab_cons_p.SuspendLayout()
         CType(Me.DGVcatprov, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,6 +95,15 @@ Partial Class Catprod
         Me.Tab_cons_p.TabIndex = 0
         Me.Tab_cons_p.Text = "Consulta"
         Me.Tab_cons_p.UseVisualStyleBackColor = True
+        '
+        'Btn_filtro
+        '
+        Me.Btn_filtro.Location = New System.Drawing.Point(488, 4)
+        Me.Btn_filtro.Name = "Btn_filtro"
+        Me.Btn_filtro.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_filtro.TabIndex = 6
+        Me.Btn_filtro.Text = "Button2"
+        Me.Btn_filtro.UseVisualStyleBackColor = True
         '
         'BtnBuscar
         '
@@ -374,15 +383,6 @@ Partial Class Catprod
         Me.DGV_Edit_CP.Name = "DGV_Edit_CP"
         Me.DGV_Edit_CP.Size = New System.Drawing.Size(792, 241)
         Me.DGV_Edit_CP.TabIndex = 1
-        '
-        'Btn_filtro
-        '
-        Me.Btn_filtro.Location = New System.Drawing.Point(488, 4)
-        Me.Btn_filtro.Name = "Btn_filtro"
-        Me.Btn_filtro.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_filtro.TabIndex = 6
-        Me.Btn_filtro.Text = "Button2"
-        Me.Btn_filtro.UseVisualStyleBackColor = True
         '
         'Catprod
         '

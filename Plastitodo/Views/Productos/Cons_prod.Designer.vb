@@ -22,10 +22,7 @@ Partial Class Cons_prod
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BtnCambios = New System.Windows.Forms.Button()
         Me.Btn_filtro = New System.Windows.Forms.Button()
-        Me.TxtProv = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtMarca = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtCodigo = New System.Windows.Forms.TextBox()
@@ -34,55 +31,29 @@ Partial Class Cons_prod
         CType(Me.DGVcatprov, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BtnCambios
-        '
-        Me.BtnCambios.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCambios.Location = New System.Drawing.Point(613, 23)
-        Me.BtnCambios.Name = "BtnCambios"
-        Me.BtnCambios.Size = New System.Drawing.Size(90, 43)
-        Me.BtnCambios.TabIndex = 19
-        Me.BtnCambios.Text = "Guardar Cambios"
-        Me.BtnCambios.UseVisualStyleBackColor = True
-        '
         'Btn_filtro
         '
+        Me.Btn_filtro.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Btn_filtro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_filtro.Location = New System.Drawing.Point(520, 23)
+        Me.Btn_filtro.Location = New System.Drawing.Point(621, 11)
         Me.Btn_filtro.Name = "Btn_filtro"
-        Me.Btn_filtro.Size = New System.Drawing.Size(87, 43)
-        Me.Btn_filtro.TabIndex = 18
-        Me.Btn_filtro.Text = "Buscar Articulo"
+        Me.Btn_filtro.Size = New System.Drawing.Size(87, 32)
+        Me.Btn_filtro.TabIndex = 3
+        Me.Btn_filtro.Text = "Buscar"
         Me.Btn_filtro.UseVisualStyleBackColor = True
-        '
-        'TxtProv
-        '
-        Me.TxtProv.Location = New System.Drawing.Point(349, 23)
-        Me.TxtProv.Name = "TxtProv"
-        Me.TxtProv.Size = New System.Drawing.Size(152, 20)
-        Me.TxtProv.TabIndex = 17
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(254, 24)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 16)
-        Me.Label3.TabIndex = 23
-        Me.Label3.Text = "Proveedor: "
         '
         'TxtMarca
         '
-        Me.TxtMarca.Location = New System.Drawing.Point(82, 51)
+        Me.TxtMarca.Location = New System.Drawing.Point(324, 23)
         Me.TxtMarca.Name = "TxtMarca"
         Me.TxtMarca.Size = New System.Drawing.Size(152, 20)
-        Me.TxtMarca.TabIndex = 16
+        Me.TxtMarca.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(21, 51)
+        Me.Label2.Location = New System.Drawing.Point(263, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 16)
         Me.Label2.TabIndex = 22
@@ -93,7 +64,7 @@ Partial Class Cons_prod
         Me.TxtCodigo.Location = New System.Drawing.Point(83, 24)
         Me.TxtCodigo.Name = "TxtCodigo"
         Me.TxtCodigo.Size = New System.Drawing.Size(152, 20)
-        Me.TxtCodigo.TabIndex = 15
+        Me.TxtCodigo.TabIndex = 1
         '
         'Label1
         '
@@ -111,8 +82,8 @@ Partial Class Cons_prod
         Me.DGVcatprov.AllowUserToDeleteRows = False
         Me.DGVcatprov.AllowUserToOrderColumns = True
         Me.DGVcatprov.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGVcatprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVcatprov.Location = New System.Drawing.Point(12, 89)
         Me.DGVcatprov.Name = "DGVcatprov"
@@ -125,10 +96,7 @@ Partial Class Cons_prod
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(720, 361)
-        Me.Controls.Add(Me.BtnCambios)
         Me.Controls.Add(Me.Btn_filtro)
-        Me.Controls.Add(Me.TxtProv)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TxtMarca)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TxtCodigo)
@@ -142,10 +110,7 @@ Partial Class Cons_prod
 
     End Sub
 
-    Friend WithEvents BtnCambios As Button
     Friend WithEvents Btn_filtro As Button
-    Friend WithEvents TxtProv As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents TxtMarca As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtCodigo As TextBox
