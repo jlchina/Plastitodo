@@ -13,6 +13,7 @@ Module conexion
     Public comando As MySqlCommand
     Public cmd As MySqlCommand
     Public cmd2 As MySqlCommand
+    Public cmd3 As MySqlCommand
     Public datareader_mysql As MySqlDataReader
 
     Sub connection()
