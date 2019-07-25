@@ -196,6 +196,7 @@ Partial Class Alta_fam_prod
         Me.ClientSize = New System.Drawing.Size(486, 301)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Alta_fam_prod"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Alta_fam_prod"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)

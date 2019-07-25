@@ -82,6 +82,12 @@
     <Compile Include="Controllers\PrincipalMod.vb" />
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
+    <Compile Include="Views\Productos\AltaMarca.Designer.vb">
+      <DependentUpon>AltaMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\AltaMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Productos\Catprod_NoUsar.Designer.vb">
       <DependentUpon>Catprod_NoUsar.vb</DependentUpon>
     </Compile>
@@ -158,6 +164,18 @@
     <Compile Include="Views\Productos\Cons_prod.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Productos\EditarMarcas.Designer.vb">
+      <DependentUpon>EditarMarcas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\EditarMarcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Productos\MarcaCons.Designer.vb">
+      <DependentUpon>MarcaCons.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\MarcaCons.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Productos\ModCatprod.Designer.vb">
       <DependentUpon>ModCatprod.vb</DependentUpon>
     </Compile>
@@ -184,6 +202,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\Productos\AltaMarca.resx">
+      <DependentUpon>AltaMarca.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\Catprod_NoUsar.resx">
       <DependentUpon>Catprod_NoUsar.vb</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +240,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\Cons_prod.resx">
       <DependentUpon>Cons_prod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\EditarMarcas.resx">
+      <DependentUpon>EditarMarcas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\MarcaCons.resx">
+      <DependentUpon>MarcaCons.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\ModCatprod.resx">
       <DependentUpon>ModCatprod.vb</DependentUpon>

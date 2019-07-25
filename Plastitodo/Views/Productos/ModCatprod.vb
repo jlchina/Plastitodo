@@ -130,7 +130,7 @@ Public Class ModCatprod
         con_string.Close()
     End Sub
 
-    Private Sub BtnCambiosEd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCambiosEd.Click
+    Private Sub BtnCambiosEd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) 
         Dim actualizar As String
         actualizar = "UPDATE catalogo_productos SET "
     End Sub

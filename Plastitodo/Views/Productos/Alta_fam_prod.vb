@@ -42,4 +42,8 @@ Public Class Alta_fam_prod
     Private Sub txt_descfam_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_descfam.KeyPress
         onlyletters(e)
     End Sub
+
+    Private Sub Alta_fam_prod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

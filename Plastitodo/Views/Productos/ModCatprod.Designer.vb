@@ -42,7 +42,6 @@ Partial Class ModCatprod
         Me.Btn_cancelarp = New System.Windows.Forms.Button()
         Me.Btn_agregarp = New System.Windows.Forms.Button()
         Me.TabEditCatProv = New System.Windows.Forms.TabPage()
-        Me.BtnCambiosEd = New System.Windows.Forms.Button()
         Me.TxtModeloEd = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnBuscar = New System.Windows.Forms.Button()
@@ -60,8 +59,8 @@ Partial Class ModCatprod
         'Tab_proveedor
         '
         Me.Tab_proveedor.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tab_proveedor.Controls.Add(Me.Tab_alta_p)
         Me.Tab_proveedor.Controls.Add(Me.TabEditCatProv)
         Me.Tab_proveedor.Location = New System.Drawing.Point(12, 12)
@@ -239,7 +238,6 @@ Partial Class ModCatprod
         '
         'TabEditCatProv
         '
-        Me.TabEditCatProv.Controls.Add(Me.BtnCambiosEd)
         Me.TabEditCatProv.Controls.Add(Me.TxtModeloEd)
         Me.TabEditCatProv.Controls.Add(Me.Label1)
         Me.TabEditCatProv.Controls.Add(Me.BtnBuscar)
@@ -254,16 +252,6 @@ Partial Class ModCatprod
         Me.TabEditCatProv.TabIndex = 2
         Me.TabEditCatProv.Text = "Editar"
         Me.TabEditCatProv.UseVisualStyleBackColor = True
-        '
-        'BtnCambiosEd
-        '
-        Me.BtnCambiosEd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCambiosEd.Location = New System.Drawing.Point(592, 2)
-        Me.BtnCambiosEd.Name = "BtnCambiosEd"
-        Me.BtnCambiosEd.Size = New System.Drawing.Size(90, 43)
-        Me.BtnCambiosEd.TabIndex = 11
-        Me.BtnCambiosEd.Text = "Guardar Cambios"
-        Me.BtnCambiosEd.UseVisualStyleBackColor = True
         '
         'TxtModeloEd
         '
@@ -285,7 +273,7 @@ Partial Class ModCatprod
         'BtnBuscar
         '
         Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.Location = New System.Drawing.Point(503, 3)
+        Me.BtnBuscar.Location = New System.Drawing.Point(599, 9)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(83, 42)
         Me.BtnBuscar.TabIndex = 8
@@ -325,8 +313,8 @@ Partial Class ModCatprod
         Me.DGV_Edit_CP.AllowUserToDeleteRows = False
         Me.DGV_Edit_CP.AllowUserToOrderColumns = True
         Me.DGV_Edit_CP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGV_Edit_CP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Edit_CP.Location = New System.Drawing.Point(6, 57)
         Me.DGV_Edit_CP.Name = "DGV_Edit_CP"
@@ -372,7 +360,6 @@ Partial Class ModCatprod
     Friend WithEvents Btn_cancelarp As Button
     Friend WithEvents Btn_agregarp As Button
     Friend WithEvents TabEditCatProv As TabPage
-    Friend WithEvents BtnCambiosEd As Button
     Friend WithEvents TxtModeloEd As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnBuscar As Button

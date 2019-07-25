@@ -117,18 +117,18 @@ Public Class Principal
     Private Sub CrearFamiliaDeProductoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CrearFamiliaDeProductoToolStripMenuItem.Click
         Dim newfamilia As New Alta_fam_prod()
         newfamilia.MdiParent = Me
-        newfamilia.MdiParent.Show()
+        newfamilia.Show()
     End Sub
 
     Private Sub CrearGrupoDeProductoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CrearGrupoDeProductoToolStripMenuItem.Click
         Dim newgrupo As New AltaGpoProd()
         newgrupo.MdiParent = Me
-        newgrupo.MdiParent.Show()
+        newgrupo.Show()
     End Sub
 
     Private Sub MarcaCrearOModificarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MarcaCrearOModificarToolStripMenuItem.Click
         Dim newmarca As New MarcaCons()
         newmarca.MdiParent = Me
-        newmarca.MdiParent.Show()
+        newmarca.Show()
     End Sub
 End Class
