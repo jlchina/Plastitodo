@@ -31,7 +31,7 @@ Public Class MarcaCons
 
                 datatable.Rows.Add(DataRow)
 
-                '--------->Agregar botón Ver
+                'Agregar botón Editar
                 Dim Editar As New DataGridViewButtonColumn()
                 Editar.UseColumnTextForButtonValue = True
                 Editar.Text = "Editar"
@@ -64,5 +64,23 @@ Public Class MarcaCons
         AltaMarca.Show()
 
         Me.Close()
+    End Sub
+
+    Private Sub dgv_marcas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_marcas.CellClick
+        If e.ColumnIndex <> 0 Then Exit Sub
+
+        Try
+            If dgv_marcas.Columns(e.ColumnIndex).Name = "Editar" Then
+                Dim id_marca As String
+                'para enviar informacion al formulario
+                id_marca = dgv_marcas.Rows(e.RowIndex).Cells("ID").Value
+                'envia datos al formulario
+                Dim mostrarform As New EditarMarcas()
+                mostrarform.ObtenerDatos(id_marca)  'envia el ID de la marca seleccionada
+                mostrarform.Show()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

@@ -45,7 +45,6 @@ Partial Class ModCatprod
         Me.TxtModeloEd = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.txtCodigoEd = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DGV_Edit_CP = New System.Windows.Forms.DataGridView()
@@ -66,7 +65,7 @@ Partial Class ModCatprod
         Me.Tab_proveedor.Location = New System.Drawing.Point(12, 12)
         Me.Tab_proveedor.Name = "Tab_proveedor"
         Me.Tab_proveedor.SelectedIndex = 0
-        Me.Tab_proveedor.Size = New System.Drawing.Size(696, 337)
+        Me.Tab_proveedor.Size = New System.Drawing.Size(741, 337)
         Me.Tab_proveedor.TabIndex = 2
         '
         'Tab_alta_p
@@ -241,14 +240,13 @@ Partial Class ModCatprod
         Me.TabEditCatProv.Controls.Add(Me.TxtModeloEd)
         Me.TabEditCatProv.Controls.Add(Me.Label1)
         Me.TabEditCatProv.Controls.Add(Me.BtnBuscar)
-        Me.TabEditCatProv.Controls.Add(Me.Button1)
         Me.TabEditCatProv.Controls.Add(Me.txtCodigoEd)
         Me.TabEditCatProv.Controls.Add(Me.Label4)
         Me.TabEditCatProv.Controls.Add(Me.DGV_Edit_CP)
         Me.TabEditCatProv.Location = New System.Drawing.Point(4, 22)
         Me.TabEditCatProv.Name = "TabEditCatProv"
         Me.TabEditCatProv.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabEditCatProv.Size = New System.Drawing.Size(688, 311)
+        Me.TabEditCatProv.Size = New System.Drawing.Size(733, 311)
         Me.TabEditCatProv.TabIndex = 2
         Me.TabEditCatProv.Text = "Editar"
         Me.TabEditCatProv.UseVisualStyleBackColor = True
@@ -273,22 +271,12 @@ Partial Class ModCatprod
         'BtnBuscar
         '
         Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.Location = New System.Drawing.Point(599, 9)
+        Me.BtnBuscar.Location = New System.Drawing.Point(644, 9)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(83, 42)
         Me.BtnBuscar.TabIndex = 8
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(692, 22)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'txtCodigoEd
         '
@@ -318,14 +306,14 @@ Partial Class ModCatprod
         Me.DGV_Edit_CP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Edit_CP.Location = New System.Drawing.Point(6, 57)
         Me.DGV_Edit_CP.Name = "DGV_Edit_CP"
-        Me.DGV_Edit_CP.Size = New System.Drawing.Size(679, 248)
+        Me.DGV_Edit_CP.Size = New System.Drawing.Size(724, 248)
         Me.DGV_Edit_CP.TabIndex = 1
         '
         'ModCatprod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(720, 361)
+        Me.ClientSize = New System.Drawing.Size(765, 361)
         Me.Controls.Add(Me.Tab_proveedor)
         Me.Name = "ModCatprod"
         Me.Text = "ModCatprod"
@@ -363,7 +351,6 @@ Partial Class ModCatprod
     Friend WithEvents TxtModeloEd As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnBuscar As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents txtCodigoEd As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents DGV_Edit_CP As DataGridView
