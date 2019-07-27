@@ -37,7 +37,7 @@ Partial Class ListaUsuariosForm
         Me.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
         Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNuevo.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnNuevo.Location = New System.Drawing.Point(671, 22)
+        Me.BtnNuevo.Location = New System.Drawing.Point(484, 12)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(30, 30)
         Me.BtnNuevo.TabIndex = 27
@@ -48,17 +48,17 @@ Partial Class ListaUsuariosForm
         Me.DgvUsuarios.AllowUserToAddRows = False
         Me.DgvUsuarios.AllowUserToDeleteRows = False
         Me.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvUsuarios.Location = New System.Drawing.Point(12, 89)
+        Me.DgvUsuarios.Location = New System.Drawing.Point(12, 48)
         Me.DgvUsuarios.Name = "DgvUsuarios"
         Me.DgvUsuarios.ReadOnly = True
-        Me.DgvUsuarios.Size = New System.Drawing.Size(689, 225)
+        Me.DgvUsuarios.Size = New System.Drawing.Size(502, 225)
         Me.DgvUsuarios.TabIndex = 26
         '
         'ListaUsuariosForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(713, 336)
+        Me.ClientSize = New System.Drawing.Size(533, 287)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.DgvUsuarios)
         Me.Name = "ListaUsuariosForm"

@@ -17,24 +17,41 @@ Public Class EditarUsuariosForm
             Dim DataUsuario As DataSet = GetDatosUsuario(id_usuario)
             For Each dr As DataRow In DataUsuario.Tables(0).Rows
                 TxtUsuario.Text = dr(1)
-                TxtContrasena.Text = dr(2)
                 TxtNombre.Text = dr(3)
                 TxtAPaterno.Text = dr(4)
-                TxtAMaterno.Text = dr(5)
+                TxtAMaterno.Text = If(dr(5) Is DBNull.Value, String.Empty, dr(5))
+                CmbPerfil.SelectedItem = dr(6)
             Next
         End If
     End Sub
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        If (TxtAPaterno.Text <> "" And TxtAMaterno.Text <> "" And TxtNombre.Text <> "" And TxtUsuario.Text <> "" And TxtContrasena.Text <> "") Then
-            Dim HashedPass As String = ""
-            Using MD5hash As MD5 = MD5.Create()
-                HashedPass = System.Convert.ToBase64String(MD5hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(TxtContrasena.Text)))
-            End Using
-            If (AgregarUsuario(TxtNombre.Text, TxtAPaterno.Text, TxtAMaterno.Text, CmbPerfil.SelectedValue, TxtUsuario.Text, HashedPass)) Then
-                Me.Hide()
+        If (id_usuario) Then
+            If (TxtAPaterno.Text <> "" And TxtAMaterno.Text <> "" And TxtNombre.Text <> "" And TxtUsuario.Text <> "") Then
+                Dim HashedPass As String = Nothing
+                If (TxtContrasena.Text <> "") Then
+                    Using MD5hash As MD5 = MD5.Create()
+                        HashedPass = System.Convert.ToBase64String(MD5hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(TxtContrasena.Text)))
+                    End Using
+                End If
+                If (AgregarUsuario(id_usuario, TxtNombre.Text, TxtAPaterno.Text, TxtAMaterno.Text, CmbPerfil.SelectedValue, TxtUsuario.Text, HashedPass)) Then
+                    Me.Hide()
+                End If
+            Else
+                MsgBox("Favor de Llenar todos los campos", MsgBoxStyle.Exclamation, "Información")
             End If
         Else
-            MsgBox("Favor de Llenar todos los campos", MsgBoxStyle.Exclamation, "Información")
+            If (TxtAPaterno.Text <> "" And TxtAMaterno.Text <> "" And TxtNombre.Text <> "" And TxtUsuario.Text <> "" And TxtContrasena.Text <> "") Then
+                Dim HashedPass As String = Nothing
+                Using MD5hash As MD5 = MD5.Create()
+                    HashedPass = System.Convert.ToBase64String(MD5hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(TxtContrasena.Text)))
+                End Using
+                If (AgregarUsuario(Nothing, TxtNombre.Text, TxtAPaterno.Text, TxtAMaterno.Text, CmbPerfil.SelectedValue, TxtUsuario.Text, HashedPass)) Then
+                    Me.Hide()
+                End If
+            Else
+                MsgBox("Favor de Llenar todos los campos", MsgBoxStyle.Exclamation, "Información")
+            End If
         End If
+
     End Sub
 End Class

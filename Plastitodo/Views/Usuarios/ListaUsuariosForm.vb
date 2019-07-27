@@ -40,4 +40,27 @@
         DgvUsuarios.AllowUserToAddRows = False
         DgvUsuarios.ReadOnly = True       'El control DataGridView será de sólo lectura
     End Sub
+
+    Private Sub DgvUsuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvUsuarios.CellClick
+        If e.ColumnIndex <> 0 Then Exit Sub
+        'Dim con2 As Integer = 0
+        Try
+            If DgvUsuarios.Columns(e.ColumnIndex).Name = "Editar" Then
+                '--------->Campos enviar a formulario
+                Dim id_usuario As String
+                id_usuario = DgvUsuarios.Rows(e.RowIndex).Cells("ID").Value
+                '--------->Instrucción abrir formulario y enviar datos de tabla
+                Dim VerForm As New EditarUsuariosForm()
+                VerForm.GetData(id_usuario)
+                VerForm.Show()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+        Dim VerForm As New EditarUsuariosForm()
+        VerForm.Show()
+    End Sub
 End Class

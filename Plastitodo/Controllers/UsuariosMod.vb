@@ -45,19 +45,35 @@ Module UsuariosMod
         End Try
         Return ds
     End Function
-    Function AgregarUsuario(ByVal nombre As String, ap_paterno As String, ap_materno As String, id_perfil As Integer, username As String, password As String)
-        Dim sql = "INSERT INTO usuarios (username,password,nombre,ap_paterno,ap_materno,id_perfil) VALUES (@username,@password,@nombre,@ap_paterno,@ap_materno,@id_perfil)"
+    Function AgregarUsuario(ByVal id As Integer, nombre As String, ap_paterno As String, ap_materno As String, id_perfil As Integer, username As String, password As String)
+        Dim sql = Nothing
+        If (id) Then
+            sql = "UPDATE usuarios SET username = @username,nombre = @nombre ,ap_paterno = @ap_paterno, ap_materno = @ap_materno, id_perfil = @id_perfil "
+            If (password <> Nothing And password <> "") Then
+                sql = sql & ", password = @password "
+            End If
+
+            sql = sql & "WHERE id = @id"
+        Else
+            sql = "INSERT INTO usuarios (username,password,nombre,ap_paterno,ap_materno,id_perfil) VALUES (@username,@password,@nombre,@ap_paterno,@ap_materno,@id_perfil)"
+        End If
+
 
         Try
             'Iniciar comando de conexion
             cmd = New MySqlCommand(sql, conn)
             'Pasar parametros
             cmd.Parameters.Add(New MySqlParameter("@username", username))
-            cmd.Parameters.Add(New MySqlParameter("@password", password))
+            If (password <> Nothing And password <> "") Then
+                cmd.Parameters.Add(New MySqlParameter("@password", password))
+            End If
             cmd.Parameters.Add(New MySqlParameter("@nombre", nombre))
             cmd.Parameters.Add(New MySqlParameter("@ap_paterno", ap_paterno))
             cmd.Parameters.Add(New MySqlParameter("@ap_materno", ap_materno))
             cmd.Parameters.Add(New MySqlParameter("@id_perfil", id_perfil))
+            If (id) Then
+                cmd.Parameters.Add(New MySqlParameter("@id", id))
+            End If
 
             Using conn As New MySqlConnection(ConnectionString2)
                 If conn.State = ConnectionState.Closed Then
