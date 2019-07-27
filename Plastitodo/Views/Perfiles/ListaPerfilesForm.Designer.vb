@@ -33,10 +33,10 @@ Partial Class ListaPerfilesForm
         Me.DgvPerfiles.AllowUserToAddRows = False
         Me.DgvPerfiles.AllowUserToDeleteRows = False
         Me.DgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvPerfiles.Location = New System.Drawing.Point(12, 79)
+        Me.DgvPerfiles.Location = New System.Drawing.Point(12, 48)
         Me.DgvPerfiles.Name = "DgvPerfiles"
         Me.DgvPerfiles.ReadOnly = True
-        Me.DgvPerfiles.Size = New System.Drawing.Size(689, 225)
+        Me.DgvPerfiles.Size = New System.Drawing.Size(315, 225)
         Me.DgvPerfiles.TabIndex = 0
         '
         'BtnNuevo
@@ -48,7 +48,7 @@ Partial Class ListaPerfilesForm
         Me.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
         Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNuevo.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnNuevo.Location = New System.Drawing.Point(671, 12)
+        Me.BtnNuevo.Location = New System.Drawing.Point(297, 12)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(30, 30)
         Me.BtnNuevo.TabIndex = 25
@@ -58,7 +58,7 @@ Partial Class ListaPerfilesForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(713, 336)
+        Me.ClientSize = New System.Drawing.Size(340, 285)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.DgvPerfiles)
         Me.Name = "ListaPerfilesForm"
