@@ -82,6 +82,24 @@
     <Compile Include="Controllers\PrincipalMod.vb" />
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
+    <Compile Include="Views\Inventarios\Editar Mercancia.Designer.vb">
+      <DependentUpon>Editar Mercancia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\Editar Mercancia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Inventarios\EntradasMerca.Designer.vb">
+      <DependentUpon>EntradasMerca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\EntradasMerca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Inventarios\Existencias.Designer.vb">
+      <DependentUpon>Existencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\Existencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Productos\AltaMarca.Designer.vb">
       <DependentUpon>AltaMarca.vb</DependentUpon>
     </Compile>
@@ -206,8 +224,23 @@
     <Compile Include="Views\Usuarios\ListaUsuariosForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Ventas\OfertaVentaForm.Designer.vb">
+      <DependentUpon>OfertaVentaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ventas\OfertaVentaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\Inventarios\Editar Mercancia.resx">
+      <DependentUpon>Editar Mercancia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Inventarios\EntradasMerca.resx">
+      <DependentUpon>EntradasMerca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Inventarios\Existencias.resx">
+      <DependentUpon>Existencias.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\AltaMarca.resx">
       <DependentUpon>AltaMarca.vb</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuarios\ListaUsuariosForm.resx">
       <DependentUpon>ListaUsuariosForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Ventas\OfertaVentaForm.resx">
+      <DependentUpon>OfertaVentaForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

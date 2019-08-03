@@ -131,4 +131,28 @@ Public Class Principal
         newmarca.MdiParent = Me
         newmarca.Show()
     End Sub
+
+    Private Sub ExistenciasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExistenciasToolStripMenuItem.Click
+        Dim newBusExis As New Existencias()
+        newBusExis.MdiParent = Me
+        newBusExis.Show()
+    End Sub
+
+    Private Sub EntradasMercanciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradasMercanciaToolStripMenuItem.Click
+        Dim newEntraMerca As New EntradasMerca()
+        newEntraMerca.MdiParent = Me
+        newEntraMerca.Show()
+    End Sub
+
+    Private Sub EditarEliminarMercanciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarEliminarMercanciaToolStripMenuItem.Click
+        Dim newEdiMerca As New Editar_Mercancia()
+        newEdiMerca.MdiParent = Me
+        newEdiMerca.Show()
+    End Sub
+
+    Private Sub OfertaDeVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OfertaDeVentaToolStripMenuItem.Click
+        Dim newForm As New OfertaVentaForm()
+        newForm.MdiParent = Me
+        newForm.Show()
+    End Sub
 End Class
