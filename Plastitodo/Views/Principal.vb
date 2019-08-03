@@ -33,6 +33,8 @@ Public Class Principal
             End Select
         Next
 
+        lbl_time.Text = DateTime.Now.ToShortTimeString
+
     End Sub
 
     Private Sub ProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

@@ -31,14 +31,14 @@ Public Class EditarGpoProd
             con_string = New MySqlConnection
             con_string.ConnectionString = ConnectionString2
             con_string.Open()
-            cons_altagpo = "SELECT * FROM catalogacion_familias"
+            cons_altagpo = "SELECT * FROM catalogacion"
             datad = New MySqlDataAdapter(cons_altagpo, con_string)
             datat = New DataTable
             datad.Fill(datat)
             con_string.Close()
             Cbo_EFamprod.DataSource = datat
-            Cbo_EFamprod.DisplayMember = "nom_familia"
-            Cbo_EFamprod.ValueMember = "id_familia"
+            Cbo_EFamprod.DisplayMember = "Nom_categoria"
+            Cbo_EFamprod.ValueMember = "id"
         Catch ex As Exception
             MsgBox("Se genero un error al cargar la consulta familias")
         End Try

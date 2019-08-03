@@ -50,7 +50,24 @@ Public Class EditarMarcas
     End Sub
 
     Private Sub Btn_guardar_Click(sender As Object, e As EventArgs) Handles btn_guardar.Click
-        'actualizar campo de marca en la BD JCLS 27-07-19
+        'actualizar campo de marca en la BD JCLS 02/08/19
+        Dim actualizar As String = "UPDATE marcas SET marca = @marca WHERE id = " & id_marca
+        Try
+            'Abir conexion
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(actualizar, con_string)
+            'Pasar parametros
+            cmd.Parameters.Add(New MySqlParameter("@marca", Txt_marca.Text))
+            'enviar nuevos datos a la tabla
+            cmd.ExecuteNonQuery()
+            con_string.Close()
 
+            MsgBox("Registro actualizado")
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

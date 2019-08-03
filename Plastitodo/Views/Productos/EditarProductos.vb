@@ -23,7 +23,7 @@ Public Class EditarProductos
         Dim comm As MySqlCommand
         Dim consulta = "SELECT * FROM catalogo_productos WHERE id = @id_Prod"
         Dim consulta2 = "SELECT * FROM marcas"
-        Dim consulta3 = "SELECT * FROM catalogacion_familias"
+        Dim consulta3 = "SELECT * FROM catalogacion"
         Dim consulta4 = "SELECT * FROM presentacion_prod"
 
         If (id_prod) Then
@@ -61,11 +61,11 @@ Public Class EditarProductos
             con_string.Close()
 
             Cbo_GpoProd.DataSource = datatable3
-            Cbo_GpoProd.DisplayMember = "nom_familia"
-            Cbo_GpoProd.ValueMember = "id_familia"
+            Cbo_GpoProd.DisplayMember = "Nom_categoria"
+            Cbo_GpoProd.ValueMember = "id"
         Catch ex As Exception
             MsgBox(ex.Message)
-            MessageBox.Show("No se pudo conectar a la Base de Datos", "No se pudieron importar los datos desde la tabla Catalogacion Familias", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "No se pudieron importar los datos desde la tabla Catalogacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
         Try
@@ -136,7 +136,7 @@ Public Class EditarProductos
     End Sub
 
     Private Sub Btn_actualizar_Click(sender As Object, e As EventArgs) Handles Btn_actualizar.Click
-        Dim actualizar As String = "UPDATE catalogo_productos SET codigo_barras = @cb, marca = @marca, Modelo=@Modelo,descripcion=@descripcion,presentacion=@presentacion,precio=@precio, id_familia=@GpoProd WHERE id = " & id_prod
+        Dim actualizar As String = "UPDATE catalogo_productos SET codigo_barras = @cb, marca = @marca, Modelo=@Modelo,descripcion=@descripcion,presentacion=@presentacion,precio=@precio, id_catalogacion=@id_catalogacion WHERE id = " & id_prod
         Try
             'Abir conexion
             con_string = New MySqlConnection
@@ -151,7 +151,7 @@ Public Class EditarProductos
             cmd.Parameters.Add(New MySqlParameter("@descripcion", Txt_Desc.Text))
             cmd.Parameters.Add(New MySqlParameter("@presentacion", idpp))
             cmd.Parameters.Add(New MySqlParameter("@precio", Txt_Cto.Text))
-            cmd.Parameters.Add(New MySqlParameter("@GpoProd", idgp))
+            cmd.Parameters.Add(New MySqlParameter("@id_catalogacion", idgp))
             'enviar nuevos datos a la tabla
             cmd.ExecuteNonQuery()
             con_string.Close()
