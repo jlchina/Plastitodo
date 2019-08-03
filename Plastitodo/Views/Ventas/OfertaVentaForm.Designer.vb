@@ -37,7 +37,15 @@ Partial Class OfertaVentaForm
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvLista = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.presentacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnCrear = New System.Windows.Forms.Button()
@@ -60,7 +68,7 @@ Partial Class OfertaVentaForm
         Me.BtnBuscarProducto = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvLista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -214,13 +222,71 @@ Partial Class OfertaVentaForm
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "No."
         '
-        'DataGridView1
+        'DgvLista
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(9, 188)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(918, 187)
-        Me.DataGridView1.TabIndex = 32
+        Me.DgvLista.AllowUserToAddRows = False
+        Me.DgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvLista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.descripcion, Me.presentacion, Me.cantidad, Me.stock, Me.precio, Me.iva, Me.total})
+        Me.DgvLista.Location = New System.Drawing.Point(9, 188)
+        Me.DgvLista.Name = "DgvLista"
+        Me.DgvLista.Size = New System.Drawing.Size(918, 187)
+        Me.DgvLista.TabIndex = 32
+        '
+        'codigo
+        '
+        Me.codigo.Frozen = True
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.Frozen = True
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        Me.descripcion.Width = 160
+        '
+        'presentacion
+        '
+        Me.presentacion.Frozen = True
+        Me.presentacion.HeaderText = "Presentación"
+        Me.presentacion.Name = "presentacion"
+        Me.presentacion.ReadOnly = True
+        '
+        'cantidad
+        '
+        Me.cantidad.Frozen = True
+        Me.cantidad.HeaderText = "Cantidad"
+        Me.cantidad.Name = "cantidad"
+        '
+        'stock
+        '
+        Me.stock.Frozen = True
+        Me.stock.HeaderText = "Stock"
+        Me.stock.Name = "stock"
+        Me.stock.ReadOnly = True
+        '
+        'precio
+        '
+        Me.precio.Frozen = True
+        Me.precio.HeaderText = "Precio por Unidad"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        '
+        'iva
+        '
+        Me.iva.Frozen = True
+        Me.iva.HeaderText = "Iva"
+        Me.iva.Name = "iva"
+        Me.iva.ReadOnly = True
+        '
+        'total
+        '
+        Me.total.Frozen = True
+        Me.total.HeaderText = "Total"
+        Me.total.Name = "total"
+        Me.total.ReadOnly = True
         '
         'GroupBox4
         '
@@ -441,7 +507,7 @@ Partial Class OfertaVentaForm
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DgvLista)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox2)
         Me.Name = "OfertaVentaForm"
@@ -450,7 +516,7 @@ Partial Class OfertaVentaForm
         Me.GroupBox2.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvLista, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -474,7 +540,7 @@ Partial Class OfertaVentaForm
     Friend WithEvents Label13 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvLista As DataGridView
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnCrear As Button
@@ -495,4 +561,12 @@ Partial Class OfertaVentaForm
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents CmbProducto As ComboBox
     Friend WithEvents BtnBuscarProducto As Button
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents presentacion As DataGridViewTextBoxColumn
+    Friend WithEvents cantidad As DataGridViewTextBoxColumn
+    Friend WithEvents stock As DataGridViewTextBoxColumn
+    Friend WithEvents precio As DataGridViewTextBoxColumn
+    Friend WithEvents iva As DataGridViewTextBoxColumn
+    Friend WithEvents total As DataGridViewTextBoxColumn
 End Class

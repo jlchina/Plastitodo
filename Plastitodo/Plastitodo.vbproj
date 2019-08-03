@@ -82,6 +82,7 @@
     <Compile Include="Controllers\PrincipalMod.vb" />
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
+    <Compile Include="Controllers\VentasMod.vb" />
     <Compile Include="Views\Inventarios\Editar Mercancia.Designer.vb">
       <DependentUpon>Editar Mercancia.vb</DependentUpon>
     </Compile>
