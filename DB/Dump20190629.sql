@@ -58,7 +58,9 @@ CREATE TABLE `perfiles` (
   `descripcion` VARCHAR(80) NULL DEFAULT NULL,
   PRIMARY KEY (`id`));
   
-INSERT INTO `perfiles` (`nombre`, `descripcion`) VALUES ('Administrador', 'Administrador del sistema');
+INSERT INTO `perfiles` (`nombre`, `descripcion`) VALUES 
+('Administrador', 'Administrador del sistema'),
+('Ventas', 'Ventas en caja');
 --
 -- Table structure for table `relacion_perfiles_modulos`
 --
@@ -109,25 +111,26 @@ INSERT INTO `usuarios` (`username`,`password`,`nombre`,`ap_paterno`,`id_perfil`)
 --
 -- Estructura de tabla para la tabla `catalogacion`
 --
-
+DROP TABLE IF EXISTS `catalogacion`;
 CREATE TABLE `catalogacion` (
-  `Gpo_prod` int(4) NOT NULL,
+  `id` int(11) NOT NULL,
+  `Gpo_prod` varchar(20) NOT NULL,
   `Id_familia` int(2) NOT NULL,
-  `Nom_familia` text NOT NULL,
   `Id_categoria` int(2) NOT NULL,
   `Nom_categoria` text NOT NULL
-);
+) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `catalogacion_familias`
 --
-
+DROP TABLE IF EXISTS `catalogacion_familias`;
 CREATE TABLE `catalogacion_familias` (
-  `id_familia` int(3) NOT NULL,
-  `nom_familia` text NOT NULL
-);
+  `id_familia` int(11) NOT NULL,
+  `nom_familia` text NOT NULL,
+  `descripcion_fam` text NOT NULL
+) ENGINE=InnoDB;
 
 --
 -- Volcado de datos para la tabla `catalogacion_familias`
@@ -142,15 +145,15 @@ INSERT INTO `catalogacion_familias` (`id_familia`, `nom_familia`) VALUES
 
 DROP TABLE IF EXISTS `catalogo_productos`;
 CREATE TABLE `catalogo_productos` (
-   `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+   `id` int(11) UNSIGNED NOT NULL,
   `codigo_barras` bigint(14) NOT NULL,
-   `marca` tinytext ,
+  `marca` int(4) DEFAULT NULL,
   `Modelo` text NOT NULL,
-  `descripcion` text ,
-  `presentacion` text ,
+  `descripcion` text,
+  `presentacion` text,
   `precio` varchar(45) DEFAULT NULL,
-  `id_familia` INT(11) NOT NULL,
-   PRIMARY KEY (`id`))
+  `id_catalogacion` int(11) NOT NULL,
+   PRIMARY KEY (`id`)
 )
 
 --
