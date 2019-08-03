@@ -14,15 +14,15 @@ Public Class ModCatprod
             con_string.ConnectionString = ConnectionString2
             con_string.Open()
             'campos a ingresar en la BD desde el formulario
-            comando = New MySqlCommand("INSERT INTO catalogo_productos(codigo_barras, marca, Modelo, descripcion, presentacion, precio, id_familia)" & Chr(13) &
-                                       "VALUES(@codigo_barras, @marca, @Modelo, @descripcion, @presentacion, @precio, @id_familia)", con_string)
+            comando = New MySqlCommand("INSERT INTO catalogo_productos(codigo_barras, marca, Modelo, descripcion, presentacion, precio, id_catalogacion)" & Chr(13) &
+                                       "VALUES(@codigo_barras, @marca, @Modelo, @descripcion, @presentacion, @precio, @id_catalogacion)", con_string)
             comando.Parameters.AddWithValue("@codigo_barras", Txt_codbar.Text)
             comando.Parameters.AddWithValue("@marca", idmarca)
             comando.Parameters.AddWithValue("@Modelo", Txt_mod.Text)
             comando.Parameters.AddWithValue("@descripcion", Txt_desc.Text)
             comando.Parameters.AddWithValue("@presentacion", idpresp)
             comando.Parameters.AddWithValue("@precio", Txt_Cto.Text)
-            comando.Parameters.AddWithValue("@id_familia", idf)
+            comando.Parameters.AddWithValue("@id_catalogacion", idf)
             comando.ExecuteNonQuery()
             MsgBox("Producto guardado con exito")
             con_string.Close()
@@ -177,11 +177,12 @@ Public Class ModCatprod
                     where = " modelo LIKE '%" & TxtModeloEd.Text & "%' "
                 End If
             End If
-            'genera la consulta a partir de los campos que se llenaron
+            'genera la consulta a partir de los campos que se llenaron y cambia los valores de los campos
+            'de marca
             If where <> Nothing Then
-                sql = "Select * from catalogo_productos where " & where
+                sql = "SELECT cp.*, p.presentacion as unidad, m.marca nom_marca, c.Nom_categoria FROM catalogo_productos cp LEFT JOIN presentacion_prod p on cp.presentacion = p.id_pp LEFT JOIN marcas m on cp.marca = m.id LEFT JOIN catalogacion c on cp.id_catalogacion = c.id where " & where
             Else
-                sql = "Select * from catalogo_productos"
+                sql = "SELECT cp.*, p.presentacion as unidad, m.marca nom_marca, c.Nom_categoria FROM catalogo_productos cp LEFT JOIN presentacion_prod p on cp.presentacion = p.id_pp LEFT JOIN marcas m on cp.marca = m.id LEFT JOIN catalogacion c on cp.id_catalogacion = c.id"
             End If
             da = New MySqlDataAdapter(sql, con_string)
             ds = New DataSet
@@ -190,23 +191,23 @@ Public Class ModCatprod
             'se declararan las columnas para el data grid
             dt.Columns.Add("ID", GetType(Int32)) '1
             dt.Columns.Add("Codigo de barras", GetType(Int64)) '2
-            dt.Columns.Add("Marca", GetType(Int32)) '3
+            dt.Columns.Add("Marca", GetType(String)) '3
             dt.Columns.Add("Modelo", GetType(String)) '4
             dt.Columns.Add("Descripcion", GetType(String)) '5
             dt.Columns.Add("Presentacion", GetType(String)) '6
             dt.Columns.Add("Precio", GetType(String)) '7
-            dt.Columns.Add("Id Familia", GetType(Int32)) '8
+            dt.Columns.Add("id_catalogacion", GetType(String)) '8
 
             For Each dr As DataRow In ds.Tables(0).Rows
                 Dim DataRow As DataRow = dt.NewRow()
                 DataRow("ID") = dr(0)
                 DataRow("Codigo de barras") = dr(1)
-                DataRow("Marca") = dr(2)
+                DataRow("Marca") = dr(9)
                 DataRow("Modelo") = dr(3)
                 DataRow("Descripcion") = dr(4)
-                DataRow("Presentacion") = dr(5)
+                DataRow("Presentacion") = dr(8)
                 DataRow("Precio") = dr(6).ToString
-                DataRow("Id Familia") = dr(7)
+                DataRow("id_catalogacion") = dr(10)
 
                 dt.Rows.Add(DataRow)
 
