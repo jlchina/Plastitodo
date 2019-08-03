@@ -30,7 +30,6 @@ Public Class EditarMarcas
             da = New MySqlDataAdapter(comm)
             da.Fill(ds)
             con_string.Close()
-
         Catch ex As Exception
             MsgBox(ex.Message)
             MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -36,12 +36,15 @@ Public Class AltaMarca
                 comando.Parameters.AddWithValue("@marca", Txt_marca.Text)
                 comando.ExecuteNonQuery()   'ejecuta la consulta para guardar el registro en la tabla
                 MsgBox("Nueva marca guardada con exito")
+
+                con_string.Close()
+
                 Txt_marca.Text = String.Empty
             Catch ex As Exception
                 MsgBox(ex.Message)
                 MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-            con_string.Close()
+
         Else
             MsgBox("Por favor ingrese el nombre de la marca primero")
         End If

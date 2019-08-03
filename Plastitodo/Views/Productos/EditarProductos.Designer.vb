@@ -36,6 +36,7 @@ Partial Class EditarProductos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Btn_actualizar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Txt_CodBar
@@ -44,6 +45,7 @@ Partial Class EditarProductos
         Me.Txt_CodBar.Name = "Txt_CodBar"
         Me.Txt_CodBar.Size = New System.Drawing.Size(255, 20)
         Me.Txt_CodBar.TabIndex = 0
+        Me.Txt_CodBar.UseWaitCursor = True
         '
         'Cbo_Marca
         '
@@ -52,6 +54,7 @@ Partial Class EditarProductos
         Me.Cbo_Marca.Name = "Cbo_Marca"
         Me.Cbo_Marca.Size = New System.Drawing.Size(255, 21)
         Me.Cbo_Marca.TabIndex = 1
+        Me.Cbo_Marca.UseWaitCursor = True
         '
         'Txt_Modelo
         '
@@ -59,6 +62,7 @@ Partial Class EditarProductos
         Me.Txt_Modelo.Name = "Txt_Modelo"
         Me.Txt_Modelo.Size = New System.Drawing.Size(255, 20)
         Me.Txt_Modelo.TabIndex = 2
+        Me.Txt_Modelo.UseWaitCursor = True
         '
         'Txt_Desc
         '
@@ -66,6 +70,7 @@ Partial Class EditarProductos
         Me.Txt_Desc.Name = "Txt_Desc"
         Me.Txt_Desc.Size = New System.Drawing.Size(255, 20)
         Me.Txt_Desc.TabIndex = 3
+        Me.Txt_Desc.UseWaitCursor = True
         '
         'Cbo_GpoProd
         '
@@ -74,6 +79,7 @@ Partial Class EditarProductos
         Me.Cbo_GpoProd.Name = "Cbo_GpoProd"
         Me.Cbo_GpoProd.Size = New System.Drawing.Size(255, 21)
         Me.Cbo_GpoProd.TabIndex = 4
+        Me.Cbo_GpoProd.UseWaitCursor = True
         '
         'Cbo_Pres
         '
@@ -82,6 +88,7 @@ Partial Class EditarProductos
         Me.Cbo_Pres.Name = "Cbo_Pres"
         Me.Cbo_Pres.Size = New System.Drawing.Size(133, 21)
         Me.Cbo_Pres.TabIndex = 5
+        Me.Cbo_Pres.UseWaitCursor = True
         '
         'Txt_Cto
         '
@@ -89,6 +96,7 @@ Partial Class EditarProductos
         Me.Txt_Cto.Name = "Txt_Cto"
         Me.Txt_Cto.Size = New System.Drawing.Size(133, 20)
         Me.Txt_Cto.TabIndex = 6
+        Me.Txt_Cto.UseWaitCursor = True
         '
         'Label1
         '
@@ -98,6 +106,7 @@ Partial Class EditarProductos
         Me.Label1.Size = New System.Drawing.Size(90, 13)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Codigo de barras:"
+        Me.Label1.UseWaitCursor = True
         '
         'Label2
         '
@@ -107,6 +116,7 @@ Partial Class EditarProductos
         Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Marca:"
+        Me.Label2.UseWaitCursor = True
         '
         'Label3
         '
@@ -116,6 +126,7 @@ Partial Class EditarProductos
         Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Modelo:"
+        Me.Label3.UseWaitCursor = True
         '
         'Label4
         '
@@ -125,6 +136,7 @@ Partial Class EditarProductos
         Me.Label4.Size = New System.Drawing.Size(66, 13)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Descripción:"
+        Me.Label4.UseWaitCursor = True
         '
         'Label5
         '
@@ -134,6 +146,7 @@ Partial Class EditarProductos
         Me.Label5.Size = New System.Drawing.Size(104, 13)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Grupo de productos:"
+        Me.Label5.UseWaitCursor = True
         '
         'Label6
         '
@@ -143,6 +156,7 @@ Partial Class EditarProductos
         Me.Label6.Size = New System.Drawing.Size(72, 13)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Presentación:"
+        Me.Label6.UseWaitCursor = True
         '
         'Label7
         '
@@ -152,12 +166,23 @@ Partial Class EditarProductos
         Me.Label7.Size = New System.Drawing.Size(71, 13)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Costo unitario"
+        Me.Label7.UseWaitCursor = True
+        '
+        'Btn_actualizar
+        '
+        Me.Btn_actualizar.Location = New System.Drawing.Point(526, 312)
+        Me.Btn_actualizar.Name = "Btn_actualizar"
+        Me.Btn_actualizar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_actualizar.TabIndex = 14
+        Me.Btn_actualizar.Text = "Actualizar"
+        Me.Btn_actualizar.UseVisualStyleBackColor = True
         '
         'EditarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(755, 377)
+        Me.ClientSize = New System.Drawing.Size(626, 347)
+        Me.Controls.Add(Me.Btn_actualizar)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -172,8 +197,14 @@ Partial Class EditarProductos
         Me.Controls.Add(Me.Txt_Modelo)
         Me.Controls.Add(Me.Cbo_Marca)
         Me.Controls.Add(Me.Txt_CodBar)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(642, 386)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(642, 386)
         Me.Name = "EditarProductos"
-        Me.Text = "EditarProductos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Editar Producto:"
+        Me.UseWaitCursor = True
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -193,4 +224,5 @@ Partial Class EditarProductos
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Btn_actualizar As Button
 End Class

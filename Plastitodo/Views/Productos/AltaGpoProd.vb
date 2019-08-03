@@ -31,7 +31,70 @@ Public Class AltaGpoProd
         Catch ex As Exception
             MsgBox("Se genero un error al cargar la consulta familias")
         End Try
-        
+
+        'Declaracion de variables para llenar data grid de consulta
+        Dim ds As DataSet = New DataSet
+        Dim dt As New DataTable()
+        Dim da As MySqlDataAdapter
+        Dim comm As MySqlCommand
+        Dim consulta = "select * From catalogacion"
+
+        Try
+            'iniciar parametro de conexion
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
+
+            'iniciar comando para conexion y consulta, servira para el llenado del data grid de edicion
+            comm = New MySqlCommand(consulta, con_string)
+            da = New MySqlDataAdapter(comm)
+            da.Fill(ds)
+            'cierra conexion
+            con_string.Close()
+
+            'asignar nombre a las columnas del data grid
+            dt.Columns.Add("id", GetType(String)) '1
+            dt.Columns.Add("Gpo_prod", GetType(String)) '2
+            dt.Columns.Add("Id_familia", GetType(Int32)) '3
+            dt.Columns.Add("Id_categoria", GetType(Int32)) '4
+            dt.Columns.Add("Nom_categoria", GetType(String)) '5
+
+            For Each dr As DataRow In ds.Tables(0).Rows
+                Dim DataRow As DataRow = dt.NewRow()
+                DataRow("id") = dr(0)
+                DataRow("Gpo_prod") = dr(1)
+                DataRow("Id_familia") = dr(2)
+                DataRow("Id_categoria") = dr(3)
+                DataRow("Nom_categoria") = dr(4)
+
+                dt.Rows.Add(DataRow)
+
+                'Agregar botón Editar
+                Dim Editar As New DataGridViewButtonColumn()
+                Editar.UseColumnTextForButtonValue = True
+                Editar.Text = "Editar"
+                Editar.Name = "Editar"          'Agregar nombre a columna
+                Editar.HeaderText = "Acciones"
+                Editar.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+
+                If Dgv_EditarGP.ColumnCount < 5 Then  'Condición para no desplegar otra columna
+                    Dgv_EditarGP.Columns.Add(Editar)
+                End If
+
+                Dgv_EditarGP.DataSource = dt
+                'Determinamos el alto de las filas
+                Dgv_EditarGP.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+                Dgv_EditarGP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+                'Configurar aspectos visuales
+                Dgv_EditarGP.BackgroundColor = Color.AliceBlue
+                Dgv_EditarGP.AllowUserToAddRows = False
+                Dgv_EditarGP.ReadOnly = True       'El control DataGridView será de sólo lectura
+
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de conexión al cargar la consulta de la tabla categorias", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
 
@@ -124,4 +187,22 @@ Public Class AltaGpoProd
             btn_validar.Enabled = True
         End Try
     End Sub
+
+    Private Sub Dgv_EditarGP_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_EditarGP.CellClick
+        If e.ColumnIndex <> 0 Then Exit Sub
+        Try
+            If Dgv_EditarGP.Columns(e.ColumnIndex).Name = "Editar" Then
+                Dim id_GpoProd As String
+                'para enviar informacion al formulario
+                id_GpoProd = Dgv_EditarGP.Rows(e.RowIndex).Cells("id").Value
+                'envia datos al formulario
+                Dim mostrarform As New EditarGpoProd()
+                mostrarform.Obtener_IdGP(id_GpoProd)  'envia el ID de la marca seleccionada, a la funcion publica del formulario de edicion
+                mostrarform.Show()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 End Class

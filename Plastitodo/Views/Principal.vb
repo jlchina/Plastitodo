@@ -155,4 +155,11 @@ Public Class Principal
         newForm.MdiParent = Me
         newForm.Show()
     End Sub
+
+    Private Sub PresentaciónDeProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PresentaciónDeProductosToolStripMenuItem.Click
+        Dim newpresprod As New Presentacion_Prod()
+        newpresprod.MdiParent = Me
+        newpresprod.Show()
+    End Sub
+
 End Class
