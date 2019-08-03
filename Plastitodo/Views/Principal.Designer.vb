@@ -42,6 +42,7 @@ Partial Class Principal
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.StatusConexion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Lblconexion = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.PresentaciónDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -66,20 +67,20 @@ Partial Class Principal
         '
         Me.UsuariosToolStripMenuItem.Enabled = False
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'PerfilesToolStripMenuItem
         '
         Me.PerfilesToolStripMenuItem.Enabled = False
         Me.PerfilesToolStripMenuItem.Name = "PerfilesToolStripMenuItem"
-        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.PerfilesToolStripMenuItem.Text = "Perfiles"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(119, 22)
         Me.ToolStripMenuItem2.Text = "Salir"
         '
         'ModulosToolStripMenuItem
@@ -120,7 +121,7 @@ Partial Class Principal
         '
         'ProductosToolStripMenuItem
         '
-        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearFamiliaDeProductoToolStripMenuItem, Me.CrearGrupoDeProductoToolStripMenuItem, Me.AltaYoEditarToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.MarcaCrearOModificarToolStripMenuItem})
+        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearFamiliaDeProductoToolStripMenuItem, Me.CrearGrupoDeProductoToolStripMenuItem, Me.MarcaCrearOModificarToolStripMenuItem, Me.AltaYoEditarToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.PresentaciónDeProductosToolStripMenuItem})
         Me.ProductosToolStripMenuItem.Enabled = False
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
@@ -129,31 +130,31 @@ Partial Class Principal
         'CrearFamiliaDeProductoToolStripMenuItem
         '
         Me.CrearFamiliaDeProductoToolStripMenuItem.Name = "CrearFamiliaDeProductoToolStripMenuItem"
-        Me.CrearFamiliaDeProductoToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.CrearFamiliaDeProductoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.CrearFamiliaDeProductoToolStripMenuItem.Text = "Crear familia de producto"
         '
         'CrearGrupoDeProductoToolStripMenuItem
         '
         Me.CrearGrupoDeProductoToolStripMenuItem.Name = "CrearGrupoDeProductoToolStripMenuItem"
-        Me.CrearGrupoDeProductoToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.CrearGrupoDeProductoToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.CrearGrupoDeProductoToolStripMenuItem.Text = "Crear grupo de producto"
         '
         'AltaYoEditarToolStripMenuItem
         '
         Me.AltaYoEditarToolStripMenuItem.Name = "AltaYoEditarToolStripMenuItem"
-        Me.AltaYoEditarToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.AltaYoEditarToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.AltaYoEditarToolStripMenuItem.Text = "Alta y/o editar producto"
         '
         'ConsultaToolStripMenuItem
         '
         Me.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem"
-        Me.ConsultaToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.ConsultaToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.ConsultaToolStripMenuItem.Text = "Consulta de productos"
         '
         'MarcaCrearOModificarToolStripMenuItem
         '
         Me.MarcaCrearOModificarToolStripMenuItem.Name = "MarcaCrearOModificarToolStripMenuItem"
-        Me.MarcaCrearOModificarToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.MarcaCrearOModificarToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.MarcaCrearOModificarToolStripMenuItem.Text = "Marca crear o modificar"
         '
         'InventariosToolStripMenuItem
@@ -184,6 +185,12 @@ Partial Class Principal
         Me.Lblconexion.Name = "Lblconexion"
         Me.Lblconexion.Size = New System.Drawing.Size(107, 17)
         Me.Lblconexion.Text = "--------------------"
+        '
+        'PresentaciónDeProductosToolStripMenuItem
+        '
+        Me.PresentaciónDeProductosToolStripMenuItem.Name = "PresentaciónDeProductosToolStripMenuItem"
+        Me.PresentaciónDeProductosToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.PresentaciónDeProductosToolStripMenuItem.Text = "Presentación de productos"
         '
         'Principal
         '
@@ -228,4 +235,5 @@ Partial Class Principal
     Friend WithEvents CrearFamiliaDeProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CrearGrupoDeProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MarcaCrearOModificarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PresentaciónDeProductosToolStripMenuItem As ToolStripMenuItem
 End Class

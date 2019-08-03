@@ -25,13 +25,13 @@ Partial Class ModCatprod
         Me.Tab_proveedor = New System.Windows.Forms.TabControl()
         Me.Tab_alta_p = New System.Windows.Forms.TabPage()
         Me.Pan_prov = New System.Windows.Forms.Panel()
+        Me.Cbo_Marca = New System.Windows.Forms.ComboBox()
         Me.Cbo_gpoprod = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Cbo_Pres = New System.Windows.Forms.ComboBox()
         Me.Txt_Cto = New System.Windows.Forms.TextBox()
         Me.Txt_desc = New System.Windows.Forms.TextBox()
         Me.Txt_mod = New System.Windows.Forms.TextBox()
-        Me.Txt_marca = New System.Windows.Forms.TextBox()
         Me.Txt_codbar = New System.Windows.Forms.TextBox()
         Me.Lbl_telp = New System.Windows.Forms.Label()
         Me.Lb_cpp = New System.Windows.Forms.Label()
@@ -76,7 +76,7 @@ Partial Class ModCatprod
         Me.Tab_alta_p.Location = New System.Drawing.Point(4, 22)
         Me.Tab_alta_p.Name = "Tab_alta_p"
         Me.Tab_alta_p.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_alta_p.Size = New System.Drawing.Size(688, 311)
+        Me.Tab_alta_p.Size = New System.Drawing.Size(733, 311)
         Me.Tab_alta_p.TabIndex = 1
         Me.Tab_alta_p.Text = "Alta"
         Me.Tab_alta_p.UseVisualStyleBackColor = True
@@ -84,13 +84,13 @@ Partial Class ModCatprod
         'Pan_prov
         '
         Me.Pan_prov.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Pan_prov.Controls.Add(Me.Cbo_Marca)
         Me.Pan_prov.Controls.Add(Me.Cbo_gpoprod)
         Me.Pan_prov.Controls.Add(Me.Label2)
         Me.Pan_prov.Controls.Add(Me.Cbo_Pres)
         Me.Pan_prov.Controls.Add(Me.Txt_Cto)
         Me.Pan_prov.Controls.Add(Me.Txt_desc)
         Me.Pan_prov.Controls.Add(Me.Txt_mod)
-        Me.Pan_prov.Controls.Add(Me.Txt_marca)
         Me.Pan_prov.Controls.Add(Me.Txt_codbar)
         Me.Pan_prov.Controls.Add(Me.Lbl_telp)
         Me.Pan_prov.Controls.Add(Me.Lb_cpp)
@@ -102,6 +102,14 @@ Partial Class ModCatprod
         Me.Pan_prov.Name = "Pan_prov"
         Me.Pan_prov.Size = New System.Drawing.Size(477, 247)
         Me.Pan_prov.TabIndex = 30
+        '
+        'Cbo_Marca
+        '
+        Me.Cbo_Marca.FormattingEnabled = True
+        Me.Cbo_Marca.Location = New System.Drawing.Point(131, 38)
+        Me.Cbo_Marca.Name = "Cbo_Marca"
+        Me.Cbo_Marca.Size = New System.Drawing.Size(332, 21)
+        Me.Cbo_Marca.TabIndex = 2
         '
         'Cbo_gpoprod
         '
@@ -125,7 +133,7 @@ Partial Class ModCatprod
         Me.Cbo_Pres.FormattingEnabled = True
         Me.Cbo_Pres.Location = New System.Drawing.Point(131, 177)
         Me.Cbo_Pres.Name = "Cbo_Pres"
-        Me.Cbo_Pres.Size = New System.Drawing.Size(113, 21)
+        Me.Cbo_Pres.Size = New System.Drawing.Size(176, 21)
         Me.Cbo_Pres.TabIndex = 16
         '
         'Txt_Cto
@@ -148,13 +156,6 @@ Partial Class ModCatprod
         Me.Txt_mod.Name = "Txt_mod"
         Me.Txt_mod.Size = New System.Drawing.Size(332, 20)
         Me.Txt_mod.TabIndex = 3
-        '
-        'Txt_marca
-        '
-        Me.Txt_marca.Location = New System.Drawing.Point(131, 43)
-        Me.Txt_marca.Name = "Txt_marca"
-        Me.Txt_marca.Size = New System.Drawing.Size(332, 20)
-        Me.Txt_marca.TabIndex = 2
         '
         'Txt_codbar
         '
@@ -315,8 +316,13 @@ Partial Class ModCatprod
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(765, 361)
         Me.Controls.Add(Me.Tab_proveedor)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(781, 400)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(781, 400)
         Me.Name = "ModCatprod"
-        Me.Text = "ModCatprod"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Catalogo de productos: Alta, Consulta y Edicion"
         Me.Tab_proveedor.ResumeLayout(False)
         Me.Tab_alta_p.ResumeLayout(False)
         Me.Pan_prov.ResumeLayout(False)
@@ -337,7 +343,6 @@ Partial Class ModCatprod
     Friend WithEvents Txt_Cto As TextBox
     Friend WithEvents Txt_desc As TextBox
     Friend WithEvents Txt_mod As TextBox
-    Friend WithEvents Txt_marca As TextBox
     Friend WithEvents Txt_codbar As TextBox
     Friend WithEvents Lbl_telp As Label
     Friend WithEvents Lb_cpp As Label
@@ -354,4 +359,5 @@ Partial Class ModCatprod
     Friend WithEvents txtCodigoEd As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents DGV_Edit_CP As DataGridView
+    Friend WithEvents Cbo_Marca As ComboBox
 End Class

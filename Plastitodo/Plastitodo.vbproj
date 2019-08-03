@@ -88,12 +88,6 @@
     <Compile Include="Views\Productos\AltaMarca.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Productos\Catprod_NoUsar.Designer.vb">
-      <DependentUpon>Catprod_NoUsar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Productos\Catprod_NoUsar.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Views\Cat_Prov.Designer.vb">
       <DependentUpon>Cat_Prov.vb</DependentUpon>
     </Compile>
@@ -164,6 +158,18 @@
     <Compile Include="Views\Productos\Cons_prod.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Productos\EditarFamiliaProducto.Designer.vb">
+      <DependentUpon>EditarFamiliaProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\EditarFamiliaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Productos\EditarGpoProd.Designer.vb">
+      <DependentUpon>EditarGpoProd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\EditarGpoProd.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Productos\EditarMarcas.Designer.vb">
       <DependentUpon>EditarMarcas.vb</DependentUpon>
     </Compile>
@@ -188,6 +194,12 @@
     <Compile Include="Views\Productos\ModCatprod.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Productos\Presentacion_Prod.Designer.vb">
+      <DependentUpon>Presentacion_Prod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\Presentacion_Prod.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Proveedores\CatalogoProveedor.Designer.vb">
       <DependentUpon>CatalogoProveedor.vb</DependentUpon>
     </Compile>
@@ -210,9 +222,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\Productos\AltaMarca.resx">
       <DependentUpon>AltaMarca.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Productos\Catprod_NoUsar.resx">
-      <DependentUpon>Catprod_NoUsar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Cat_Prov.resx">
       <DependentUpon>Cat_Prov.vb</DependentUpon>
@@ -247,6 +256,12 @@
     <EmbeddedResource Include="Views\Productos\Cons_prod.resx">
       <DependentUpon>Cons_prod.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\EditarFamiliaProducto.resx">
+      <DependentUpon>EditarFamiliaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\EditarGpoProd.resx">
+      <DependentUpon>EditarGpoProd.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\EditarMarcas.resx">
       <DependentUpon>EditarMarcas.vb</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\ModCatprod.resx">
       <DependentUpon>ModCatprod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\Presentacion_Prod.resx">
+      <DependentUpon>Presentacion_Prod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Proveedores\CatalogoProveedor.resx">
       <DependentUpon>CatalogoProveedor.vb</DependentUpon>

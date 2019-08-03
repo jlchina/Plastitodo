@@ -52,6 +52,9 @@ Partial Class MarcaCons
         Me.Controls.Add(Me.btn_nvamarca)
         Me.Controls.Add(Me.dgv_marcas)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(379, 391)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(379, 391)
         Me.Name = "MarcaCons"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Lista de marcas"
