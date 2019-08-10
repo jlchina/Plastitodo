@@ -28,6 +28,7 @@ Partial Class Existencias
         Me.DataGridViewexis = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TExistencias.SuspendLayout()
         Me.TBusExistencias.SuspendLayout()
         CType(Me.DataGridViewexis, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +45,7 @@ Partial Class Existencias
         '
         'TBusExistencias
         '
+        Me.TBusExistencias.Controls.Add(Me.Button1)
         Me.TBusExistencias.Controls.Add(Me.Bbuscarexis)
         Me.TBusExistencias.Controls.Add(Me.DataGridViewexis)
         Me.TBusExistencias.Controls.Add(Me.Label1)
@@ -90,6 +92,15 @@ Partial Class Existencias
         Me.TextBox1.Size = New System.Drawing.Size(319, 20)
         Me.TextBox1.TabIndex = 0
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(511, 153)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Existencias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -112,4 +123,5 @@ Partial Class Existencias
     Friend WithEvents DataGridViewexis As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
 End Class
