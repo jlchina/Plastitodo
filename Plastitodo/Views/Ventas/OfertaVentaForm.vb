@@ -106,7 +106,7 @@ Public Class OfertaVentaForm
                     DgvLista.Rows(Filad).Cells(3).Value = "1"
                 End If
             Case "descuento"
-                Dim PrecioUnidad, TotalLinea, TotalBrutoLinea, Desc As Decimal
+                Dim PrecioUnidad, Desc As Decimal
                 Dim Cantidad As Decimal = CDec(DgvLista.Rows(Filad).Cells(3).Value.ToString)
                 Desc = CDec(DgvLista.Rows(Filad).Cells(6).Value.ToString)
                 If Desc <> 0 Then
