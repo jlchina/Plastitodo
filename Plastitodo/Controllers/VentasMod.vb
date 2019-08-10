@@ -92,4 +92,31 @@ Module VentasMod
         End Try
         Return ds
     End Function
+    Function GetFolioMax()
+        Dim ds As DataSet = New DataSet
+        Dim ultimo As Integer
+        Dim sql = "Select ifnull(max(d.folio)+1,1) as ultimo
+                    From documentos d;"
+        Try
+            '---Abir conexion
+            conn = New MySqlConnection
+            conn.ConnectionString = ConnectionString2
+            conn.Open()
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(sql, conn)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(ds)
+
+            For Each dr As DataRow In ds.Tables(0).Rows
+                ultimo = CInt(dr(0))
+            Next
+
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Return ultimo
+    End Function
 End Module

@@ -2,7 +2,7 @@
 Public Class OfertaVentaForm
     Dim ImpuestoTotal, Subtotal, Sumtotal As Decimal
     Private Sub OfertaVentaForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        TxtDocNum.Text = GetFolioMax()
     End Sub
 
     Private Sub CmbProducto_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles CmbProducto.KeyUp
@@ -72,6 +72,10 @@ Public Class OfertaVentaForm
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
+    End Sub
+
+    Private Sub BtnCrear_Click(sender As Object, e As EventArgs) Handles BtnCrear.Click
 
     End Sub
 
