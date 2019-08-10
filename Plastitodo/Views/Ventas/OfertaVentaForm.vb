@@ -2,11 +2,7 @@
 Public Class OfertaVentaForm
     Dim ImpuestoTotal, Subtotal, Sumtotal As Decimal
     Private Sub OfertaVentaForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim ds As DataSet = GetVendedores()
-        CmbVendedor.Items.Add("-Ningún empleado del departamento de ventas-")
-        CmbVendedor.DataSource = ds.Tables(0)
-        CmbVendedor.DisplayMember = "nombre"
-        CmbVendedor.ValueMember = "id"
+
     End Sub
 
     Private Sub CmbProducto_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles CmbProducto.KeyUp
