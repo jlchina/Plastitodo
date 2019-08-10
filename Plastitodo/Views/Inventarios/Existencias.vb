@@ -2,18 +2,6 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Existencias
-    Private Sub Blimpiar_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub BAgregarprovee_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Textcorreo_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub Bbuscarexis_Click(sender As Object, e As EventArgs) Handles Bbuscarexis.Click
 
         Try
