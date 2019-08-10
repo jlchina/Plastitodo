@@ -38,14 +38,21 @@ Partial Class OfertaVentaForm
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DgvLista = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.presentacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnCrear = New System.Windows.Forms.Button()
-        Me.CmbVendedor = New System.Windows.Forms.ComboBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnCopiara = New System.Windows.Forms.Button()
@@ -58,15 +65,6 @@ Partial Class OfertaVentaForm
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.CmbProducto = New System.Windows.Forms.ComboBox()
         Me.BtnBuscarProducto = New System.Windows.Forms.Button()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.presentacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DgvLista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,15 +231,75 @@ Partial Class OfertaVentaForm
         Me.DgvLista.Size = New System.Drawing.Size(1007, 187)
         Me.DgvLista.TabIndex = 32
         '
+        'codigo
+        '
+        Me.codigo.Frozen = True
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.Frozen = True
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        Me.descripcion.Width = 160
+        '
+        'presentacion
+        '
+        Me.presentacion.Frozen = True
+        Me.presentacion.HeaderText = "Presentación"
+        Me.presentacion.Name = "presentacion"
+        Me.presentacion.ReadOnly = True
+        '
+        'cantidad
+        '
+        Me.cantidad.Frozen = True
+        Me.cantidad.HeaderText = "Cantidad"
+        Me.cantidad.Name = "cantidad"
+        '
+        'stock
+        '
+        Me.stock.Frozen = True
+        Me.stock.HeaderText = "Stock"
+        Me.stock.Name = "stock"
+        Me.stock.ReadOnly = True
+        '
+        'precio
+        '
+        Me.precio.Frozen = True
+        Me.precio.HeaderText = "Precio por Unidad"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        '
+        'descuento
+        '
+        Me.descuento.Frozen = True
+        Me.descuento.HeaderText = "Descuento %"
+        Me.descuento.Name = "descuento"
+        '
+        'iva
+        '
+        Me.iva.Frozen = True
+        Me.iva.HeaderText = "Iva"
+        Me.iva.Name = "iva"
+        Me.iva.ReadOnly = True
+        '
+        'total
+        '
+        Me.total.Frozen = True
+        Me.total.HeaderText = "Total"
+        Me.total.Name = "total"
+        Me.total.ReadOnly = True
+        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.BtnCancelar)
         Me.GroupBox4.Controls.Add(Me.BtnCrear)
-        Me.GroupBox4.Controls.Add(Me.CmbVendedor)
         Me.GroupBox4.Controls.Add(Me.TextBox1)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.TextBox2)
-        Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Controls.Add(Me.Label8)
         Me.GroupBox4.ForeColor = System.Drawing.Color.Black
         Me.GroupBox4.Location = New System.Drawing.Point(9, 391)
@@ -268,18 +326,6 @@ Partial Class OfertaVentaForm
         Me.BtnCrear.Text = "Crear"
         Me.BtnCrear.UseVisualStyleBackColor = True
         '
-        'CmbVendedor
-        '
-        Me.CmbVendedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.CmbVendedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.CmbVendedor.FormattingEnabled = True
-        Me.CmbVendedor.Location = New System.Drawing.Point(10, 32)
-        Me.CmbVendedor.MaxDropDownItems = 5
-        Me.CmbVendedor.MaxLength = 7
-        Me.CmbVendedor.Name = "CmbVendedor"
-        Me.CmbVendedor.Size = New System.Drawing.Size(203, 21)
-        Me.CmbVendedor.TabIndex = 7
-        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(231, 35)
@@ -301,21 +347,10 @@ Partial Class OfertaVentaForm
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(10, 71)
+        Me.TextBox2.Location = New System.Drawing.Point(6, 35)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(203, 20)
         Me.TextBox2.TabIndex = 4
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(7, 55)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(43, 13)
-        Me.Label7.TabIndex = 3
-        Me.Label7.Text = "Titular"
         '
         'Label8
         '
@@ -444,68 +479,6 @@ Partial Class OfertaVentaForm
         Me.BtnBuscarProducto.TabIndex = 24
         Me.BtnBuscarProducto.UseVisualStyleBackColor = True
         '
-        'codigo
-        '
-        Me.codigo.Frozen = True
-        Me.codigo.HeaderText = "Codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        '
-        'descripcion
-        '
-        Me.descripcion.Frozen = True
-        Me.descripcion.HeaderText = "Descripción"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
-        Me.descripcion.Width = 160
-        '
-        'presentacion
-        '
-        Me.presentacion.Frozen = True
-        Me.presentacion.HeaderText = "Presentación"
-        Me.presentacion.Name = "presentacion"
-        Me.presentacion.ReadOnly = True
-        '
-        'cantidad
-        '
-        Me.cantidad.Frozen = True
-        Me.cantidad.HeaderText = "Cantidad"
-        Me.cantidad.Name = "cantidad"
-        '
-        'stock
-        '
-        Me.stock.Frozen = True
-        Me.stock.HeaderText = "Stock"
-        Me.stock.Name = "stock"
-        Me.stock.ReadOnly = True
-        '
-        'precio
-        '
-        Me.precio.Frozen = True
-        Me.precio.HeaderText = "Precio por Unidad"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        '
-        'descuento
-        '
-        Me.descuento.Frozen = True
-        Me.descuento.HeaderText = "Descuento %"
-        Me.descuento.Name = "descuento"
-        '
-        'iva
-        '
-        Me.iva.Frozen = True
-        Me.iva.HeaderText = "Iva"
-        Me.iva.Name = "iva"
-        Me.iva.ReadOnly = True
-        '
-        'total
-        '
-        Me.total.Frozen = True
-        Me.total.HeaderText = "Total"
-        Me.total.Name = "total"
-        Me.total.ReadOnly = True
-        '
         'OfertaVentaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -552,11 +525,9 @@ Partial Class OfertaVentaForm
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnCrear As Button
-    Friend WithEvents CmbVendedor As ComboBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnCopiara As Button
