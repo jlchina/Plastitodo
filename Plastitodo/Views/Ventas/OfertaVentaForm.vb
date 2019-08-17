@@ -75,10 +75,6 @@ Public Class OfertaVentaForm
 
     End Sub
 
-    Private Sub BtnCrear_Click(sender As Object, e As EventArgs) Handles BtnCrear.Click
-
-    End Sub
-
     Private Sub Contar()
         ImpuestoTotal = Nothing
         Subtotal = Nothing
@@ -123,5 +119,35 @@ Public Class OfertaVentaForm
                 Contar()
 
         End Select
+    End Sub
+
+    Private Sub BtnCrear_Click(sender As Object, e As EventArgs) Handles BtnCrear.Click
+        Dim lineas As New DataTable
+        lineas.Columns.Add("id_producto")
+        lineas.Columns.Add("cantidad")
+        lineas.Columns.Add("id_presentacion")
+        lineas.Columns.Add("precio")
+        lineas.Columns.Add("descuento")
+        lineas.Columns.Add("id_iva")
+        lineas.Columns.Add("subtotal")
+        lineas.Columns.Add("total")
+        lineas.Columns.Add("id_usuario")
+
+
+        For Each Dt_Row As DataGridViewRow In DgvLista.Rows
+            Dim row As DataRow = lineas.NewRow()
+            row("id_producto") = ""
+            row("Nombre") = ""
+            row("cantidad") = ""
+            row("id_presentacion") = ""
+            row("precio") = ""
+            row("descuento") = ""
+            row("id_iva") = ""
+            row("subtotal") = ""
+            row("total") = ""
+            row("id_usuario") = ""
+
+            lineas.Rows.Add(row)
+        Next
     End Sub
 End Class

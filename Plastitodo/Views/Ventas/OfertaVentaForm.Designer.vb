@@ -38,15 +38,6 @@ Partial Class OfertaVentaForm
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DgvLista = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.presentacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnCrear = New System.Windows.Forms.Button()
@@ -65,6 +56,16 @@ Partial Class OfertaVentaForm
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.CmbProducto = New System.Windows.Forms.ComboBox()
         Me.BtnBuscarProducto = New System.Windows.Forms.Button()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.presentacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.stotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.iva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DgvLista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -225,73 +226,11 @@ Partial Class OfertaVentaForm
         '
         Me.DgvLista.AllowUserToAddRows = False
         Me.DgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvLista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.descripcion, Me.presentacion, Me.cantidad, Me.stock, Me.precio, Me.descuento, Me.iva, Me.total})
+        Me.DgvLista.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.descripcion, Me.presentacion, Me.cantidad, Me.stock, Me.precio, Me.stotal, Me.descuento, Me.iva, Me.total})
         Me.DgvLista.Location = New System.Drawing.Point(9, 188)
         Me.DgvLista.Name = "DgvLista"
         Me.DgvLista.Size = New System.Drawing.Size(905, 187)
         Me.DgvLista.TabIndex = 32
-        '
-        'codigo
-        '
-        Me.codigo.Frozen = True
-        Me.codigo.HeaderText = "Codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        '
-        'descripcion
-        '
-        Me.descripcion.Frozen = True
-        Me.descripcion.HeaderText = "Descripción"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
-        Me.descripcion.Width = 160
-        '
-        'presentacion
-        '
-        Me.presentacion.Frozen = True
-        Me.presentacion.HeaderText = "Presentación"
-        Me.presentacion.Name = "presentacion"
-        Me.presentacion.ReadOnly = True
-        '
-        'cantidad
-        '
-        Me.cantidad.Frozen = True
-        Me.cantidad.HeaderText = "Cantidad"
-        Me.cantidad.Name = "cantidad"
-        '
-        'stock
-        '
-        Me.stock.Frozen = True
-        Me.stock.HeaderText = "Stock"
-        Me.stock.Name = "stock"
-        Me.stock.ReadOnly = True
-        '
-        'precio
-        '
-        Me.precio.Frozen = True
-        Me.precio.HeaderText = "Precio por Unidad"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        '
-        'descuento
-        '
-        Me.descuento.Frozen = True
-        Me.descuento.HeaderText = "Descuento %"
-        Me.descuento.Name = "descuento"
-        '
-        'iva
-        '
-        Me.iva.Frozen = True
-        Me.iva.HeaderText = "Iva"
-        Me.iva.Name = "iva"
-        Me.iva.ReadOnly = True
-        '
-        'total
-        '
-        Me.total.Frozen = True
-        Me.total.HeaderText = "Total"
-        Me.total.Name = "total"
-        Me.total.ReadOnly = True
         '
         'GroupBox4
         '
@@ -479,6 +418,70 @@ Partial Class OfertaVentaForm
         Me.BtnBuscarProducto.TabIndex = 24
         Me.BtnBuscarProducto.UseVisualStyleBackColor = True
         '
+        'codigo
+        '
+        Me.codigo.Frozen = True
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.Frozen = True
+        Me.descripcion.HeaderText = "Descripción"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        Me.descripcion.Width = 160
+        '
+        'presentacion
+        '
+        Me.presentacion.Frozen = True
+        Me.presentacion.HeaderText = "Presentación"
+        Me.presentacion.Name = "presentacion"
+        Me.presentacion.ReadOnly = True
+        '
+        'cantidad
+        '
+        Me.cantidad.Frozen = True
+        Me.cantidad.HeaderText = "Cantidad"
+        Me.cantidad.Name = "cantidad"
+        '
+        'stock
+        '
+        Me.stock.Frozen = True
+        Me.stock.HeaderText = "Stock"
+        Me.stock.Name = "stock"
+        Me.stock.ReadOnly = True
+        '
+        'precio
+        '
+        Me.precio.Frozen = True
+        Me.precio.HeaderText = "Precio por Unidad"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        '
+        'stotal
+        '
+        Me.stotal.HeaderText = "Sub-Total"
+        Me.stotal.Name = "stotal"
+        '
+        'descuento
+        '
+        Me.descuento.HeaderText = "Descuento %"
+        Me.descuento.Name = "descuento"
+        '
+        'iva
+        '
+        Me.iva.HeaderText = "Iva"
+        Me.iva.Name = "iva"
+        Me.iva.ReadOnly = True
+        '
+        'total
+        '
+        Me.total.HeaderText = "Total"
+        Me.total.Name = "total"
+        Me.total.ReadOnly = True
+        '
         'OfertaVentaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -546,6 +549,7 @@ Partial Class OfertaVentaForm
     Friend WithEvents cantidad As DataGridViewTextBoxColumn
     Friend WithEvents stock As DataGridViewTextBoxColumn
     Friend WithEvents precio As DataGridViewTextBoxColumn
+    Friend WithEvents stotal As DataGridViewTextBoxColumn
     Friend WithEvents descuento As DataGridViewTextBoxColumn
     Friend WithEvents iva As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn

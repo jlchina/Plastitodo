@@ -119,4 +119,7 @@ Module VentasMod
         End Try
         Return ultimo
     End Function
+    Function DocumentoVenta(ByVal id_tipo_documento As Integer, id_cliente As Integer, nombre As String, vendedor As String, comentarios As String, lineas As DataSet)
+        Dim sql = "0"
+    End Function
 End Module

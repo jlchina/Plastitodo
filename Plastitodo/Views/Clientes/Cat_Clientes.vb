@@ -45,7 +45,7 @@ Public Class Cat_Clientes
             Dim conexion As New MySqlConnection(ConnectionString2)
             Dim query = "Select * from cliente where Nombre like ?"
             Dim adap As New MySqlDataAdapter(query, conexion)
-            adap.SelectCommand.Parameters.AddWithValue("@p1", "%" & Txtbusclient.Text & "%")
+            adap.SelectCommand.Parameters.AddWithValue("@p1", "%" & Textbusclient.Text & "%")
             Dim dt As New DataTable
             adap.Fill(dt)
             If dt.Rows.Count > 0 Then
@@ -85,7 +85,7 @@ Public Class Cat_Clientes
             Dim dt As New DataTable
             adap.Fill(dt)
             If dt.Rows.Count > 0 Then
-                DGV_Edit_CP.DataSource = dt
+                DGVconsultclient.DataSource = dt
             Else
                 MessageBox.Show("No se encontraron coincidencias")
             End If
