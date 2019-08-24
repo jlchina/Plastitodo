@@ -164,4 +164,9 @@ Public Class Principal
         newpresprod.Show()
     End Sub
 
+    Private Sub DatosMaestrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DatosMaestrosToolStripMenuItem.Click
+        Dim newppublico As New DeterminarPrecioPublico()
+        newppublico.MdiParent = Me
+        newppublico.Show()
+    End Sub
 End Class

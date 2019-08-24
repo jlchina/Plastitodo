@@ -80,9 +80,15 @@
     <Compile Include="Config\Globales.vb" />
     <Compile Include="Controllers\PerfilesMod.vb" />
     <Compile Include="Controllers\PrincipalMod.vb" />
+    <Compile Include="Controllers\Productos_Precios.vb" />
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
     <Compile Include="Controllers\VentasMod.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Inventarios\Editar Mercancia.Designer.vb">
       <DependentUpon>Editar Mercancia.vb</DependentUpon>
     </Compile>
@@ -149,11 +155,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -177,6 +178,12 @@
     <Compile Include="Views\Productos\Cons_prod.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Productos\DeterminarPrecioPublico.Designer.vb">
+      <DependentUpon>DeterminarPrecioPublico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\DeterminarPrecioPublico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Productos\EditarFamiliaProducto.Designer.vb">
       <DependentUpon>EditarFamiliaProducto.vb</DependentUpon>
     </Compile>
@@ -193,6 +200,12 @@
       <DependentUpon>EditarMarcas.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Productos\EditarMarcas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Productos\EditarPresProd.Designer.vb">
+      <DependentUpon>EditarPresProd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Productos\EditarPresProd.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Productos\EditarProductos.Designer.vb">
@@ -277,9 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\AltaGpoProd.resx">
       <DependentUpon>AltaGpoProd.vb</DependentUpon>
@@ -290,6 +303,9 @@
     <EmbeddedResource Include="Views\Productos\Cons_prod.resx">
       <DependentUpon>Cons_prod.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\DeterminarPrecioPublico.resx">
+      <DependentUpon>DeterminarPrecioPublico.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\EditarFamiliaProducto.resx">
       <DependentUpon>EditarFamiliaProducto.vb</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\EditarMarcas.resx">
       <DependentUpon>EditarMarcas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Productos\EditarPresProd.resx">
+      <DependentUpon>EditarPresProd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Productos\EditarProductos.resx">
       <DependentUpon>EditarProductos.vb</DependentUpon>
@@ -337,9 +356,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tjmutud-imgur.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,11 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 
-
 Public Class ModCatprod
     ' Dim con_datos As String
     Dim idf As Integer = Nothing
     Dim idpresp As Integer = Nothing
     Dim idmarca As Integer = Nothing
+    Dim idprov As Integer = Nothing
+    Dim id_catprod As Integer = Nothing
 
     Private Sub Btn_agregarp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_agregarp.Click
         Try
@@ -14,8 +15,8 @@ Public Class ModCatprod
             con_string.ConnectionString = ConnectionString2
             con_string.Open()
             'campos a ingresar en la BD desde el formulario
-            comando = New MySqlCommand("INSERT INTO catalogo_productos(codigo_barras, marca, Modelo, descripcion, presentacion, precio, id_catalogacion)" & Chr(13) &
-                                       "VALUES(@codigo_barras, @marca, @Modelo, @descripcion, @presentacion, @precio, @id_catalogacion)", con_string)
+            comando = New MySqlCommand("INSERT INTO catalogo_productos(codigo_barras, marca, Modelo, descripcion, presentacion, precio, id_catalogacion, id_prov)" & Chr(13) &
+                                       "VALUES(@codigo_barras, @marca, @Modelo, @descripcion, @presentacion, @precio, @id_catalogacion, @id_prov)", con_string)
             comando.Parameters.AddWithValue("@codigo_barras", Txt_codbar.Text)
             comando.Parameters.AddWithValue("@marca", idmarca)
             comando.Parameters.AddWithValue("@Modelo", Txt_mod.Text)
@@ -23,9 +24,14 @@ Public Class ModCatprod
             comando.Parameters.AddWithValue("@presentacion", idpresp)
             comando.Parameters.AddWithValue("@precio", Txt_Cto.Text)
             comando.Parameters.AddWithValue("@id_catalogacion", idf)
+            comando.Parameters.AddWithValue("@id_prov", idprov)
             comando.ExecuteNonQuery()
-            MsgBox("Producto guardado con exito")
             con_string.Close()
+
+            'Llama la funcion para guardar el costo en la tabla de historicos
+            GetHistoricoCosto(idprov, id_catprod, Txt_Cto.Text)
+
+            MsgBox("Producto guardado con exito")
             'borra el valor de la variable con la categoria que fue seleccionada
             idf = Nothing
             'despues de guardar limpia la ventana
@@ -36,6 +42,7 @@ Public Class ModCatprod
             Txt_Cto.Text = String.Empty
             Cbo_gpoprod.Text = "Seleccione una categoria"
             Cbo_Pres.Text = "Selecciona una opción"
+            Cbo_Proveedor.Text = "Seleciona un proveedor"
         Catch ex As Exception
             MsgBox(ex.Message, "Hubo un error al guardar el producto, verifique los datos")
             Txt_codbar.Text = String.Empty
@@ -45,7 +52,9 @@ Public Class ModCatprod
             Txt_Cto.Text = String.Empty
             Cbo_gpoprod.Text = "Seleccione una categoria"
             Cbo_Pres.Text = "Selecciona una opción"
+            Cbo_Proveedor.Text = "Seleciona un proveedor"
         End Try
+
     End Sub
 
     Private Sub Catprod_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -117,6 +126,52 @@ Public Class ModCatprod
             MsgBox("Error de conexion. No se pudo cargar la tabla presentacion de productos", vbCritical)
         End Try
 
+        'llenar combobox de proveedor
+        Dim cons_prov As String = "SELECT * FROM proveedor"
+        Dim da_prov As New MySqlDataAdapter
+        Dim dt_prov As New DataTable
+        Try
+            'iniciar conexion
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
+            'realizar consulta para extraer datos
+            da_prov = New MySqlDataAdapter(cons_prov, con_string)
+            dt_prov = New DataTable
+            da_prov.Fill(dt_prov)
+            con_string.Close()
+            'llenado de informacion en el combobox presentacion de productos para alta de productos
+            Cbo_Proveedor.DataSource = dt_prov
+            Cbo_Proveedor.DisplayMember = "Nombre"
+            Cbo_Proveedor.ValueMember = "idProveedor"
+            Cbo_Proveedor.Text = "Selecciona un proveedor"
+        Catch ex As Exception
+            MsgBox("Error de conexion. No se pudo cargar la tabla presentacion de proveedores", vbCritical)
+        End Try
+
+        'extraer el numero maximo de la tabla de catalogo de productos y sumar 1
+        Try
+            Dim cons_idcatprod As String = Nothing
+
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
+            cons_idcatprod = "SELECT (IFNULL(MAX(Id),0)+1) AS MaxId FROM catalogo_productos"
+            cmd = New MySqlCommand(cons_idcatprod, con_string)
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                While dr.Read
+                    'obtener valores de la consulta
+                    id_catprod = dr.Item("MaxId") 'si quieres mostrar el resultado en este textbox
+                End While
+            End If
+            dr.Close()
+            con_string.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
+
     End Sub
 
     Private Sub Btn_cancelarp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_cancelarp.Click
@@ -128,6 +183,7 @@ Public Class ModCatprod
         Cbo_Pres.Text = "Selecciona una opción"
         Cbo_Marca.Text = "Selecciona una marca"
         Cbo_gpoprod.Text = "Seleccione una categoria"
+        Cbo_Proveedor.Text = "Seleccione un proveedor"
     End Sub
 
     Private Sub BtnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnBuscar.Click
@@ -180,9 +236,9 @@ Public Class ModCatprod
             'genera la consulta a partir de los campos que se llenaron y cambia los valores de los campos
             'de marca
             If where <> Nothing Then
-                sql = "SELECT cp.*, p.presentacion as unidad, m.marca nom_marca, c.Nom_categoria FROM catalogo_productos cp LEFT JOIN presentacion_prod p on cp.presentacion = p.id_pp LEFT JOIN marcas m on cp.marca = m.id LEFT JOIN catalogacion c on cp.id_catalogacion = c.id where " & where
+                sql = "SELECT cp.*, p.presentacion as unidad, m.marca nom_marca, c.Nom_categoria, provs.nombre Razon_Social FROM catalogo_productos cp LEFT JOIN presentacion_prod p on cp.presentacion = p.id_pp LEFT JOIN marcas m on cp.marca = m.id LEFT JOIN catalogacion c on cp.id_catalogacion = c.id LEFT JOIN proveedor provs on cp.id_prov = provs.idProveedor where " & where
             Else
-                sql = "SELECT cp.*, p.presentacion as unidad, m.marca nom_marca, c.Nom_categoria FROM catalogo_productos cp LEFT JOIN presentacion_prod p on cp.presentacion = p.id_pp LEFT JOIN marcas m on cp.marca = m.id LEFT JOIN catalogacion c on cp.id_catalogacion = c.id"
+                sql = "SELECT cp.*, p.presentacion as unidad, m.marca nom_marca, c.Nom_categoria, provs.nombre Razon_Social FROM catalogo_productos cp LEFT JOIN presentacion_prod p on cp.presentacion = p.id_pp LEFT JOIN marcas m on cp.marca = m.id LEFT JOIN catalogacion c on cp.id_catalogacion = c.id LEFT JOIN proveedor provs on cp.id_prov = provs.idProveedor"
             End If
             da = New MySqlDataAdapter(sql, con_string)
             ds = New DataSet
@@ -195,19 +251,21 @@ Public Class ModCatprod
             dt.Columns.Add("Modelo", GetType(String)) '4
             dt.Columns.Add("Descripcion", GetType(String)) '5
             dt.Columns.Add("Presentacion", GetType(String)) '6
-            dt.Columns.Add("Precio", GetType(String)) '7
-            dt.Columns.Add("id_catalogacion", GetType(String)) '8
+            dt.Columns.Add("Costo", GetType(String)) '7
+            dt.Columns.Add("Catalogación", GetType(String)) '8
+            dt.Columns.Add("Razon Social", GetType(String)) '9
 
             For Each dr As DataRow In ds.Tables(0).Rows
                 Dim DataRow As DataRow = dt.NewRow()
                 DataRow("ID") = dr(0)
                 DataRow("Codigo de barras") = dr(1)
-                DataRow("Marca") = dr(9)
+                DataRow("Marca") = dr(10)
                 DataRow("Modelo") = dr(3)
                 DataRow("Descripcion") = dr(4)
-                DataRow("Presentacion") = dr(8)
-                DataRow("Precio") = dr(6).ToString
-                DataRow("id_catalogacion") = dr(10)
+                DataRow("Presentacion") = dr(9)
+                DataRow("Costo") = dr(6).ToString
+                DataRow("Catalogación") = dr(11)
+                DataRow("Razon Social") = dr(12)
 
                 dt.Rows.Add(DataRow)
 
@@ -284,5 +342,25 @@ Public Class ModCatprod
         Else
             idpresp = Nothing
         End If
+    End Sub
+
+    Private Sub Cbo_Proveedor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbo_Proveedor.SelectedIndexChanged
+        If IsNumeric(Cbo_Proveedor.SelectedValue) Then
+            idprov = Cbo_Proveedor.SelectedValue
+        Else
+            idprov = Nothing
+        End If
+    End Sub
+
+    Private Sub Txt_codbar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_codbar.KeyPress
+        solonumeros(e)
+    End Sub
+
+    Private Sub Txt_Cto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_Cto.KeyPress
+        NumerosyDecimal(Txt_Cto, e)
+    End Sub
+
+    Private Sub txtCodigoEd_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigoEd.KeyPress
+        solonumeros(e)
     End Sub
 End Class

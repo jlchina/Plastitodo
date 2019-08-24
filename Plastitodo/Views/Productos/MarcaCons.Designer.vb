@@ -24,6 +24,7 @@ Partial Class MarcaCons
     Private Sub InitializeComponent()
         Me.dgv_marcas = New System.Windows.Forms.DataGridView()
         Me.btn_nvamarca = New System.Windows.Forms.Button()
+        Me.Btn_Actualizar = New System.Windows.Forms.Button()
         CType(Me.dgv_marcas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -44,11 +45,21 @@ Partial Class MarcaCons
         Me.btn_nvamarca.Text = "Crear Marca"
         Me.btn_nvamarca.UseVisualStyleBackColor = True
         '
+        'Btn_Actualizar
+        '
+        Me.Btn_Actualizar.Location = New System.Drawing.Point(276, 28)
+        Me.Btn_Actualizar.Name = "Btn_Actualizar"
+        Me.Btn_Actualizar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Actualizar.TabIndex = 2
+        Me.Btn_Actualizar.Text = "Actualizar"
+        Me.Btn_Actualizar.UseVisualStyleBackColor = True
+        '
         'MarcaCons
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(363, 352)
+        Me.Controls.Add(Me.Btn_Actualizar)
         Me.Controls.Add(Me.btn_nvamarca)
         Me.Controls.Add(Me.dgv_marcas)
         Me.MaximizeBox = False
@@ -65,4 +76,5 @@ Partial Class MarcaCons
 
     Friend WithEvents dgv_marcas As DataGridView
     Friend WithEvents btn_nvamarca As Button
+    Friend WithEvents Btn_Actualizar As Button
 End Class

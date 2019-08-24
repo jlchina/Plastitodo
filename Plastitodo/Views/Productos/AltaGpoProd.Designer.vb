@@ -24,7 +24,6 @@ Partial Class AltaGpoProd
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.btn_validar = New System.Windows.Forms.Button()
         Me.cmbo_nomfam = New System.Windows.Forms.ComboBox()
         Me.Btn_agregar = New System.Windows.Forms.Button()
@@ -37,6 +36,8 @@ Partial Class AltaGpoProd
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Btn_Actualizar = New System.Windows.Forms.Button()
         Me.Dgv_EditarGP = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -54,7 +55,7 @@ Partial Class AltaGpoProd
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(641, 275)
+        Me.TabControl1.Size = New System.Drawing.Size(641, 299)
         Me.TabControl1.TabIndex = 23
         '
         'TabPage1
@@ -74,28 +75,17 @@ Partial Class AltaGpoProd
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(633, 249)
+        Me.TabPage1.Size = New System.Drawing.Size(633, 273)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Alta"
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.Dgv_EditarGP)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(633, 249)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Consultar / Editar"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'btn_validar
         '
         Me.btn_validar.Location = New System.Drawing.Point(443, 221)
         Me.btn_validar.Name = "btn_validar"
         Me.btn_validar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_validar.TabIndex = 34
+        Me.btn_validar.TabIndex = 3
         Me.btn_validar.Text = "VALIDAR"
         Me.btn_validar.UseVisualStyleBackColor = True
         '
@@ -105,14 +95,14 @@ Partial Class AltaGpoProd
         Me.cmbo_nomfam.Location = New System.Drawing.Point(443, 4)
         Me.cmbo_nomfam.Name = "cmbo_nomfam"
         Me.cmbo_nomfam.Size = New System.Drawing.Size(172, 21)
-        Me.cmbo_nomfam.TabIndex = 24
+        Me.cmbo_nomfam.TabIndex = 1
         '
         'Btn_agregar
         '
         Me.Btn_agregar.Location = New System.Drawing.Point(540, 221)
         Me.Btn_agregar.Name = "Btn_agregar"
         Me.Btn_agregar.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_agregar.TabIndex = 33
+        Me.Btn_agregar.TabIndex = 4
         Me.Btn_agregar.Text = "AGREGAR"
         Me.Btn_agregar.UseVisualStyleBackColor = True
         '
@@ -122,14 +112,14 @@ Partial Class AltaGpoProd
         Me.txt_gpoprod.Name = "txt_gpoprod"
         Me.txt_gpoprod.ReadOnly = True
         Me.txt_gpoprod.Size = New System.Drawing.Size(100, 20)
-        Me.txt_gpoprod.TabIndex = 27
+        Me.txt_gpoprod.TabIndex = 7
         '
         'txt_nomcat
         '
         Me.txt_nomcat.Location = New System.Drawing.Point(443, 62)
         Me.txt_nomcat.Name = "txt_nomcat"
         Me.txt_nomcat.Size = New System.Drawing.Size(172, 20)
-        Me.txt_nomcat.TabIndex = 26
+        Me.txt_nomcat.TabIndex = 2
         '
         'txt_cat
         '
@@ -137,7 +127,7 @@ Partial Class AltaGpoProd
         Me.txt_cat.Name = "txt_cat"
         Me.txt_cat.ReadOnly = True
         Me.txt_cat.Size = New System.Drawing.Size(100, 20)
-        Me.txt_cat.TabIndex = 25
+        Me.txt_cat.TabIndex = 6
         '
         'txt_idfamilia
         '
@@ -145,7 +135,7 @@ Partial Class AltaGpoProd
         Me.txt_idfamilia.Name = "txt_idfamilia"
         Me.txt_idfamilia.ReadOnly = True
         Me.txt_idfamilia.Size = New System.Drawing.Size(100, 20)
-        Me.txt_idfamilia.TabIndex = 23
+        Me.txt_idfamilia.TabIndex = 5
         '
         'Label5
         '
@@ -153,7 +143,7 @@ Partial Class AltaGpoProd
         Me.Label5.Location = New System.Drawing.Point(18, 127)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(99, 13)
-        Me.Label5.TabIndex = 32
+        Me.Label5.TabIndex = 10
         Me.Label5.Text = "Grupo de producto:"
         '
         'Label4
@@ -162,7 +152,7 @@ Partial Class AltaGpoProd
         Me.Label4.Location = New System.Drawing.Point(324, 69)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(95, 13)
-        Me.Label4.TabIndex = 31
+        Me.Label4.TabIndex = 12
         Me.Label4.Text = "Nombre Categoria:"
         '
         'Label3
@@ -171,7 +161,7 @@ Partial Class AltaGpoProd
         Me.Label3.Location = New System.Drawing.Point(18, 69)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(67, 13)
-        Me.Label3.TabIndex = 30
+        Me.Label3.TabIndex = 9
         Me.Label3.Text = "Id Categoria:"
         '
         'Label2
@@ -180,7 +170,7 @@ Partial Class AltaGpoProd
         Me.Label2.Location = New System.Drawing.Point(324, 11)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(94, 13)
-        Me.Label2.TabIndex = 29
+        Me.Label2.TabIndex = 11
         Me.Label2.Text = "Nombre Id Familia:"
         '
         'Label1
@@ -189,8 +179,29 @@ Partial Class AltaGpoProd
         Me.Label1.Location = New System.Drawing.Point(18, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 13)
-        Me.Label1.TabIndex = 28
+        Me.Label1.TabIndex = 8
         Me.Label1.Text = "Id Familia:"
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.Btn_Actualizar)
+        Me.TabPage2.Controls.Add(Me.Dgv_EditarGP)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(633, 273)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Consultar / Editar"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Btn_Actualizar
+        '
+        Me.Btn_Actualizar.Location = New System.Drawing.Point(552, 14)
+        Me.Btn_Actualizar.Name = "Btn_Actualizar"
+        Me.Btn_Actualizar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Actualizar.TabIndex = 1
+        Me.Btn_Actualizar.Text = "Actualizar"
+        Me.Btn_Actualizar.UseVisualStyleBackColor = True
         '
         'Dgv_EditarGP
         '
@@ -198,16 +209,16 @@ Partial Class AltaGpoProd
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Dgv_EditarGP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_EditarGP.Location = New System.Drawing.Point(6, 6)
+        Me.Dgv_EditarGP.Location = New System.Drawing.Point(6, 43)
         Me.Dgv_EditarGP.Name = "Dgv_EditarGP"
-        Me.Dgv_EditarGP.Size = New System.Drawing.Size(621, 237)
+        Me.Dgv_EditarGP.Size = New System.Drawing.Size(621, 224)
         Me.Dgv_EditarGP.TabIndex = 0
         '
         'AltaGpoProd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(665, 299)
+        Me.ClientSize = New System.Drawing.Size(665, 323)
         Me.Controls.Add(Me.TabControl1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -238,4 +249,5 @@ Partial Class AltaGpoProd
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Dgv_EditarGP As DataGridView
+    Friend WithEvents Btn_Actualizar As Button
 End Class

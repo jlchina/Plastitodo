@@ -30,6 +30,7 @@ Partial Class Alta_fam_prod
         Me.txt_descfam = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Btn_actualizar = New System.Windows.Forms.Button()
         Me.Dgv_FamiliaProducto = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -45,7 +46,7 @@ Partial Class Alta_fam_prod
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(486, 302)
-        Me.TabControl1.TabIndex = 6
+        Me.TabControl1.TabIndex = 4
         '
         'TabPage1
         '
@@ -65,25 +66,25 @@ Partial Class Alta_fam_prod
         'btn_guardar
         '
         Me.btn_guardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_guardar.Location = New System.Drawing.Point(340, 219)
+        Me.btn_guardar.Location = New System.Drawing.Point(362, 220)
         Me.btn_guardar.Name = "btn_guardar"
         Me.btn_guardar.Size = New System.Drawing.Size(91, 28)
-        Me.btn_guardar.TabIndex = 9
+        Me.btn_guardar.TabIndex = 3
         Me.btn_guardar.Text = "GUARDAR"
         Me.btn_guardar.UseVisualStyleBackColor = True
         '
         'txt_nomfam
         '
-        Me.txt_nomfam.Location = New System.Drawing.Point(191, 25)
+        Me.txt_nomfam.Location = New System.Drawing.Point(58, 64)
         Me.txt_nomfam.Name = "txt_nomfam"
         Me.txt_nomfam.Size = New System.Drawing.Size(262, 20)
-        Me.txt_nomfam.TabIndex = 8
+        Me.txt_nomfam.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 29)
+        Me.Label2.Location = New System.Drawing.Point(55, 29)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(122, 16)
         Me.Label2.TabIndex = 7
@@ -91,16 +92,16 @@ Partial Class Alta_fam_prod
         '
         'txt_descfam
         '
-        Me.txt_descfam.Location = New System.Drawing.Point(191, 93)
+        Me.txt_descfam.Location = New System.Drawing.Point(58, 154)
         Me.txt_descfam.Name = "txt_descfam"
         Me.txt_descfam.Size = New System.Drawing.Size(262, 20)
-        Me.txt_descfam.TabIndex = 6
+        Me.txt_descfam.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(8, 97)
+        Me.Label1.Location = New System.Drawing.Point(55, 116)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(188, 16)
         Me.Label1.TabIndex = 5
@@ -108,6 +109,7 @@ Partial Class Alta_fam_prod
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Btn_actualizar)
         Me.TabPage2.Controls.Add(Me.Dgv_FamiliaProducto)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -117,24 +119,34 @@ Partial Class Alta_fam_prod
         Me.TabPage2.Text = "Consultar / Editar"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Btn_actualizar
+        '
+        Me.Btn_actualizar.Location = New System.Drawing.Point(393, 23)
+        Me.Btn_actualizar.Name = "Btn_actualizar"
+        Me.Btn_actualizar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_actualizar.TabIndex = 1
+        Me.Btn_actualizar.Text = "Actualizar"
+        Me.Btn_actualizar.UseVisualStyleBackColor = True
+        '
         'Dgv_FamiliaProducto
         '
         Me.Dgv_FamiliaProducto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Dgv_FamiliaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_FamiliaProducto.Location = New System.Drawing.Point(3, 20)
+        Me.Dgv_FamiliaProducto.Location = New System.Drawing.Point(3, 52)
         Me.Dgv_FamiliaProducto.Name = "Dgv_FamiliaProducto"
-        Me.Dgv_FamiliaProducto.Size = New System.Drawing.Size(469, 253)
+        Me.Dgv_FamiliaProducto.Size = New System.Drawing.Size(469, 209)
         Me.Dgv_FamiliaProducto.TabIndex = 0
         '
         'Alta_fam_prod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(486, 301)
+        Me.ClientSize = New System.Drawing.Size(484, 302)
         Me.Controls.Add(Me.TabControl1)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Alta_fam_prod"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Crear Familia de Productos"
@@ -156,4 +168,5 @@ Partial Class Alta_fam_prod
     Friend WithEvents Label1 As Label
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Dgv_FamiliaProducto As DataGridView
+    Friend WithEvents Btn_actualizar As Button
 End Class

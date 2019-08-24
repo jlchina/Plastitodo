@@ -82,7 +82,7 @@ Partial Class EditarGpoProd
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 9)
+        Me.Label3.Location = New System.Drawing.Point(37, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(126, 16)
         Me.Label3.TabIndex = 5
@@ -92,7 +92,8 @@ Partial Class EditarGpoProd
         '
         Me.Lbl_GpoProd.AutoSize = True
         Me.Lbl_GpoProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_GpoProd.Location = New System.Drawing.Point(147, 9)
+        Me.Lbl_GpoProd.ForeColor = System.Drawing.Color.Blue
+        Me.Lbl_GpoProd.Location = New System.Drawing.Point(159, 9)
         Me.Lbl_GpoProd.Name = "Lbl_GpoProd"
         Me.Lbl_GpoProd.Size = New System.Drawing.Size(64, 16)
         Me.Lbl_GpoProd.TabIndex = 6

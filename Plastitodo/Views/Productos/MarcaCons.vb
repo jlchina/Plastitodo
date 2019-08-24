@@ -1,7 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Plastitodo.conexion
+
 Public Class MarcaCons
-    Private Sub MarcaCons_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Function Cons_Marcas()
+
         Dim ds As DataSet = New DataSet
         Dim datatable As New DataTable()
         Dim da As MySqlDataAdapter
@@ -57,7 +60,10 @@ Public Class MarcaCons
             MsgBox(ex.Message)
             MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
+        Return ds
+    End Function
+    Private Sub MarcaCons_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Cons_Marcas()
     End Sub
 
     Private Sub Btn_nvamarca_Click(sender As Object, e As EventArgs) Handles btn_nvamarca.Click
@@ -82,5 +88,9 @@ Public Class MarcaCons
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Btn_Actualizar_Click(sender As Object, e As EventArgs) Handles Btn_Actualizar.Click
+        Cons_Marcas()
     End Sub
 End Class
