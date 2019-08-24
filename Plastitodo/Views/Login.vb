@@ -38,6 +38,7 @@ Public Class Login
                         '--------->Obtener valores de consulta
                         Nombre = dr.Item("nombre")
                         Id_perfil = dr.Item("id_perfil")
+                        Id_usuario = dr.Item("id")
                     End While
                 End If
 
