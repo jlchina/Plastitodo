@@ -24,25 +24,23 @@ Partial Class EntradasMerca
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TEntradasMerca = New System.Windows.Forms.TabPage()
+        Me.Buttonlimpiardatos = New System.Windows.Forms.Button()
+        Me.DataGridViewdetalleentrada = New System.Windows.Forms.DataGridView()
+        Me.TextBoxprecio = New System.Windows.Forms.TextBox()
+        Me.TextBoxproducto = New System.Windows.Forms.TextBox()
+        Me.Labelprecio = New System.Windows.Forms.Label()
         Me.BBuscarCodigo = New System.Windows.Forms.Button()
         Me.TextBoxcodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.ComboBoxdescrip = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBoxprovee = New System.Windows.Forms.ComboBox()
         Me.BGuardardetaentramerca = New System.Windows.Forms.Button()
-        Me.Tcosto = New System.Windows.Forms.TextBox()
         Me.Tcantidad = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TEntradasMerca.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewdetalleentrada, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -52,22 +50,23 @@ Partial Class EntradasMerca
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(677, 357)
-        Me.TabControl1.TabIndex = 1
+        Me.TabControl1.TabIndex = 2
         '
         'TEntradasMerca
         '
+        Me.TEntradasMerca.Controls.Add(Me.Buttonlimpiardatos)
+        Me.TEntradasMerca.Controls.Add(Me.DataGridViewdetalleentrada)
+        Me.TEntradasMerca.Controls.Add(Me.TextBoxprecio)
+        Me.TEntradasMerca.Controls.Add(Me.TextBoxproducto)
+        Me.TEntradasMerca.Controls.Add(Me.Labelprecio)
         Me.TEntradasMerca.Controls.Add(Me.BBuscarCodigo)
         Me.TEntradasMerca.Controls.Add(Me.TextBoxcodigo)
         Me.TEntradasMerca.Controls.Add(Me.Label1)
-        Me.TEntradasMerca.Controls.Add(Me.DataGridView1)
         Me.TEntradasMerca.Controls.Add(Me.Label6)
-        Me.TEntradasMerca.Controls.Add(Me.ComboBoxdescrip)
         Me.TEntradasMerca.Controls.Add(Me.Label5)
         Me.TEntradasMerca.Controls.Add(Me.ComboBoxprovee)
         Me.TEntradasMerca.Controls.Add(Me.BGuardardetaentramerca)
-        Me.TEntradasMerca.Controls.Add(Me.Tcosto)
         Me.TEntradasMerca.Controls.Add(Me.Tcantidad)
-        Me.TEntradasMerca.Controls.Add(Me.Label4)
         Me.TEntradasMerca.Controls.Add(Me.Label3)
         Me.TEntradasMerca.Location = New System.Drawing.Point(4, 22)
         Me.TEntradasMerca.Name = "TEntradasMerca"
@@ -77,9 +76,51 @@ Partial Class EntradasMerca
         Me.TEntradasMerca.Text = "Entradas"
         Me.TEntradasMerca.UseVisualStyleBackColor = True
         '
+        'Buttonlimpiardatos
+        '
+        Me.Buttonlimpiardatos.Location = New System.Drawing.Point(522, 54)
+        Me.Buttonlimpiardatos.Name = "Buttonlimpiardatos"
+        Me.Buttonlimpiardatos.Size = New System.Drawing.Size(97, 23)
+        Me.Buttonlimpiardatos.TabIndex = 22
+        Me.Buttonlimpiardatos.Text = "Limpiar"
+        Me.Buttonlimpiardatos.UseVisualStyleBackColor = True
+        '
+        'DataGridViewdetalleentrada
+        '
+        Me.DataGridViewdetalleentrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewdetalleentrada.Location = New System.Drawing.Point(15, 164)
+        Me.DataGridViewdetalleentrada.Name = "DataGridViewdetalleentrada"
+        Me.DataGridViewdetalleentrada.Size = New System.Drawing.Size(492, 150)
+        Me.DataGridViewdetalleentrada.TabIndex = 21
+        '
+        'TextBoxprecio
+        '
+        Me.TextBoxprecio.Location = New System.Drawing.Point(386, 95)
+        Me.TextBoxprecio.Name = "TextBoxprecio"
+        Me.TextBoxprecio.ReadOnly = True
+        Me.TextBoxprecio.Size = New System.Drawing.Size(121, 20)
+        Me.TextBoxprecio.TabIndex = 20
+        '
+        'TextBoxproducto
+        '
+        Me.TextBoxproducto.Enabled = False
+        Me.TextBoxproducto.Location = New System.Drawing.Point(68, 54)
+        Me.TextBoxproducto.Name = "TextBoxproducto"
+        Me.TextBoxproducto.Size = New System.Drawing.Size(219, 20)
+        Me.TextBoxproducto.TabIndex = 19
+        '
+        'Labelprecio
+        '
+        Me.Labelprecio.AutoSize = True
+        Me.Labelprecio.Location = New System.Drawing.Point(303, 95)
+        Me.Labelprecio.Name = "Labelprecio"
+        Me.Labelprecio.Size = New System.Drawing.Size(37, 13)
+        Me.Labelprecio.TabIndex = 17
+        Me.Labelprecio.Text = "Precio"
+        '
         'BBuscarCodigo
         '
-        Me.BBuscarCodigo.Location = New System.Drawing.Point(588, 106)
+        Me.BBuscarCodigo.Location = New System.Drawing.Point(306, 12)
         Me.BBuscarCodigo.Name = "BBuscarCodigo"
         Me.BBuscarCodigo.Size = New System.Drawing.Size(75, 23)
         Me.BBuscarCodigo.TabIndex = 15
@@ -88,65 +129,33 @@ Partial Class EntradasMerca
         '
         'TextBoxcodigo
         '
-        Me.TextBoxcodigo.Location = New System.Drawing.Point(412, 18)
+        Me.TextBoxcodigo.Location = New System.Drawing.Point(91, 14)
         Me.TextBoxcodigo.Name = "TextBoxcodigo"
-        Me.TextBoxcodigo.Size = New System.Drawing.Size(238, 20)
+        Me.TextBoxcodigo.Size = New System.Drawing.Size(196, 20)
         Me.TextBoxcodigo.TabIndex = 14
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(331, 24)
+        Me.Label1.Location = New System.Drawing.Point(12, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 13)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Codigo Barras"
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Producto, Me.Cantidad, Me.Costo})
-        Me.DataGridView1.Location = New System.Drawing.Point(34, 175)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(548, 150)
-        Me.DataGridView1.TabIndex = 12
-        '
-        'Producto
-        '
-        Me.Producto.HeaderText = "Producto"
-        Me.Producto.Name = "Producto"
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        '
-        'Costo
-        '
-        Me.Costo.HeaderText = "Costo"
-        Me.Costo.Name = "Costo"
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(331, 75)
+        Me.Label6.Location = New System.Drawing.Point(12, 58)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(50, 13)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Producto"
         '
-        'ComboBoxdescrip
-        '
-        Me.ComboBoxdescrip.FormattingEnabled = True
-        Me.ComboBoxdescrip.Location = New System.Drawing.Point(412, 67)
-        Me.ComboBoxdescrip.Name = "ComboBoxdescrip"
-        Me.ComboBoxdescrip.Size = New System.Drawing.Size(238, 21)
-        Me.ComboBoxdescrip.TabIndex = 10
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(24, 25)
+        Me.Label5.Location = New System.Drawing.Point(12, 103)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(56, 13)
         Me.Label5.TabIndex = 9
@@ -155,47 +164,31 @@ Partial Class EntradasMerca
         'ComboBoxprovee
         '
         Me.ComboBoxprovee.FormattingEnabled = True
-        Me.ComboBoxprovee.Location = New System.Drawing.Point(123, 17)
+        Me.ComboBoxprovee.Location = New System.Drawing.Point(68, 95)
         Me.ComboBoxprovee.Name = "ComboBoxprovee"
-        Me.ComboBoxprovee.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBoxprovee.Size = New System.Drawing.Size(219, 21)
         Me.ComboBoxprovee.TabIndex = 8
         '
         'BGuardardetaentramerca
         '
-        Me.BGuardardetaentramerca.Location = New System.Drawing.Point(588, 270)
+        Me.BGuardardetaentramerca.Location = New System.Drawing.Point(522, 92)
         Me.BGuardardetaentramerca.Name = "BGuardardetaentramerca"
-        Me.BGuardardetaentramerca.Size = New System.Drawing.Size(75, 23)
+        Me.BGuardardetaentramerca.Size = New System.Drawing.Size(97, 23)
         Me.BGuardardetaentramerca.TabIndex = 1
         Me.BGuardardetaentramerca.Text = "Guardar"
         Me.BGuardardetaentramerca.UseVisualStyleBackColor = True
         '
-        'Tcosto
-        '
-        Me.Tcosto.Location = New System.Drawing.Point(412, 131)
-        Me.Tcosto.Name = "Tcosto"
-        Me.Tcosto.Size = New System.Drawing.Size(100, 20)
-        Me.Tcosto.TabIndex = 7
-        '
         'Tcantidad
         '
-        Me.Tcantidad.Location = New System.Drawing.Point(123, 68)
+        Me.Tcantidad.Location = New System.Drawing.Point(386, 54)
         Me.Tcantidad.Name = "Tcantidad"
         Me.Tcantidad.Size = New System.Drawing.Size(121, 20)
         Me.Tcantidad.TabIndex = 6
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(331, 138)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Costo"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(31, 75)
+        Me.Label3.Location = New System.Drawing.Point(303, 58)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 2
@@ -212,27 +205,25 @@ Partial Class EntradasMerca
         Me.TabControl1.ResumeLayout(False)
         Me.TEntradasMerca.ResumeLayout(False)
         Me.TEntradasMerca.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewdetalleentrada, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TEntradasMerca As TabPage
+    Friend WithEvents Buttonlimpiardatos As Button
+    Friend WithEvents DataGridViewdetalleentrada As DataGridView
+    Friend WithEvents TextBoxprecio As TextBox
+    Friend WithEvents TextBoxproducto As TextBox
+    Friend WithEvents Labelprecio As Label
     Friend WithEvents BBuscarCodigo As Button
     Friend WithEvents TextBoxcodigo As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Producto As DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents Costo As DataGridViewTextBoxColumn
     Friend WithEvents Label6 As Label
-    Friend WithEvents ComboBoxdescrip As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents ComboBoxprovee As ComboBox
     Friend WithEvents BGuardardetaentramerca As Button
-    Friend WithEvents Tcosto As TextBox
     Friend WithEvents Tcantidad As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
 End Class
