@@ -52,9 +52,11 @@ Partial Class EditarMarcas
         'lbl_IdM
         '
         Me.lbl_IdM.AutoSize = True
+        Me.lbl_IdM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_IdM.ForeColor = System.Drawing.Color.Blue
         Me.lbl_IdM.Location = New System.Drawing.Point(148, 50)
         Me.lbl_IdM.Name = "lbl_IdM"
-        Me.lbl_IdM.Size = New System.Drawing.Size(31, 13)
+        Me.lbl_IdM.Size = New System.Drawing.Size(36, 16)
         Me.lbl_IdM.TabIndex = 2
         Me.lbl_IdM.Text = "0000"
         '

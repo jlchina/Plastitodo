@@ -29,6 +29,7 @@ Partial Class Presentacion_Prod
         Me.Txt_Presentacion = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Dgv_Presentacion = New System.Windows.Forms.DataGridView()
+        Me.Btn_Actualizar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -85,6 +86,7 @@ Partial Class Presentacion_Prod
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Btn_Actualizar)
         Me.TabPage2.Controls.Add(Me.Dgv_Presentacion)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -97,10 +99,19 @@ Partial Class Presentacion_Prod
         'Dgv_Presentacion
         '
         Me.Dgv_Presentacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Presentacion.Location = New System.Drawing.Point(6, 6)
+        Me.Dgv_Presentacion.Location = New System.Drawing.Point(6, 35)
         Me.Dgv_Presentacion.Name = "Dgv_Presentacion"
-        Me.Dgv_Presentacion.Size = New System.Drawing.Size(401, 209)
+        Me.Dgv_Presentacion.Size = New System.Drawing.Size(401, 180)
         Me.Dgv_Presentacion.TabIndex = 0
+        '
+        'Btn_Actualizar
+        '
+        Me.Btn_Actualizar.Location = New System.Drawing.Point(332, 6)
+        Me.Btn_Actualizar.Name = "Btn_Actualizar"
+        Me.Btn_Actualizar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Actualizar.TabIndex = 1
+        Me.Btn_Actualizar.Text = "Actualizar"
+        Me.Btn_Actualizar.UseVisualStyleBackColor = True
         '
         'Presentacion_Prod
         '
@@ -131,4 +142,5 @@ Partial Class Presentacion_Prod
     Friend WithEvents Btn_Guardar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Dgv_Presentacion As DataGridView
+    Friend WithEvents Btn_Actualizar As Button
 End Class

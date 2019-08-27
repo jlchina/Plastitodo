@@ -13,7 +13,7 @@ Public Class Cat_Clientes
         '    comando.Parameters.AddWithValue("@Codigo_postal", Text_cp.Text)
         '    comando.Parameters.AddWithValue("@telefono", Text_tel.Text)
         '    comando.Parameters.AddWithValue("@email", Text_mail.Text)
-        '    comando.ExecuteNonQuery()
+        '    comando.ExecuteNonQuery()test
         '    MsgBox("Cliente guardado con exito")
         'Catch ex As Exception
         '    MsgBox(ex.Message, "Hubo un error al guardar el Cliente, verifique los datos")

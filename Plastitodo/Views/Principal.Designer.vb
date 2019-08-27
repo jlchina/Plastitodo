@@ -37,6 +37,7 @@ Partial Class Principal
         Me.AltaYoEditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PresentaciónDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DatosMaestrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExistenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasMercanciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -113,7 +114,7 @@ Partial Class Principal
         '
         'ProductosToolStripMenuItem
         '
-        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearFamiliaDeProductoToolStripMenuItem, Me.CrearGrupoDeProductoToolStripMenuItem, Me.MarcaCrearOModificarToolStripMenuItem, Me.AltaYoEditarToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.PresentaciónDeProductosToolStripMenuItem})
+        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearFamiliaDeProductoToolStripMenuItem, Me.CrearGrupoDeProductoToolStripMenuItem, Me.MarcaCrearOModificarToolStripMenuItem, Me.AltaYoEditarToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.PresentaciónDeProductosToolStripMenuItem, Me.DatosMaestrosToolStripMenuItem})
         Me.ProductosToolStripMenuItem.Enabled = False
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
@@ -155,6 +156,12 @@ Partial Class Principal
         Me.PresentaciónDeProductosToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.PresentaciónDeProductosToolStripMenuItem.Text = "Presentación de productos"
         '
+        'DatosMaestrosToolStripMenuItem
+        '
+        Me.DatosMaestrosToolStripMenuItem.Name = "DatosMaestrosToolStripMenuItem"
+        Me.DatosMaestrosToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
+        Me.DatosMaestrosToolStripMenuItem.Text = "Determinar Precio Publico"
+        '
         'InventariosToolStripMenuItem
         '
         Me.InventariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExistenciasToolStripMenuItem, Me.EntradasMercanciaToolStripMenuItem, Me.EditarEliminarMercanciaToolStripMenuItem})
@@ -185,7 +192,7 @@ Partial Class Principal
         '
         Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OfertaDeVentaToolStripMenuItem, Me.NotaDeVentaToolStripMenuItem, Me.DocumentosToolStripMenuItem})
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'OfertaDeVentaToolStripMenuItem
@@ -287,4 +294,5 @@ Partial Class Principal
     Friend WithEvents lbl_time As ToolStripStatusLabel
     Friend WithEvents NotaDeVentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DocumentosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DatosMaestrosToolStripMenuItem As ToolStripMenuItem
 End Class

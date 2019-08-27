@@ -2,11 +2,8 @@
 Imports Plastitodo.conexion
 
 'JLCS 29-07-19
-
 Public Class Presentacion_Prod
-    Private Sub Presentacion_Prod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Btn_Guardar.Enabled = False
-
+    Function Cons_PP()
         Dim ds As DataSet = New DataSet
         Dim datatable As New DataTable()
         Dim da As MySqlDataAdapter
@@ -62,7 +59,11 @@ Public Class Presentacion_Prod
             MsgBox(ex.Message)
             MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
+        Return ds
+    End Function
+    Private Sub Presentacion_Prod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Btn_Guardar.Enabled = False
+        Cons_PP()
     End Sub
 
     Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles Btn_Guardar.Click
@@ -76,7 +77,7 @@ Public Class Presentacion_Prod
             comando = New MySqlCommand("INSERT INTO presentacion_prod (presentacion)" & Chr(13) &
                                        "VALUES(@presentacion)", con_string)    'indica a que valor hara referencia la consulta para transferir los datos
 
-            comando.Parameters.AddWithValue("@presentacion", Txt_Presentacion.text)
+            comando.Parameters.AddWithValue("@presentacion", Txt_Presentacion.Text)
             comando.ExecuteNonQuery()   'ejecuta la consulta para guardar el registro en la tabla
             MsgBox("Nueva presentacion de productos guardada con exito")
             Txt_Presentacion.Text = String.Empty
@@ -94,7 +95,24 @@ Public Class Presentacion_Prod
         End If
     End Sub
 
-    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+    Private Sub Btn_Actualizar_Click(sender As Object, e As EventArgs) Handles Btn_Actualizar.Click
+        Cons_PP()
+    End Sub
 
+    Private Sub Dgv_Presentacion_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Presentacion.CellClick
+        If e.ColumnIndex <> 0 Then Exit Sub
+        Try
+            If Dgv_Presentacion.Columns(e.ColumnIndex).Name = "Editar" Then
+                Dim id_PProd As String
+                'para enviar informacion al formulario
+                id_PProd = Dgv_Presentacion.Rows(e.RowIndex).Cells("ID").Value
+                'envia datos al formulario
+                Dim mostrarform As New EditarPresProd()
+                mostrarform.obt_PresProd(id_PProd)  'envia el ID de la marca seleccionada
+                mostrarform.Show()
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

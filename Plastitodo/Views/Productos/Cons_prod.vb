@@ -8,10 +8,6 @@ Public Class Cons_prod
         con_datos = DGVcatprov.Rows(e.RowIndex).Cells(0).Value.ToString
     End Sub
 
-    Private Sub Cons_prod_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub Btn_filtro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_filtro.Click
         Dim sql As String = Nothing
         Dim where1 As String = Nothing
@@ -52,5 +48,9 @@ Public Class Cons_prod
     Private Sub BtnCambios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ModCatprod.Show()
         Me.Close()
+    End Sub
+
+    Private Sub TxtCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodigo.KeyPress
+        solonumeros(e)
     End Sub
 End Class

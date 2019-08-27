@@ -5,33 +5,7 @@ Public Class AltaGpoProd
     Public idfam As String = Nothing
     Public sel As String = Nothing
 
-    Private Sub AltaGpoProd_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'bloquear el boton de guardado antes de validar información
-        Btn_agregar.Enabled = False
-        'cargar el idfamilia vacio - evita que se cargue un error antes de seleccionar algo en el combobox
-        txt_idfamilia.Text = ""
-
-        'llenar el combo box para creación de familias
-        Dim cons_altagpo As String = Nothing
-        Dim datat As New DataTable
-        Dim datad As MySqlDataAdapter
-        Try
-            con_string = New MySqlConnection
-            con_string.ConnectionString = ConnectionString2
-            con_string.Open()
-            cons_altagpo = "SELECT * FROM catalogacion_familias"
-            datad = New MySqlDataAdapter(cons_altagpo, con_string)
-            datat = New DataTable
-            datad.Fill(datat)
-            cmbo_nomfam.DataSource = datat
-            cmbo_nomfam.DisplayMember = "nom_familia"
-            cmbo_nomfam.ValueMember = "id_familia"
-            cmbo_nomfam.Text = "Seleccione una familia"
-            con_string.Close()
-        Catch ex As Exception
-            MsgBox("Se genero un error al cargar la consulta familias")
-        End Try
-
+    Function carga_gp()
         'Declaracion de variables para llenar data grid de consulta
         Dim ds As DataSet = New DataSet
         Dim dt As New DataTable()
@@ -95,6 +69,37 @@ Public Class AltaGpoProd
             MsgBox(ex.Message)
             MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de conexión al cargar la consulta de la tabla categorias", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+        Return ds
+    End Function
+
+    Private Sub AltaGpoProd_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'bloquear el boton de guardado antes de validar información
+        Btn_agregar.Enabled = False
+        'cargar el idfamilia vacio - evita que se cargue un error antes de seleccionar algo en el combobox
+        txt_idfamilia.Text = ""
+
+        'llenar el combo box para creación de familias
+        Dim cons_altagpo As String = Nothing
+        Dim datat As New DataTable
+        Dim datad As MySqlDataAdapter
+        Try
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
+            cons_altagpo = "SELECT * FROM catalogacion_familias"
+            datad = New MySqlDataAdapter(cons_altagpo, con_string)
+            datat = New DataTable
+            datad.Fill(datat)
+            cmbo_nomfam.DataSource = datat
+            cmbo_nomfam.DisplayMember = "nom_familia"
+            cmbo_nomfam.ValueMember = "id_familia"
+            cmbo_nomfam.Text = "Seleccione una familia"
+            con_string.Close()
+        Catch ex As Exception
+            MsgBox("Se genero un error al cargar la consulta familias")
+        End Try
+
+        carga_gp()
 
     End Sub
 
@@ -111,7 +116,7 @@ Public Class AltaGpoProd
             con_string = New MySqlConnection
             con_string.ConnectionString = ConnectionString2
             con_string.Open()
-            considcat = "SELECT (IFNULL(MAX(Id_categoria),0)+1) AS MaxId FRom catalogacion WHERE Id_familia = @select"
+            considcat = "SELECT (IFNULL(MAX(Id_categoria),0)+1) AS MaxId FROM catalogacion WHERE Id_familia = @select"
             cmd = New MySqlCommand(considcat, con_string)
             cmd.Parameters.Add(New MySqlParameter("@select", cmbo_nomfam.SelectedValue)) 'aqui le pasas el parametro de lo que tenga el combobox
             'cmbo_nomfam.SelectedValue pone el valor seleccionado, en este caso el id que se pone cuando cargas el combobox con el valuemember
@@ -205,4 +210,7 @@ Public Class AltaGpoProd
         End Try
     End Sub
 
+    Private Sub Btn_Actualizar_Click(sender As Object, e As EventArgs) Handles Btn_Actualizar.Click
+        carga_gp()
+    End Sub
 End Class

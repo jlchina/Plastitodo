@@ -84,9 +84,11 @@ Partial Class EditarFamiliaProducto
         'Lbl_ID
         '
         Me.Lbl_ID.AutoSize = True
+        Me.Lbl_ID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_ID.ForeColor = System.Drawing.Color.Blue
         Me.Lbl_ID.Location = New System.Drawing.Point(53, 19)
         Me.Lbl_ID.Name = "Lbl_ID"
-        Me.Lbl_ID.Size = New System.Drawing.Size(37, 13)
+        Me.Lbl_ID.Size = New System.Drawing.Size(48, 16)
         Me.Lbl_ID.TabIndex = 6
         Me.Lbl_ID.Text = "----------"
         '

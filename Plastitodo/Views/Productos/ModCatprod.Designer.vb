@@ -48,6 +48,8 @@ Partial Class ModCatprod
         Me.txtCodigoEd = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DGV_Edit_CP = New System.Windows.Forms.DataGridView()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Cbo_Proveedor = New System.Windows.Forms.ComboBox()
         Me.Tab_proveedor.SuspendLayout()
         Me.Tab_alta_p.SuspendLayout()
         Me.Pan_prov.SuspendLayout()
@@ -65,7 +67,7 @@ Partial Class ModCatprod
         Me.Tab_proveedor.Location = New System.Drawing.Point(12, 12)
         Me.Tab_proveedor.Name = "Tab_proveedor"
         Me.Tab_proveedor.SelectedIndex = 0
-        Me.Tab_proveedor.Size = New System.Drawing.Size(741, 337)
+        Me.Tab_proveedor.Size = New System.Drawing.Size(741, 387)
         Me.Tab_proveedor.TabIndex = 2
         '
         'Tab_alta_p
@@ -76,7 +78,7 @@ Partial Class ModCatprod
         Me.Tab_alta_p.Location = New System.Drawing.Point(4, 22)
         Me.Tab_alta_p.Name = "Tab_alta_p"
         Me.Tab_alta_p.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_alta_p.Size = New System.Drawing.Size(733, 311)
+        Me.Tab_alta_p.Size = New System.Drawing.Size(733, 361)
         Me.Tab_alta_p.TabIndex = 1
         Me.Tab_alta_p.Text = "Alta"
         Me.Tab_alta_p.UseVisualStyleBackColor = True
@@ -84,6 +86,8 @@ Partial Class ModCatprod
         'Pan_prov
         '
         Me.Pan_prov.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Pan_prov.Controls.Add(Me.Cbo_Proveedor)
+        Me.Pan_prov.Controls.Add(Me.Label3)
         Me.Pan_prov.Controls.Add(Me.Cbo_Marca)
         Me.Pan_prov.Controls.Add(Me.Cbo_gpoprod)
         Me.Pan_prov.Controls.Add(Me.Label2)
@@ -100,13 +104,13 @@ Partial Class ModCatprod
         Me.Pan_prov.Controls.Add(Me.Lb_nomp)
         Me.Pan_prov.Location = New System.Drawing.Point(45, 6)
         Me.Pan_prov.Name = "Pan_prov"
-        Me.Pan_prov.Size = New System.Drawing.Size(477, 247)
+        Me.Pan_prov.Size = New System.Drawing.Size(477, 297)
         Me.Pan_prov.TabIndex = 30
         '
         'Cbo_Marca
         '
         Me.Cbo_Marca.FormattingEnabled = True
-        Me.Cbo_Marca.Location = New System.Drawing.Point(131, 38)
+        Me.Cbo_Marca.Location = New System.Drawing.Point(135, 45)
         Me.Cbo_Marca.Name = "Cbo_Marca"
         Me.Cbo_Marca.Size = New System.Drawing.Size(332, 21)
         Me.Cbo_Marca.TabIndex = 2
@@ -114,15 +118,15 @@ Partial Class ModCatprod
         'Cbo_gpoprod
         '
         Me.Cbo_gpoprod.FormattingEnabled = True
-        Me.Cbo_gpoprod.Location = New System.Drawing.Point(131, 144)
+        Me.Cbo_gpoprod.Location = New System.Drawing.Point(135, 158)
         Me.Cbo_gpoprod.Name = "Cbo_gpoprod"
         Me.Cbo_gpoprod.Size = New System.Drawing.Size(176, 21)
-        Me.Cbo_gpoprod.TabIndex = 18
+        Me.Cbo_gpoprod.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 152)
+        Me.Label2.Location = New System.Drawing.Point(17, 162)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(104, 13)
         Me.Label2.TabIndex = 17
@@ -131,35 +135,35 @@ Partial Class ModCatprod
         'Cbo_Pres
         '
         Me.Cbo_Pres.FormattingEnabled = True
-        Me.Cbo_Pres.Location = New System.Drawing.Point(131, 177)
+        Me.Cbo_Pres.Location = New System.Drawing.Point(135, 196)
         Me.Cbo_Pres.Name = "Cbo_Pres"
         Me.Cbo_Pres.Size = New System.Drawing.Size(176, 21)
-        Me.Cbo_Pres.TabIndex = 16
+        Me.Cbo_Pres.TabIndex = 6
         '
         'Txt_Cto
         '
-        Me.Txt_Cto.Location = New System.Drawing.Point(131, 214)
+        Me.Txt_Cto.Location = New System.Drawing.Point(135, 233)
         Me.Txt_Cto.Name = "Txt_Cto"
         Me.Txt_Cto.Size = New System.Drawing.Size(113, 20)
-        Me.Txt_Cto.TabIndex = 6
+        Me.Txt_Cto.TabIndex = 7
         '
         'Txt_desc
         '
-        Me.Txt_desc.Location = New System.Drawing.Point(131, 114)
+        Me.Txt_desc.Location = New System.Drawing.Point(135, 121)
         Me.Txt_desc.Name = "Txt_desc"
         Me.Txt_desc.Size = New System.Drawing.Size(332, 20)
         Me.Txt_desc.TabIndex = 4
         '
         'Txt_mod
         '
-        Me.Txt_mod.Location = New System.Drawing.Point(131, 78)
+        Me.Txt_mod.Location = New System.Drawing.Point(135, 85)
         Me.Txt_mod.Name = "Txt_mod"
         Me.Txt_mod.Size = New System.Drawing.Size(332, 20)
         Me.Txt_mod.TabIndex = 3
         '
         'Txt_codbar
         '
-        Me.Txt_codbar.Location = New System.Drawing.Point(131, 8)
+        Me.Txt_codbar.Location = New System.Drawing.Point(135, 15)
         Me.Txt_codbar.Name = "Txt_codbar"
         Me.Txt_codbar.Size = New System.Drawing.Size(332, 20)
         Me.Txt_codbar.TabIndex = 1
@@ -167,7 +171,7 @@ Partial Class ModCatprod
         'Lbl_telp
         '
         Me.Lbl_telp.AutoSize = True
-        Me.Lbl_telp.Location = New System.Drawing.Point(13, 221)
+        Me.Lbl_telp.Location = New System.Drawing.Point(17, 236)
         Me.Lbl_telp.Name = "Lbl_telp"
         Me.Lbl_telp.Size = New System.Drawing.Size(74, 13)
         Me.Lbl_telp.TabIndex = 15
@@ -176,7 +180,7 @@ Partial Class ModCatprod
         'Lb_cpp
         '
         Me.Lb_cpp.AutoSize = True
-        Me.Lb_cpp.Location = New System.Drawing.Point(13, 186)
+        Me.Lb_cpp.Location = New System.Drawing.Point(17, 201)
         Me.Lb_cpp.Name = "Lb_cpp"
         Me.Lb_cpp.Size = New System.Drawing.Size(69, 13)
         Me.Lb_cpp.TabIndex = 14
@@ -185,7 +189,7 @@ Partial Class ModCatprod
         'Lbl_ciudadp
         '
         Me.Lbl_ciudadp.AutoSize = True
-        Me.Lbl_ciudadp.Location = New System.Drawing.Point(13, 121)
+        Me.Lbl_ciudadp.Location = New System.Drawing.Point(17, 124)
         Me.Lbl_ciudadp.Name = "Lbl_ciudadp"
         Me.Lbl_ciudadp.Size = New System.Drawing.Size(66, 13)
         Me.Lbl_ciudadp.TabIndex = 13
@@ -194,7 +198,7 @@ Partial Class ModCatprod
         'lbl_colp
         '
         Me.lbl_colp.AutoSize = True
-        Me.lbl_colp.Location = New System.Drawing.Point(13, 85)
+        Me.lbl_colp.Location = New System.Drawing.Point(17, 88)
         Me.lbl_colp.Name = "lbl_colp"
         Me.lbl_colp.Size = New System.Drawing.Size(45, 13)
         Me.lbl_colp.TabIndex = 12
@@ -203,7 +207,7 @@ Partial Class ModCatprod
         'Lb_direccionp
         '
         Me.Lb_direccionp.AutoSize = True
-        Me.Lb_direccionp.Location = New System.Drawing.Point(13, 46)
+        Me.Lb_direccionp.Location = New System.Drawing.Point(17, 49)
         Me.Lb_direccionp.Name = "Lb_direccionp"
         Me.Lb_direccionp.Size = New System.Drawing.Size(40, 13)
         Me.Lb_direccionp.TabIndex = 11
@@ -212,7 +216,7 @@ Partial Class ModCatprod
         'Lb_nomp
         '
         Me.Lb_nomp.AutoSize = True
-        Me.Lb_nomp.Location = New System.Drawing.Point(13, 16)
+        Me.Lb_nomp.Location = New System.Drawing.Point(17, 17)
         Me.Lb_nomp.Name = "Lb_nomp"
         Me.Lb_nomp.Size = New System.Drawing.Size(90, 13)
         Me.Lb_nomp.TabIndex = 10
@@ -220,19 +224,19 @@ Partial Class ModCatprod
         '
         'Btn_cancelarp
         '
-        Me.Btn_cancelarp.Location = New System.Drawing.Point(45, 268)
+        Me.Btn_cancelarp.Location = New System.Drawing.Point(45, 309)
         Me.Btn_cancelarp.Name = "Btn_cancelarp"
         Me.Btn_cancelarp.Size = New System.Drawing.Size(109, 23)
-        Me.Btn_cancelarp.TabIndex = 9
+        Me.Btn_cancelarp.TabIndex = 10
         Me.Btn_cancelarp.Text = "Cancelar/Limpiar"
         Me.Btn_cancelarp.UseVisualStyleBackColor = True
         '
         'Btn_agregarp
         '
-        Me.Btn_agregarp.Location = New System.Drawing.Point(447, 268)
+        Me.Btn_agregarp.Location = New System.Drawing.Point(447, 309)
         Me.Btn_agregarp.Name = "Btn_agregarp"
         Me.Btn_agregarp.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_agregarp.TabIndex = 8
+        Me.Btn_agregarp.TabIndex = 9
         Me.Btn_agregarp.Text = "Agregar"
         Me.Btn_agregarp.UseVisualStyleBackColor = True
         '
@@ -247,7 +251,7 @@ Partial Class ModCatprod
         Me.TabEditCatProv.Location = New System.Drawing.Point(4, 22)
         Me.TabEditCatProv.Name = "TabEditCatProv"
         Me.TabEditCatProv.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabEditCatProv.Size = New System.Drawing.Size(733, 311)
+        Me.TabEditCatProv.Size = New System.Drawing.Size(733, 361)
         Me.TabEditCatProv.TabIndex = 2
         Me.TabEditCatProv.Text = "Editar"
         Me.TabEditCatProv.UseVisualStyleBackColor = True
@@ -307,19 +311,36 @@ Partial Class ModCatprod
         Me.DGV_Edit_CP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Edit_CP.Location = New System.Drawing.Point(6, 57)
         Me.DGV_Edit_CP.Name = "DGV_Edit_CP"
-        Me.DGV_Edit_CP.Size = New System.Drawing.Size(724, 248)
+        Me.DGV_Edit_CP.Size = New System.Drawing.Size(724, 298)
         Me.DGV_Edit_CP.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(17, 273)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.TabIndex = 20
+        Me.Label3.Text = "Proveedor:"
+        '
+        'Cbo_Proveedor
+        '
+        Me.Cbo_Proveedor.FormattingEnabled = True
+        Me.Cbo_Proveedor.Location = New System.Drawing.Point(135, 270)
+        Me.Cbo_Proveedor.Name = "Cbo_Proveedor"
+        Me.Cbo_Proveedor.Size = New System.Drawing.Size(332, 21)
+        Me.Cbo_Proveedor.TabIndex = 8
         '
         'ModCatprod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(765, 361)
+        Me.ClientSize = New System.Drawing.Size(765, 411)
         Me.Controls.Add(Me.Tab_proveedor)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(781, 400)
+        Me.MaximumSize = New System.Drawing.Size(781, 450)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(781, 400)
+        Me.MinimumSize = New System.Drawing.Size(781, 450)
         Me.Name = "ModCatprod"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Catalogo de productos: Alta, Consulta y Edicion"
@@ -360,4 +381,6 @@ Partial Class ModCatprod
     Friend WithEvents Label4 As Label
     Friend WithEvents DGV_Edit_CP As DataGridView
     Friend WithEvents Cbo_Marca As ComboBox
+    Friend WithEvents Cbo_Proveedor As ComboBox
+    Friend WithEvents Label3 As Label
 End Class

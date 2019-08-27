@@ -166,10 +166,10 @@ Public Class Principal
         newpresprod.Show()
     End Sub
 
-    Private Sub ClientesToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
-        Dim newForm As New Cat_Clientes()
-        newForm.MdiParent = Me
-        newForm.Show()
+    Private Sub DatosMaestrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DatosMaestrosToolStripMenuItem.Click
+        Dim newppublico As New DeterminarPrecioPublico()
+        newppublico.MdiParent = Me
+        newppublico.Show()
     End Sub
 
     Private Sub DocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentosToolStripMenuItem.Click
