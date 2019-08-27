@@ -42,9 +42,10 @@ Partial Class ListaDocumentos
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(12, 21)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.Size = New System.Drawing.Size(63, 16)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Nombre"
         '
@@ -53,7 +54,7 @@ Partial Class ListaDocumentos
         Me.DtpFechaDocumento.CustomFormat = "dd/MM/yyyy"
         Me.DtpFechaDocumento.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DtpFechaDocumento.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtpFechaDocumento.Location = New System.Drawing.Point(489, 19)
+        Me.DtpFechaDocumento.Location = New System.Drawing.Point(536, 22)
         Me.DtpFechaDocumento.Name = "DtpFechaDocumento"
         Me.DtpFechaDocumento.Size = New System.Drawing.Size(113, 18)
         Me.DtpFechaDocumento.TabIndex = 14
@@ -61,9 +62,10 @@ Partial Class ListaDocumentos
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label13.Location = New System.Drawing.Point(371, 23)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(112, 13)
+        Me.Label13.Size = New System.Drawing.Size(159, 16)
         Me.Label13.TabIndex = 13
         Me.Label13.Text = "Fecha del Documento"
         '
@@ -97,7 +99,7 @@ Partial Class ListaDocumentos
         Me.Controls.Add(Me.TxtNombre)
         Me.Controls.Add(Me.Label2)
         Me.Name = "ListaDocumentos"
-        Me.Text = "ListaDocumentos"
+        Me.Text = "Documentos de venta"
         CType(Me.DgvDocumentos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

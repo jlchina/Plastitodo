@@ -35,10 +35,10 @@ Partial Class Login
         'lbl_user
         '
         Me.lbl_user.AutoSize = True
-        Me.lbl_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.lbl_user.Location = New System.Drawing.Point(54, 132)
         Me.lbl_user.Name = "lbl_user"
-        Me.lbl_user.Size = New System.Drawing.Size(64, 20)
+        Me.lbl_user.Size = New System.Drawing.Size(62, 16)
         Me.lbl_user.TabIndex = 0
         Me.lbl_user.Text = "Usuario"
         Me.lbl_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -63,10 +63,10 @@ Partial Class Login
         'lbl_pass
         '
         Me.lbl_pass.AutoSize = True
-        Me.lbl_pass.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_pass.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.lbl_pass.Location = New System.Drawing.Point(54, 158)
         Me.lbl_pass.Name = "lbl_pass"
-        Me.lbl_pass.Size = New System.Drawing.Size(92, 20)
+        Me.lbl_pass.Size = New System.Drawing.Size(87, 16)
         Me.lbl_pass.TabIndex = 2
         Me.lbl_pass.Text = "Contraseña"
         Me.lbl_pass.TextAlign = System.Drawing.ContentAlignment.MiddleRight

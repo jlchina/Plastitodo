@@ -9,6 +9,17 @@ Public Class OfertaVentaForm
         id_tipo_documento = tipo
     End Sub
 
+    Public Sub GetClientData(ByVal id_cliente As Integer)
+        '--------->Establecer valores obtenidos del GridViewForm
+        Dim ds As DataSet = GetClientesByID(id_cliente)
+        CmbCliente.DataSource = ds.Tables(0)
+        CmbCliente.DisplayMember = "Nombre"
+        CmbCliente.ValueMember = "idCliente"
+
+        'CmbProducto.Select(CmbProducto.Text.Length + 1, 0)
+        'Me.CmbCliente.DroppedDown = True
+    End Sub
+
     Public Sub GetTipo(ByVal tipo As Integer)
         '--------->Establecer valores obtenidos del GridViewForm
         id_tipo_documento = tipo
@@ -108,6 +119,7 @@ Public Class OfertaVentaForm
                 DgvLista.Rows(Fila - 1).Cells(1).Value = dr(4) 'Descripcion
                 DgvLista.Rows(Fila - 1).Cells(2).Value = dr(8) 'Presentacion
                 DgvLista.Rows(Fila - 1).Cells(3).Value = 1 'Cantidad
+                DgvLista.Rows(Fila - 1).Cells(4).Value = dr(9) 'Stock
                 DgvLista.Rows(Fila - 1).Cells(5).Value = Format(CDec(dr(6)), "$ #,###,##0.00") 'Precio
                 DgvLista.Rows(Fila - 1).Cells(6).Value = Format(CDec(dr(6)), "$ #,###,##0.00") 'Sub-total
                 DgvLista.Rows(Fila - 1).Cells(7).Value = Format(CDec(0), "##0.00") 'Descuento
@@ -134,6 +146,7 @@ Public Class OfertaVentaForm
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(1).Value = dr(2) 'Descripcion
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(2).Value = dr(3) 'Presentacion
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(3).Value = dr(4) 'Cantidad
+                DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(4).Value = dr(10) 'Stock
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(5).Value = Format(CDec(dr(5)), "$ #,###,##0.00") 'Precio
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(6).Value = Format(CDec(dr(6)), "$ #,###,##0.00") 'Sub-total
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(7).Value = Format(CDec(7), "##0.00") 'Descuento
@@ -181,6 +194,11 @@ Public Class OfertaVentaForm
         id_tipo_documento = 1
         Me.Text = "Nota de venta - Nuevo"
         TxtFolio.Text = GetFolioMax(id_tipo_documento)
+    End Sub
+
+    Private Sub BtnBuscarCliente_Click(sender As Object, e As EventArgs) Handles BtnBuscarCliente.Click
+        Dim VerForm As New BuscarClientes()
+        VerForm.Show()
     End Sub
 
     Private Sub DgvLista_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DgvLista.CellEndEdit

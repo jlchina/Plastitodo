@@ -32,10 +32,8 @@ Partial Class OfertaVentaForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DtpDocDueDate = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TxtFolio = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DgvLista = New System.Windows.Forms.DataGridView()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -96,7 +94,7 @@ Partial Class OfertaVentaForm
         Me.GroupBox2.Size = New System.Drawing.Size(376, 90)
         Me.GroupBox2.TabIndex = 30
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Informacion Del cliente"
+        Me.GroupBox2.Text = "Información del cliente"
         '
         'TxtNombre
         '
@@ -147,20 +145,19 @@ Partial Class OfertaVentaForm
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox5.Controls.Add(Me.DtpDocDueDate)
-        Me.GroupBox5.Controls.Add(Me.TextBox4)
         Me.GroupBox5.Controls.Add(Me.TxtFolio)
         Me.GroupBox5.Controls.Add(Me.Label13)
-        Me.GroupBox5.Controls.Add(Me.Label9)
         Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox5.Location = New System.Drawing.Point(630, 9)
+        Me.GroupBox5.Location = New System.Drawing.Point(660, 9)
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(0)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(0)
-        Me.GroupBox5.Size = New System.Drawing.Size(323, 90)
+        Me.GroupBox5.Size = New System.Drawing.Size(293, 90)
         Me.GroupBox5.TabIndex = 31
         Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Información general"
         '
         'DtpDocDueDate
         '
@@ -168,23 +165,15 @@ Partial Class OfertaVentaForm
         Me.DtpDocDueDate.Enabled = False
         Me.DtpDocDueDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DtpDocDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtpDocDueDate.Location = New System.Drawing.Point(206, 63)
+        Me.DtpDocDueDate.Location = New System.Drawing.Point(165, 51)
         Me.DtpDocDueDate.Name = "DtpDocDueDate"
         Me.DtpDocDueDate.Size = New System.Drawing.Size(113, 18)
         Me.DtpDocDueDate.TabIndex = 10
         '
-        'TextBox4
-        '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(206, 41)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(113, 20)
-        Me.TextBox4.TabIndex = 7
-        '
         'TxtFolio
         '
         Me.TxtFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtFolio.Location = New System.Drawing.Point(206, 16)
+        Me.TxtFolio.Location = New System.Drawing.Point(165, 24)
         Me.TxtFolio.Name = "TxtFolio"
         Me.TxtFolio.Size = New System.Drawing.Size(113, 20)
         Me.TxtFolio.TabIndex = 6
@@ -192,29 +181,20 @@ Partial Class OfertaVentaForm
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(3, 65)
+        Me.Label13.Location = New System.Drawing.Point(6, 51)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(159, 16)
         Me.Label13.TabIndex = 5
         Me.Label13.Text = "Fecha del Documento"
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(3, 41)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(57, 16)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "Estado"
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(3, 16)
+        Me.Label10.Location = New System.Drawing.Point(116, 24)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(32, 16)
+        Me.Label10.Size = New System.Drawing.Size(43, 16)
         Me.Label10.TabIndex = 0
-        Me.Label10.Text = "No."
+        Me.Label10.Text = "Folio"
         '
         'DgvLista
         '
@@ -259,7 +239,6 @@ Partial Class OfertaVentaForm
         Me.stock.Frozen = True
         Me.stock.HeaderText = "Stock"
         Me.stock.Name = "stock"
-        Me.stock.ReadOnly = True
         '
         'precio
         '
@@ -537,10 +516,8 @@ Partial Class OfertaVentaForm
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents DtpDocDueDate As DateTimePicker
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TxtFolio As TextBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents DgvLista As DataGridView
     Friend WithEvents GroupBox4 As GroupBox
@@ -562,6 +539,9 @@ Partial Class OfertaVentaForm
     Friend WithEvents CmbProducto As ComboBox
     Friend WithEvents BtnBuscarProducto As Button
     Friend WithEvents TxtNombre As TextBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents OfertaDeVentaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NotaDeVentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents descripcion As DataGridViewTextBoxColumn
     Friend WithEvents presentacion As DataGridViewTextBoxColumn
@@ -573,7 +553,4 @@ Partial Class OfertaVentaForm
     Friend WithEvents iva As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
     Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents OfertaDeVentaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NotaDeVentaToolStripMenuItem As ToolStripMenuItem
 End Class

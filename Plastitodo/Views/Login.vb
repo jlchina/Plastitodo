@@ -39,6 +39,7 @@ Public Class Login
                         Nombre = dr.Item("nombre")
                         Id_perfil = dr.Item("id_perfil")
                         Id_usuario = dr.Item("id")
+                        UserName = dr.Item("username")
                     End While
                 End If
 

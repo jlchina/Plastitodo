@@ -75,20 +75,20 @@ Partial Class Principal
         '
         Me.UsuariosToolStripMenuItem.Enabled = False
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'PerfilesToolStripMenuItem
         '
         Me.PerfilesToolStripMenuItem.Enabled = False
         Me.PerfilesToolStripMenuItem.Name = "PerfilesToolStripMenuItem"
-        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
+        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.PerfilesToolStripMenuItem.Text = "Perfiles"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(119, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem2.Text = "Salir"
         '
         'ModulosToolStripMenuItem
@@ -191,8 +191,9 @@ Partial Class Principal
         'VentasToolStripMenuItem
         '
         Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OfertaDeVentaToolStripMenuItem, Me.NotaDeVentaToolStripMenuItem, Me.DocumentosToolStripMenuItem})
+        Me.VentasToolStripMenuItem.Enabled = False
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'OfertaDeVentaToolStripMenuItem
