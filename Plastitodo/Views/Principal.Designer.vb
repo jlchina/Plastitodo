@@ -43,6 +43,8 @@ Partial Class Principal
         Me.EditarEliminarMercanciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OfertaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NotaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbl_time = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusConexion = New System.Windows.Forms.ToolStripStatusLabel()
@@ -181,7 +183,7 @@ Partial Class Principal
         '
         'VentasToolStripMenuItem
         '
-        Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OfertaDeVentaToolStripMenuItem})
+        Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OfertaDeVentaToolStripMenuItem, Me.NotaDeVentaToolStripMenuItem, Me.DocumentosToolStripMenuItem})
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
         Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VentasToolStripMenuItem.Text = "Ventas"
@@ -191,6 +193,18 @@ Partial Class Principal
         Me.OfertaDeVentaToolStripMenuItem.Name = "OfertaDeVentaToolStripMenuItem"
         Me.OfertaDeVentaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.OfertaDeVentaToolStripMenuItem.Text = "Oferta de Venta"
+        '
+        'NotaDeVentaToolStripMenuItem
+        '
+        Me.NotaDeVentaToolStripMenuItem.Name = "NotaDeVentaToolStripMenuItem"
+        Me.NotaDeVentaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.NotaDeVentaToolStripMenuItem.Text = "Nota de Venta"
+        '
+        'DocumentosToolStripMenuItem
+        '
+        Me.DocumentosToolStripMenuItem.Name = "DocumentosToolStripMenuItem"
+        Me.DocumentosToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.DocumentosToolStripMenuItem.Text = "Documentos"
         '
         'StatusStrip1
         '
@@ -271,4 +285,6 @@ Partial Class Principal
     Friend WithEvents OfertaDeVentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PresentaciónDeProductosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lbl_time As ToolStripStatusLabel
+    Friend WithEvents NotaDeVentaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DocumentosToolStripMenuItem As ToolStripMenuItem
 End Class

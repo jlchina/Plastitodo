@@ -63,17 +63,20 @@ Public Class Principal
     End Sub
 
     Private Sub Principal_FormClosing(sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        Dim dlgRes As DialogResult
-        dlgRes = MessageBox.Show("Desea Cerrar y Guardar los Cambios Efectuados?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        '--------->Mensaje para confirmar salir del sistema
+        'Dim Msg As String
+        Dim Title As String
+        Dim Style As MsgBoxStyle
+        Dim Response As MsgBoxResult
+        'Msg = "Cerrar Sesión"
+        Style = MsgBoxStyle.YesNo
+        Title = "Mensaje Sistema"
 
-        If e.CloseReason = CloseReason.UserClosing Then
-            If dlgRes = Windows.Forms.DialogResult.Yes Then
-                Me.Dispose()
-            End If
+        Response = MsgBox("Cerrar Conexion", Style, "Error")
 
-            If dlgRes = Windows.Forms.DialogResult.No Then
-                e.Cancel = True
-            End If
+        If Response = MsgBoxResult.Yes Then
+            Application.Exit()
+            End
         End If
     End Sub
 
@@ -145,6 +148,14 @@ Public Class Principal
 
     Private Sub OfertaDeVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OfertaDeVentaToolStripMenuItem.Click
         Dim newForm As New OfertaVentaForm()
+        newForm.GetTipo(2)
+        newForm.MdiParent = Me
+        newForm.Show()
+    End Sub
+
+    Private Sub NotaDeVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotaDeVentaToolStripMenuItem.Click
+        Dim newForm As New OfertaVentaForm()
+        newForm.GetTipo(1)
         newForm.MdiParent = Me
         newForm.Show()
     End Sub
@@ -157,6 +168,12 @@ Public Class Principal
 
     Private Sub ClientesToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         Dim newForm As New Cat_Clientes()
+        newForm.MdiParent = Me
+        newForm.Show()
+    End Sub
+
+    Private Sub DocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentosToolStripMenuItem.Click
+        Dim newForm As New ListaDocumentos()
         newForm.MdiParent = Me
         newForm.Show()
     End Sub
