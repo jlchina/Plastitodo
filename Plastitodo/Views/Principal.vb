@@ -21,7 +21,7 @@ Public Class Principal
                 Case 6 'Modulos de inventarios
                     InventariosToolStripMenuItem.Enabled = True
                 Case 7 'Modulos de ventas
-                    InventariosToolStripMenuItem.Enabled = True
+                    VentasToolStripMenuItem.Enabled = True
             End Select
         Next
 
