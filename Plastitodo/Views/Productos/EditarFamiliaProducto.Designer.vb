@@ -22,6 +22,7 @@ Partial Class EditarFamiliaProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditarFamiliaProducto))
         Me.Txt_NombreFamilia = New System.Windows.Forms.TextBox()
         Me.Txt_Descripcion = New System.Windows.Forms.TextBox()
         Me.Btn_Guardar = New System.Windows.Forms.Button()
@@ -33,51 +34,61 @@ Partial Class EditarFamiliaProducto
         '
         'Txt_NombreFamilia
         '
-        Me.Txt_NombreFamilia.Location = New System.Drawing.Point(132, 93)
+        Me.Txt_NombreFamilia.Location = New System.Drawing.Point(19, 123)
+        Me.Txt_NombreFamilia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_NombreFamilia.MaxLength = 30
         Me.Txt_NombreFamilia.Name = "Txt_NombreFamilia"
-        Me.Txt_NombreFamilia.Size = New System.Drawing.Size(208, 20)
+        Me.Txt_NombreFamilia.Size = New System.Drawing.Size(310, 22)
         Me.Txt_NombreFamilia.TabIndex = 0
         '
         'Txt_Descripcion
         '
-        Me.Txt_Descripcion.Location = New System.Drawing.Point(132, 168)
+        Me.Txt_Descripcion.Location = New System.Drawing.Point(19, 222)
+        Me.Txt_Descripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Descripcion.MaxLength = 80
         Me.Txt_Descripcion.Name = "Txt_Descripcion"
-        Me.Txt_Descripcion.Size = New System.Drawing.Size(208, 20)
+        Me.Txt_Descripcion.Size = New System.Drawing.Size(310, 22)
         Me.Txt_Descripcion.TabIndex = 1
         '
         'Btn_Guardar
         '
-        Me.Btn_Guardar.Location = New System.Drawing.Point(265, 211)
+        Me.Btn_Guardar.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_Guardar.BackgroundImage = CType(resources.GetObject("Btn_Guardar.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_Guardar.Location = New System.Drawing.Point(265, 269)
+        Me.Btn_Guardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_Guardar.Name = "Btn_Guardar"
-        Me.Btn_Guardar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Guardar.Size = New System.Drawing.Size(64, 46)
         Me.Btn_Guardar.TabIndex = 2
-        Me.Btn_Guardar.Text = "Guardar"
-        Me.Btn_Guardar.UseVisualStyleBackColor = True
+        Me.Btn_Guardar.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 68)
+        Me.Label1.Location = New System.Drawing.Point(16, 84)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(170, 13)
+        Me.Label1.Size = New System.Drawing.Size(251, 16)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Nombre de la familia de productos:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 147)
+        Me.Label2.Location = New System.Drawing.Point(16, 181)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 13)
+        Me.Label2.Size = New System.Drawing.Size(95, 16)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Descripción:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 19)
+        Me.Label3.Location = New System.Drawing.Point(16, 23)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(28, 13)
+        Me.Label3.Size = New System.Drawing.Size(35, 16)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "#ID:"
         '
@@ -86,7 +97,8 @@ Partial Class EditarFamiliaProducto
         Me.Lbl_ID.AutoSize = True
         Me.Lbl_ID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_ID.ForeColor = System.Drawing.Color.Blue
-        Me.Lbl_ID.Location = New System.Drawing.Point(53, 19)
+        Me.Lbl_ID.Location = New System.Drawing.Point(80, 23)
+        Me.Lbl_ID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lbl_ID.Name = "Lbl_ID"
         Me.Lbl_ID.Size = New System.Drawing.Size(48, 16)
         Me.Lbl_ID.TabIndex = 6
@@ -94,9 +106,9 @@ Partial Class EditarFamiliaProducto
         '
         'EditarFamiliaProducto
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(373, 259)
+        Me.ClientSize = New System.Drawing.Size(360, 331)
         Me.Controls.Add(Me.Lbl_ID)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -104,9 +116,12 @@ Partial Class EditarFamiliaProducto
         Me.Controls.Add(Me.Btn_Guardar)
         Me.Controls.Add(Me.Txt_Descripcion)
         Me.Controls.Add(Me.Txt_NombreFamilia)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "EditarFamiliaProducto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Familia De Producto"
         Me.ResumeLayout(False)
         Me.PerformLayout()

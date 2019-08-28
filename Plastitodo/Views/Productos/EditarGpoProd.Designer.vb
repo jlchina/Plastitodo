@@ -22,6 +22,7 @@ Partial Class EditarGpoProd
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditarGpoProd))
         Me.Cbo_EFamprod = New System.Windows.Forms.ComboBox()
         Me.Txt_NomCat = New System.Windows.Forms.TextBox()
         Me.Btn_Actualizar = New System.Windows.Forms.Button()
@@ -33,77 +34,87 @@ Partial Class EditarGpoProd
         '
         'Cbo_EFamprod
         '
-        Me.Cbo_EFamprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cbo_EFamprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Cbo_EFamprod.FormattingEnabled = True
-        Me.Cbo_EFamprod.Location = New System.Drawing.Point(150, 68)
+        Me.Cbo_EFamprod.Location = New System.Drawing.Point(198, 67)
+        Me.Cbo_EFamprod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Cbo_EFamprod.Name = "Cbo_EFamprod"
-        Me.Cbo_EFamprod.Size = New System.Drawing.Size(176, 24)
+        Me.Cbo_EFamprod.Size = New System.Drawing.Size(262, 24)
         Me.Cbo_EFamprod.TabIndex = 0
         '
         'Txt_NomCat
         '
-        Me.Txt_NomCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_NomCat.Location = New System.Drawing.Point(150, 136)
+        Me.Txt_NomCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Txt_NomCat.Location = New System.Drawing.Point(198, 135)
+        Me.Txt_NomCat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_NomCat.MaxLength = 30
         Me.Txt_NomCat.Name = "Txt_NomCat"
-        Me.Txt_NomCat.Size = New System.Drawing.Size(176, 22)
+        Me.Txt_NomCat.Size = New System.Drawing.Size(262, 22)
         Me.Txt_NomCat.TabIndex = 1
         '
         'Btn_Actualizar
         '
+        Me.Btn_Actualizar.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_Actualizar.BackgroundImage = CType(resources.GetObject("Btn_Actualizar.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_Actualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Actualizar.Location = New System.Drawing.Point(251, 187)
+        Me.Btn_Actualizar.Location = New System.Drawing.Point(398, 185)
+        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
-        Me.Btn_Actualizar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Actualizar.Size = New System.Drawing.Size(62, 50)
         Me.Btn_Actualizar.TabIndex = 2
-        Me.Btn_Actualizar.Text = "Actualizar"
-        Me.Btn_Actualizar.UseVisualStyleBackColor = True
+        Me.Btn_Actualizar.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(37, 46)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(13, 70)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 16)
+        Me.Label1.Size = New System.Drawing.Size(59, 16)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Familia"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(37, 119)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(13, 138)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 16)
+        Me.Label2.Size = New System.Drawing.Size(76, 16)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Categoria"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(37, 9)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label3.Location = New System.Drawing.Point(13, 20)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(126, 16)
+        Me.Label3.Size = New System.Drawing.Size(145, 16)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Grupo de producto: "
         '
         'Lbl_GpoProd
         '
         Me.Lbl_GpoProd.AutoSize = True
-        Me.Lbl_GpoProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_GpoProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Lbl_GpoProd.ForeColor = System.Drawing.Color.Blue
-        Me.Lbl_GpoProd.Location = New System.Drawing.Point(159, 9)
+        Me.Lbl_GpoProd.Location = New System.Drawing.Point(195, 20)
+        Me.Lbl_GpoProd.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lbl_GpoProd.Name = "Lbl_GpoProd"
-        Me.Lbl_GpoProd.Size = New System.Drawing.Size(64, 16)
+        Me.Lbl_GpoProd.Size = New System.Drawing.Size(78, 16)
         Me.Lbl_GpoProd.TabIndex = 6
         Me.Lbl_GpoProd.Text = "--------------"
         '
         'EditarGpoProd
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(388, 222)
+        Me.ClientSize = New System.Drawing.Size(478, 253)
         Me.Controls.Add(Me.Lbl_GpoProd)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -111,6 +122,8 @@ Partial Class EditarGpoProd
         Me.Controls.Add(Me.Btn_Actualizar)
         Me.Controls.Add(Me.Txt_NomCat)
         Me.Controls.Add(Me.Cbo_EFamprod)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "EditarGpoProd"

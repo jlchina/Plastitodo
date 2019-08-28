@@ -34,18 +34,20 @@ Partial Class EditarMarcas
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 50)
+        Me.Label1.Location = New System.Drawing.Point(13, 24)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 13)
+        Me.Label1.Size = New System.Drawing.Size(74, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ID Marca:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 102)
+        Me.Label2.Location = New System.Drawing.Point(13, 84)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(106, 13)
+        Me.Label2.Size = New System.Drawing.Size(153, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Nombre de la Marca:"
         '
@@ -54,7 +56,8 @@ Partial Class EditarMarcas
         Me.lbl_IdM.AutoSize = True
         Me.lbl_IdM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_IdM.ForeColor = System.Drawing.Color.Blue
-        Me.lbl_IdM.Location = New System.Drawing.Point(148, 50)
+        Me.lbl_IdM.Location = New System.Drawing.Point(217, 24)
+        Me.lbl_IdM.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_IdM.Name = "lbl_IdM"
         Me.lbl_IdM.Size = New System.Drawing.Size(36, 16)
         Me.lbl_IdM.TabIndex = 2
@@ -62,9 +65,10 @@ Partial Class EditarMarcas
         '
         'Txt_marca
         '
-        Me.Txt_marca.Location = New System.Drawing.Point(151, 95)
+        Me.Txt_marca.Location = New System.Drawing.Point(220, 81)
+        Me.Txt_marca.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txt_marca.Name = "Txt_marca"
-        Me.Txt_marca.Size = New System.Drawing.Size(216, 20)
+        Me.Txt_marca.Size = New System.Drawing.Size(322, 22)
         Me.Txt_marca.TabIndex = 1
         '
         'btn_guardar
@@ -74,9 +78,10 @@ Partial Class EditarMarcas
         Me.btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_guardar.FlatAppearance.BorderSize = 0
         Me.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_guardar.Location = New System.Drawing.Point(332, 157)
+        Me.btn_guardar.Location = New System.Drawing.Point(490, 152)
+        Me.btn_guardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_guardar.Name = "btn_guardar"
-        Me.btn_guardar.Size = New System.Drawing.Size(35, 30)
+        Me.btn_guardar.Size = New System.Drawing.Size(52, 37)
         Me.btn_guardar.TabIndex = 2
         Me.btn_guardar.UseVisualStyleBackColor = False
         '
@@ -86,24 +91,27 @@ Partial Class EditarMarcas
         Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_cancelar.FlatAppearance.BorderSize = 0
         Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_cancelar.Location = New System.Drawing.Point(15, 157)
+        Me.btn_cancelar.Location = New System.Drawing.Point(16, 152)
+        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(38, 30)
+        Me.btn_cancelar.Size = New System.Drawing.Size(57, 37)
         Me.btn_cancelar.TabIndex = 3
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
         'EditarMarcas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(388, 222)
+        Me.ClientSize = New System.Drawing.Size(563, 214)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_guardar)
         Me.Controls.Add(Me.Txt_marca)
         Me.Controls.Add(Me.lbl_IdM)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "EditarMarcas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

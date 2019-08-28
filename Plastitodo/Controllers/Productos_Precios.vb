@@ -13,11 +13,12 @@ Module Productos_Precios
             con_string.ConnectionString = ConnectionString2
             con_string.Open()
             'campos a ingresar en la BD desde el formulario
-            comando = New MySqlCommand("INSERT INTO historico_costos(Id_Prov, id_catprod, precio_cto)" & Chr(13) &
-                                       "VALUES(@Id_Prov, @id_catprod, @precio_cto)", con_string)
+            comando = New MySqlCommand("INSERT INTO historico_costos(Id_Prov, id_catprod, precio_cto,usuario)" & Chr(13) &
+                                       "VALUES(@Id_Prov, @id_catprod, @precio_cto, @usuario)", con_string)
             comando.Parameters.AddWithValue("@Id_Prov", Id_Prov)
             comando.Parameters.AddWithValue("@id_catprod", id_catprod)
             comando.Parameters.AddWithValue("@precio_cto", precio_cto)
+            comando.Parameters.AddWithValue("@usuario", Id_usuario)
             comando.ExecuteNonQuery()
 
             ultimo_id = CInt(comando.LastInsertedId)

@@ -22,208 +22,245 @@ Partial Class EntradasMerca
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TEntradasMerca = New System.Windows.Forms.TabPage()
-        Me.Buttonlimpiardatos = New System.Windows.Forms.Button()
-        Me.DataGridViewdetalleentrada = New System.Windows.Forms.DataGridView()
-        Me.TextBoxprecio = New System.Windows.Forms.TextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EntradasMerca))
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBoxproducto = New System.Windows.Forms.TextBox()
         Me.Labelprecio = New System.Windows.Forms.Label()
-        Me.BBuscarCodigo = New System.Windows.Forms.Button()
-        Me.TextBoxcodigo = New System.Windows.Forms.TextBox()
+        Me.TextBoxprecio = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBoxcodigo = New System.Windows.Forms.TextBox()
+        Me.BBuscarCodigo = New System.Windows.Forms.Button()
+        Me.Buttonlimpiardatos = New System.Windows.Forms.Button()
+        Me.DataGridViewdetalleentrada = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBoxprovee = New System.Windows.Forms.ComboBox()
         Me.BGuardardetaentramerca = New System.Windows.Forms.Button()
         Me.Tcantidad = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TabControl1.SuspendLayout()
-        Me.TEntradasMerca.SuspendLayout()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridViewdetalleentrada, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'GroupBox2
         '
-        Me.TabControl1.Controls.Add(Me.TEntradasMerca)
-        Me.TabControl1.Location = New System.Drawing.Point(15, 19)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(677, 357)
-        Me.TabControl1.TabIndex = 2
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.TextBoxproducto)
+        Me.GroupBox2.Controls.Add(Me.Labelprecio)
+        Me.GroupBox2.Controls.Add(Me.TextBoxprecio)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 96)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(487, 126)
+        Me.GroupBox2.TabIndex = 33
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Producto"
         '
-        'TEntradasMerca
+        'Label6
         '
-        Me.TEntradasMerca.Controls.Add(Me.Buttonlimpiardatos)
-        Me.TEntradasMerca.Controls.Add(Me.DataGridViewdetalleentrada)
-        Me.TEntradasMerca.Controls.Add(Me.TextBoxprecio)
-        Me.TEntradasMerca.Controls.Add(Me.TextBoxproducto)
-        Me.TEntradasMerca.Controls.Add(Me.Labelprecio)
-        Me.TEntradasMerca.Controls.Add(Me.BBuscarCodigo)
-        Me.TEntradasMerca.Controls.Add(Me.TextBoxcodigo)
-        Me.TEntradasMerca.Controls.Add(Me.Label1)
-        Me.TEntradasMerca.Controls.Add(Me.Label6)
-        Me.TEntradasMerca.Controls.Add(Me.Label5)
-        Me.TEntradasMerca.Controls.Add(Me.ComboBoxprovee)
-        Me.TEntradasMerca.Controls.Add(Me.BGuardardetaentramerca)
-        Me.TEntradasMerca.Controls.Add(Me.Tcantidad)
-        Me.TEntradasMerca.Controls.Add(Me.Label3)
-        Me.TEntradasMerca.Location = New System.Drawing.Point(4, 22)
-        Me.TEntradasMerca.Name = "TEntradasMerca"
-        Me.TEntradasMerca.Padding = New System.Windows.Forms.Padding(3)
-        Me.TEntradasMerca.Size = New System.Drawing.Size(669, 331)
-        Me.TEntradasMerca.TabIndex = 0
-        Me.TEntradasMerca.Text = "Entradas"
-        Me.TEntradasMerca.UseVisualStyleBackColor = True
-        '
-        'Buttonlimpiardatos
-        '
-        Me.Buttonlimpiardatos.Location = New System.Drawing.Point(522, 54)
-        Me.Buttonlimpiardatos.Name = "Buttonlimpiardatos"
-        Me.Buttonlimpiardatos.Size = New System.Drawing.Size(97, 23)
-        Me.Buttonlimpiardatos.TabIndex = 22
-        Me.Buttonlimpiardatos.Text = "Limpiar"
-        Me.Buttonlimpiardatos.UseVisualStyleBackColor = True
-        '
-        'DataGridViewdetalleentrada
-        '
-        Me.DataGridViewdetalleentrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewdetalleentrada.Location = New System.Drawing.Point(15, 164)
-        Me.DataGridViewdetalleentrada.Name = "DataGridViewdetalleentrada"
-        Me.DataGridViewdetalleentrada.Size = New System.Drawing.Size(492, 150)
-        Me.DataGridViewdetalleentrada.TabIndex = 21
-        '
-        'TextBoxprecio
-        '
-        Me.TextBoxprecio.Location = New System.Drawing.Point(386, 95)
-        Me.TextBoxprecio.Name = "TextBoxprecio"
-        Me.TextBoxprecio.ReadOnly = True
-        Me.TextBoxprecio.Size = New System.Drawing.Size(121, 20)
-        Me.TextBoxprecio.TabIndex = 20
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(7, 44)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(95, 16)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Descripción:"
         '
         'TextBoxproducto
         '
         Me.TextBoxproducto.Enabled = False
-        Me.TextBoxproducto.Location = New System.Drawing.Point(68, 54)
+        Me.TextBoxproducto.Location = New System.Drawing.Point(137, 41)
+        Me.TextBoxproducto.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxproducto.Name = "TextBoxproducto"
-        Me.TextBoxproducto.Size = New System.Drawing.Size(219, 20)
+        Me.TextBoxproducto.Size = New System.Drawing.Size(326, 22)
         Me.TextBoxproducto.TabIndex = 19
         '
         'Labelprecio
         '
         Me.Labelprecio.AutoSize = True
-        Me.Labelprecio.Location = New System.Drawing.Point(303, 95)
+        Me.Labelprecio.Location = New System.Drawing.Point(7, 91)
+        Me.Labelprecio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Labelprecio.Name = "Labelprecio"
-        Me.Labelprecio.Size = New System.Drawing.Size(37, 13)
+        Me.Labelprecio.Size = New System.Drawing.Size(53, 16)
         Me.Labelprecio.TabIndex = 17
         Me.Labelprecio.Text = "Precio"
         '
-        'BBuscarCodigo
+        'TextBoxprecio
         '
-        Me.BBuscarCodigo.Location = New System.Drawing.Point(306, 12)
-        Me.BBuscarCodigo.Name = "BBuscarCodigo"
-        Me.BBuscarCodigo.Size = New System.Drawing.Size(75, 23)
-        Me.BBuscarCodigo.TabIndex = 15
-        Me.BBuscarCodigo.Text = "Buscar"
-        Me.BBuscarCodigo.UseVisualStyleBackColor = True
+        Me.TextBoxprecio.Location = New System.Drawing.Point(137, 88)
+        Me.TextBoxprecio.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBoxprecio.Name = "TextBoxprecio"
+        Me.TextBoxprecio.ReadOnly = True
+        Me.TextBoxprecio.Size = New System.Drawing.Size(180, 22)
+        Me.TextBoxprecio.TabIndex = 20
         '
-        'TextBoxcodigo
+        'GroupBox1
         '
-        Me.TextBoxcodigo.Location = New System.Drawing.Point(91, 14)
-        Me.TextBoxcodigo.Name = "TextBoxcodigo"
-        Me.TextBoxcodigo.Size = New System.Drawing.Size(196, 20)
-        Me.TextBoxcodigo.TabIndex = 14
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.TextBoxcodigo)
+        Me.GroupBox1.Controls.Add(Me.BBuscarCodigo)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(487, 78)
+        Me.GroupBox1.TabIndex = 32
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Búsqueda"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 17)
+        Me.Label1.Location = New System.Drawing.Point(7, 37)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 13)
+        Me.Label1.Size = New System.Drawing.Size(112, 16)
         Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Codigo Barras"
+        Me.Label1.Text = "Codigo Barras:"
         '
-        'Label6
+        'TextBoxcodigo
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 58)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(50, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Producto"
+        Me.TextBoxcodigo.Location = New System.Drawing.Point(138, 34)
+        Me.TextBoxcodigo.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBoxcodigo.MaxLength = 15
+        Me.TextBoxcodigo.Name = "TextBoxcodigo"
+        Me.TextBoxcodigo.Size = New System.Drawing.Size(213, 22)
+        Me.TextBoxcodigo.TabIndex = 14
+        '
+        'BBuscarCodigo
+        '
+        Me.BBuscarCodigo.BackgroundImage = CType(resources.GetObject("BBuscarCodigo.BackgroundImage"), System.Drawing.Image)
+        Me.BBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BBuscarCodigo.Location = New System.Drawing.Point(398, 22)
+        Me.BBuscarCodigo.Margin = New System.Windows.Forms.Padding(4)
+        Me.BBuscarCodigo.Name = "BBuscarCodigo"
+        Me.BBuscarCodigo.Size = New System.Drawing.Size(57, 45)
+        Me.BBuscarCodigo.TabIndex = 15
+        Me.BBuscarCodigo.UseVisualStyleBackColor = True
+        '
+        'Buttonlimpiardatos
+        '
+        Me.Buttonlimpiardatos.BackgroundImage = CType(resources.GetObject("Buttonlimpiardatos.BackgroundImage"), System.Drawing.Image)
+        Me.Buttonlimpiardatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Buttonlimpiardatos.Location = New System.Drawing.Point(874, 265)
+        Me.Buttonlimpiardatos.Margin = New System.Windows.Forms.Padding(4)
+        Me.Buttonlimpiardatos.Name = "Buttonlimpiardatos"
+        Me.Buttonlimpiardatos.Size = New System.Drawing.Size(80, 62)
+        Me.Buttonlimpiardatos.TabIndex = 31
+        Me.Buttonlimpiardatos.UseVisualStyleBackColor = True
+        '
+        'DataGridViewdetalleentrada
+        '
+        Me.DataGridViewdetalleentrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewdetalleentrada.Location = New System.Drawing.Point(13, 230)
+        Me.DataGridViewdetalleentrada.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridViewdetalleentrada.Name = "DataGridViewdetalleentrada"
+        Me.DataGridViewdetalleentrada.Size = New System.Drawing.Size(738, 220)
+        Me.DataGridViewdetalleentrada.TabIndex = 30
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 103)
+        Me.Label5.Location = New System.Drawing.Point(7, 34)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(56, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Proveedor"
+        Me.Label5.Size = New System.Drawing.Size(85, 16)
+        Me.Label5.TabIndex = 29
+        Me.Label5.Text = "Proveedor:"
         '
         'ComboBoxprovee
         '
         Me.ComboBoxprovee.FormattingEnabled = True
-        Me.ComboBoxprovee.Location = New System.Drawing.Point(68, 95)
+        Me.ComboBoxprovee.Location = New System.Drawing.Point(123, 31)
+        Me.ComboBoxprovee.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBoxprovee.Name = "ComboBoxprovee"
-        Me.ComboBoxprovee.Size = New System.Drawing.Size(219, 21)
-        Me.ComboBoxprovee.TabIndex = 8
+        Me.ComboBoxprovee.Size = New System.Drawing.Size(326, 24)
+        Me.ComboBoxprovee.TabIndex = 28
         '
         'BGuardardetaentramerca
         '
-        Me.BGuardardetaentramerca.Location = New System.Drawing.Point(522, 92)
+        Me.BGuardardetaentramerca.BackgroundImage = CType(resources.GetObject("BGuardardetaentramerca.BackgroundImage"), System.Drawing.Image)
+        Me.BGuardardetaentramerca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BGuardardetaentramerca.Location = New System.Drawing.Point(874, 352)
+        Me.BGuardardetaentramerca.Margin = New System.Windows.Forms.Padding(4)
         Me.BGuardardetaentramerca.Name = "BGuardardetaentramerca"
-        Me.BGuardardetaentramerca.Size = New System.Drawing.Size(97, 23)
-        Me.BGuardardetaentramerca.TabIndex = 1
-        Me.BGuardardetaentramerca.Text = "Guardar"
+        Me.BGuardardetaentramerca.Size = New System.Drawing.Size(80, 62)
+        Me.BGuardardetaentramerca.TabIndex = 25
         Me.BGuardardetaentramerca.UseVisualStyleBackColor = True
         '
         'Tcantidad
         '
-        Me.Tcantidad.Location = New System.Drawing.Point(386, 54)
+        Me.Tcantidad.Location = New System.Drawing.Point(123, 85)
+        Me.Tcantidad.Margin = New System.Windows.Forms.Padding(4)
         Me.Tcantidad.Name = "Tcantidad"
-        Me.Tcantidad.Size = New System.Drawing.Size(121, 20)
-        Me.Tcantidad.TabIndex = 6
+        Me.Tcantidad.Size = New System.Drawing.Size(180, 22)
+        Me.Tcantidad.TabIndex = 27
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(303, 58)
+        Me.Label3.Location = New System.Drawing.Point(7, 91)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 13)
-        Me.Label3.TabIndex = 2
+        Me.Label3.Size = New System.Drawing.Size(70, 16)
+        Me.Label3.TabIndex = 26
         Me.Label3.Text = "Cantidad"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Controls.Add(Me.ComboBoxprovee)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.Tcantidad)
+        Me.GroupBox3.Location = New System.Drawing.Point(515, 96)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(510, 126)
+        Me.GroupBox3.TabIndex = 34
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Entrada de mercancías"
         '
         'EntradasMerca
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(706, 394)
-        Me.Controls.Add(Me.TabControl1)
+        Me.ClientSize = New System.Drawing.Size(1037, 463)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Buttonlimpiardatos)
+        Me.Controls.Add(Me.DataGridViewdetalleentrada)
+        Me.Controls.Add(Me.BGuardardetaentramerca)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "EntradasMerca"
         Me.Text = "Detalle de Entradas Mercancia"
-        Me.TabControl1.ResumeLayout(False)
-        Me.TEntradasMerca.ResumeLayout(False)
-        Me.TEntradasMerca.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.DataGridViewdetalleentrada, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TEntradasMerca As TabPage
-    Friend WithEvents Buttonlimpiardatos As Button
-    Friend WithEvents DataGridViewdetalleentrada As DataGridView
-    Friend WithEvents TextBoxprecio As TextBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label6 As Label
     Friend WithEvents TextBoxproducto As TextBox
     Friend WithEvents Labelprecio As Label
-    Friend WithEvents BBuscarCodigo As Button
-    Friend WithEvents TextBoxcodigo As TextBox
+    Friend WithEvents TextBoxprecio As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBoxcodigo As TextBox
+    Friend WithEvents BBuscarCodigo As Button
+    Friend WithEvents Buttonlimpiardatos As Button
+    Friend WithEvents DataGridViewdetalleentrada As DataGridView
     Friend WithEvents Label5 As Label
     Friend WithEvents ComboBoxprovee As ComboBox
     Friend WithEvents BGuardardetaentramerca As Button
     Friend WithEvents Tcantidad As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

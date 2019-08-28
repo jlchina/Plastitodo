@@ -41,13 +41,11 @@ Partial Class Principal
         Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExistenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EntradasMercanciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditarEliminarMercanciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OfertaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NotaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.lbl_time = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusConexion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Lblconexion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
@@ -102,14 +100,14 @@ Partial Class Principal
         '
         Me.ClientesToolStripMenuItem.Enabled = False
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.Enabled = False
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'ProductosToolStripMenuItem
@@ -117,7 +115,7 @@ Partial Class Principal
         Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CrearFamiliaDeProductoToolStripMenuItem, Me.CrearGrupoDeProductoToolStripMenuItem, Me.MarcaCrearOModificarToolStripMenuItem, Me.AltaYoEditarToolStripMenuItem, Me.ConsultaToolStripMenuItem, Me.PresentaciónDeProductosToolStripMenuItem, Me.DatosMaestrosToolStripMenuItem})
         Me.ProductosToolStripMenuItem.Enabled = False
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'CrearFamiliaDeProductoToolStripMenuItem
@@ -164,29 +162,23 @@ Partial Class Principal
         '
         'InventariosToolStripMenuItem
         '
-        Me.InventariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExistenciasToolStripMenuItem, Me.EntradasMercanciaToolStripMenuItem, Me.EditarEliminarMercanciaToolStripMenuItem})
+        Me.InventariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExistenciasToolStripMenuItem, Me.EntradasMercanciaToolStripMenuItem})
         Me.InventariosToolStripMenuItem.Enabled = False
         Me.InventariosToolStripMenuItem.Name = "InventariosToolStripMenuItem"
-        Me.InventariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InventariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.InventariosToolStripMenuItem.Text = "Inventarios"
         '
         'ExistenciasToolStripMenuItem
         '
         Me.ExistenciasToolStripMenuItem.Name = "ExistenciasToolStripMenuItem"
-        Me.ExistenciasToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.ExistenciasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ExistenciasToolStripMenuItem.Text = "Existencias"
         '
         'EntradasMercanciaToolStripMenuItem
         '
         Me.EntradasMercanciaToolStripMenuItem.Name = "EntradasMercanciaToolStripMenuItem"
-        Me.EntradasMercanciaToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.EntradasMercanciaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EntradasMercanciaToolStripMenuItem.Text = "Entradas Mercancia"
-        '
-        'EditarEliminarMercanciaToolStripMenuItem
-        '
-        Me.EditarEliminarMercanciaToolStripMenuItem.Name = "EditarEliminarMercanciaToolStripMenuItem"
-        Me.EditarEliminarMercanciaToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
-        Me.EditarEliminarMercanciaToolStripMenuItem.Text = "Editar/Eliminar Mercancia"
         '
         'VentasToolStripMenuItem
         '
@@ -215,19 +207,13 @@ Partial Class Principal
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbl_time, Me.StatusConexion, Me.Lblconexion})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusConexion, Me.Lblconexion})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 400)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(758, 22)
         Me.StatusStrip1.TabIndex = 5
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'lbl_time
-        '
-        Me.lbl_time.Name = "lbl_time"
-        Me.lbl_time.Size = New System.Drawing.Size(49, 17)
-        Me.lbl_time.Text = "00:00:00"
         '
         'StatusConexion
         '
@@ -246,7 +232,8 @@ Partial Class Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(758, 422)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -256,6 +243,7 @@ Partial Class Principal
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Principal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Plastibolsas"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
@@ -287,11 +275,9 @@ Partial Class Principal
     Friend WithEvents MarcaCrearOModificarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExistenciasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EntradasMercanciaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditarEliminarMercanciaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VentasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OfertaDeVentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PresentaciónDeProductosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents lbl_time As ToolStripStatusLabel
     Friend WithEvents NotaDeVentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DocumentosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DatosMaestrosToolStripMenuItem As ToolStripMenuItem

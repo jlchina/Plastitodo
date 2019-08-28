@@ -22,6 +22,7 @@ Partial Class AltaMarca
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AltaMarca))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Btn_agregar = New System.Windows.Forms.Button()
         Me.Txt_marca = New System.Windows.Forms.TextBox()
@@ -39,17 +40,19 @@ Partial Class AltaMarca
         '
         'Btn_agregar
         '
+        Me.Btn_agregar.BackgroundImage = CType(resources.GetObject("Btn_agregar.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_agregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_agregar.Location = New System.Drawing.Point(312, 107)
+        Me.Btn_agregar.Location = New System.Drawing.Point(337, 99)
         Me.Btn_agregar.Name = "Btn_agregar"
-        Me.Btn_agregar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_agregar.Size = New System.Drawing.Size(50, 42)
         Me.Btn_agregar.TabIndex = 2
-        Me.Btn_agregar.Text = "Agregar"
         Me.Btn_agregar.UseVisualStyleBackColor = True
         '
         'Txt_marca
         '
         Me.Txt_marca.Location = New System.Drawing.Point(181, 49)
+        Me.Txt_marca.MaxLength = 20
         Me.Txt_marca.Name = "Txt_marca"
         Me.Txt_marca.Size = New System.Drawing.Size(206, 20)
         Me.Txt_marca.TabIndex = 1

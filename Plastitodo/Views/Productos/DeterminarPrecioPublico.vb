@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Plastitodo.conexion
+Imports Plastitodo.Globales
 
 Public Class DeterminarPrecioPublico
     Dim factores As Single = Nothing
@@ -181,11 +182,12 @@ Public Class DeterminarPrecioPublico
             con_string.ConnectionString = ConnectionString2
             con_string.Open()
             'campos a ingresar en la BD desde el formulario
-            comando = New MySqlCommand("INSERT INTO historico_preciopublico(id_catalogo, id_costo, p_publico)" & Chr(13) &
-                                       "VALUES(@id_catalogo, @id_costo, @p_publico)", con_string)
+            comando = New MySqlCommand("INSERT INTO historico_preciopublico(id_catalogo, id_costo, p_publico, id_usuario)" & Chr(13) &
+                                       "VALUES(@id_catalogo, @id_costo, @p_publico,@id_usuario)", con_string)
             comando.Parameters.AddWithValue("@id_catalogo", id_CatProd)
             comando.Parameters.AddWithValue("@id_costo", id_Costo)
             comando.Parameters.AddWithValue("@p_publico", Txt_PrecioPub.Text)
+            comando.Parameters.AddWithValue("@id_usuario", Id_usuario)
             comando.ExecuteNonQuery()
             con_string.Close()
         Catch ex As Exception

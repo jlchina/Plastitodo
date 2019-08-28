@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Existencias
-    Private Sub Bbuscarexis_Click(sender As Object, e As EventArgs) Handles Bbuscarexis.Click
+    Private Sub Bbuscarexis_Click(sender As Object, e As EventArgs)
 
         'Try
         '    Dim conexion As New MySqlConnection(ConnectionString2)
@@ -124,4 +124,5 @@ Public Class Existencias
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
 End Class

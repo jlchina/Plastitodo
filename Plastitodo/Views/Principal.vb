@@ -23,8 +23,6 @@ Public Class Principal
             End Select
         Next
 
-        lbl_time.Text = DateTime.Now.ToShortTimeString
-
     End Sub
 
     Private Sub ProductosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -140,7 +138,7 @@ Public Class Principal
         newEntraMerca.Show()
     End Sub
 
-    Private Sub EditarEliminarMercanciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarEliminarMercanciaToolStripMenuItem.Click
+    Private Sub EditarEliminarMercanciaToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim newEdiMerca As New Editar_Mercancia()
         newEdiMerca.MdiParent = Me
         newEdiMerca.Show()
@@ -177,4 +175,5 @@ Public Class Principal
         newForm.MdiParent = Me
         newForm.Show()
     End Sub
+
 End Class

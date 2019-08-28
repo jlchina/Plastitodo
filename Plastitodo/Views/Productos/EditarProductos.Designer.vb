@@ -22,6 +22,7 @@ Partial Class EditarProductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditarProductos))
         Me.Txt_CodBar = New System.Windows.Forms.TextBox()
         Me.Cbo_Marca = New System.Windows.Forms.ComboBox()
         Me.Txt_Modelo = New System.Windows.Forms.TextBox()
@@ -43,69 +44,80 @@ Partial Class EditarProductos
         '
         'Txt_CodBar
         '
-        Me.Txt_CodBar.Location = New System.Drawing.Point(264, 20)
+        Me.Txt_CodBar.Location = New System.Drawing.Point(187, 24)
+        Me.Txt_CodBar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_CodBar.MaxLength = 15
         Me.Txt_CodBar.Name = "Txt_CodBar"
-        Me.Txt_CodBar.Size = New System.Drawing.Size(255, 20)
+        Me.Txt_CodBar.Size = New System.Drawing.Size(380, 22)
         Me.Txt_CodBar.TabIndex = 0
         Me.Txt_CodBar.UseWaitCursor = True
         '
         'Cbo_Marca
         '
         Me.Cbo_Marca.FormattingEnabled = True
-        Me.Cbo_Marca.Location = New System.Drawing.Point(264, 60)
+        Me.Cbo_Marca.Location = New System.Drawing.Point(187, 73)
+        Me.Cbo_Marca.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Cbo_Marca.Name = "Cbo_Marca"
-        Me.Cbo_Marca.Size = New System.Drawing.Size(255, 21)
+        Me.Cbo_Marca.Size = New System.Drawing.Size(380, 24)
         Me.Cbo_Marca.TabIndex = 1
         Me.Cbo_Marca.UseWaitCursor = True
         '
         'Txt_Modelo
         '
-        Me.Txt_Modelo.Location = New System.Drawing.Point(264, 102)
+        Me.Txt_Modelo.Location = New System.Drawing.Point(187, 125)
+        Me.Txt_Modelo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Modelo.MaxLength = 20
         Me.Txt_Modelo.Name = "Txt_Modelo"
-        Me.Txt_Modelo.Size = New System.Drawing.Size(255, 20)
+        Me.Txt_Modelo.Size = New System.Drawing.Size(380, 22)
         Me.Txt_Modelo.TabIndex = 2
         Me.Txt_Modelo.UseWaitCursor = True
         '
         'Txt_Desc
         '
-        Me.Txt_Desc.Location = New System.Drawing.Point(264, 141)
+        Me.Txt_Desc.Location = New System.Drawing.Point(187, 173)
+        Me.Txt_Desc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Desc.MaxLength = 45
         Me.Txt_Desc.Name = "Txt_Desc"
-        Me.Txt_Desc.Size = New System.Drawing.Size(255, 20)
+        Me.Txt_Desc.Size = New System.Drawing.Size(380, 22)
         Me.Txt_Desc.TabIndex = 3
         Me.Txt_Desc.UseWaitCursor = True
         '
         'Cbo_GpoProd
         '
         Me.Cbo_GpoProd.FormattingEnabled = True
-        Me.Cbo_GpoProd.Location = New System.Drawing.Point(264, 179)
+        Me.Cbo_GpoProd.Location = New System.Drawing.Point(187, 219)
+        Me.Cbo_GpoProd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Cbo_GpoProd.Name = "Cbo_GpoProd"
-        Me.Cbo_GpoProd.Size = New System.Drawing.Size(255, 21)
+        Me.Cbo_GpoProd.Size = New System.Drawing.Size(380, 24)
         Me.Cbo_GpoProd.TabIndex = 4
         Me.Cbo_GpoProd.UseWaitCursor = True
         '
         'Cbo_Pres
         '
         Me.Cbo_Pres.FormattingEnabled = True
-        Me.Cbo_Pres.Location = New System.Drawing.Point(264, 218)
+        Me.Cbo_Pres.Location = New System.Drawing.Point(187, 267)
+        Me.Cbo_Pres.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Cbo_Pres.Name = "Cbo_Pres"
-        Me.Cbo_Pres.Size = New System.Drawing.Size(133, 21)
+        Me.Cbo_Pres.Size = New System.Drawing.Size(198, 24)
         Me.Cbo_Pres.TabIndex = 5
         Me.Cbo_Pres.UseWaitCursor = True
         '
         'Txt_Cto
         '
-        Me.Txt_Cto.Location = New System.Drawing.Point(264, 256)
+        Me.Txt_Cto.Location = New System.Drawing.Point(187, 314)
+        Me.Txt_Cto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txt_Cto.Name = "Txt_Cto"
-        Me.Txt_Cto.Size = New System.Drawing.Size(133, 20)
+        Me.Txt_Cto.Size = New System.Drawing.Size(198, 22)
         Me.Txt_Cto.TabIndex = 6
         Me.Txt_Cto.UseWaitCursor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 23)
+        Me.Label1.Location = New System.Drawing.Point(24, 27)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 13)
+        Me.Label1.Size = New System.Drawing.Size(133, 16)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Codigo de barras:"
         Me.Label1.UseWaitCursor = True
@@ -113,9 +125,10 @@ Partial Class EditarProductos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 63)
+        Me.Label2.Location = New System.Drawing.Point(24, 77)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(40, 13)
+        Me.Label2.Size = New System.Drawing.Size(55, 16)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Marca:"
         Me.Label2.UseWaitCursor = True
@@ -123,9 +136,10 @@ Partial Class EditarProductos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(36, 109)
+        Me.Label3.Location = New System.Drawing.Point(24, 128)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 13)
+        Me.Label3.Size = New System.Drawing.Size(64, 16)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Modelo:"
         Me.Label3.UseWaitCursor = True
@@ -133,9 +147,10 @@ Partial Class EditarProductos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(36, 148)
+        Me.Label4.Location = New System.Drawing.Point(24, 176)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(66, 13)
+        Me.Label4.Size = New System.Drawing.Size(95, 16)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Descripción:"
         Me.Label4.UseWaitCursor = True
@@ -143,9 +158,10 @@ Partial Class EditarProductos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(36, 187)
+        Me.Label5.Location = New System.Drawing.Point(24, 222)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(104, 13)
+        Me.Label5.Size = New System.Drawing.Size(149, 16)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Grupo de productos:"
         Me.Label5.UseWaitCursor = True
@@ -153,9 +169,10 @@ Partial Class EditarProductos
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(36, 226)
+        Me.Label6.Location = New System.Drawing.Point(24, 270)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(72, 13)
+        Me.Label6.Size = New System.Drawing.Size(103, 16)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Presentación:"
         Me.Label6.UseWaitCursor = True
@@ -163,29 +180,34 @@ Partial Class EditarProductos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(36, 263)
+        Me.Label7.Location = New System.Drawing.Point(24, 317)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(71, 13)
+        Me.Label7.Size = New System.Drawing.Size(103, 16)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Costo unitario"
         Me.Label7.UseWaitCursor = True
         '
         'Btn_actualizar
         '
-        Me.Btn_actualizar.Location = New System.Drawing.Point(539, 326)
+        Me.Btn_actualizar.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_actualizar.BackgroundImage = CType(resources.GetObject("Btn_actualizar.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_actualizar.Location = New System.Drawing.Point(621, 349)
+        Me.Btn_actualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_actualizar.Name = "Btn_actualizar"
-        Me.Btn_actualizar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_actualizar.Size = New System.Drawing.Size(60, 43)
         Me.Btn_actualizar.TabIndex = 14
-        Me.Btn_actualizar.Text = "Actualizar"
-        Me.Btn_actualizar.UseVisualStyleBackColor = True
+        Me.Btn_actualizar.UseVisualStyleBackColor = False
         Me.Btn_actualizar.UseWaitCursor = True
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(39, 300)
+        Me.Label8.Location = New System.Drawing.Point(24, 371)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(59, 13)
+        Me.Label8.Size = New System.Drawing.Size(85, 16)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Proveedor:"
         Me.Label8.UseWaitCursor = True
@@ -193,17 +215,18 @@ Partial Class EditarProductos
         'Cbo_Proveedor
         '
         Me.Cbo_Proveedor.FormattingEnabled = True
-        Me.Cbo_Proveedor.Location = New System.Drawing.Point(264, 300)
+        Me.Cbo_Proveedor.Location = New System.Drawing.Point(187, 368)
+        Me.Cbo_Proveedor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Cbo_Proveedor.Name = "Cbo_Proveedor"
-        Me.Cbo_Proveedor.Size = New System.Drawing.Size(255, 21)
+        Me.Cbo_Proveedor.Size = New System.Drawing.Size(380, 24)
         Me.Cbo_Proveedor.TabIndex = 16
         Me.Cbo_Proveedor.UseWaitCursor = True
         '
         'EditarProductos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(626, 361)
+        Me.ClientSize = New System.Drawing.Size(714, 421)
         Me.Controls.Add(Me.Cbo_Proveedor)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Btn_actualizar)
@@ -221,10 +244,12 @@ Partial Class EditarProductos
         Me.Controls.Add(Me.Txt_Modelo)
         Me.Controls.Add(Me.Cbo_Marca)
         Me.Controls.Add(Me.Txt_CodBar)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(642, 400)
+        Me.MaximumSize = New System.Drawing.Size(730, 460)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(642, 400)
+        Me.MinimumSize = New System.Drawing.Size(730, 460)
         Me.Name = "EditarProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar Producto:"

@@ -22,6 +22,7 @@ Partial Class EditarPresProd
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EditarPresProd))
         Me.Txt_NomPresP = New System.Windows.Forms.TextBox()
         Me.Btn_Actualizar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -31,35 +32,41 @@ Partial Class EditarPresProd
         '
         'Txt_NomPresP
         '
-        Me.Txt_NomPresP.Location = New System.Drawing.Point(180, 96)
+        Me.Txt_NomPresP.Location = New System.Drawing.Point(245, 84)
+        Me.Txt_NomPresP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txt_NomPresP.Name = "Txt_NomPresP"
-        Me.Txt_NomPresP.Size = New System.Drawing.Size(197, 20)
+        Me.Txt_NomPresP.Size = New System.Drawing.Size(167, 22)
         Me.Txt_NomPresP.TabIndex = 0
         '
         'Btn_Actualizar
         '
-        Me.Btn_Actualizar.Location = New System.Drawing.Point(302, 152)
+        Me.Btn_Actualizar.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_Actualizar.BackgroundImage = CType(resources.GetObject("Btn_Actualizar.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_Actualizar.Location = New System.Drawing.Point(358, 151)
+        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
-        Me.Btn_Actualizar.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Actualizar.Size = New System.Drawing.Size(54, 43)
         Me.Btn_Actualizar.TabIndex = 1
-        Me.Btn_Actualizar.Text = "Actualizar"
-        Me.Btn_Actualizar.UseVisualStyleBackColor = True
+        Me.Btn_Actualizar.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 99)
+        Me.Label1.Location = New System.Drawing.Point(22, 87)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(137, 13)
+        Me.Label1.Size = New System.Drawing.Size(198, 16)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Presentacion del producto: "
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 33)
+        Me.Label2.Location = New System.Drawing.Point(22, 18)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(21, 13)
+        Me.Label2.Size = New System.Drawing.Size(27, 16)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "ID:"
         '
@@ -68,7 +75,8 @@ Partial Class EditarPresProd
         Me.Lbl_Id.AutoSize = True
         Me.Lbl_Id.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Id.ForeColor = System.Drawing.Color.Blue
-        Me.Lbl_Id.Location = New System.Drawing.Point(55, 32)
+        Me.Lbl_Id.Location = New System.Drawing.Point(64, 18)
+        Me.Lbl_Id.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lbl_Id.Name = "Lbl_Id"
         Me.Lbl_Id.Size = New System.Drawing.Size(52, 16)
         Me.Lbl_Id.TabIndex = 4
@@ -76,18 +84,20 @@ Partial Class EditarPresProd
         '
         'EditarPresProd
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(414, 211)
+        Me.ClientSize = New System.Drawing.Size(434, 221)
         Me.Controls.Add(Me.Lbl_Id)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Btn_Actualizar)
         Me.Controls.Add(Me.Txt_NomPresP)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(430, 250)
+        Me.MaximumSize = New System.Drawing.Size(450, 260)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(430, 250)
+        Me.MinimumSize = New System.Drawing.Size(450, 260)
         Me.Name = "EditarPresProd"
         Me.Text = "EditarPresProd"
         Me.ResumeLayout(False)
