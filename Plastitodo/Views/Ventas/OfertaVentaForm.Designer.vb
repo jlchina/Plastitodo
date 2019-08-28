@@ -23,10 +23,8 @@ Partial Class OfertaVentaForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OfertaVentaForm))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
-        Me.BtnBuscarCliente = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CmbCliente = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -64,7 +62,6 @@ Partial Class OfertaVentaForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.CmbProducto = New System.Windows.Forms.ComboBox()
-        Me.BtnBuscarProducto = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OfertaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NotaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -81,7 +78,6 @@ Partial Class OfertaVentaForm
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.TxtNombre)
-        Me.GroupBox2.Controls.Add(Me.BtnBuscarCliente)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.CmbCliente)
         Me.GroupBox2.Controls.Add(Me.Label1)
@@ -102,16 +98,6 @@ Partial Class OfertaVentaForm
         Me.TxtNombre.Name = "TxtNombre"
         Me.TxtNombre.Size = New System.Drawing.Size(291, 22)
         Me.TxtNombre.TabIndex = 10
-        '
-        'BtnBuscarCliente
-        '
-        Me.BtnBuscarCliente.BackgroundImage = CType(resources.GetObject("BtnBuscarCliente.BackgroundImage"), System.Drawing.Image)
-        Me.BtnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnBuscarCliente.Location = New System.Drawing.Point(209, 21)
-        Me.BtnBuscarCliente.Name = "BtnBuscarCliente"
-        Me.BtnBuscarCliente.Size = New System.Drawing.Size(22, 22)
-        Me.BtnBuscarCliente.TabIndex = 2
-        Me.BtnBuscarCliente.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -430,7 +416,6 @@ Partial Class OfertaVentaForm
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.Controls.Add(Me.CmbProducto)
-        Me.GroupBox3.Controls.Add(Me.BtnBuscarProducto)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Black
         Me.GroupBox3.Location = New System.Drawing.Point(11, 111)
@@ -451,16 +436,6 @@ Partial Class OfertaVentaForm
         Me.CmbProducto.Name = "CmbProducto"
         Me.CmbProducto.Size = New System.Drawing.Size(450, 24)
         Me.CmbProducto.TabIndex = 23
-        '
-        'BtnBuscarProducto
-        '
-        Me.BtnBuscarProducto.BackgroundImage = CType(resources.GetObject("BtnBuscarProducto.BackgroundImage"), System.Drawing.Image)
-        Me.BtnBuscarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnBuscarProducto.Location = New System.Drawing.Point(466, 19)
-        Me.BtnBuscarProducto.Name = "BtnBuscarProducto"
-        Me.BtnBuscarProducto.Size = New System.Drawing.Size(22, 22)
-        Me.BtnBuscarProducto.TabIndex = 24
-        Me.BtnBuscarProducto.UseVisualStyleBackColor = True
         '
         'ContextMenuStrip1
         '
@@ -510,7 +485,6 @@ Partial Class OfertaVentaForm
     End Sub
 
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents BtnBuscarCliente As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents CmbCliente As ComboBox
     Friend WithEvents Label1 As Label
@@ -537,7 +511,6 @@ Partial Class OfertaVentaForm
     Friend WithEvents Label3 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents CmbProducto As ComboBox
-    Friend WithEvents BtnBuscarProducto As Button
     Friend WithEvents TxtNombre As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents OfertaDeVentaToolStripMenuItem As ToolStripMenuItem

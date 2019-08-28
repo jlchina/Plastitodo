@@ -11,10 +11,16 @@ Public Class OfertaVentaForm
 
     Public Sub GetClientData(ByVal id_cliente As Integer)
         '--------->Establecer valores obtenidos del GridViewForm
-        Dim ds As DataSet = GetClientesByID(id_cliente)
-        CmbCliente.DataSource = ds.Tables(0)
-        CmbCliente.DisplayMember = "Nombre"
-        CmbCliente.ValueMember = "idCliente"
+        Dim DataClientes As DataSet = GetClientesByID(id_cliente)
+        CmbCliente.Items.Clear()
+
+        For Each dr As DataRow In DataClientes.Tables(0).Rows
+            CmbCliente.DisplayMember = dr(1)
+            CmbCliente.ValueMember = dr(0)
+            TxtNombre.Text = dr(1)
+        Next
+
+        'CmbCliente.SelectedIndex = 0
 
         'CmbProducto.Select(CmbProducto.Text.Length + 1, 0)
         'Me.CmbCliente.DroppedDown = True
@@ -26,9 +32,14 @@ Public Class OfertaVentaForm
     End Sub
     Dim ImpuestoTotal, Subtotal, Sumtotal As Decimal
     Private Sub OfertaVentaForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim test As New BuscarClientes
+        test.Owner = Me
         If (id_tipo_documento) Then
             If (folio = 0) Then
                 TxtFolio.Text = GetFolioMax(id_tipo_documento)
+                BtnCrear.Text = "Crear"
+            Else
+                BtnCrear.Text = "Guardar"
             End If
             If (id_tipo_documento = 1) Then
                 Me.Text = "Nota de venta - Nuevo"
@@ -65,33 +76,38 @@ Public Class OfertaVentaForm
             CmbProducto.Text = Nothing
             'CmbProducto.Items.Clear()
         Else
-            If CmbProducto.Text <> "" And CmbProducto.Text.Length >= 3 Then
-                'CmbProducto.Items.Clear()
-                Dim ds As DataSet = GetProductos(CmbProducto.Text)
-                CmbProducto.DataSource = ds.Tables(0)
-                CmbProducto.DisplayMember = "descripcion"
-                CmbProducto.ValueMember = "codigo_barras"
+            If (e.KeyCode = Keys.ShiftKey) Then
+                If CmbProducto.Text <> "" And CmbProducto.Text.Length >= 3 Then
+                    'CmbProducto.Items.Clear()
+                    Dim ds As DataSet = GetProductos(CmbProducto.Text)
+                    CmbProducto.DataSource = ds.Tables(0)
+                    CmbProducto.DisplayMember = "descripcion"
+                    CmbProducto.ValueMember = "codigo_barras"
 
-                'CmbProducto.Select(CmbProducto.Text.Length + 1, 0)
-                Me.CmbProducto.DroppedDown = True
-            Else
-                Me.CmbProducto.DroppedDown = False
-                'CmbProducto.Items.Clear()
+                    'CmbProducto.Select(CmbProducto.Text.Length + 1, 0)
+                    Me.CmbProducto.DroppedDown = True
+                Else
+                    Me.CmbProducto.DroppedDown = False
+                    'CmbProducto.Items.Clear()
+                End If
             End If
         End If
     End Sub
 
     Private Sub CmbProducto_DropDown(sender As Object, e As EventArgs) Handles CmbProducto.DropDown
-        Cursor = Cursors.Arrow
+        ' Cursor = Cursors.Arrow
     End Sub
 
     Private Sub CmbCliente_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles CmbCliente.KeyUp
-        If CmbCliente.Text <> "" And CmbCliente.Text.Length >= 3 Then
-            BuscarCliente(CmbProducto.Text)
-        Else
-            Me.CmbCliente.DroppedDown = False
-            'CmbProducto.Items.Clear()
+        If (e.KeyCode = Keys.ShiftKey) Then
+            If CmbCliente.Text <> "" And CmbCliente.Text.Length >= 3 Then
+                BuscarCliente(CmbProducto.Text)
+            Else
+                Me.CmbCliente.DroppedDown = False
+                'CmbProducto.Items.Clear()
+            End If
         End If
+
     End Sub
 
     Private Sub BuscarCliente(cliente)
@@ -196,7 +212,7 @@ Public Class OfertaVentaForm
         TxtFolio.Text = GetFolioMax(id_tipo_documento)
     End Sub
 
-    Private Sub BtnBuscarCliente_Click(sender As Object, e As EventArgs) Handles BtnBuscarCliente.Click
+    Private Sub BtnBuscarCliente_Click(sender As Object, e As EventArgs)
         Dim VerForm As New BuscarClientes()
         VerForm.Show()
     End Sub
@@ -233,6 +249,7 @@ Public Class OfertaVentaForm
 
     Private Sub BtnCrear_Click(sender As Object, e As EventArgs) Handles BtnCrear.Click
         Dim ds As DataSet = New DataSet
+        Dim valid As Boolean = False
 
         Dim lineas As New DataTable
         lineas.Columns.Add("id")
@@ -256,14 +273,20 @@ Public Class OfertaVentaForm
             row("total") = CDec(Dt_Row.Cells("total").Value)
 
             lineas.Rows.Add(row)
+            valid = True
         Next
 
         ds.Tables.Add(lineas)
 
-        If (DocumentoVenta(folio, id_tipo_documento, CmbCliente.SelectedValue, TxtNombre.Text, TxtVendedor.Text, TxtComentarios.Text, CDec(TxtSubTotal.Text), CDec(TxtImpuestoTotal.Text), CDec(TxtTotal.Text), ds)) Then
-            MessageBox.Show("Documento guardado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.Close()
+        If (CmbCliente.SelectedValue > 0 And TxtNombre.Text IsNot "" And TxtVendedor.Text IsNot "" And valid) Then
+            If (DocumentoVenta(folio, id_tipo_documento, CmbCliente.SelectedValue, TxtNombre.Text, TxtVendedor.Text, TxtComentarios.Text, CDec(TxtSubTotal.Text), CDec(TxtImpuestoTotal.Text), CDec(TxtTotal.Text), ds)) Then
+                MessageBox.Show("Documento guardado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Close()
+            End If
+        Else
+            MessageBox.Show("Favor de llenar la informacion necesaria", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+
 
     End Sub
 End Class

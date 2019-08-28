@@ -58,11 +58,22 @@
                 Dim id As String
                 id = DgvClientes.Rows(e.RowIndex).Cells("Id").Value
                 '--------->Instrucción abrir formulario y enviar datos de tabla
-                OfertaVentaForm.GetClientData(CInt(id))
+                '
+                Dim fr As New OfertaVentaForm
+                fr.TxtNombre.Text = DgvClientes.Rows(e.RowIndex).Cells("Nombre").Value
+
+                'OfertaVentaForm.GetClientData(CInt(id))
+                'fr.TxtNombre.Text = DgvClientes.Rows(e.RowIndex).Cells("Nombre").Value
                 Me.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub TxtFrase_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtFrase.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            BtnBuscarCliente_Click(sender, e)
+        End If
     End Sub
 End Class

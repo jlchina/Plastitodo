@@ -25,10 +25,10 @@ Partial Class ListaDocumentos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ListaDocumentos))
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DtpFechaDocumento = New System.Windows.Forms.DateTimePicker()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.DgvDocumentos = New System.Windows.Forms.DataGridView()
         Me.BtnBuscarCliente = New System.Windows.Forms.Button()
+        Me.TxtFecha = New System.Windows.Forms.TextBox()
         CType(Me.DgvDocumentos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -48,16 +48,6 @@ Partial Class ListaDocumentos
         Me.Label2.Size = New System.Drawing.Size(63, 16)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Nombre"
-        '
-        'DtpFechaDocumento
-        '
-        Me.DtpFechaDocumento.CustomFormat = "dd/MM/yyyy"
-        Me.DtpFechaDocumento.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DtpFechaDocumento.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtpFechaDocumento.Location = New System.Drawing.Point(536, 22)
-        Me.DtpFechaDocumento.Name = "DtpFechaDocumento"
-        Me.DtpFechaDocumento.Size = New System.Drawing.Size(113, 18)
-        Me.DtpFechaDocumento.TabIndex = 14
         '
         'Label13
         '
@@ -87,14 +77,21 @@ Partial Class ListaDocumentos
         Me.BtnBuscarCliente.TabIndex = 16
         Me.BtnBuscarCliente.UseVisualStyleBackColor = True
         '
+        'TxtFecha
+        '
+        Me.TxtFecha.Location = New System.Drawing.Point(536, 20)
+        Me.TxtFecha.Name = "TxtFecha"
+        Me.TxtFecha.Size = New System.Drawing.Size(125, 20)
+        Me.TxtFecha.TabIndex = 17
+        '
         'ListaDocumentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(745, 364)
+        Me.Controls.Add(Me.TxtFecha)
         Me.Controls.Add(Me.BtnBuscarCliente)
         Me.Controls.Add(Me.DgvDocumentos)
-        Me.Controls.Add(Me.DtpFechaDocumento)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.TxtNombre)
         Me.Controls.Add(Me.Label2)
@@ -108,8 +105,8 @@ Partial Class ListaDocumentos
 
     Friend WithEvents TxtNombre As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents DtpFechaDocumento As DateTimePicker
     Friend WithEvents Label13 As Label
     Friend WithEvents DgvDocumentos As DataGridView
     Friend WithEvents BtnBuscarCliente As Button
+    Friend WithEvents TxtFecha As TextBox
 End Class

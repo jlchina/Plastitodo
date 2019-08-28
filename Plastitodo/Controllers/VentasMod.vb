@@ -172,7 +172,7 @@ Module VentasMod
     End Function
     Function GetDocumentos(ByVal nombre As String, fecha As String)
         Dim ds As DataSet = New DataSet
-        Dim sql = "Select d.folio, td.descripcion as tipo_documento,c.Nombre as cliente, d.nombre,d.vendedor,d.total,date(d.fecha_creacion) as fecha_documento
+        Dim sql = "Select d.folio, td.descripcion as tipo_documento,c.Nombre as cliente, d.nombre,d.vendedor,d.total,d.fecha_creacion as fecha_documento
                     from documentos d
                     left join tipos_documento td on d.id_tipo_documento = td.id
                     left join cliente c on d.id_cliente = c.idCliente"
@@ -183,9 +183,9 @@ Module VentasMod
 
         If (fecha IsNot "") Then
             If (where IsNot "") Then
-                where = where & " and (d.fecha_creacion >= str_to_date('" & fecha & "', '%d/%m/%Y') or d.fecha_creacion <= str_to_date('" & fecha & "','%d/%m/%Y'))"
+                where = where & " and date(d.fecha_creacion) = '" & fecha & "'"
             Else
-                where = where & " Where (d.fecha_creacion >= str_to_date('" & fecha & "', '%d/%m/%Y') or d.fecha_creacion <= str_to_date('" & fecha & "','%d/%m/%Y'))"
+                where = where & " Where date(d.fecha_creacion) = '" & fecha & "'"
             End If
         End If
 
