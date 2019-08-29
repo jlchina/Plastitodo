@@ -27,8 +27,6 @@ Partial Class Existencias
         Me.DataGridViewexis = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TExistencias.SuspendLayout()
-        Me.TBusExistencias.SuspendLayout()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DataGridViewexis, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -40,7 +38,7 @@ Partial Class Existencias
         Me.Bbuscarexis.BackgroundImage = CType(resources.GetObject("Bbuscarexis.BackgroundImage"), System.Drawing.Image)
         Me.Bbuscarexis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Bbuscarexis.Location = New System.Drawing.Point(592, 24)
-        Me.Bbuscarexis.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Bbuscarexis.Margin = New System.Windows.Forms.Padding(4)
         Me.Bbuscarexis.Name = "Bbuscarexis"
         Me.Bbuscarexis.Size = New System.Drawing.Size(53, 44)
         Me.Bbuscarexis.TabIndex = 7
@@ -54,7 +52,7 @@ Partial Class Existencias
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridViewexis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewexis.Location = New System.Drawing.Point(13, 86)
-        Me.DataGridViewexis.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridViewexis.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridViewexis.Name = "DataGridViewexis"
         Me.DataGridViewexis.Size = New System.Drawing.Size(632, 225)
         Me.DataGridViewexis.TabIndex = 6
@@ -72,7 +70,7 @@ Partial Class Existencias
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(217, 35)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.MaxLength = 15
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(355, 22)
@@ -99,9 +97,9 @@ Partial Class Existencias
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Existencias"
-        Me.Text = "Existencias"
+        Me.Text = "Consultar existencias"
         CType(Me.DataGridViewexis, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

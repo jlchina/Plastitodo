@@ -122,7 +122,7 @@ Partial Class Cons_prod
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DGVcatprov)
         Me.Name = "Cons_prod"
-        Me.Text = "Cons_prod"
+        Me.Text = "Consultar productos"
         CType(Me.DGVcatprov, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

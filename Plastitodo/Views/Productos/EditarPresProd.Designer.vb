@@ -33,7 +33,7 @@ Partial Class EditarPresProd
         'Txt_NomPresP
         '
         Me.Txt_NomPresP.Location = New System.Drawing.Point(245, 84)
-        Me.Txt_NomPresP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_NomPresP.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_NomPresP.Name = "Txt_NomPresP"
         Me.Txt_NomPresP.Size = New System.Drawing.Size(167, 22)
         Me.Txt_NomPresP.TabIndex = 0
@@ -44,7 +44,7 @@ Partial Class EditarPresProd
         Me.Btn_Actualizar.BackgroundImage = CType(resources.GetObject("Btn_Actualizar.BackgroundImage"), System.Drawing.Image)
         Me.Btn_Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_Actualizar.Location = New System.Drawing.Point(358, 151)
-        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
         Me.Btn_Actualizar.Size = New System.Drawing.Size(54, 43)
         Me.Btn_Actualizar.TabIndex = 1
@@ -93,13 +93,13 @@ Partial Class EditarPresProd
         Me.Controls.Add(Me.Btn_Actualizar)
         Me.Controls.Add(Me.Txt_NomPresP)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(450, 260)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(450, 260)
         Me.Name = "EditarPresProd"
-        Me.Text = "EditarPresProd"
+        Me.Text = "Editar presentacion de productos"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

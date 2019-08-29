@@ -102,7 +102,10 @@ Partial Class Login
         Me.Controls.Add(Me.txt_user)
         Me.Controls.Add(Me.lbl_user)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(365, 301)
+        Me.MinimumSize = New System.Drawing.Size(365, 301)
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Autenticación"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
