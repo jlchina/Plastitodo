@@ -178,4 +178,9 @@ Public Class Principal
         newForm.Show()
     End Sub
 
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        Dim newForm As New Cat_Clientes()
+        newForm.MdiParent = Me
+        newForm.Show()
+    End Sub
 End Class

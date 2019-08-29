@@ -30,9 +30,8 @@ Partial Class Cat_Clientes
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DGVconsultclient = New System.Windows.Forms.DataGridView()
         Me.Tab_alta_p = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Text_id = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Text_nomb = New System.Windows.Forms.TextBox()
         Me.Text_mail = New System.Windows.Forms.TextBox()
@@ -51,21 +50,23 @@ Partial Class Cat_Clientes
         Me.Btn_cancelarp = New System.Windows.Forms.Button()
         Me.Btn_agregarc = New System.Windows.Forms.Button()
         Me.TabEditCatProv = New System.Windows.Forms.TabPage()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Buttonbuscar = New System.Windows.Forms.Button()
         Me.Textbusclient = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.DGV_Edit_CP = New System.Windows.Forms.DataGridView()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TxtRazon = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtRfc = New System.Windows.Forms.TextBox()
         Me.Tab_proveedor.SuspendLayout()
         Me.Tab_cons_p.SuspendLayout()
         CType(Me.DGVconsultclient, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab_alta_p.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabEditCatProv.SuspendLayout()
         CType(Me.DGV_Edit_CP, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Tab_proveedor
@@ -80,7 +81,7 @@ Partial Class Cat_Clientes
         Me.Tab_proveedor.Location = New System.Drawing.Point(1, 12)
         Me.Tab_proveedor.Name = "Tab_proveedor"
         Me.Tab_proveedor.SelectedIndex = 0
-        Me.Tab_proveedor.Size = New System.Drawing.Size(759, 379)
+        Me.Tab_proveedor.Size = New System.Drawing.Size(759, 394)
         Me.Tab_proveedor.TabIndex = 33
         '
         'Tab_cons_p
@@ -92,7 +93,7 @@ Partial Class Cat_Clientes
         Me.Tab_cons_p.Location = New System.Drawing.Point(4, 25)
         Me.Tab_cons_p.Name = "Tab_cons_p"
         Me.Tab_cons_p.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_cons_p.Size = New System.Drawing.Size(751, 350)
+        Me.Tab_cons_p.Size = New System.Drawing.Size(751, 365)
         Me.Tab_cons_p.TabIndex = 0
         Me.Tab_cons_p.Text = "Consulta"
         Me.Tab_cons_p.UseVisualStyleBackColor = True
@@ -137,7 +138,7 @@ Partial Class Cat_Clientes
         Me.DGVconsultclient.Location = New System.Drawing.Point(7, 54)
         Me.DGVconsultclient.Name = "DGVconsultclient"
         Me.DGVconsultclient.ReadOnly = True
-        Me.DGVconsultclient.Size = New System.Drawing.Size(719, 279)
+        Me.DGVconsultclient.Size = New System.Drawing.Size(719, 294)
         Me.DGVconsultclient.TabIndex = 0
         '
         'Tab_alta_p
@@ -150,15 +151,27 @@ Partial Class Cat_Clientes
         Me.Tab_alta_p.Location = New System.Drawing.Point(4, 25)
         Me.Tab_alta_p.Name = "Tab_alta_p"
         Me.Tab_alta_p.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_alta_p.Size = New System.Drawing.Size(751, 350)
+        Me.Tab_alta_p.Size = New System.Drawing.Size(751, 365)
         Me.Tab_alta_p.TabIndex = 1
         Me.Tab_alta_p.Text = "Alta"
         Me.Tab_alta_p.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(514, 60)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(211, 161)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 23
+        Me.PictureBox1.TabStop = False
+        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.TxtRazon)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.Text_id)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.TxtRfc)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Text_nomb)
         Me.GroupBox2.Controls.Add(Me.Text_mail)
@@ -172,26 +185,10 @@ Partial Class Cat_Clientes
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Informacion general"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(46, 25)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(25, 16)
-        Me.Label3.TabIndex = 22
-        Me.Label3.Text = "Id:"
-        '
-        'Text_id
-        '
-        Me.Text_id.Location = New System.Drawing.Point(83, 22)
-        Me.Text_id.Name = "Text_id"
-        Me.Text_id.Size = New System.Drawing.Size(113, 22)
-        Me.Text_id.TabIndex = 21
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(4, 57)
+        Me.Label10.Location = New System.Drawing.Point(4, 27)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(67, 16)
         Me.Label10.TabIndex = 11
@@ -199,14 +196,14 @@ Partial Class Cat_Clientes
         '
         'Text_nomb
         '
-        Me.Text_nomb.Location = New System.Drawing.Point(83, 54)
+        Me.Text_nomb.Location = New System.Drawing.Point(83, 24)
         Me.Text_nomb.Name = "Text_nomb"
         Me.Text_nomb.Size = New System.Drawing.Size(372, 22)
         Me.Text_nomb.TabIndex = 2
         '
         'Text_mail
         '
-        Me.Text_mail.Location = New System.Drawing.Point(268, 87)
+        Me.Text_mail.Location = New System.Drawing.Point(268, 57)
         Me.Text_mail.Name = "Text_mail"
         Me.Text_mail.Size = New System.Drawing.Size(187, 22)
         Me.Text_mail.TabIndex = 8
@@ -214,7 +211,7 @@ Partial Class Cat_Clientes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(-3, 90)
+        Me.Label1.Location = New System.Drawing.Point(-3, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 16)
         Me.Label1.TabIndex = 18
@@ -223,7 +220,7 @@ Partial Class Cat_Clientes
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(211, 88)
+        Me.Label2.Location = New System.Drawing.Point(211, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 16)
         Me.Label2.TabIndex = 20
@@ -231,7 +228,7 @@ Partial Class Cat_Clientes
         '
         'Text_tel
         '
-        Me.Text_tel.Location = New System.Drawing.Point(83, 87)
+        Me.Text_tel.Location = New System.Drawing.Point(83, 57)
         Me.Text_tel.Name = "Text_tel"
         Me.Text_tel.Size = New System.Drawing.Size(113, 22)
         Me.Text_tel.TabIndex = 7
@@ -246,7 +243,7 @@ Partial Class Cat_Clientes
         Me.GroupBox1.Controls.Add(Me.Text_cd)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Text_cp)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 143)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 142)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(477, 136)
         Me.GroupBox1.TabIndex = 21
@@ -340,7 +337,6 @@ Partial Class Cat_Clientes
         '
         'TabEditCatProv
         '
-        Me.TabEditCatProv.Controls.Add(Me.Button2)
         Me.TabEditCatProv.Controls.Add(Me.Buttonbuscar)
         Me.TabEditCatProv.Controls.Add(Me.Textbusclient)
         Me.TabEditCatProv.Controls.Add(Me.Label12)
@@ -348,28 +344,17 @@ Partial Class Cat_Clientes
         Me.TabEditCatProv.Location = New System.Drawing.Point(4, 25)
         Me.TabEditCatProv.Name = "TabEditCatProv"
         Me.TabEditCatProv.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabEditCatProv.Size = New System.Drawing.Size(751, 350)
+        Me.TabEditCatProv.Size = New System.Drawing.Size(751, 365)
         Me.TabEditCatProv.TabIndex = 2
         Me.TabEditCatProv.Text = "Editar"
         Me.TabEditCatProv.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.BackgroundImage = Global.Plastitodo.My.Resources.Resources.Edit
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(687, 10)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(58, 37)
-        Me.Button2.TabIndex = 8
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Buttonbuscar
         '
         Me.Buttonbuscar.BackgroundImage = CType(resources.GetObject("Buttonbuscar.BackgroundImage"), System.Drawing.Image)
         Me.Buttonbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Buttonbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Buttonbuscar.Location = New System.Drawing.Point(596, 8)
+        Me.Buttonbuscar.Location = New System.Drawing.Point(687, 12)
         Me.Buttonbuscar.Name = "Buttonbuscar"
         Me.Buttonbuscar.Size = New System.Drawing.Size(58, 39)
         Me.Buttonbuscar.TabIndex = 7
@@ -377,9 +362,9 @@ Partial Class Cat_Clientes
         '
         'Textbusclient
         '
-        Me.Textbusclient.Location = New System.Drawing.Point(101, 25)
+        Me.Textbusclient.Location = New System.Drawing.Point(184, 26)
         Me.Textbusclient.Name = "Textbusclient"
-        Me.Textbusclient.Size = New System.Drawing.Size(97, 22)
+        Me.Textbusclient.Size = New System.Drawing.Size(237, 22)
         Me.Textbusclient.TabIndex = 6
         '
         'Label12
@@ -388,9 +373,9 @@ Partial Class Cat_Clientes
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.Location = New System.Drawing.Point(17, 29)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(77, 16)
+        Me.Label12.Size = New System.Drawing.Size(162, 16)
         Me.Label12.TabIndex = 5
-        Me.Label12.Text = "Id Cliente:"
+        Me.Label12.Text = "Busqueda de clientes:"
         '
         'DGV_Edit_CP
         '
@@ -403,24 +388,46 @@ Partial Class Cat_Clientes
         Me.DGV_Edit_CP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Edit_CP.Location = New System.Drawing.Point(6, 57)
         Me.DGV_Edit_CP.Name = "DGV_Edit_CP"
-        Me.DGV_Edit_CP.Size = New System.Drawing.Size(739, 246)
+        Me.DGV_Edit_CP.Size = New System.Drawing.Size(739, 261)
         Me.DGV_Edit_CP.TabIndex = 1
         '
-        'PictureBox1
+        'TxtRazon
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(514, 60)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(211, 161)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 23
-        Me.PictureBox1.TabStop = False
+        Me.TxtRazon.Location = New System.Drawing.Point(268, 88)
+        Me.TxtRazon.Name = "TxtRazon"
+        Me.TxtRazon.Size = New System.Drawing.Size(187, 22)
+        Me.TxtRazon.TabIndex = 22
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(36, 91)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 16)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "Rfc:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(198, 91)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(74, 16)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "Razon S.:"
+        '
+        'TxtRfc
+        '
+        Me.TxtRfc.Location = New System.Drawing.Point(83, 88)
+        Me.TxtRfc.Name = "TxtRfc"
+        Me.TxtRfc.Size = New System.Drawing.Size(113, 22)
+        Me.TxtRfc.TabIndex = 21
         '
         'Cat_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(772, 450)
+        Me.ClientSize = New System.Drawing.Size(772, 465)
         Me.Controls.Add(Me.Tab_proveedor)
         Me.Name = "Cat_Clientes"
         Me.Text = "Clientes"
@@ -429,6 +436,7 @@ Partial Class Cat_Clientes
         Me.Tab_cons_p.PerformLayout()
         CType(Me.DGVconsultclient, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab_alta_p.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -436,7 +444,6 @@ Partial Class Cat_Clientes
         Me.TabEditCatProv.ResumeLayout(False)
         Me.TabEditCatProv.PerformLayout()
         CType(Me.DGV_Edit_CP, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -465,14 +472,15 @@ Partial Class Cat_Clientes
     Friend WithEvents Btn_cancelarp As Button
     Friend WithEvents Btn_agregarc As Button
     Friend WithEvents TabEditCatProv As TabPage
-    Friend WithEvents Button2 As Button
     Friend WithEvents Buttonbuscar As Button
     Friend WithEvents Textbusclient As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents DGV_Edit_CP As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Text_id As TextBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TxtRazon As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TxtRfc As TextBox
 End Class

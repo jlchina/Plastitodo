@@ -95,7 +95,11 @@ CREATE TABLE `cliente` (
   `Ciudad` tinytext COLLATE latin1_general_ci DEFAULT NULL,
   `Codigo_postal` varchar(45) COLLATE latin1_general_ci DEFAULT NULL,
   `telefono` varchar(45) COLLATE latin1_general_ci DEFAULT NULL,
-  `email` tinytext COLLATE latin1_general_ci DEFAULT NULL
+  `email` tinytext COLLATE latin1_general_ci DEFAULT NULL,
+  `rfc` varchar(20) COLLATE latin1_general_ci DEFAULT NULL,
+  `razon_social` varchar(115) COLLATE latin1_general_ci DEFAULT NULL,
+  `fecha_creacion` timestamp NULL DEFAULT current_timestamp(),
+  `fecha_actualizacion` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
