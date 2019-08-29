@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Cat_Clientes
+    Dim id_cliente As Integer
     Private Sub Cat_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Try
         '    comando = New MySqlCommand("INSERT INTO cliente(idCliente, Nombre, Direccion, Colonia, Ciudad, Codigo_postal, telefono, email)" & Chr(13) &
@@ -24,45 +25,55 @@ Public Class Cat_Clientes
         Try
             If (Text_nomb.Text IsNot "" And Text_dir.Text IsNot "" And Text_col.Text IsNot "" And
                 Text_cd.Text IsNot "" And Text_cp.Text IsNot "" And Text_cp.Text IsNot "" And Text_tel.Text And TxtRfc.Text IsNot "") Then
-                comando = New MySqlCommand("INSERT INTO cliente(Nombre, Direccion, Colonia, Ciudad, Codigo_postal, telefono, email, rfc, razon_social)" & Chr(13) &
-                                       "VALUES(@Nombre, @Direccion, @Colonia, @Ciudad, @Codigo_postal, @telefono, @email, @rfc, @razon_social)", con_string)
 
-                comando.Parameters.AddWithValue("@Nombre", Text_nomb.Text)
-                comando.Parameters.AddWithValue("@Direccion", Text_dir.Text)
-                comando.Parameters.AddWithValue("@Colonia", Text_col.Text)
-                comando.Parameters.AddWithValue("@Ciudad", Text_cd.Text)
-                comando.Parameters.AddWithValue("@Codigo_postal", Text_cp.Text)
-                comando.Parameters.AddWithValue("@telefono", Text_tel.Text)
-                comando.Parameters.AddWithValue("@email", Text_mail.Text)
-                comando.Parameters.AddWithValue("@rfc", TxtRfc.Text)
-                comando.Parameters.AddWithValue("@razon_social", TxtRazon.Text)
-                comando.ExecuteNonQuery()
+                Dim sql = ""
+
+                If (id_cliente > 0) Then
+                    sql = "UPDATE cliente
+                            SET
+                            Nombre = @Nombre,
+                            Direccion = @Direccion,
+                            Colonia = @Colonia,
+                            Ciudad = @Ciudad,
+                            Codigo_postal = @Codigo_postal,
+                            telefono = @telefono,
+                            email = @email,
+                            rfc = @rfc,
+                            razon_social = @razon_social
+                            WHERE idCliente = @id;"
+                Else
+                    sql = "INSERT INTO cliente(Nombre, Direccion, Colonia, Ciudad, Codigo_postal, telefono, email, rfc, razon_social) " & Chr(13) &
+                           "VALUES(@Nombre, @Direccion, @Colonia, @Ciudad, @Codigo_postal, @telefono, @email, @rfc, @razon_social)"
+                End If
+                conn = New MySqlConnection
+                conn.ConnectionString = ConnectionString2
+                conn.Open()
+
+                cmd = New MySqlCommand(sql, conn)
+                If (id_cliente > 0) Then
+                    cmd.Parameters.AddWithValue("@id", id_cliente)
+                End If
+                cmd.Parameters.AddWithValue("@Nombre", Text_nomb.Text)
+                cmd.Parameters.AddWithValue("@Direccion", Text_dir.Text)
+                cmd.Parameters.AddWithValue("@Colonia", Text_col.Text)
+                cmd.Parameters.AddWithValue("@Ciudad", Text_cd.Text)
+                cmd.Parameters.AddWithValue("@Codigo_postal", Text_cp.Text)
+                cmd.Parameters.AddWithValue("@telefono", Text_tel.Text)
+                cmd.Parameters.AddWithValue("@email", Text_mail.Text)
+                cmd.Parameters.AddWithValue("@rfc", TxtRfc.Text)
+                cmd.Parameters.AddWithValue("@razon_social", TxtRazon.Text)
+                cmd.ExecuteNonQuery()
+                conn.Close()
                 MsgBox("Cliente guardado con exito")
+                id_cliente = 0
+                Tab_proveedor.TabPages(0).Text = "Alta"
+                limpiar()
             Else
                 MessageBox.Show("Favor de llenar la informacion necesaria", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, "Hubo un error al guardar el Cliente, verifique los datos")
             limpiar()
-        End Try
-    End Sub
-
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Try
-            Dim conexion As New MySqlConnection(ConnectionString2)
-            Dim query = "Select * from cliente where Nombre like ?"
-            Dim adap As New MySqlDataAdapter(query, conexion)
-            adap.SelectCommand.Parameters.AddWithValue("@p1", "%" & Textbusclient.Text & "%")
-            Dim dt As New DataTable
-            adap.Fill(dt)
-            If dt.Rows.Count > 0 Then
-                DGVconsultclient.DataSource = dt
-            Else
-                MessageBox.Show("No se encontraron coincidencias")
-            End If
-            conexion.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
@@ -74,6 +85,8 @@ Public Class Cat_Clientes
         Text_cp.Text = String.Empty
         Text_tel.Text = String.Empty
         Text_mail.Text = String.Empty
+        TxtRfc.Text = String.Empty
+        TxtRazon.Text = String.Empty
 
     End Sub
 
@@ -109,8 +122,8 @@ Public Class Cat_Clientes
             DataTable.Columns.Add("Codigo postal", GetType(String)) '6
             DataTable.Columns.Add("Telefono", GetType(String)) '7
             DataTable.Columns.Add("Email", GetType(String)) '8
-            DataTable.Columns.Add("RFC", GetType(String)) '8
-            DataTable.Columns.Add("Razon", GetType(String)) '8
+            DataTable.Columns.Add("RFC", GetType(String)) '9
+            DataTable.Columns.Add("Razon", GetType(String)) '10
 
 
             For Each dr As DataRow In ds.Tables(0).Rows
@@ -122,9 +135,9 @@ Public Class Cat_Clientes
                 DataRow("Ciudad") = dr(4)
                 DataRow("Codigo postal") = dr(5)
                 DataRow("Telefono") = dr(6)
-                DataRow("Email") = dr(6)
-                DataRow("RFC") = dr(7)
-                DataRow("Razon") = dr(8)
+                DataRow("Email") = dr(7)
+                DataRow("RFC") = dr(8)
+                DataRow("Razon") = dr(9)
 
                 DataTable.Rows.Add(DataRow)
             Next
@@ -159,5 +172,38 @@ Public Class Cat_Clientes
         If Asc(e.KeyChar) = 13 Then
             Button1_Click(sender, e)
         End If
+    End Sub
+
+    Private Sub DGV_Edit_CP_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Edit_CP.CellClick
+        If e.ColumnIndex <> 0 Then Exit Sub
+        'Dim con2 As Integer = 0
+        Try
+            If DGV_Edit_CP.Columns(e.ColumnIndex).Name = "Editar" Then
+                '--------->Campos enviar a formulario
+                Dim id As String
+                id = DGV_Edit_CP.Rows(e.RowIndex).Cells("Id").Value
+                '--------->Instrucción abrir formulario y enviar datos de tabla
+                Dim ds As DataSet = GetClientesByID(CInt(id))
+
+                For Each dr As DataRow In ds.Tables(0).Rows
+                    id_cliente = dr(0)
+                    Text_nomb.Text = dr(1)
+                    Text_dir.Text = dr(2)
+                    Text_col.Text = dr(3)
+                    Text_cd.Text = dr(4)
+                    Text_cp.Text = dr(5)
+                    Text_tel.Text = dr(6)
+                    Text_mail.Text = dr(7)
+                    TxtRfc.Text = dr(8)
+                    TxtRazon.Text = dr(9)
+                Next
+
+                Tab_proveedor.TabPages(0).Text = "Editar"
+                Tab_proveedor.SelectedIndex = 0
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

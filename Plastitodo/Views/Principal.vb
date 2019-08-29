@@ -75,7 +75,6 @@ Public Class Principal
         Response = MsgBox("Cerrar Conexion", Style, "Error")
 
         If Response = MsgBoxResult.Yes Then
-            Application.Exit()
             End
         End If
     End Sub
