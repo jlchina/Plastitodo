@@ -170,7 +170,7 @@ Partial Class EditarUsuariosForm
         Me.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
         Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGuardar.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnGuardar.Location = New System.Drawing.Point(330, 265)
+        Me.BtnGuardar.Location = New System.Drawing.Point(338, 225)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(40, 40)
         Me.BtnGuardar.TabIndex = 141
@@ -185,17 +185,17 @@ Partial Class EditarUsuariosForm
         Me.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCancelar.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.BtnCancelar.Location = New System.Drawing.Point(12, 265)
+        Me.BtnCancelar.Location = New System.Drawing.Point(20, 225)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(40, 40)
         Me.BtnCancelar.TabIndex = 142
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
-        'UsuariosForm
+        'EditarUsuariosForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(387, 317)
+        Me.ClientSize = New System.Drawing.Size(387, 277)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.CmbPerfil)
@@ -210,7 +210,7 @@ Partial Class EditarUsuariosForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtAPaterno)
         Me.Controls.Add(Me.Label5)
-        Me.Name = "UsuariosForm"
+        Me.Name = "EditarUsuariosForm"
         Me.Text = "Control de usuarios"
         Me.ResumeLayout(False)
         Me.PerformLayout()

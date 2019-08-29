@@ -125,9 +125,10 @@ Partial Class EditarPerfilesForm
         '
         'BtnAgregarModulo
         '
-        Me.BtnAgregarModulo.Location = New System.Drawing.Point(222, 77)
+        Me.BtnAgregarModulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.BtnAgregarModulo.Location = New System.Drawing.Point(222, 60)
         Me.BtnAgregarModulo.Name = "BtnAgregarModulo"
-        Me.BtnAgregarModulo.Size = New System.Drawing.Size(75, 23)
+        Me.BtnAgregarModulo.Size = New System.Drawing.Size(75, 40)
         Me.BtnAgregarModulo.TabIndex = 143
         Me.BtnAgregarModulo.Text = "Agregar"
         Me.BtnAgregarModulo.UseVisualStyleBackColor = True

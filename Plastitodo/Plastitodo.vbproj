@@ -250,6 +250,12 @@
     <Compile Include="Views\Usuarios\ListaUsuariosForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Ventas\BuscarClientes.Designer.vb">
+      <DependentUpon>BuscarClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ventas\BuscarClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Ventas\ListaDocumentos.Designer.vb">
       <DependentUpon>ListaDocumentos.vb</DependentUpon>
     </Compile>
@@ -344,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuarios\ListaUsuariosForm.resx">
       <DependentUpon>ListaUsuariosForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Ventas\BuscarClientes.resx">
+      <DependentUpon>BuscarClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Ventas\ListaDocumentos.resx">
       <DependentUpon>ListaDocumentos.vb</DependentUpon>

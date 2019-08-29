@@ -1,6 +1,6 @@
 ﻿Public Class ListaDocumentos
     Private Sub BtnBuscarCliente_Click(sender As Object, e As EventArgs) Handles BtnBuscarCliente.Click
-        Dim ds As DataSet = GetDocumentos(TxtNombre.Text, DtpFechaDocumento.Value)
+        Dim ds As DataSet = GetDocumentos(TxtNombre.Text, TxtFecha.Text)
         Dim DataTable As New DataTable()
 
         'Declarar columnas para data gridview
@@ -71,5 +71,9 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub ListaDocumentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TxtFecha.Text = DateTime.Now.ToString("yyyy-MM-dd")
     End Sub
 End Class

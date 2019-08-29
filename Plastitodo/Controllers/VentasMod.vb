@@ -45,6 +45,54 @@ Module VentasMod
         End Try
         Return ds
     End Function
+
+    Function GetSearchClientes(ByVal descripcion As String)
+        Dim ds As DataSet = New DataSet
+        Dim sql = "Select * From cliente c
+                    Where c.nombre like '%" & descripcion & "%' or c.direccion Like '%" & descripcion & "%' or c.Ciudad Like '%" & descripcion & "%';"
+        Try
+            '---Abir conexion
+            conn = New MySqlConnection
+            conn.ConnectionString = ConnectionString2
+            conn.Open()
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(sql, conn)
+            'cmd.Parameters.Add(New MySqlParameter("@descripcion", descripcion))
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(ds)
+
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Return ds
+    End Function
+
+    Function GetClientesByID(ByVal id_cliente As Integer)
+        Dim ds As DataSet = New DataSet
+        Dim sql = "SELECT * FROM cliente c WHERE c.idCliente = @id;"
+        Try
+            '---Abir conexion
+            conn = New MySqlConnection
+            conn.ConnectionString = ConnectionString2
+            conn.Open()
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(sql, conn)
+            cmd.Parameters.Add(New MySqlParameter("@id", id_cliente))
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(ds)
+
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Return ds
+    End Function
+
     Function GetProductos(ByVal descripcion As String)
         Dim ds As DataSet = New DataSet
         Dim sql = "SELECT cp.codigo_barras,cp.descripcion FROM catalogo_productos cp WHERE cp.descripcion Like '%" & descripcion & "%' ORDER BY cp.descripcion LIMIT 10;"
@@ -69,9 +117,10 @@ Module VentasMod
     End Function
     Function GetProducto(ByVal codigo As String)
         Dim ds As DataSet = New DataSet
-        Dim sql = "SELECT cp.*, p.presentacion as unidad
+        Dim sql = "SELECT cp.*, p.presentacion as unidad, ifnull(i.existencia,0) as stock
                     FROM catalogo_productos cp
                     LEFT JOIN presentacion_prod p on cp.presentacion = p.id_pp
+                    LEFT JOIN inventario i on cp.codigo_barras = i.codigo_barras
                     WHERE cp.codigo_barras = @codigo  LIMIT 1;"
         Try
             '---Abir conexion
@@ -123,7 +172,7 @@ Module VentasMod
     End Function
     Function GetDocumentos(ByVal nombre As String, fecha As String)
         Dim ds As DataSet = New DataSet
-        Dim sql = "Select d.folio, td.descripcion as tipo_documento,c.Nombre as cliente, d.nombre,d.vendedor,d.total,date(d.fecha_creacion) as fecha_documento
+        Dim sql = "Select d.folio, td.descripcion as tipo_documento,c.Nombre as cliente, d.nombre,d.vendedor,d.total,d.fecha_creacion as fecha_documento
                     from documentos d
                     left join tipos_documento td on d.id_tipo_documento = td.id
                     left join cliente c on d.id_cliente = c.idCliente"
@@ -134,9 +183,9 @@ Module VentasMod
 
         If (fecha IsNot "") Then
             If (where IsNot "") Then
-                where = where & " and (d.fecha_creacion >= str_to_date('" & fecha & "', '%d/%m/%Y') or d.fecha_creacion <= str_to_date('" & fecha & "','%d/%m/%Y'))"
+                where = where & " and date(d.fecha_creacion) = '" & fecha & "'"
             Else
-                where = where & " Where (d.fecha_creacion >= str_to_date('" & fecha & "', '%d/%m/%Y') or d.fecha_creacion <= str_to_date('" & fecha & "','%d/%m/%Y'))"
+                where = where & " Where date(d.fecha_creacion) = '" & fecha & "'"
             End If
         End If
 
@@ -190,10 +239,11 @@ Module VentasMod
 
     Function GetLineasDocumento(ByVal folio As Integer, tipo As Integer)
         Dim ds As DataSet = New DataSet
-        Dim sql = "Select ld.id,cp.codigo_barras,cp.descripcion,pp.presentacion,ld.cantidad,ld.precio,ld.subtotal,ld.descuento,ld.iva,ld.total
+        Dim sql = "Select ld.id,cp.codigo_barras,cp.descripcion,pp.presentacion,ld.cantidad,ld.precio,ld.subtotal,ld.descuento,ld.iva,ld.total,ifnull(i.existencia,0) as stock
                     From lineas_documento ld
                     left join catalogo_productos cp on ld.id_producto = cp.id
                     left join presentacion_prod pp on ld.id_presentacion = pp.id_pp
+                    left join inventario i on cp.codigo_barras = i.codigo_barras
                     Where ld.id_documento = (select d.id from documentos d where d.folio = @folio) and ld.id_tipo_documento = @tipo;"
         Try
             '---Abir conexion
@@ -314,6 +364,11 @@ Module VentasMod
                     cmd3.Parameters.Add(New MySqlParameter("@id", dr(0)))
                 End If
                 cmd3.ExecuteScalar()
+
+                cmd2 = New MySqlCommand("Update inventario SET existencia = (Select (i.existencia-@cantidad) from inventario i where i.codigo_barras = @codigo)  WHERE codigo_barras = @codigo", conn)
+                cmd2.Parameters.Add(New MySqlParameter("@codigo", dr(1)))
+                cmd2.Parameters.Add(New MySqlParameter("@cantidad", dr(2)))
+                cmd2.ExecuteScalar()
 
             Next
 
