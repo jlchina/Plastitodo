@@ -54,4 +54,12 @@ Public Class EditarUsuariosForm
         End If
 
     End Sub
+
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        TxtNombre.Text = Nothing
+        TxtAPaterno.Text = Nothing
+        TxtAMaterno.Text = Nothing
+        TxtUsuario.Text = Nothing
+        TxtContrasena.Text = Nothing
+    End Sub
 End Class
