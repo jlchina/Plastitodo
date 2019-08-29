@@ -4,36 +4,38 @@ Imports Plastitodo.conexion
 Public Class CatalogoProveedor
     Private datos As DataSet
 
-    Private Sub CProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub BAgregarprovee_Click(sender As Object, e As EventArgs) Handles BAgregarprovee.Click
-        Dim conexion As New MySqlConnection(ConnectionString2)
+        Try
+            Dim conexion As New MySqlConnection(ConnectionString2)
+            Dim CONSULTA
+            conexion.Open()
+            CONSULTA = "INSERT INTO proveedor(Nombre, Direccion, Colonia, Ciudad, Codigo_postal, telefono, correo, contacto)" & Chr(13) &
+                                           "VALUES(@Nombre, @Direccion, @Colonia, @Ciudad, @Codigo_postal, @telefono, @correo, @contacto)"
+            Dim COMANDO As New MySqlCommand(CONSULTA.ToString(), conexion)
+            COMANDO.Parameters.AddWithValue("@Nombre", Textnombre.Text)
+            COMANDO.Parameters.AddWithValue("@Direccion", Textdire.Text)
+            COMANDO.Parameters.AddWithValue("@Colonia", Textcol.Text)
+            COMANDO.Parameters.AddWithValue("@Ciudad", Textcuidad.Text)
+            COMANDO.Parameters.AddWithValue("@Codigo_postal", Textcp.Text)
+            COMANDO.Parameters.AddWithValue("@telefono", Texttel.Text)
+            COMANDO.Parameters.AddWithValue("@correo", Textcorreo.Text)
+            COMANDO.Parameters.AddWithValue("@contacto", Textcontacto.Text)
 
-        Dim CONSULTA As New StringBuilder
-        CONSULTA.Clear()
-        CONSULTA.AppendLine("insert into proveedor(idProveedor, Nombre, Direccion, Colonia,")
-        CONSULTA.AppendLine("Cuidad,Codigo_postal,telefono,correo, contacto)")
-        CONSULTA.AppendLine("values ('{txtidpro.Text}','{Textnombre.Text}',")
-        CONSULTA.AppendLine("'{Textdire.Text}', '{Textcol.Text}','{Textcuidad.Text}',")
-        CONSULTA.AppendLine("'{Textcp.Text}' , '{Texttel.Text}',")
-        CONSULTA.AppendLine("'{Textcorreo.Text}','{Textcontacto.Text}')")
 
-        Dim COMANDO As New MySqlCommand(CONSULTA.ToString(), conexion)
+            COMANDO.ExecuteNonQuery()
+            conexion.Close()
 
-        conexion.Open()
-        COMANDO.ExecuteNonQuery()
+            MsgBox("DATOS GUARDADOS CORRECTAMENTE!!")
+        Catch ex As Exception
+            MsgBox("Error de conexion a la BD, Datos no guardados!!")
+        End Try
 
-        conexion.Close()
-        MsgBox("DATOS GUARDADOS CORRECTAMENTE!!")
         limpiar()
 
     End Sub
 
     Private Sub limpiar()
 
-        txtidpro.Text = String.Empty
         Textnombre.Text = String.Empty
         Textdire.Text = String.Empty
         Textcol.Text = String.Empty
