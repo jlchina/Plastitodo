@@ -53,7 +53,6 @@ Public Class Principal
             Response = MsgBox("¿Esta seguro que desea salir?", Style, "Confirmacion")
 
             If Response = MsgBoxResult.Yes Then
-                Application.Exit()
                 End
             End If
 
