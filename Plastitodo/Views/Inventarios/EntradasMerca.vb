@@ -39,22 +39,6 @@ Public Class EntradasMerca
 
     End Sub
 
-    'Private Sub listadescrip()
-    '    Dim conexion As New MySqlConnection(ConnectionString2)
-    '    conexion.Open()
-
-
-    '    Dim consulta As String
-    '    consulta = "select * from catalogo_productos"
-    '    Dim adaptador = New MySqlDataAdapter(consulta, conexion)
-    '    Dim datos = New DataSet
-    '    datos.Tables.Add("catalogo_productos")
-    '    adaptador.Fill(datos.Tables("catalogo_productos"))
-    '    ComboBoxdescrip.DataSource = datos.Tables("catalogo_productos")
-    '    ComboBoxdescrip.DisplayMember = "descripcion"
-    '    conexion.Close()
-    'End Sub
-
     Private Sub limpiardatos()
         TextBoxcodigo.Text = String.Empty
         TextBoxprecio.Text = String.Empty
@@ -99,8 +83,8 @@ Public Class EntradasMerca
         Dim consulta As New StringBuilder
         consulta.Clear()
         consulta.AppendLine("insert into detalle_entrada(id_producto, costo, cantidad,proveedor,usuario)")
-        consulta.AppendLine("values ('{TextBoxcodigo.Text}','{TextBoxprecio.Text}',")
-        consulta.AppendLine("'{Tcantidad.Text}','{ComboBoxprovee.Text}','{Id_usuario}')")
+        consulta.AppendLine($"values ('{TextBoxcodigo.Text}','{TextBoxprecio.Text}',")
+        consulta.AppendLine($"'{Tcantidad.Text}','{ComboBoxprovee.Text}','{Id_usuario}')")
 
         Dim COMANDO As New MySqlCommand(consulta.ToString(), conexion)
 
