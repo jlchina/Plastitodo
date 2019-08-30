@@ -95,6 +95,7 @@ Partial Class ListaDocumentos
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.TxtNombre)
         Me.Controls.Add(Me.Label2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ListaDocumentos"
         Me.Text = "Documentos de venta"
         CType(Me.DgvDocumentos, System.ComponentModel.ISupportInitialize).EndInit()

@@ -374,6 +374,7 @@ Partial Class ModCatprod
         Me.ClientSize = New System.Drawing.Size(959, 506)
         Me.Controls.Add(Me.Tab_proveedor)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(975, 545)

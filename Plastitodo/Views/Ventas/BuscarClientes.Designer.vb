@@ -74,6 +74,7 @@ Partial Class BuscarClientes
         Me.Controls.Add(Me.DgvClientes)
         Me.Controls.Add(Me.TxtFrase)
         Me.Controls.Add(Me.Label2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BuscarClientes"
         Me.Text = "Buscar clientes"
         CType(Me.DgvClientes, System.ComponentModel.ISupportInitialize).EndInit()

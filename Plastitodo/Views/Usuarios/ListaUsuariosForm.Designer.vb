@@ -61,6 +61,7 @@ Partial Class ListaUsuariosForm
         Me.ClientSize = New System.Drawing.Size(533, 287)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.DgvUsuarios)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ListaUsuariosForm"
         Me.Text = "Usuarios"
         CType(Me.DgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()

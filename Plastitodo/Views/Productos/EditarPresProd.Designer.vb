@@ -93,6 +93,7 @@ Partial Class EditarPresProd
         Me.Controls.Add(Me.Btn_Actualizar)
         Me.Controls.Add(Me.Txt_NomPresP)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(450, 260)

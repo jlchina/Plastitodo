@@ -37,7 +37,7 @@ Partial Class EditarGpoProd
         Me.Cbo_EFamprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Cbo_EFamprod.FormattingEnabled = True
         Me.Cbo_EFamprod.Location = New System.Drawing.Point(198, 67)
-        Me.Cbo_EFamprod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Cbo_EFamprod.Margin = New System.Windows.Forms.Padding(4)
         Me.Cbo_EFamprod.Name = "Cbo_EFamprod"
         Me.Cbo_EFamprod.Size = New System.Drawing.Size(262, 24)
         Me.Cbo_EFamprod.TabIndex = 0
@@ -46,7 +46,7 @@ Partial Class EditarGpoProd
         '
         Me.Txt_NomCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Txt_NomCat.Location = New System.Drawing.Point(198, 135)
-        Me.Txt_NomCat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_NomCat.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_NomCat.MaxLength = 30
         Me.Txt_NomCat.Name = "Txt_NomCat"
         Me.Txt_NomCat.Size = New System.Drawing.Size(262, 22)
@@ -59,7 +59,7 @@ Partial Class EditarGpoProd
         Me.Btn_Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_Actualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Actualizar.Location = New System.Drawing.Point(398, 185)
-        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
         Me.Btn_Actualizar.Size = New System.Drawing.Size(62, 50)
         Me.Btn_Actualizar.TabIndex = 2
@@ -123,7 +123,8 @@ Partial Class EditarGpoProd
         Me.Controls.Add(Me.Txt_NomCat)
         Me.Controls.Add(Me.Cbo_EFamprod)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "EditarGpoProd"

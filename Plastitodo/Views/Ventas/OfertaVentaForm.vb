@@ -32,8 +32,7 @@ Public Class OfertaVentaForm
     End Sub
     Dim ImpuestoTotal, Subtotal, Sumtotal As Decimal
     Private Sub OfertaVentaForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim test As New BuscarClientes
-        test.Owner = Me
+        TxtFecha.Text = DateTime.Now.ToString("yyyy-MM-dd")
         If (id_tipo_documento) Then
             If (folio = 0) Then
                 TxtFolio.Text = GetFolioMax(id_tipo_documento)
@@ -48,6 +47,7 @@ Public Class OfertaVentaForm
             End If
         End If
         If (folio > 0 And id_tipo_documento > 0) Then
+            BtnCrear.Enabled = False
             Dim DataPerfil As DataSet = GetDocumento(folio, id_tipo_documento)
             For Each dr As DataRow In DataPerfil.Tables(0).Rows
                 TxtFolio.Text = dr(1)
@@ -56,7 +56,8 @@ Public Class OfertaVentaForm
                 TxtComentarios.Text = dr(6)
                 TxtSubTotal.Text = Format(CDec(dr(7)), "$ #,###,##0.00")
                 TxtImpuestoTotal.Text = Format(CDec(dr(8)), "$ #,###,##0.00")
-                TxtTotal.Text = Format(CDec(dr(9)), "$ #,###,##0.00")
+                TxtTotal.Text = Format(CDec(dr(9)), "$ #,###,##0.00") '
+                TxtFecha.Text = dr(14)
                 BuscarCliente(dr(13))
             Next
             Listar2()
@@ -66,6 +67,8 @@ Public Class OfertaVentaForm
             Else
                 Me.Text = "Oferta de venta - Folio: " & TxtFolio.Text
             End If
+        Else
+            BtnCrear.Enabled = True
         End If
     End Sub
 
@@ -101,7 +104,7 @@ Public Class OfertaVentaForm
     Private Sub CmbCliente_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles CmbCliente.KeyUp
         If (e.KeyCode = Keys.ShiftKey) Then
             If CmbCliente.Text <> "" And CmbCliente.Text.Length >= 3 Then
-                BuscarCliente(CmbProducto.Text)
+                BuscarCliente(CmbCliente.Text)
             Else
                 Me.CmbCliente.DroppedDown = False
                 'CmbProducto.Items.Clear()
@@ -133,14 +136,14 @@ Public Class OfertaVentaForm
                 DgvLista.Rows(Fila - 1).Cells(10).Value = ""
                 DgvLista.Rows(Fila - 1).Cells(0).Value = dr(1) 'Codigo
                 DgvLista.Rows(Fila - 1).Cells(1).Value = dr(4) 'Descripcion
-                DgvLista.Rows(Fila - 1).Cells(2).Value = dr(8) 'Presentacion
+                DgvLista.Rows(Fila - 1).Cells(2).Value = dr(9) 'Presentacion
                 DgvLista.Rows(Fila - 1).Cells(3).Value = 1 'Cantidad
-                DgvLista.Rows(Fila - 1).Cells(4).Value = dr(9) 'Stock
-                DgvLista.Rows(Fila - 1).Cells(5).Value = Format(CDec(dr(6)), "$ #,###,##0.00") 'Precio
-                DgvLista.Rows(Fila - 1).Cells(6).Value = Format(CDec(dr(6)), "$ #,###,##0.00") 'Sub-total
+                DgvLista.Rows(Fila - 1).Cells(4).Value = dr(10) 'Stock
+                DgvLista.Rows(Fila - 1).Cells(5).Value = Format(CDec(dr(11)), "$ #,###,##0.00") 'Precio
+                DgvLista.Rows(Fila - 1).Cells(6).Value = Format(CDec(dr(11)), "$ #,###,##0.00") 'Sub-total
                 DgvLista.Rows(Fila - 1).Cells(7).Value = Format(CDec(0), "##0.00") 'Descuento
-                DgvLista.Rows(Fila - 1).Cells(8).Value = Format(CDec(dr(6) * 0.16), "$ #,###,##0.00") 'Iva
-                DgvLista.Rows(Fila - 1).Cells(9).Value = Format(CDec(dr(6) * 0.16) + CDec(dr(6)), "$ #,###,##0.00") 'Total
+                DgvLista.Rows(Fila - 1).Cells(8).Value = Format(CDec(dr(11) * 0.16), "$ #,###,##0.00") 'Iva
+                DgvLista.Rows(Fila - 1).Cells(9).Value = Format(CDec(dr(11) * 0.16) + CDec(dr(11)), "$ #,###,##0.00") 'Total
             Next
 
             DgvLista.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
@@ -210,11 +213,6 @@ Public Class OfertaVentaForm
         id_tipo_documento = 1
         Me.Text = "Nota de venta - Nuevo"
         TxtFolio.Text = GetFolioMax(id_tipo_documento)
-    End Sub
-
-    Private Sub BtnBuscarCliente_Click(sender As Object, e As EventArgs)
-        Dim VerForm As New BuscarClientes()
-        VerForm.Show()
     End Sub
 
     Private Sub DgvLista_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DgvLista.CellEndEdit

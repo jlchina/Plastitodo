@@ -50,7 +50,7 @@ Public Class Principal
             Style = MsgBoxStyle.YesNo
             Title = "Mensaje Sistema"
 
-            Response = MsgBox("Cerrar Conexion", Style, "Error")
+            Response = MsgBox("¿Esta seguro que desea salir?", Style, "Confirmacion")
 
             If Response = MsgBoxResult.Yes Then
                 Application.Exit()
@@ -72,7 +72,7 @@ Public Class Principal
         Style = MsgBoxStyle.YesNo
         Title = "Mensaje Sistema"
 
-        Response = MsgBox("Cerrar Conexion", Style, "Error")
+        Response = MsgBox("¿Esta seguro que desea salir?", Style, "Confirmacion")
 
         If Response = MsgBoxResult.Yes Then
             End

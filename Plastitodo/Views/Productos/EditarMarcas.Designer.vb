@@ -66,7 +66,7 @@ Partial Class EditarMarcas
         'Txt_marca
         '
         Me.Txt_marca.Location = New System.Drawing.Point(220, 81)
-        Me.Txt_marca.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_marca.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_marca.Name = "Txt_marca"
         Me.Txt_marca.Size = New System.Drawing.Size(322, 22)
         Me.Txt_marca.TabIndex = 1
@@ -79,7 +79,7 @@ Partial Class EditarMarcas
         Me.btn_guardar.FlatAppearance.BorderSize = 0
         Me.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_guardar.Location = New System.Drawing.Point(490, 152)
-        Me.btn_guardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_guardar.Name = "btn_guardar"
         Me.btn_guardar.Size = New System.Drawing.Size(52, 37)
         Me.btn_guardar.TabIndex = 2
@@ -92,7 +92,7 @@ Partial Class EditarMarcas
         Me.btn_cancelar.FlatAppearance.BorderSize = 0
         Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_cancelar.Location = New System.Drawing.Point(16, 152)
-        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(57, 37)
         Me.btn_cancelar.TabIndex = 3
@@ -111,7 +111,8 @@ Partial Class EditarMarcas
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "EditarMarcas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -117,7 +117,7 @@ Module VentasMod
     End Function
     Function GetProducto(ByVal codigo As String)
         Dim ds As DataSet = New DataSet
-        Dim sql = "SELECT cp.*, p.presentacion as unidad, ifnull(i.existencia,0) as stock
+        Dim sql = "SELECT cp.*, p.presentacion as unidad, ifnull(i.existencia,0) as stock,ifnull((select ifnull(hp.p_publico,0) from historico_preciopublico hp where hp.id_catalogo = cp.id order by hp.id desc Limit 1),0) as precio_publico
                     FROM catalogo_productos cp
                     LEFT JOIN presentacion_prod p on cp.presentacion = p.id_pp
                     LEFT JOIN inventario i on cp.codigo_barras = i.codigo_barras
@@ -212,7 +212,7 @@ Module VentasMod
 
     Function GetDocumento(ByVal folio As Integer, tipo As Integer)
         Dim ds As DataSet = New DataSet
-        Dim sql = "Select D.*,c.Nombre as cliente
+        Dim sql = "Select D.*,c.Nombre as cliente, date(d.fecha_creacion) as fecha
                     from documentos d
                     left join cliente c on d.id_cliente = c.idCliente
                     Where d.folio = @folio and d.id_tipo_documento = @tipo;"
@@ -244,7 +244,7 @@ Module VentasMod
                     left join catalogo_productos cp on ld.id_producto = cp.id
                     left join presentacion_prod pp on ld.id_presentacion = pp.id_pp
                     left join inventario i on cp.codigo_barras = i.codigo_barras
-                    Where ld.id_documento = (select d.id from documentos d where d.folio = @folio) and ld.id_tipo_documento = @tipo;"
+                    Where ld.id_documento = (select d.id from documentos d where d.folio = @folio and d.id_tipo_documento = @tipo) and ld.id_tipo_documento = @tipo;"
         Try
             '---Abir conexion
             conn = New MySqlConnection

@@ -101,6 +101,7 @@ Partial Class Login
         Me.Controls.Add(Me.lbl_pass)
         Me.Controls.Add(Me.txt_user)
         Me.Controls.Add(Me.lbl_user)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(365, 301)
         Me.MinimumSize = New System.Drawing.Size(365, 301)

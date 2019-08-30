@@ -42,7 +42,7 @@ Partial Class Presentacion_Prod
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(18, 15)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(632, 304)
@@ -54,9 +54,9 @@ Partial Class Presentacion_Prod
         Me.TabPage1.Controls.Add(Me.Btn_Guardar)
         Me.TabPage1.Controls.Add(Me.Txt_Presentacion)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Size = New System.Drawing.Size(624, 275)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Alta"
@@ -77,7 +77,7 @@ Partial Class Presentacion_Prod
         Me.Btn_Guardar.BackgroundImage = CType(resources.GetObject("Btn_Guardar.BackgroundImage"), System.Drawing.Image)
         Me.Btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_Guardar.Location = New System.Drawing.Point(505, 179)
-        Me.Btn_Guardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_Guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_Guardar.Name = "Btn_Guardar"
         Me.Btn_Guardar.Size = New System.Drawing.Size(53, 45)
         Me.Btn_Guardar.TabIndex = 1
@@ -86,7 +86,7 @@ Partial Class Presentacion_Prod
         'Txt_Presentacion
         '
         Me.Txt_Presentacion.Location = New System.Drawing.Point(244, 86)
-        Me.Txt_Presentacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Presentacion.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_Presentacion.Name = "Txt_Presentacion"
         Me.Txt_Presentacion.Size = New System.Drawing.Size(314, 22)
         Me.Txt_Presentacion.TabIndex = 0
@@ -96,9 +96,9 @@ Partial Class Presentacion_Prod
         Me.TabPage2.Controls.Add(Me.Btn_Actualizar)
         Me.TabPage2.Controls.Add(Me.Dgv_Presentacion)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(624, 275)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Consultar / Editar"
@@ -110,7 +110,7 @@ Partial Class Presentacion_Prod
         Me.Btn_Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_Actualizar.FlatAppearance.BorderSize = 0
         Me.Btn_Actualizar.Location = New System.Drawing.Point(9, 2)
-        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
         Me.Btn_Actualizar.Size = New System.Drawing.Size(48, 39)
         Me.Btn_Actualizar.TabIndex = 1
@@ -120,7 +120,7 @@ Partial Class Presentacion_Prod
         '
         Me.Dgv_Presentacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Presentacion.Location = New System.Drawing.Point(9, 43)
-        Me.Dgv_Presentacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Dgv_Presentacion.Margin = New System.Windows.Forms.Padding(4)
         Me.Dgv_Presentacion.Name = "Dgv_Presentacion"
         Me.Dgv_Presentacion.Size = New System.Drawing.Size(602, 222)
         Me.Dgv_Presentacion.TabIndex = 0
@@ -132,7 +132,8 @@ Partial Class Presentacion_Prod
         Me.ClientSize = New System.Drawing.Size(668, 334)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(684, 373)
         Me.MinimizeBox = False

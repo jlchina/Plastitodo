@@ -11,7 +11,9 @@ Public Class AltaGpoProd
         Dim dt As New DataTable()
         Dim da As MySqlDataAdapter
         Dim comm As MySqlCommand
-        Dim consulta = "select * From catalogacion"
+        Dim consulta = "select c.id, c.Gpo_prod as Grupo,cf.nom_familia as Familia,c.Nom_categoria as Categoria
+                        from catalogacion c
+                        left join catalogacion_familias cf on c.Id_familia = cf.id_familia"
 
         Try
             'iniciar parametro de conexion
@@ -28,18 +30,16 @@ Public Class AltaGpoProd
 
             'asignar nombre a las columnas del data grid
             dt.Columns.Add("id", GetType(String)) '1
-            dt.Columns.Add("Gpo_prod", GetType(String)) '2
-            dt.Columns.Add("Id_familia", GetType(Int32)) '3
-            dt.Columns.Add("Id_categoria", GetType(Int32)) '4
-            dt.Columns.Add("Nom_categoria", GetType(String)) '5
+            dt.Columns.Add("Grupo", GetType(String)) '2
+            dt.Columns.Add("Familia", GetType(String)) '3
+            dt.Columns.Add("Categoria", GetType(String)) '4
 
             For Each dr As DataRow In ds.Tables(0).Rows
                 Dim DataRow As DataRow = dt.NewRow()
                 DataRow("id") = dr(0)
-                DataRow("Gpo_prod") = dr(1)
-                DataRow("Id_familia") = dr(2)
-                DataRow("Id_categoria") = dr(3)
-                DataRow("Nom_categoria") = dr(4)
+                DataRow("Grupo") = dr(1)
+                DataRow("Familia") = dr(2)
+                DataRow("Categoria") = dr(3)
 
                 dt.Rows.Add(DataRow)
 
@@ -51,7 +51,7 @@ Public Class AltaGpoProd
                 Editar.HeaderText = "Acciones"
                 Editar.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
 
-                If Dgv_EditarGP.ColumnCount < 5 Then  'Condición para no desplegar otra columna
+                If Dgv_EditarGP.ColumnCount < 4 Then  'Condición para no desplegar otra columna
                     Dgv_EditarGP.Columns.Add(Editar)
                 End If
 

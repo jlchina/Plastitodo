@@ -121,6 +121,7 @@ Partial Class Cons_prod
         Me.ClientSize = New System.Drawing.Size(720, 361)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DGVcatprov)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Cons_prod"
         Me.Text = "Consultar productos"
         CType(Me.DGVcatprov, System.ComponentModel.ISupportInitialize).EndInit()

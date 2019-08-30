@@ -33,7 +33,7 @@ Partial Class MarcaCons
         '
         Me.dgv_marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_marcas.Location = New System.Drawing.Point(18, 85)
-        Me.dgv_marcas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgv_marcas.Margin = New System.Windows.Forms.Padding(4)
         Me.dgv_marcas.Name = "dgv_marcas"
         Me.dgv_marcas.Size = New System.Drawing.Size(508, 334)
         Me.dgv_marcas.TabIndex = 0
@@ -44,7 +44,7 @@ Partial Class MarcaCons
         Me.btn_nvamarca.BackgroundImage = CType(resources.GetObject("btn_nvamarca.BackgroundImage"), System.Drawing.Image)
         Me.btn_nvamarca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_nvamarca.Location = New System.Drawing.Point(20, 13)
-        Me.btn_nvamarca.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_nvamarca.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_nvamarca.Name = "btn_nvamarca"
         Me.btn_nvamarca.Size = New System.Drawing.Size(55, 49)
         Me.btn_nvamarca.TabIndex = 1
@@ -56,7 +56,7 @@ Partial Class MarcaCons
         Me.Btn_Actualizar.BackgroundImage = CType(resources.GetObject("Btn_Actualizar.BackgroundImage"), System.Drawing.Image)
         Me.Btn_Actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_Actualizar.Location = New System.Drawing.Point(463, 13)
-        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_Actualizar.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_Actualizar.Name = "Btn_Actualizar"
         Me.Btn_Actualizar.Size = New System.Drawing.Size(63, 49)
         Me.Btn_Actualizar.TabIndex = 2
@@ -71,7 +71,8 @@ Partial Class MarcaCons
         Me.Controls.Add(Me.btn_nvamarca)
         Me.Controls.Add(Me.dgv_marcas)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(560, 472)
         Me.MinimizeBox = False

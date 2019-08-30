@@ -45,7 +45,7 @@ Partial Class EditarProductos
         'Txt_CodBar
         '
         Me.Txt_CodBar.Location = New System.Drawing.Point(187, 24)
-        Me.Txt_CodBar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_CodBar.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_CodBar.MaxLength = 15
         Me.Txt_CodBar.Name = "Txt_CodBar"
         Me.Txt_CodBar.Size = New System.Drawing.Size(380, 22)
@@ -56,7 +56,7 @@ Partial Class EditarProductos
         '
         Me.Cbo_Marca.FormattingEnabled = True
         Me.Cbo_Marca.Location = New System.Drawing.Point(187, 73)
-        Me.Cbo_Marca.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Cbo_Marca.Margin = New System.Windows.Forms.Padding(4)
         Me.Cbo_Marca.Name = "Cbo_Marca"
         Me.Cbo_Marca.Size = New System.Drawing.Size(380, 24)
         Me.Cbo_Marca.TabIndex = 1
@@ -65,7 +65,7 @@ Partial Class EditarProductos
         'Txt_Modelo
         '
         Me.Txt_Modelo.Location = New System.Drawing.Point(187, 125)
-        Me.Txt_Modelo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Modelo.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_Modelo.MaxLength = 20
         Me.Txt_Modelo.Name = "Txt_Modelo"
         Me.Txt_Modelo.Size = New System.Drawing.Size(380, 22)
@@ -75,7 +75,7 @@ Partial Class EditarProductos
         'Txt_Desc
         '
         Me.Txt_Desc.Location = New System.Drawing.Point(187, 173)
-        Me.Txt_Desc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Desc.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_Desc.MaxLength = 45
         Me.Txt_Desc.Name = "Txt_Desc"
         Me.Txt_Desc.Size = New System.Drawing.Size(380, 22)
@@ -86,7 +86,7 @@ Partial Class EditarProductos
         '
         Me.Cbo_GpoProd.FormattingEnabled = True
         Me.Cbo_GpoProd.Location = New System.Drawing.Point(187, 219)
-        Me.Cbo_GpoProd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Cbo_GpoProd.Margin = New System.Windows.Forms.Padding(4)
         Me.Cbo_GpoProd.Name = "Cbo_GpoProd"
         Me.Cbo_GpoProd.Size = New System.Drawing.Size(380, 24)
         Me.Cbo_GpoProd.TabIndex = 4
@@ -96,7 +96,7 @@ Partial Class EditarProductos
         '
         Me.Cbo_Pres.FormattingEnabled = True
         Me.Cbo_Pres.Location = New System.Drawing.Point(187, 267)
-        Me.Cbo_Pres.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Cbo_Pres.Margin = New System.Windows.Forms.Padding(4)
         Me.Cbo_Pres.Name = "Cbo_Pres"
         Me.Cbo_Pres.Size = New System.Drawing.Size(198, 24)
         Me.Cbo_Pres.TabIndex = 5
@@ -105,7 +105,7 @@ Partial Class EditarProductos
         'Txt_Cto
         '
         Me.Txt_Cto.Location = New System.Drawing.Point(187, 314)
-        Me.Txt_Cto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Cto.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_Cto.Name = "Txt_Cto"
         Me.Txt_Cto.Size = New System.Drawing.Size(198, 22)
         Me.Txt_Cto.TabIndex = 6
@@ -194,7 +194,7 @@ Partial Class EditarProductos
         Me.Btn_actualizar.BackgroundImage = CType(resources.GetObject("Btn_actualizar.BackgroundImage"), System.Drawing.Image)
         Me.Btn_actualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_actualizar.Location = New System.Drawing.Point(621, 349)
-        Me.Btn_actualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_actualizar.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_actualizar.Name = "Btn_actualizar"
         Me.Btn_actualizar.Size = New System.Drawing.Size(60, 43)
         Me.Btn_actualizar.TabIndex = 14
@@ -216,7 +216,7 @@ Partial Class EditarProductos
         '
         Me.Cbo_Proveedor.FormattingEnabled = True
         Me.Cbo_Proveedor.Location = New System.Drawing.Point(187, 368)
-        Me.Cbo_Proveedor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Cbo_Proveedor.Margin = New System.Windows.Forms.Padding(4)
         Me.Cbo_Proveedor.Name = "Cbo_Proveedor"
         Me.Cbo_Proveedor.Size = New System.Drawing.Size(380, 24)
         Me.Cbo_Proveedor.TabIndex = 16
@@ -245,7 +245,8 @@ Partial Class EditarProductos
         Me.Controls.Add(Me.Cbo_Marca)
         Me.Controls.Add(Me.Txt_CodBar)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(730, 460)
         Me.MinimizeBox = False

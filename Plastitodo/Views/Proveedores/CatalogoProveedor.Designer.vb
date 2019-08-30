@@ -24,25 +24,27 @@ Partial Class CatalogoProveedor
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CatalogoProveedor))
         Me.TabAltaprovee = New System.Windows.Forms.TabPage()
-        Me.Blimpiar = New System.Windows.Forms.Button()
-        Me.BAgregarprovee = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Textcontacto = New System.Windows.Forms.TextBox()
-        Me.Textcorreo = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Texttel = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Textcp = New System.Windows.Forms.TextBox()
-        Me.Textcuidad = New System.Windows.Forms.TextBox()
-        Me.Textcol = New System.Windows.Forms.TextBox()
-        Me.Textdire = New System.Windows.Forms.TextBox()
-        Me.Textnombre = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Textcuidad = New System.Windows.Forms.TextBox()
+        Me.Textdire = New System.Windows.Forms.TextBox()
+        Me.Textcol = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Textcontacto = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Textcorreo = New System.Windows.Forms.TextBox()
+        Me.Textnombre = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Texttel = New System.Windows.Forms.TextBox()
+        Me.Blimpiar = New System.Windows.Forms.Button()
+        Me.BAgregarprovee = New System.Windows.Forms.Button()
         Me.TabCprovee = New System.Windows.Forms.TabControl()
         Me.TabConsuProvee = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -51,7 +53,9 @@ Partial Class CatalogoProveedor
         Me.TextBoxnombre = New System.Windows.Forms.TextBox()
         Me.LConsultacontaprovee = New System.Windows.Forms.Label()
         Me.TabAltaprovee.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.TabCprovee.SuspendLayout()
         Me.TabConsuProvee.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,23 +63,213 @@ Partial Class CatalogoProveedor
         '
         'TabAltaprovee
         '
+        Me.TabAltaprovee.Controls.Add(Me.PictureBox1)
+        Me.TabAltaprovee.Controls.Add(Me.GroupBox2)
+        Me.TabAltaprovee.Controls.Add(Me.GroupBox1)
         Me.TabAltaprovee.Controls.Add(Me.Blimpiar)
         Me.TabAltaprovee.Controls.Add(Me.BAgregarprovee)
-        Me.TabAltaprovee.Controls.Add(Me.Panel1)
         Me.TabAltaprovee.Location = New System.Drawing.Point(4, 25)
         Me.TabAltaprovee.Margin = New System.Windows.Forms.Padding(4)
         Me.TabAltaprovee.Name = "TabAltaprovee"
         Me.TabAltaprovee.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabAltaprovee.Size = New System.Drawing.Size(976, 445)
+        Me.TabAltaprovee.Size = New System.Drawing.Size(811, 359)
         Me.TabAltaprovee.TabIndex = 1
         Me.TabAltaprovee.Text = "Alta Proveedor"
         Me.TabAltaprovee.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(591, 57)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(211, 161)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 24
+        Me.PictureBox1.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Textcp)
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Textcuidad)
+        Me.GroupBox2.Controls.Add(Me.Textdire)
+        Me.GroupBox2.Controls.Add(Me.Textcol)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Location = New System.Drawing.Point(22, 156)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(537, 128)
+        Me.GroupBox2.TabIndex = 37
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Informacion del domicilio"
+        '
+        'Textcp
+        '
+        Me.Textcp.Location = New System.Drawing.Point(387, 80)
+        Me.Textcp.Margin = New System.Windows.Forms.Padding(4)
+        Me.Textcp.Name = "Textcp"
+        Me.Textcp.Size = New System.Drawing.Size(141, 22)
+        Me.Textcp.TabIndex = 6
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(7, 18)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(78, 16)
+        Me.Label14.TabIndex = 12
+        Me.Label14.Text = "Direccion:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(269, 83)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(110, 16)
+        Me.Label11.TabIndex = 15
+        Me.Label11.Text = "Código Postal:"
+        '
+        'Textcuidad
+        '
+        Me.Textcuidad.Location = New System.Drawing.Point(93, 80)
+        Me.Textcuidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.Textcuidad.Name = "Textcuidad"
+        Me.Textcuidad.Size = New System.Drawing.Size(168, 22)
+        Me.Textcuidad.TabIndex = 5
+        '
+        'Textdire
+        '
+        Me.Textdire.Location = New System.Drawing.Point(91, 18)
+        Me.Textdire.Margin = New System.Windows.Forms.Padding(4)
+        Me.Textdire.Name = "Textdire"
+        Me.Textdire.Size = New System.Drawing.Size(437, 22)
+        Me.Textdire.TabIndex = 3
+        '
+        'Textcol
+        '
+        Me.Textcol.Location = New System.Drawing.Point(93, 48)
+        Me.Textcol.Margin = New System.Windows.Forms.Padding(4)
+        Me.Textcol.Name = "Textcol"
+        Me.Textcol.Size = New System.Drawing.Size(435, 22)
+        Me.Textcol.TabIndex = 4
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(24, 80)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(61, 16)
+        Me.Label12.TabIndex = 14
+        Me.Label12.Text = "Ciudad:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(20, 46)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(65, 16)
+        Me.Label13.TabIndex = 13
+        Me.Label13.Text = "Colonia:"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Textcontacto)
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Textcorreo)
+        Me.GroupBox1.Controls.Add(Me.Textnombre)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.Texttel)
+        Me.GroupBox1.Location = New System.Drawing.Point(22, 20)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(537, 130)
+        Me.GroupBox1.TabIndex = 36
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Informacion general"
+        '
+        'Textcontacto
+        '
+        Me.Textcontacto.Location = New System.Drawing.Point(91, 76)
+        Me.Textcontacto.Margin = New System.Windows.Forms.Padding(4)
+        Me.Textcontacto.Name = "Textcontacto"
+        Me.Textcontacto.Size = New System.Drawing.Size(437, 22)
+        Me.Textcontacto.TabIndex = 20
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(16, 18)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(67, 16)
+        Me.Label15.TabIndex = 11
+        Me.Label15.Text = "Nombre:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(10, 76)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(73, 16)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Contacto:"
+        '
+        'Textcorreo
+        '
+        Me.Textcorreo.Location = New System.Drawing.Point(374, 43)
+        Me.Textcorreo.Margin = New System.Windows.Forms.Padding(4)
+        Me.Textcorreo.Name = "Textcorreo"
+        Me.Textcorreo.Size = New System.Drawing.Size(154, 22)
+        Me.Textcorreo.TabIndex = 19
+        '
+        'Textnombre
+        '
+        Me.Textnombre.Location = New System.Drawing.Point(91, 15)
+        Me.Textnombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.Textnombre.Name = "Textnombre"
+        Me.Textnombre.Size = New System.Drawing.Size(437, 22)
+        Me.Textnombre.TabIndex = 2
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(9, 43)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(74, 16)
+        Me.Label10.TabIndex = 16
+        Me.Label10.Text = "Telefono:"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(297, 46)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(59, 16)
+        Me.Label9.TabIndex = 17
+        Me.Label9.Text = "Correo:"
+        '
+        'Texttel
+        '
+        Me.Texttel.Location = New System.Drawing.Point(91, 43)
+        Me.Texttel.Margin = New System.Windows.Forms.Padding(4)
+        Me.Texttel.Name = "Texttel"
+        Me.Texttel.Size = New System.Drawing.Size(187, 22)
+        Me.Texttel.TabIndex = 7
         '
         'Blimpiar
         '
         Me.Blimpiar.BackgroundImage = CType(resources.GetObject("Blimpiar.BackgroundImage"), System.Drawing.Image)
         Me.Blimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Blimpiar.Location = New System.Drawing.Point(852, 20)
+        Me.Blimpiar.Location = New System.Drawing.Point(22, 302)
         Me.Blimpiar.Margin = New System.Windows.Forms.Padding(4)
         Me.Blimpiar.Name = "Blimpiar"
         Me.Blimpiar.Size = New System.Drawing.Size(57, 49)
@@ -87,181 +281,12 @@ Partial Class CatalogoProveedor
         '
         Me.BAgregarprovee.BackgroundImage = CType(resources.GetObject("BAgregarprovee.BackgroundImage"), System.Drawing.Image)
         Me.BAgregarprovee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BAgregarprovee.Location = New System.Drawing.Point(852, 381)
+        Me.BAgregarprovee.Location = New System.Drawing.Point(493, 304)
         Me.BAgregarprovee.Margin = New System.Windows.Forms.Padding(4)
         Me.BAgregarprovee.Name = "BAgregarprovee"
         Me.BAgregarprovee.Size = New System.Drawing.Size(57, 47)
         Me.BAgregarprovee.TabIndex = 1
         Me.BAgregarprovee.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.Textcontacto)
-        Me.Panel1.Controls.Add(Me.Textcorreo)
-        Me.Panel1.Controls.Add(Me.Label8)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Texttel)
-        Me.Panel1.Controls.Add(Me.Textcp)
-        Me.Panel1.Controls.Add(Me.Textcuidad)
-        Me.Panel1.Controls.Add(Me.Textcol)
-        Me.Panel1.Controls.Add(Me.Textdire)
-        Me.Panel1.Controls.Add(Me.Textnombre)
-        Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.Label12)
-        Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.Label14)
-        Me.Panel1.Controls.Add(Me.Label15)
-        Me.Panel1.Location = New System.Drawing.Point(4, 23)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(799, 405)
-        Me.Panel1.TabIndex = 34
-        '
-        'Textcontacto
-        '
-        Me.Textcontacto.Location = New System.Drawing.Point(137, 321)
-        Me.Textcontacto.Margin = New System.Windows.Forms.Padding(4)
-        Me.Textcontacto.Name = "Textcontacto"
-        Me.Textcontacto.Size = New System.Drawing.Size(496, 22)
-        Me.Textcontacto.TabIndex = 20
-        '
-        'Textcorreo
-        '
-        Me.Textcorreo.Location = New System.Drawing.Point(137, 280)
-        Me.Textcorreo.Margin = New System.Windows.Forms.Padding(4)
-        Me.Textcorreo.Name = "Textcorreo"
-        Me.Textcorreo.Size = New System.Drawing.Size(496, 22)
-        Me.Textcorreo.TabIndex = 19
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(16, 326)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(73, 16)
-        Me.Label8.TabIndex = 18
-        Me.Label8.Text = "Contacto:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(16, 283)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(59, 16)
-        Me.Label9.TabIndex = 17
-        Me.Label9.Text = "Correo:"
-        '
-        'Texttel
-        '
-        Me.Texttel.Location = New System.Drawing.Point(137, 238)
-        Me.Texttel.Margin = New System.Windows.Forms.Padding(4)
-        Me.Texttel.Name = "Texttel"
-        Me.Texttel.Size = New System.Drawing.Size(496, 22)
-        Me.Texttel.TabIndex = 7
-        '
-        'Textcp
-        '
-        Me.Textcp.Location = New System.Drawing.Point(137, 195)
-        Me.Textcp.Margin = New System.Windows.Forms.Padding(4)
-        Me.Textcp.Name = "Textcp"
-        Me.Textcp.Size = New System.Drawing.Size(168, 22)
-        Me.Textcp.TabIndex = 6
-        '
-        'Textcuidad
-        '
-        Me.Textcuidad.Location = New System.Drawing.Point(137, 152)
-        Me.Textcuidad.Margin = New System.Windows.Forms.Padding(4)
-        Me.Textcuidad.Name = "Textcuidad"
-        Me.Textcuidad.Size = New System.Drawing.Size(168, 22)
-        Me.Textcuidad.TabIndex = 5
-        '
-        'Textcol
-        '
-        Me.Textcol.Location = New System.Drawing.Point(137, 109)
-        Me.Textcol.Margin = New System.Windows.Forms.Padding(4)
-        Me.Textcol.Name = "Textcol"
-        Me.Textcol.Size = New System.Drawing.Size(496, 22)
-        Me.Textcol.TabIndex = 4
-        '
-        'Textdire
-        '
-        Me.Textdire.Location = New System.Drawing.Point(137, 65)
-        Me.Textdire.Margin = New System.Windows.Forms.Padding(4)
-        Me.Textdire.Name = "Textdire"
-        Me.Textdire.Size = New System.Drawing.Size(496, 22)
-        Me.Textdire.TabIndex = 3
-        '
-        'Textnombre
-        '
-        Me.Textnombre.Location = New System.Drawing.Point(137, 22)
-        Me.Textnombre.Margin = New System.Windows.Forms.Padding(4)
-        Me.Textnombre.Name = "Textnombre"
-        Me.Textnombre.Size = New System.Drawing.Size(496, 22)
-        Me.Textnombre.TabIndex = 2
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(16, 240)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(74, 16)
-        Me.Label10.TabIndex = 16
-        Me.Label10.Text = "Telefono:"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 198)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(32, 16)
-        Me.Label11.TabIndex = 15
-        Me.Label11.Text = "CP:"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(18, 155)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(61, 16)
-        Me.Label12.TabIndex = 14
-        Me.Label12.Text = "Cuidad:"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(16, 112)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(65, 16)
-        Me.Label13.TabIndex = 13
-        Me.Label13.Text = "Colonia:"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(18, 68)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(78, 16)
-        Me.Label14.TabIndex = 12
-        Me.Label14.Text = "Direccion:"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(16, 25)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(67, 16)
-        Me.Label15.TabIndex = 11
-        Me.Label15.Text = "Nombre:"
         '
         'TabCprovee
         '
@@ -271,7 +296,7 @@ Partial Class CatalogoProveedor
         Me.TabCprovee.Margin = New System.Windows.Forms.Padding(4)
         Me.TabCprovee.Name = "TabCprovee"
         Me.TabCprovee.SelectedIndex = 0
-        Me.TabCprovee.Size = New System.Drawing.Size(984, 474)
+        Me.TabCprovee.Size = New System.Drawing.Size(819, 388)
         Me.TabCprovee.TabIndex = 1
         '
         'TabConsuProvee
@@ -285,7 +310,7 @@ Partial Class CatalogoProveedor
         Me.TabConsuProvee.Margin = New System.Windows.Forms.Padding(4)
         Me.TabConsuProvee.Name = "TabConsuProvee"
         Me.TabConsuProvee.Padding = New System.Windows.Forms.Padding(4)
-        Me.TabConsuProvee.Size = New System.Drawing.Size(976, 445)
+        Me.TabConsuProvee.Size = New System.Drawing.Size(811, 359)
         Me.TabConsuProvee.TabIndex = 0
         Me.TabConsuProvee.Text = "Consulta Proveedor"
         Me.TabConsuProvee.UseVisualStyleBackColor = True
@@ -303,14 +328,14 @@ Partial Class CatalogoProveedor
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(777, 226)
+        Me.DataGridView1.Size = New System.Drawing.Size(573, 226)
         Me.DataGridView1.TabIndex = 7
         '
         'BConsultaLimpi
         '
         Me.BConsultaLimpi.BackgroundImage = CType(resources.GetObject("BConsultaLimpi.BackgroundImage"), System.Drawing.Image)
         Me.BConsultaLimpi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BConsultaLimpi.Location = New System.Drawing.Point(863, 97)
+        Me.BConsultaLimpi.Location = New System.Drawing.Point(627, 100)
         Me.BConsultaLimpi.Margin = New System.Windows.Forms.Padding(4)
         Me.BConsultaLimpi.Name = "BConsultaLimpi"
         Me.BConsultaLimpi.Size = New System.Drawing.Size(61, 48)
@@ -321,7 +346,7 @@ Partial Class CatalogoProveedor
         '
         Me.BConsultaProvee.BackgroundImage = CType(resources.GetObject("BConsultaProvee.BackgroundImage"), System.Drawing.Image)
         Me.BConsultaProvee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BConsultaProvee.Location = New System.Drawing.Point(863, 18)
+        Me.BConsultaProvee.Location = New System.Drawing.Point(627, 21)
         Me.BConsultaProvee.Margin = New System.Windows.Forms.Padding(4)
         Me.BConsultaProvee.Name = "BConsultaProvee"
         Me.BConsultaProvee.Size = New System.Drawing.Size(61, 41)
@@ -333,7 +358,7 @@ Partial Class CatalogoProveedor
         Me.TextBoxnombre.Location = New System.Drawing.Point(117, 30)
         Me.TextBoxnombre.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBoxnombre.Name = "TextBoxnombre"
-        Me.TextBoxnombre.Size = New System.Drawing.Size(690, 22)
+        Me.TextBoxnombre.Size = New System.Drawing.Size(488, 22)
         Me.TextBoxnombre.TabIndex = 3
         '
         'LConsultacontaprovee
@@ -350,15 +375,19 @@ Partial Class CatalogoProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1017, 501)
+        Me.ClientSize = New System.Drawing.Size(847, 422)
         Me.Controls.Add(Me.TabCprovee)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "CatalogoProveedor"
         Me.Text = "Consulta y alta de proveedores"
         Me.TabAltaprovee.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.TabCprovee.ResumeLayout(False)
         Me.TabConsuProvee.ResumeLayout(False)
         Me.TabConsuProvee.PerformLayout()
@@ -370,7 +399,6 @@ Partial Class CatalogoProveedor
     Friend WithEvents TabAltaprovee As TabPage
     Friend WithEvents Blimpiar As Button
     Friend WithEvents BAgregarprovee As Button
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Textcontacto As TextBox
     Friend WithEvents Textcorreo As TextBox
     Friend WithEvents Label8 As Label
@@ -394,4 +422,7 @@ Partial Class CatalogoProveedor
     Friend WithEvents BConsultaProvee As Button
     Friend WithEvents TextBoxnombre As TextBox
     Friend WithEvents LConsultacontaprovee As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

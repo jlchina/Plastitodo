@@ -23,13 +23,13 @@ Partial Class OfertaVentaForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OfertaVentaForm))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CmbCliente = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.DtpDocDueDate = New System.Windows.Forms.DateTimePicker()
         Me.TxtFolio = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -65,6 +65,7 @@ Partial Class OfertaVentaForm
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OfertaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NotaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TxtFecha = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DgvLista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,7 +131,7 @@ Partial Class OfertaVentaForm
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox5.Controls.Add(Me.DtpDocDueDate)
+        Me.GroupBox5.Controls.Add(Me.TxtFecha)
         Me.GroupBox5.Controls.Add(Me.TxtFolio)
         Me.GroupBox5.Controls.Add(Me.Label13)
         Me.GroupBox5.Controls.Add(Me.Label10)
@@ -144,17 +145,6 @@ Partial Class OfertaVentaForm
         Me.GroupBox5.TabIndex = 31
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Información general"
-        '
-        'DtpDocDueDate
-        '
-        Me.DtpDocDueDate.CustomFormat = "dd/MM/yyyy"
-        Me.DtpDocDueDate.Enabled = False
-        Me.DtpDocDueDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DtpDocDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtpDocDueDate.Location = New System.Drawing.Point(165, 51)
-        Me.DtpDocDueDate.Name = "DtpDocDueDate"
-        Me.DtpDocDueDate.Size = New System.Drawing.Size(113, 18)
-        Me.DtpDocDueDate.TabIndex = 10
         '
         'TxtFolio
         '
@@ -455,6 +445,13 @@ Partial Class OfertaVentaForm
         Me.NotaDeVentaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.NotaDeVentaToolStripMenuItem.Text = "Nota de venta"
         '
+        'TxtFecha
+        '
+        Me.TxtFecha.Location = New System.Drawing.Point(165, 51)
+        Me.TxtFecha.Name = "TxtFecha"
+        Me.TxtFecha.Size = New System.Drawing.Size(113, 22)
+        Me.TxtFecha.TabIndex = 18
+        '
         'OfertaVentaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -466,6 +463,7 @@ Partial Class OfertaVentaForm
         Me.Controls.Add(Me.DgvLista)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "OfertaVentaForm"
         Me.Text = "OfertaVentaForm"
@@ -489,7 +487,6 @@ Partial Class OfertaVentaForm
     Friend WithEvents CmbCliente As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents DtpDocDueDate As DateTimePicker
     Friend WithEvents TxtFolio As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label10 As Label
@@ -526,4 +523,5 @@ Partial Class OfertaVentaForm
     Friend WithEvents iva As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
     Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents TxtFecha As TextBox
 End Class

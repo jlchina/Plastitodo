@@ -61,6 +61,7 @@ Partial Class ListaPerfilesForm
         Me.ClientSize = New System.Drawing.Size(340, 285)
         Me.Controls.Add(Me.BtnNuevo)
         Me.Controls.Add(Me.DgvPerfiles)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ListaPerfilesForm"
         Me.Text = "Perfiles"
         CType(Me.DgvPerfiles, System.ComponentModel.ISupportInitialize).EndInit()

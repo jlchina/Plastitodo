@@ -364,6 +364,7 @@ Partial Class Cat_Clientes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(772, 465)
         Me.Controls.Add(Me.Tab_proveedor)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Cat_Clientes"
         Me.Text = "Clientes"
         Me.Tab_proveedor.ResumeLayout(False)

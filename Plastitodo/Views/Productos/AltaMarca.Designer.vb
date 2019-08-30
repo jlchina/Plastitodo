@@ -63,6 +63,7 @@ Partial Class AltaMarca
         Me.Controls.Add(Me.Txt_marca)
         Me.Controls.Add(Me.Btn_agregar)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AltaMarca"
         Me.Text = "Marca: Dar de alta"
         Me.ResumeLayout(False)

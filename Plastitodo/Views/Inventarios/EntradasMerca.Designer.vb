@@ -156,7 +156,7 @@ Partial Class EntradasMerca
         Me.DataGridViewdetalleentrada.Location = New System.Drawing.Point(13, 230)
         Me.DataGridViewdetalleentrada.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridViewdetalleentrada.Name = "DataGridViewdetalleentrada"
-        Me.DataGridViewdetalleentrada.Size = New System.Drawing.Size(738, 220)
+        Me.DataGridViewdetalleentrada.Size = New System.Drawing.Size(805, 220)
         Me.DataGridViewdetalleentrada.TabIndex = 30
         '
         'Label5
@@ -232,6 +232,7 @@ Partial Class EntradasMerca
         Me.Controls.Add(Me.DataGridViewdetalleentrada)
         Me.Controls.Add(Me.BGuardardetaentramerca)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "EntradasMerca"
         Me.Text = "Detalle de Entradas Mercancia"

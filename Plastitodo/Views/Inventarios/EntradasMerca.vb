@@ -78,65 +78,70 @@ Public Class EntradasMerca
     End Sub
 
     Private Sub BGuardardetaentramerca_Click_1(sender As Object, e As EventArgs) Handles BGuardardetaentramerca.Click
-        Dim conexion As New MySqlConnection(ConnectionString2)
+        Try
+            Dim conexion As New MySqlConnection(ConnectionString2)
 
-        Dim consulta As New StringBuilder
-        consulta.Clear()
-        consulta.AppendLine("insert into detalle_entrada(id_producto, costo, cantidad,proveedor,usuario)")
-        consulta.AppendLine($"values ('{TextBoxcodigo.Text}','{TextBoxprecio.Text}',")
-        consulta.AppendLine($"'{Tcantidad.Text}','{ComboBoxprovee.Text}','{Id_usuario}')")
+            Dim consulta As New StringBuilder
+            consulta.Clear()
+            consulta.AppendLine("insert into detalle_entrada(id_producto, precio, cantidad,proveedor,usuario)")
+            consulta.AppendLine($"values ('{TextBoxcodigo.Text}','{TextBoxprecio.Text}',")
+            consulta.AppendLine($"'{Tcantidad.Text}','{ComboBoxprovee.Text}','{Id_usuario}')")
 
-        Dim COMANDO As New MySqlCommand(consulta.ToString(), conexion)
-
-        conexion.Open()
-        COMANDO.ExecuteNonQuery()
-        conexion.Close()
-
-        Dim query = "Select * from inventario where codigo_barras = ?"
-
-        Dim adap As New MySqlDataAdapter(query, conexion)
-        adap.SelectCommand.Parameters.AddWithValue("@p1", TextBoxcodigo.Text)
-        Dim dt As New DataTable
-        adap.Fill(dt)
-
-        If dt.Rows.Count > 0 Then
-            Dim inventarioActual = CInt(dt.Rows(0).Item(1))
-            Dim qryUpdate = $"Update inventario SET existencia = {inventarioActual + CInt(Tcantidad.Text)} WHERE codigo_barras = {TextBoxcodigo.Text}"
-
-            Dim cmdUpdate As New MySqlCommand(qryUpdate, conexion)
+            Dim COMANDO As New MySqlCommand(consulta.ToString(), conexion)
 
             conexion.Open()
-            cmdUpdate.ExecuteNonQuery()
-            conexion.Close()
-        Else
-
-            Dim qryInsert = $"INSERT INTO inventario (codigo_barras,existencia,maximo,minimo,reorden,activo) VALUES ({TextBoxcodigo.Text},{Tcantidad.Text},{0},{0},'' ,'' )"
-
-            Dim cmdUpdate As New MySqlCommand(qryInsert, conexion)
-
-            conexion.Open()
-            cmdUpdate.ExecuteNonQuery()
+            COMANDO.ExecuteNonQuery()
             conexion.Close()
 
-        End If
+            Dim query = "Select * from inventario where codigo_barras = ?"
 
-        'agregar un renglón
-        'agregar al datatable los datos
-        'guardar renglon
+            Dim adap As New MySqlDataAdapter(query, conexion)
+            adap.SelectCommand.Parameters.AddWithValue("@p1", TextBoxcodigo.Text)
+            Dim dt As New DataTable
+            adap.Fill(dt)
 
-        'agregar al datasource del grid el datatable
+            If dt.Rows.Count > 0 Then
+                Dim inventarioActual = CInt(dt.Rows(0).Item(1))
+                Dim qryUpdate = $"Update inventario SET existencia = {inventarioActual + CInt(Tcantidad.Text)} WHERE codigo_barras = {TextBoxcodigo.Text}"
 
-        Dim Renglon As DataRow = miDataTable.NewRow()
-        Renglon("id_producto") = TextBoxcodigo.Text
-        Renglon("producto") = TextBoxproducto.Text
-        Renglon("costo") = TextBoxprecio.Text
-        Renglon("cantidad") = Tcantidad.Text
-        Renglon("proveedor") = ComboBoxprovee.Text
-        miDataTable.Rows.Add(Renglon)
+                Dim cmdUpdate As New MySqlCommand(qryUpdate, conexion)
 
-        Me.DataGridViewdetalleentrada.DataSource = miDataTable
-        ' Me.DataGridViewdetalleentrada.DataBind()
+                conexion.Open()
+                cmdUpdate.ExecuteNonQuery()
+                conexion.Close()
+            Else
 
-        MsgBox("DATOS GUARDADOS CORRECTAMENTE!!")
+                Dim qryInsert = $"INSERT INTO inventario (codigo_barras,existencia,maximo,minimo,reorden,activo) VALUES ({TextBoxcodigo.Text},{Tcantidad.Text},{0},{0},'' ,'' )"
+
+                Dim cmdUpdate As New MySqlCommand(qryInsert, conexion)
+
+                conexion.Open()
+                cmdUpdate.ExecuteNonQuery()
+                conexion.Close()
+
+            End If
+
+            'agregar un renglón
+            'agregar al datatable los datos
+            'guardar renglon
+
+            'agregar al datasource del grid el datatable
+
+            Dim Renglon As DataRow = miDataTable.NewRow()
+            Renglon("id_producto") = TextBoxcodigo.Text
+            Renglon("producto") = TextBoxproducto.Text
+            Renglon("precio") = TextBoxprecio.Text
+            Renglon("cantidad") = Tcantidad.Text
+            Renglon("proveedor") = ComboBoxprovee.Text
+            miDataTable.Rows.Add(Renglon)
+
+            Me.DataGridViewdetalleentrada.DataSource = miDataTable
+            DataGridViewdetalleentrada.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            DataGridViewdetalleentrada.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+
+            MsgBox("DATOS GUARDADOS CORRECTAMENTE!!")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class

@@ -35,7 +35,7 @@ Partial Class EditarFamiliaProducto
         'Txt_NombreFamilia
         '
         Me.Txt_NombreFamilia.Location = New System.Drawing.Point(19, 123)
-        Me.Txt_NombreFamilia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_NombreFamilia.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_NombreFamilia.MaxLength = 30
         Me.Txt_NombreFamilia.Name = "Txt_NombreFamilia"
         Me.Txt_NombreFamilia.Size = New System.Drawing.Size(310, 22)
@@ -44,7 +44,7 @@ Partial Class EditarFamiliaProducto
         'Txt_Descripcion
         '
         Me.Txt_Descripcion.Location = New System.Drawing.Point(19, 222)
-        Me.Txt_Descripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Descripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_Descripcion.MaxLength = 80
         Me.Txt_Descripcion.Name = "Txt_Descripcion"
         Me.Txt_Descripcion.Size = New System.Drawing.Size(310, 22)
@@ -56,7 +56,7 @@ Partial Class EditarFamiliaProducto
         Me.Btn_Guardar.BackgroundImage = CType(resources.GetObject("Btn_Guardar.BackgroundImage"), System.Drawing.Image)
         Me.Btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_Guardar.Location = New System.Drawing.Point(265, 269)
-        Me.Btn_Guardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_Guardar.Margin = New System.Windows.Forms.Padding(4)
         Me.Btn_Guardar.Name = "Btn_Guardar"
         Me.Btn_Guardar.Size = New System.Drawing.Size(64, 46)
         Me.Btn_Guardar.TabIndex = 2
@@ -117,7 +117,8 @@ Partial Class EditarFamiliaProducto
         Me.Controls.Add(Me.Txt_Descripcion)
         Me.Controls.Add(Me.Txt_NombreFamilia)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "EditarFamiliaProducto"

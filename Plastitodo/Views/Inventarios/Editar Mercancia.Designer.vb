@@ -218,6 +218,7 @@ Partial Class Editar_Mercancia
         Me.ClientSize = New System.Drawing.Size(938, 456)
         Me.Controls.Add(Me.TabEdiMerca)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Editar_Mercancia"
         Me.Text = "Editar_Mercancia"

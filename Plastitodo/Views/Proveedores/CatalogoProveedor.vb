@@ -1,40 +1,54 @@
 ﻿Imports System.Text
 Imports MySql.Data.MySqlClient
 Imports Plastitodo.conexion
+Imports System.Text.RegularExpressions
 Public Class CatalogoProveedor
     Private datos As DataSet
 
+
+
     Private Sub BAgregarprovee_Click(sender As Object, e As EventArgs) Handles BAgregarprovee.Click
         Try
-            Dim conexion As New MySqlConnection(ConnectionString2)
-            Dim CONSULTA
-            conexion.Open()
-            CONSULTA = "INSERT INTO proveedor(Nombre, Direccion, Colonia, Ciudad, Codigo_postal, telefono, correo, contacto)" & Chr(13) &
-                                           "VALUES(@Nombre, @Direccion, @Colonia, @Ciudad, @Codigo_postal, @telefono, @correo, @contacto)"
-            Dim COMANDO As New MySqlCommand(CONSULTA.ToString(), conexion)
-            COMANDO.Parameters.AddWithValue("@Nombre", Textnombre.Text)
-            COMANDO.Parameters.AddWithValue("@Direccion", Textdire.Text)
-            COMANDO.Parameters.AddWithValue("@Colonia", Textcol.Text)
-            COMANDO.Parameters.AddWithValue("@Ciudad", Textcuidad.Text)
-            COMANDO.Parameters.AddWithValue("@Codigo_postal", Textcp.Text)
-            COMANDO.Parameters.AddWithValue("@telefono", Texttel.Text)
-            COMANDO.Parameters.AddWithValue("@correo", Textcorreo.Text)
-            COMANDO.Parameters.AddWithValue("@contacto", Textcontacto.Text)
+            Dim email As String
 
+            email = Textcorreo.Text
 
-            COMANDO.ExecuteNonQuery()
-            conexion.Close()
+            If Len(email) > 0 Then
+                If (validar_mail(email) = True) Then
+                    Dim conexion As New MySqlConnection(ConnectionString2)
 
-            MsgBox("DATOS GUARDADOS CORRECTAMENTE!!")
+                    Dim CONSULTA As New StringBuilder
+                    CONSULTA.Clear()
+                    CONSULTA.AppendLine("insert into proveedor(Nombre, Direccion, Colonia,")
+                    CONSULTA.AppendLine("Ciudad,Codigo_postal,telefono,correo, contacto)")
+                    CONSULTA.AppendLine($"values ('{Textnombre.Text}',")
+                    CONSULTA.AppendLine($"'{Textdire.Text}', '{Textcol.Text}','{Textcuidad.Text}',")
+                    CONSULTA.AppendLine($"'{Textcp.Text}' , '{Texttel.Text}',")
+                    CONSULTA.AppendLine($"'{Textcorreo.Text}','{Textcontacto.Text}')")
+
+                    Dim COMANDO As New MySqlCommand(CONSULTA.ToString(), conexion)
+
+                    conexion.Open()
+                    COMANDO.ExecuteNonQuery()
+
+                    conexion.Close()
+                    MsgBox("DATOS GUARDADOS CORRECTAMENTE!!")
+                    limpiar()
+                Else
+                    MessageBox.Show("Verificar Correo")
+                End If
+            Else
+                MessageBox.Show("Favor de Ingresar un Correo")
+            End If
         Catch ex As Exception
-            MsgBox("Error de conexion a la BD, Datos no guardados!!")
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
-        limpiar()
-
     End Sub
 
+
     Private Sub limpiar()
+
 
         Textnombre.Text = String.Empty
         Textdire.Text = String.Empty
@@ -89,5 +103,28 @@ Public Class CatalogoProveedor
 
     Private Sub BConsultaLimpi_Click(sender As Object, e As EventArgs) Handles BConsultaLimpi.Click
         limpiarconsulta()
+    End Sub
+
+    Private Sub Texttel_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Texttel.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub Textcp_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Textcp.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Public Function validar_mail(ByVal sMail As String) As Boolean
+        Return Regex.IsMatch(sMail, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$")
+        'Static emailExpression As New Regex("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/igm")
+
+        'Return emailExpression.IsMatch(sMail)
+    End Function
+
+    Private Sub CatalogoProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
     End Sub
 End Class
