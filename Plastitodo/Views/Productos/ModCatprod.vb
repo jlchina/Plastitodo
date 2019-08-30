@@ -8,56 +8,7 @@ Public Class ModCatprod
     Dim idprov As Integer = Nothing
     Dim id_catprod As Integer = Nothing
 
-    Private Sub Btn_agregarp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_agregarp.Click
-        Try
-            'Se inicializa la conexion a la BD JLCS
-            con_string = New MySqlConnection
-            con_string.ConnectionString = ConnectionString2
-            con_string.Open()
-            'campos a ingresar en la BD desde el formulario
-            comando = New MySqlCommand("INSERT INTO catalogo_productos(codigo_barras, marca, Modelo, descripcion, presentacion, precio, id_catalogacion, id_prov)" & Chr(13) &
-                                       "VALUES(@codigo_barras, @marca, @Modelo, @descripcion, @presentacion, @precio, @id_catalogacion, @id_prov)", con_string)
-            comando.Parameters.AddWithValue("@codigo_barras", Txt_codbar.Text)
-            comando.Parameters.AddWithValue("@marca", idmarca)
-            comando.Parameters.AddWithValue("@Modelo", Txt_mod.Text)
-            comando.Parameters.AddWithValue("@descripcion", Txt_desc.Text)
-            comando.Parameters.AddWithValue("@presentacion", idpresp)
-            comando.Parameters.AddWithValue("@precio", Txt_Cto.Text)
-            comando.Parameters.AddWithValue("@id_catalogacion", idf)
-            comando.Parameters.AddWithValue("@id_prov", idprov)
-            comando.ExecuteNonQuery()
-            con_string.Close()
-
-            'Llama la funcion para guardar el costo en la tabla de historicos
-            GetHistoricoCosto(idprov, id_catprod, Txt_Cto.Text)
-
-            MsgBox("Producto guardado con exito")
-            'borra el valor de la variable con la categoria que fue seleccionada
-            idf = Nothing
-            'despues de guardar limpia la ventana
-            Txt_codbar.Text = String.Empty
-            Cbo_Marca.Text = "Seleccione una marca"
-            Txt_mod.Text = String.Empty
-            Txt_desc.Text = String.Empty
-            Txt_Cto.Text = String.Empty
-            Cbo_gpoprod.Text = "Seleccione una categoria"
-            Cbo_Pres.Text = "Selecciona una opción"
-            Cbo_Proveedor.Text = "Seleciona un proveedor"
-        Catch ex As Exception
-            MsgBox(ex.Message, "Hubo un error al guardar el producto, verifique los datos")
-            Txt_codbar.Text = String.Empty
-            Cbo_Marca.Text = "Seleccione una marca"
-            Txt_mod.Text = String.Empty
-            Txt_desc.Text = String.Empty
-            Txt_Cto.Text = String.Empty
-            Cbo_gpoprod.Text = "Seleccione una categoria"
-            Cbo_Pres.Text = "Selecciona una opción"
-            Cbo_Proveedor.Text = "Seleciona un proveedor"
-        End Try
-
-    End Sub
-
-    Private Sub Catprod_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Function cargadatos()
         'llenar el combo box para catalogacion del articulo
         Dim consulta As String = Nothing
 
@@ -171,7 +122,61 @@ Public Class ModCatprod
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Function
+    Private Sub Btn_agregarp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_agregarp.Click
+        Try
+            'Se inicializa la conexion a la BD JLCS
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
+            'campos a ingresar en la BD desde el formulario
+            comando = New MySqlCommand("INSERT INTO catalogo_productos(codigo_barras, marca, Modelo, descripcion, presentacion, precio, id_catalogacion, id_prov)" & Chr(13) &
+                                       "VALUES(@codigo_barras, @marca, @Modelo, @descripcion, @presentacion, @precio, @id_catalogacion, @id_prov)", con_string)
+            comando.Parameters.AddWithValue("@codigo_barras", Txt_codbar.Text)
+            comando.Parameters.AddWithValue("@marca", idmarca)
+            comando.Parameters.AddWithValue("@Modelo", Txt_mod.Text)
+            comando.Parameters.AddWithValue("@descripcion", Txt_desc.Text)
+            comando.Parameters.AddWithValue("@presentacion", idpresp)
+            comando.Parameters.AddWithValue("@precio", Txt_Cto.Text)
+            comando.Parameters.AddWithValue("@id_catalogacion", idf)
+            comando.Parameters.AddWithValue("@id_prov", idprov)
+            comando.ExecuteNonQuery()
+            con_string.Close()
 
+            'Llama la funcion para guardar el costo en la tabla de historicos
+            GetHistoricoCosto(idprov, id_catprod, Txt_Cto.Text)
+
+            MsgBox("Producto guardado con exito")
+            'borra el valor de la variable con la categoria que fue seleccionada
+            idf = Nothing
+            'despues de guardar limpia la ventana
+            Txt_codbar.Text = String.Empty
+            Cbo_Marca.Text = "Seleccione una marca"
+            Txt_mod.Text = String.Empty
+            Txt_desc.Text = String.Empty
+            Txt_Cto.Text = String.Empty
+            Cbo_gpoprod.Text = "Seleccione una categoria"
+            Cbo_Pres.Text = "Selecciona una opción"
+            Cbo_Proveedor.Text = "Seleciona un proveedor"
+        Catch ex As Exception
+            MsgBox(ex.Message, "Hubo un error al guardar el producto, verifique los datos")
+            Txt_codbar.Text = String.Empty
+            Cbo_Marca.Text = "Seleccione una marca"
+            Txt_mod.Text = String.Empty
+            Txt_desc.Text = String.Empty
+            Txt_Cto.Text = String.Empty
+            Cbo_gpoprod.Text = "Seleccione una categoria"
+            Cbo_Pres.Text = "Selecciona una opción"
+            Cbo_Proveedor.Text = "Seleciona un proveedor"
+        End Try
+        idprov = Nothing
+        id_catprod = Nothing
+        cargadatos()
+
+    End Sub
+
+    Private Sub Catprod_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        cargadatos()
     End Sub
 
     Private Sub Btn_cancelarp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_cancelarp.Click

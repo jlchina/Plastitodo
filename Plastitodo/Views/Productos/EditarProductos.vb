@@ -12,7 +12,7 @@ Public Class EditarProductos
         'Para obtener datos del formulario de productos y póder realizar modificación
         id_prod = IdP
     End Sub
-    Private Sub EditarProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Function act_datos()
         Dim ds As DataSet = New DataSet
         Dim datatable As New DataTable()
         Dim datatable2 As New DataTable()
@@ -140,7 +140,9 @@ Public Class EditarProductos
         Catch ex As Exception
             MsgBox("Error de conexion. No se pudo cargar la tabla presentacion de proveedores", vbCritical)
         End Try
-
+    End Function
+    Private Sub EditarProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        act_datos()
     End Sub
 
     Private Sub Cbo_Marca_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbo_Marca.SelectedIndexChanged

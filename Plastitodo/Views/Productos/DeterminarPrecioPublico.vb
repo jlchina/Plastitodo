@@ -190,8 +190,10 @@ Public Class DeterminarPrecioPublico
             comando.Parameters.AddWithValue("@id_usuario", Id_usuario)
             comando.ExecuteNonQuery()
             con_string.Close()
+            MsgBox("Precio guardado con exito")
         Catch ex As Exception
-
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
