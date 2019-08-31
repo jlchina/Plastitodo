@@ -168,7 +168,7 @@ Public Class OfertaVentaForm
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(4).Value = dr(10) 'Stock
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(5).Value = Format(CDec(dr(5)), "$ #,###,##0.00") 'Precio
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(6).Value = Format(CDec(dr(6)), "$ #,###,##0.00") 'Sub-total
-                DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(7).Value = Format(CDec(7), "##0.00") 'Descuento
+                DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(7).Value = Format(CDec(dr(7)), "##0.00") 'Descuento
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(8).Value = Format(CDec(dr(8)), "$ #,###,##0.00") 'Iva
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(9).Value = Format(CDec(dr(9)), "$ #,###,##0.00") 'Total
             Next
