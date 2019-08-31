@@ -30,6 +30,7 @@ Partial Class OfertaVentaForm
         Me.CmbCliente = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TxtFecha = New System.Windows.Forms.TextBox()
         Me.TxtFolio = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -65,7 +66,6 @@ Partial Class OfertaVentaForm
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.OfertaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NotaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TxtFecha = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DgvLista, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,7 +114,7 @@ Partial Class OfertaVentaForm
         Me.CmbCliente.FormattingEnabled = True
         Me.CmbCliente.Location = New System.Drawing.Point(69, 21)
         Me.CmbCliente.MaxDropDownItems = 5
-        Me.CmbCliente.MaxLength = 7
+        Me.CmbCliente.MaxLength = 250
         Me.CmbCliente.Name = "CmbCliente"
         Me.CmbCliente.Size = New System.Drawing.Size(134, 24)
         Me.CmbCliente.TabIndex = 1
@@ -145,6 +145,13 @@ Partial Class OfertaVentaForm
         Me.GroupBox5.TabIndex = 31
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Información general"
+        '
+        'TxtFecha
+        '
+        Me.TxtFecha.Location = New System.Drawing.Point(165, 51)
+        Me.TxtFecha.Name = "TxtFecha"
+        Me.TxtFecha.Size = New System.Drawing.Size(113, 22)
+        Me.TxtFecha.TabIndex = 18
         '
         'TxtFolio
         '
@@ -444,13 +451,6 @@ Partial Class OfertaVentaForm
         Me.NotaDeVentaToolStripMenuItem.Name = "NotaDeVentaToolStripMenuItem"
         Me.NotaDeVentaToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.NotaDeVentaToolStripMenuItem.Text = "Nota de venta"
-        '
-        'TxtFecha
-        '
-        Me.TxtFecha.Location = New System.Drawing.Point(165, 51)
-        Me.TxtFecha.Name = "TxtFecha"
-        Me.TxtFecha.Size = New System.Drawing.Size(113, 22)
-        Me.TxtFecha.TabIndex = 18
         '
         'OfertaVentaForm
         '
