@@ -206,6 +206,8 @@ Public Class OfertaVentaForm
         id_tipo_documento = 2
         Me.Text = "Oferta de venta - Nuevo"
         TxtFolio.Text = GetFolioMax(id_tipo_documento)
+        BtnCrear.Enabled = True
+        BtnCrear.Text = "Crear"
     End Sub
 
     Private Sub NotaDeVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotaDeVentaToolStripMenuItem.Click
@@ -213,6 +215,8 @@ Public Class OfertaVentaForm
         id_tipo_documento = 1
         Me.Text = "Nota de venta - Nuevo"
         TxtFolio.Text = GetFolioMax(id_tipo_documento)
+        BtnCrear.Enabled = True
+        BtnCrear.Text = "Crear"
     End Sub
 
     Private Sub DgvLista_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DgvLista.CellEndEdit
