@@ -1,11 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Editar_Mercancia
     Private Sub BBuscarEdi_Click(sender As Object, e As EventArgs) Handles BBuscarEdi.Click
+
         Try
             Dim conexion As New MySqlConnection(ConnectionString2)
-
             Dim query = "Select *from catalogo_productos where codigo_barras like ?"
-
             Dim adap As New MySqlDataAdapter(query, conexion)
             adap.SelectCommand.Parameters.AddWithValue("@p1", "%" & TextBox1.Text & "%")
             Dim dt As New DataTable
@@ -13,17 +12,12 @@ Public Class Editar_Mercancia
 
             If dt.Rows.Count > 0 Then
                 DataGridViewBusEdi.DataSource = dt
-
             Else
                 MessageBox.Show("No se encontraron coincidencias")
             End If
-
             'DataGridView1.DataSource = dt
-
-
             conexion.Close()
         Catch ex As Exception
-
             MessageBox.Show(ex.Message)
         End Try
     End Sub

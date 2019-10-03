@@ -69,26 +69,37 @@ Public Class EditarGpoProd
     End Sub
 
     Private Sub Btn_Actualizar_Click(sender As Object, e As EventArgs) Handles Btn_Actualizar.Click
+        Dim verif As Boolean
         Dim actualizar As String = "UPDATE catalogacion SET Id_familia = @Id_familia, Nom_categoria = @Nom_categoria WHERE id = " & id_cat
-        Try
-            'Abir conexion
-            con_string = New MySqlConnection
-            con_string.ConnectionString = ConnectionString2
-            con_string.Open()
-            'Iniciar comando de conexion
-            cmd = New MySqlCommand(actualizar, con_string)
-            'Pasar parametros
-            cmd.Parameters.Add(New MySqlParameter("@Id_familia", id_fam))
-            cmd.Parameters.Add(New MySqlParameter("@Nom_categoria", Txt_NomCat.Text))
-            'enviar nuevos datos a la tabla
-            cmd.ExecuteNonQuery()
-            con_string.Close()
 
-            MsgBox("Registro actualizado")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            MessageBox.Show("No se pudo actualizar el registro", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        If (id_fam.ToString IsNot "" And Txt_NomCat.Text IsNot "") Then
+            verif = True
+        Else
+            verif = False
+        End If
+        If verif = False Then
+            Try
+                'Abir conexion
+                con_string = New MySqlConnection
+                con_string.ConnectionString = ConnectionString2
+                con_string.Open()
+                'Iniciar comando de conexion
+                cmd = New MySqlCommand(actualizar, con_string)
+                'Pasar parametros
+                cmd.Parameters.Add(New MySqlParameter("@Id_familia", id_fam))
+                cmd.Parameters.Add(New MySqlParameter("@Nom_categoria", Txt_NomCat.Text))
+                'enviar nuevos datos a la tabla
+                cmd.ExecuteNonQuery()
+                con_string.Close()
+
+                MsgBox("Registro actualizado")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                MessageBox.Show("No se pudo actualizar el registro", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            MsgBox("No se han llenado todos los campos, verifique la información")
+        End If
     End Sub
 
     Private Sub Cbo_EFamprod_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbo_EFamprod.SelectedIndexChanged

@@ -64,24 +64,36 @@ Public Class Alta_fam_prod
     End Function
 
     Private Sub btn_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_guardar.Click
+        Dim ver As Boolean
         con_string = New MySqlConnection
         con_string.ConnectionString = ConnectionString2
-        con_string.Open()
-        Try
-            comando = New MySqlCommand("INSERT INTO catalogacion_familias(nom_familia, descripcion_fam)" & Chr(13) &
-                                       "VALUES(@nom_familia,@descripcion_fam)", con_string)
-            comando.Parameters.AddWithValue("@nom_familia", txt_nomfam.Text)
-            comando.Parameters.AddWithValue("@descripcion_fam", txt_descfam.Text)
-            comando.ExecuteNonQuery()
-            MsgBox("Nueva familia de productos guardada con exito")
-            txt_nomfam.Text = String.Empty
-            txt_descfam.Text = String.Empty
-        Catch ex As Exception
-            MsgBox(ex.Message, "Hubo un error al guardar, verifique los datos")
-            txt_nomfam.Text = String.Empty
-            txt_descfam.Text = String.Empty
-        End Try
-        con_string.Close()
+
+        If (txt_nomfam.Text IsNot "" And txt_descfam.Text IsNot "") Then
+            ver = False
+        Else
+            ver = True
+        End If
+
+        If ver = False Then
+            Try
+                comando = New MySqlCommand("INSERT INTO catalogacion_familias(nom_familia, descripcion_fam)" & Chr(13) &
+                                           "VALUES(@nom_familia,@descripcion_fam)", con_string)
+                comando.Parameters.AddWithValue("@nom_familia", txt_nomfam.Text)
+                comando.Parameters.AddWithValue("@descripcion_fam", txt_descfam.Text)
+                con_string.Open()
+                comando.ExecuteNonQuery()
+                MsgBox("Nueva familia de productos guardada con exito")
+                txt_nomfam.Text = String.Empty
+                txt_descfam.Text = String.Empty
+                con_string.Close()
+            Catch ex As Exception
+                MsgBox(ex.Message, "Hubo un error al guardar, verifique los datos")
+                txt_nomfam.Text = String.Empty
+                txt_descfam.Text = String.Empty
+            End Try
+        Else
+            MsgBox("No se han llenado todos los campos, verifique la información")
+        End If
     End Sub
 
 

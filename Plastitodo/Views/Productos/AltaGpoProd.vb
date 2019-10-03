@@ -152,45 +152,57 @@ Public Class AltaGpoProd
     End Sub
 
     Private Sub Btn_agregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_agregar.Click
-        Try
-            'Abre la conexion a la BD
-            con_string = New MySqlConnection
-            con_string.ConnectionString = ConnectionString2
-            con_string.Open()
+        Dim verif As Boolean
+        If (txt_gpoprod.Text IsNot "" And txt_idfamilia.Text IsNot "" And txt_cat.Text IsNot "" And txt_nomcat.Text) Then
+            verif = True
+        Else
+            verif = False
+        End If
 
-            'valores de la tabla catalogacion que seran guardados y se referencian con "@" para guardar
-            'posteriormente el contenido de las cajas de texto
-            comando = New MySqlCommand("INSERT INTO catalogacion(Gpo_prod, Id_familia, Id_categoria, Nom_categoria)" & Chr(13) &
-                                       "VALUES(@Gpo_prod,@Id_familia, @Id_categoria, @Nom_categoria)", con_string)
-            comando.Parameters.AddWithValue("@Gpo_prod", txt_gpoprod.Text)
-            comando.Parameters.AddWithValue("@Id_familia", txt_idfamilia.Text)
-            comando.Parameters.AddWithValue("@Id_categoria", txt_cat.Text)
-            comando.Parameters.AddWithValue("@Nom_categoria", txt_nomcat.Text)
-            MsgBox("Grupo de productos guardado con exito", vbExclamation)
-            comando.ExecuteNonQuery()
-            con_string.Close()
+        If verif = False Then
 
-            'limpia los datos ingresados para poder dar de alta uno nuevo
-            txt_gpoprod.Text = String.Empty
-            txt_idfamilia.Text = String.Empty
-            txt_cat.Text = String.Empty
-            txt_nomcat.Text = String.Empty
-            'desactiva el botón de agregar y activa el botón de validar
-            Btn_agregar.Enabled = False
-            btn_validar.Enabled = True
+            Try
+                'Abre la conexion a la BD
+                con_string = New MySqlConnection
+                con_string.ConnectionString = ConnectionString2
+                con_string.Open()
 
-        Catch ex As Exception
-            'En caso de error limpia los datos ingresados y envia mensaje
-            MsgBox("No se ha podido guardar, verifique los datos ingresados", vbExclamation)
+                'valores de la tabla catalogacion que seran guardados y se referencian con "@" para guardar
+                'posteriormente el contenido de las cajas de texto
+                comando = New MySqlCommand("INSERT INTO catalogacion(Gpo_prod, Id_familia, Id_categoria, Nom_categoria)" & Chr(13) &
+                                           "VALUES(@Gpo_prod,@Id_familia, @Id_categoria, @Nom_categoria)", con_string)
+                comando.Parameters.AddWithValue("@Gpo_prod", txt_gpoprod.Text)
+                comando.Parameters.AddWithValue("@Id_familia", txt_idfamilia.Text)
+                comando.Parameters.AddWithValue("@Id_categoria", txt_cat.Text)
+                comando.Parameters.AddWithValue("@Nom_categoria", txt_nomcat.Text)
+                MsgBox("Grupo de productos guardado con exito", vbExclamation)
+                comando.ExecuteNonQuery()
+                con_string.Close()
 
-            txt_gpoprod.Text = String.Empty
-            txt_idfamilia.Text = String.Empty
-            txt_cat.Text = String.Empty
-            txt_nomcat.Text = String.Empty
+                'limpia los datos ingresados para poder dar de alta uno nuevo
+                txt_gpoprod.Text = String.Empty
+                txt_idfamilia.Text = String.Empty
+                txt_cat.Text = String.Empty
+                txt_nomcat.Text = String.Empty
+                'desactiva el botón de agregar y activa el botón de validar
+                Btn_agregar.Enabled = False
+                btn_validar.Enabled = True
 
-            Btn_agregar.Enabled = False
-            btn_validar.Enabled = True
-        End Try
+            Catch ex As Exception
+                'En caso de error limpia los datos ingresados y envia mensaje
+                MsgBox("No se ha podido guardar, verifique los datos ingresados", vbExclamation)
+
+                txt_gpoprod.Text = String.Empty
+                txt_idfamilia.Text = String.Empty
+                txt_cat.Text = String.Empty
+                txt_nomcat.Text = String.Empty
+
+                Btn_agregar.Enabled = False
+                btn_validar.Enabled = True
+            End Try
+        Else
+            MsgBox("No se han llenado todos los campos, verifique la información")
+        End If
     End Sub
 
     Private Sub Dgv_EditarGP_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_EditarGP.CellClick

@@ -164,31 +164,42 @@ Public Class EditarProductos
     End Sub
 
     Private Sub Btn_actualizar_Click(sender As Object, e As EventArgs) Handles Btn_actualizar.Click
+        Dim verif As Boolean
         Dim actualizar As String = "UPDATE catalogo_productos SET codigo_barras = @cb, marca = @marca, Modelo=@Modelo,descripcion=@descripcion,presentacion=@presentacion,precio=@precio, id_catalogacion=@id_catalogacion, id_prov=@id_prov WHERE id = " & id_prod
-        Try
-            'Abir conexion
-            con_string = New MySqlConnection
-            con_string.ConnectionString = ConnectionString2
-            con_string.Open()
-            'Iniciar comando de conexion
-            cmd = New MySqlCommand(actualizar, con_string)
-            'Pasar parametros
-            cmd.Parameters.Add(New MySqlParameter("@cb", Txt_CodBar.Text))
-            cmd.Parameters.Add(New MySqlParameter("@marca", idm))
-            cmd.Parameters.Add(New MySqlParameter("@Modelo", Txt_Modelo.Text))
-            cmd.Parameters.Add(New MySqlParameter("@descripcion", Txt_Desc.Text))
-            cmd.Parameters.Add(New MySqlParameter("@presentacion", idpp))
-            cmd.Parameters.Add(New MySqlParameter("@precio", Txt_Cto.Text))
-            cmd.Parameters.Add(New MySqlParameter("@id_catalogacion", idgp))
-            cmd.Parameters.Add(New MySqlParameter("@id_prov", idprov))
-            'enviar nuevos datos a la tabla
-            cmd.ExecuteNonQuery()
-            con_string.Close()
-            MsgBox("Registro actualizado")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            MessageBox.Show("No se pudo actualizar el registro", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+
+        If (Txt_CodBar.Text IsNot "" And idm.ToString IsNot "" And Txt_Modelo.Text IsNot "" And Txt_Desc.Text IsNot "" And idpp.ToString IsNot "" And Txt_Cto.ToString IsNot "" And idgp.ToString IsNot "" And idprov.ToString IsNot "") Then
+            verif = True
+        Else
+            verif = False
+        End If
+        If verif = False Then
+            Try
+                'Abir conexion
+                con_string = New MySqlConnection
+                con_string.ConnectionString = ConnectionString2
+                con_string.Open()
+                'Iniciar comando de conexion
+                cmd = New MySqlCommand(actualizar, con_string)
+                'Pasar parametros
+                cmd.Parameters.Add(New MySqlParameter("@cb", Txt_CodBar.Text))
+                cmd.Parameters.Add(New MySqlParameter("@marca", idm))
+                cmd.Parameters.Add(New MySqlParameter("@Modelo", Txt_Modelo.Text))
+                cmd.Parameters.Add(New MySqlParameter("@descripcion", Txt_Desc.Text))
+                cmd.Parameters.Add(New MySqlParameter("@presentacion", idpp))
+                cmd.Parameters.Add(New MySqlParameter("@precio", Txt_Cto.Text))
+                cmd.Parameters.Add(New MySqlParameter("@id_catalogacion", idgp))
+                cmd.Parameters.Add(New MySqlParameter("@id_prov", idprov))
+                'enviar nuevos datos a la tabla
+                cmd.ExecuteNonQuery()
+                con_string.Close()
+                MsgBox("Registro actualizado con exito")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                MessageBox.Show("No se pudo actualizar el registro", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            MsgBox("No se han llenado todos los campos, verifique la información")
+        End If
 
         'esta consulta se realiza para guardar la actualizacion de costo en la BD
         'Try
@@ -210,8 +221,6 @@ Public Class EditarProductos
 
         'Llama la funcion para guardar el costo en la tabla de historicos
         GetHistoricoCosto(idprov, id_CatProd, Txt_Cto.Text)
-
-        MsgBox("Producto guardado con exito")
 
     End Sub
 

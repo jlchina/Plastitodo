@@ -67,24 +67,28 @@ Public Class Presentacion_Prod
     End Sub
 
     Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles Btn_Guardar.Click
-        'abrir conexion
-        con_string = New MySqlConnection
-        con_string.ConnectionString = ConnectionString2
-        con_string.Open()
+        If (Txt_Presentacion.Text IsNot "") Then
+            MsgBox("No se han llenado todos los campos, verifique la información")
+        Else
+            'abrir conexion
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
 
-        Try
-            'especifica la tabla y los campos donde se ha de agregar informacion
-            comando = New MySqlCommand("INSERT INTO presentacion_prod (presentacion)" & Chr(13) &
-                                       "VALUES(@presentacion)", con_string)    'indica a que valor hara referencia la consulta para transferir los datos
+            Try
+                'especifica la tabla y los campos donde se ha de agregar informacion
+                comando = New MySqlCommand("INSERT INTO presentacion_prod (presentacion)" & Chr(13) &
+                                           "VALUES(@presentacion)", con_string)    'indica a que valor hara referencia la consulta para transferir los datos
 
-            comando.Parameters.AddWithValue("@presentacion", Txt_Presentacion.Text)
-            comando.ExecuteNonQuery()   'ejecuta la consulta para guardar el registro en la tabla
-            MsgBox("Nueva presentacion de productos guardada con exito")
-            Txt_Presentacion.Text = String.Empty
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+                comando.Parameters.AddWithValue("@presentacion", Txt_Presentacion.Text)
+                comando.ExecuteNonQuery()   'ejecuta la consulta para guardar el registro en la tabla
+                MsgBox("Nueva presentacion de productos guardada con exito")
+                Txt_Presentacion.Text = String.Empty
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
     End Sub
 
     Private Sub Txt_Presentacion_ModifiedChanged(sender As Object, e As EventArgs) Handles Txt_Presentacion.ModifiedChanged

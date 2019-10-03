@@ -176,25 +176,31 @@ Public Class DeterminarPrecioPublico
     End Sub
 
     Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles Btn_Guardar.Click
-        Try
-            'Se inicializa la conexion a la BD JLCS
-            con_string = New MySqlConnection
-            con_string.ConnectionString = ConnectionString2
-            con_string.Open()
-            'campos a ingresar en la BD desde el formulario
-            comando = New MySqlCommand("INSERT INTO historico_preciopublico(id_catalogo, id_costo, p_publico, id_usuario)" & Chr(13) &
+
+        If Txt_PrecioPub.Text > 0 Then
+
+            Try
+                'Se inicializa la conexion a la BD JLCS
+                con_string = New MySqlConnection
+                con_string.ConnectionString = ConnectionString2
+                con_string.Open()
+                'campos a ingresar en la BD desde el formulario
+                comando = New MySqlCommand("INSERT INTO historico_preciopublico(id_catalogo, id_costo, p_publico, id_usuario)" & Chr(13) &
                                        "VALUES(@id_catalogo, @id_costo, @p_publico,@id_usuario)", con_string)
-            comando.Parameters.AddWithValue("@id_catalogo", id_CatProd)
-            comando.Parameters.AddWithValue("@id_costo", id_Costo)
-            comando.Parameters.AddWithValue("@p_publico", Txt_PrecioPub.Text)
-            comando.Parameters.AddWithValue("@id_usuario", Id_usuario)
-            comando.ExecuteNonQuery()
-            con_string.Close()
-            MsgBox("Precio guardado con exito")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+                comando.Parameters.AddWithValue("@id_catalogo", id_CatProd)
+                comando.Parameters.AddWithValue("@id_costo", id_Costo)
+                comando.Parameters.AddWithValue("@p_publico", Txt_PrecioPub.Text)
+                comando.Parameters.AddWithValue("@id_usuario", Id_usuario)
+                comando.ExecuteNonQuery()
+                con_string.Close()
+                MsgBox("Precio guardado con exito")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            MsgBox("No se han especificado un precio o no se ha seleccionado el margen, verifique la información")
+        End If
     End Sub
 
 End Class

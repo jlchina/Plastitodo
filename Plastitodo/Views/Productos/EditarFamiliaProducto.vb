@@ -47,26 +47,37 @@ Public Class EditarFamiliaProducto
 
     Private Sub Btn_Guardar_Click(sender As Object, e As EventArgs) Handles Btn_Guardar.Click
         Dim actualizar As String = "UPDATE catalogacion_familias SET nom_familia = @nomfam, descripcion_fam = @descripcion WHERE id_familia = " & Lbl_ID.Text
+        Dim verif As Boolean
 
-        Try
-            'Abir conexion
-            con_string = New MySqlConnection
-            con_string.ConnectionString = ConnectionString2
-            con_string.Open()
-            'Iniciar comando de conexion
-            cmd = New MySqlCommand(actualizar, con_string)
-            'Pasar parametros
-            cmd.Parameters.Add(New MySqlParameter("@nomfam", Txt_NombreFamilia.Text))
-            cmd.Parameters.Add(New MySqlParameter("@descripcion", Txt_Descripcion.Text))
-            'enviar nuevos datos a la tabla
-            cmd.ExecuteNonQuery()
-            con_string.Close()
+        If (Txt_NombreFamilia.Text IsNot "" And Txt_Descripcion.Text IsNot "") Then
+            verif = True
+        Else
+            verif = False
+        End If
 
-            MsgBox("Registro actualizado")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        If verif = False Then
+            Try
+                'Abir conexion
+                con_string = New MySqlConnection
+                con_string.ConnectionString = ConnectionString2
+                con_string.Open()
+                'Iniciar comando de conexion
+                cmd = New MySqlCommand(actualizar, con_string)
+                'Pasar parametros
+                cmd.Parameters.Add(New MySqlParameter("@nomfam", Txt_NombreFamilia.Text))
+                cmd.Parameters.Add(New MySqlParameter("@descripcion", Txt_Descripcion.Text))
+                'enviar nuevos datos a la tabla
+                cmd.ExecuteNonQuery()
+                con_string.Close()
+
+                MsgBox("Registro actualizado")
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            MsgBox("No se han llenado todos los campos, verifique la información")
+        End If
 
     End Sub
 End Class

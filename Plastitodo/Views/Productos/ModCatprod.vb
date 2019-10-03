@@ -124,54 +124,91 @@ Public Class ModCatprod
         End Try
     End Function
     Private Sub Btn_agregarp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_agregarp.Click
+        Dim sql As String = Nothing
+        Dim da As New MySqlDataAdapter
+        Dim dataset As New DataSet
+        Dim filtro_codigo As Double = 0
+        Dim val As Boolean
+
         Try
-            'Se inicializa la conexion a la BD JLCS
-            con_string = New MySqlConnection
-            con_string.ConnectionString = ConnectionString2
-            con_string.Open()
-            'campos a ingresar en la BD desde el formulario
-            comando = New MySqlCommand("INSERT INTO catalogo_productos(codigo_barras, marca, Modelo, descripcion, presentacion, precio, id_catalogacion, id_prov)" & Chr(13) &
-                                       "VALUES(@codigo_barras, @marca, @Modelo, @descripcion, @presentacion, @precio, @id_catalogacion, @id_prov)", con_string)
-            comando.Parameters.AddWithValue("@codigo_barras", Txt_codbar.Text)
-            comando.Parameters.AddWithValue("@marca", idmarca)
-            comando.Parameters.AddWithValue("@Modelo", Txt_mod.Text)
-            comando.Parameters.AddWithValue("@descripcion", Txt_desc.Text)
-            comando.Parameters.AddWithValue("@presentacion", idpresp)
-            comando.Parameters.AddWithValue("@precio", Txt_Cto.Text)
-            comando.Parameters.AddWithValue("@id_catalogacion", idf)
-            comando.Parameters.AddWithValue("@id_prov", idprov)
-            comando.ExecuteNonQuery()
-            con_string.Close()
-
-            'Llama la funcion para guardar el costo en la tabla de historicos
-            GetHistoricoCosto(idprov, id_catprod, Txt_Cto.Text)
-
-            MsgBox("Producto guardado con exito")
-            'borra el valor de la variable con la categoria que fue seleccionada
-            idf = Nothing
-            'despues de guardar limpia la ventana
-            Txt_codbar.Text = String.Empty
-            Cbo_Marca.Text = "Seleccione una marca"
-            Txt_mod.Text = String.Empty
-            Txt_desc.Text = String.Empty
-            Txt_Cto.Text = String.Empty
-            Cbo_gpoprod.Text = "Seleccione una categoria"
-            Cbo_Pres.Text = "Selecciona una opción"
-            Cbo_Proveedor.Text = "Seleciona un proveedor"
+            'buscar duplicidad de registros 28-09-2019
+            If Txt_codbar.Text <> "" Then
+                con_string = New MySqlConnection
+                con_string.ConnectionString = ConnectionString2
+                con_string.Open()
+                sql = "SELECT codigo_barras FROM catalogo_productos WHERE codigo_barras =" & Txt_codbar.Text
+                da = New MySqlDataAdapter(sql, con_string)
+                dataset = New DataSet
+                da.Fill(dataset)
+                con_string.Close()
+                For Each datar As DataRow In dataset.Tables(0).Rows
+                    filtro_codigo = datar(0)
+                Next
+                If filtro_codigo > 0 Then
+                    val = True
+                End If
+            End If
         Catch ex As Exception
-            MsgBox(ex.Message, "Hubo un error al guardar el producto, verifique los datos")
-            Txt_codbar.Text = String.Empty
-            Cbo_Marca.Text = "Seleccione una marca"
-            Txt_mod.Text = String.Empty
-            Txt_desc.Text = String.Empty
-            Txt_Cto.Text = String.Empty
-            Cbo_gpoprod.Text = "Seleccione una categoria"
-            Cbo_Pres.Text = "Selecciona una opción"
-            Cbo_Proveedor.Text = "Seleciona un proveedor"
+            MsgBox("Error")
         End Try
-        idprov = Nothing
-        id_catprod = Nothing
-        cargadatos()
+
+        If (idmarca.ToString <= 0 And Txt_mod.Text IsNot "" And Txt_desc.Text IsNot "" And idpresp.ToString <= 0 And Txt_Cto.Text IsNot "" And idf.ToString <= 0 And idprov.ToString <= 0) Then
+            val = True
+        End If
+
+        If val = False Then     'verifica si el codigo de barras ingresado se ha ingresado previamente
+
+            Try
+                'Se inicializa la conexion a la BD JLCS
+                con_string = New MySqlConnection
+                con_string.ConnectionString = ConnectionString2
+                con_string.Open()
+                'campos a ingresar en la BD desde el formulario
+                comando = New MySqlCommand("INSERT INTO catalogo_productos(codigo_barras, marca, Modelo, descripcion, presentacion, precio, id_catalogacion, id_prov)" & Chr(13) &
+                                       "VALUES(@codigo_barras, @marca, @Modelo, @descripcion, @presentacion, @precio, @id_catalogacion, @id_prov)", con_string)
+                comando.Parameters.AddWithValue("@codigo_barras", Txt_codbar.Text)
+                comando.Parameters.AddWithValue("@marca", idmarca)
+                comando.Parameters.AddWithValue("@Modelo", Txt_mod.Text)
+                comando.Parameters.AddWithValue("@descripcion", Txt_desc.Text)
+                comando.Parameters.AddWithValue("@presentacion", idpresp)
+                comando.Parameters.AddWithValue("@precio", Txt_Cto.Text)
+                comando.Parameters.AddWithValue("@id_catalogacion", idf)
+                comando.Parameters.AddWithValue("@id_prov", idprov)
+                comando.ExecuteNonQuery()
+                con_string.Close()
+
+                'Llama la funcion para guardar el costo en la tabla de historicos
+                GetHistoricoCosto(idprov, id_catprod, Txt_Cto.Text)
+
+                MsgBox("Producto guardado con exito")
+                'borra el valor de la variable con la categoria que fue seleccionada
+                idf = Nothing
+                'despues de guardar limpia la ventana
+                Txt_codbar.Text = String.Empty
+                Cbo_Marca.Text = "Seleccione una marca"
+                Txt_mod.Text = String.Empty
+                Txt_desc.Text = String.Empty
+                Txt_Cto.Text = String.Empty
+                Cbo_gpoprod.Text = "Seleccione una categoria"
+                Cbo_Pres.Text = "Selecciona una opción"
+                Cbo_Proveedor.Text = "Seleciona un proveedor"
+            Catch ex As Exception
+                MsgBox("Hubo un error al guardar el producto, verifique los datos")
+                Txt_codbar.Text = String.Empty
+                Cbo_Marca.Text = "Seleccione una marca"
+                Txt_mod.Text = String.Empty
+                Txt_desc.Text = String.Empty
+                Txt_Cto.Text = String.Empty
+                Cbo_gpoprod.Text = "Seleccione una categoria"
+                Cbo_Pres.Text = "Selecciona una opción"
+                Cbo_Proveedor.Text = "Seleciona un proveedor"
+            End Try
+            idprov = Nothing
+            id_catprod = Nothing
+            cargadatos()
+        Else
+            MsgBox("El codigo esta duplicado o no se llenaron todos los campos")
+        End If
 
     End Sub
 
