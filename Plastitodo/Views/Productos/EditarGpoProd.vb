@@ -72,10 +72,10 @@ Public Class EditarGpoProd
         Dim verif As Boolean
         Dim actualizar As String = "UPDATE catalogacion SET Id_familia = @Id_familia, Nom_categoria = @Nom_categoria WHERE id = " & id_cat
 
-        If (id_fam.ToString IsNot "" And Txt_NomCat.Text IsNot "") Then
-            verif = True
-        Else
+        If (id_fam.ToString > 0 And Txt_NomCat.Text IsNot "") Then
             verif = False
+        Else
+            verif = True
         End If
         If verif = False Then
             Try

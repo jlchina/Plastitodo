@@ -106,12 +106,16 @@ Public Class EditarProductos
                 Dim DataRow As DataRow = dt.NewRow()
                 Txt_CodBar.Text = dr(1)
                 Cbo_Marca.SelectedValue = dr(2)
+                idm = dr(2)
                 Txt_Modelo.Text = dr(3)
                 Txt_Desc.Text = dr(4)
                 Cbo_Pres.SelectedValue = dr(5)
+                idpp = dr(5)
                 Txt_Cto.Text = dr(6)
                 Cbo_GpoProd.SelectedValue = dr(7)
+                idgp = dr(7)
                 Cbo_Proveedor.SelectedValue = dr(8)
+                idprov = dr(8)
                 id_CatProd = dr(0)
             Next
         Catch ex As Exception
@@ -167,10 +171,10 @@ Public Class EditarProductos
         Dim verif As Boolean
         Dim actualizar As String = "UPDATE catalogo_productos SET codigo_barras = @cb, marca = @marca, Modelo=@Modelo,descripcion=@descripcion,presentacion=@presentacion,precio=@precio, id_catalogacion=@id_catalogacion, id_prov=@id_prov WHERE id = " & id_prod
 
-        If (Txt_CodBar.Text IsNot "" And idm.ToString IsNot "" And Txt_Modelo.Text IsNot "" And Txt_Desc.Text IsNot "" And idpp.ToString IsNot "" And Txt_Cto.ToString IsNot "" And idgp.ToString IsNot "" And idprov.ToString IsNot "") Then
-            verif = True
-        Else
+        If (Txt_CodBar.Text IsNot "" And idm.ToString > 0 And Txt_Modelo.Text IsNot "" And Txt_Desc.Text IsNot "" And idpp.ToString > 0 And Txt_Cto.ToString IsNot "" And idgp.ToString > 0 And idprov.ToString > 0) Then
             verif = False
+        Else
+            verif = True
         End If
         If verif = False Then
             Try
@@ -193,6 +197,9 @@ Public Class EditarProductos
                 cmd.ExecuteNonQuery()
                 con_string.Close()
                 MsgBox("Registro actualizado con exito")
+
+                'Llama la funcion para guardar el costo en la tabla de historicos
+                GetHistoricoCosto(idprov, id_CatProd, Txt_Cto.Text)
             Catch ex As Exception
                 MsgBox(ex.Message)
                 MessageBox.Show("No se pudo actualizar el registro", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -218,9 +225,6 @@ Public Class EditarProductos
         'Catch ex As Exception
 
         'End Try
-
-        'Llama la funcion para guardar el costo en la tabla de historicos
-        GetHistoricoCosto(idprov, id_CatProd, Txt_Cto.Text)
 
     End Sub
 
