@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿
+Imports MySql.Data.MySqlClient
 
 Module conexion
     'Public ConnectionString As String = "Data Source=127.0.0.1; Port=3306;Database=plastitodo; User id=root"

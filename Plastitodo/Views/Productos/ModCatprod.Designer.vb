@@ -51,6 +51,7 @@ Partial Class ModCatprod
         Me.txtCodigoEd = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DGV_Edit_CP = New System.Windows.Forms.DataGridView()
+        Me.DirectoryEntry1 = New System.DirectoryServices.DirectoryEntry()
         Me.Tab_proveedor.SuspendLayout()
         Me.Tab_alta_p.SuspendLayout()
         Me.Pan_prov.SuspendLayout()
@@ -422,4 +423,5 @@ Partial Class ModCatprod
     Friend WithEvents Cbo_Marca As ComboBox
     Friend WithEvents Cbo_Proveedor As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents DirectoryEntry1 As DirectoryServices.DirectoryEntry
 End Class

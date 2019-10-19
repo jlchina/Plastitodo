@@ -109,6 +109,7 @@ Public Class AltaGpoProd
     End Sub
 
     Private Sub btn_validar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_validar.Click
+
         'extraer el numero maximo de categorias creadas para determinada familia y colocarlo en el campo de texto de categorias
         Try
             Dim considcat As String = Nothing

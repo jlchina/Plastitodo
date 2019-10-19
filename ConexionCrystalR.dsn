@@ -1,0 +1,6 @@
+[ODBC]
+DRIVER=MySQL ODBC 5.2 ANSI Driver
+UID=root
+PORT=3306
+DATABASE=plastibolsas
+SERVER=127.0.0.1

@@ -28,6 +28,7 @@ Partial Class Existencias
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Btn_report = New System.Windows.Forms.Button()
         CType(Me.DataGridViewexis, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,7 +55,7 @@ Partial Class Existencias
         Me.DataGridViewexis.Location = New System.Drawing.Point(13, 86)
         Me.DataGridViewexis.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridViewexis.Name = "DataGridViewexis"
-        Me.DataGridViewexis.Size = New System.Drawing.Size(632, 225)
+        Me.DataGridViewexis.Size = New System.Drawing.Size(632, 216)
         Me.DataGridViewexis.TabIndex = 6
         '
         'Label1
@@ -86,11 +87,22 @@ Partial Class Existencias
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
+        'Btn_report
+        '
+        Me.Btn_report.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_report.Location = New System.Drawing.Point(511, 309)
+        Me.Btn_report.Name = "Btn_report"
+        Me.Btn_report.Size = New System.Drawing.Size(134, 34)
+        Me.Btn_report.TabIndex = 9
+        Me.Btn_report.Text = "Generar Reporte"
+        Me.Btn_report.UseVisualStyleBackColor = True
+        '
         'Existencias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(658, 321)
+        Me.ClientSize = New System.Drawing.Size(658, 347)
+        Me.Controls.Add(Me.Btn_report)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Bbuscarexis)
         Me.Controls.Add(Me.DataGridViewexis)
@@ -113,4 +125,5 @@ Partial Class Existencias
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Btn_report As Button
 End Class

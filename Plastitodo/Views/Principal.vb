@@ -181,4 +181,10 @@ Public Class Principal
         newForm.MdiParent = Me
         newForm.Show()
     End Sub
+
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        Dim newform As New Reportes()
+        newform.MdiParent = Me
+        newform.Show()
+    End Sub
 End Class

@@ -146,6 +146,8 @@ Public Class ModCatprod
                 Next
                 If filtro_codigo > 0 Then
                     val = True
+                Else
+                    val = False
                 End If
             End If
         Catch ex As Exception

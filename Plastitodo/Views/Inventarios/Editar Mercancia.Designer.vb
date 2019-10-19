@@ -25,8 +25,6 @@ Partial Class Editar_Mercancia
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Editar_Mercancia))
         Me.TabEdiMerca = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.BActualizar = New System.Windows.Forms.Button()
-        Me.BEditar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,9 +34,11 @@ Partial Class Editar_Mercancia
         Me.Costo = New System.Windows.Forms.Label()
         Me.Txtprecio = New System.Windows.Forms.TextBox()
         Me.DataGridViewBusEdi = New System.Windows.Forms.DataGridView()
-        Me.BBuscarEdi = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.LCodigoBusc = New System.Windows.Forms.Label()
+        Me.BActualizar = New System.Windows.Forms.Button()
+        Me.BEditar = New System.Windows.Forms.Button()
+        Me.BBuscarEdi = New System.Windows.Forms.Button()
         Me.TabEdiMerca.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridViewBusEdi, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,28 +78,6 @@ Partial Class Editar_Mercancia
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Editar "
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'BActualizar
-        '
-        Me.BActualizar.BackgroundImage = CType(resources.GetObject("BActualizar.BackgroundImage"), System.Drawing.Image)
-        Me.BActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BActualizar.Location = New System.Drawing.Point(759, 290)
-        Me.BActualizar.Margin = New System.Windows.Forms.Padding(4)
-        Me.BActualizar.Name = "BActualizar"
-        Me.BActualizar.Size = New System.Drawing.Size(70, 43)
-        Me.BActualizar.TabIndex = 13
-        Me.BActualizar.UseVisualStyleBackColor = True
-        '
-        'BEditar
-        '
-        Me.BEditar.BackgroundImage = CType(resources.GetObject("BEditar.BackgroundImage"), System.Drawing.Image)
-        Me.BEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BEditar.Location = New System.Drawing.Point(759, 146)
-        Me.BEditar.Margin = New System.Windows.Forms.Padding(4)
-        Me.BEditar.Name = "BEditar"
-        Me.BEditar.Size = New System.Drawing.Size(70, 57)
-        Me.BEditar.TabIndex = 12
-        Me.BEditar.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -182,21 +160,11 @@ Partial Class Editar_Mercancia
         Me.DataGridViewBusEdi.Size = New System.Drawing.Size(663, 105)
         Me.DataGridViewBusEdi.TabIndex = 3
         '
-        'BBuscarEdi
-        '
-        Me.BBuscarEdi.BackgroundImage = CType(resources.GetObject("BBuscarEdi.BackgroundImage"), System.Drawing.Image)
-        Me.BBuscarEdi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BBuscarEdi.Location = New System.Drawing.Point(759, 31)
-        Me.BBuscarEdi.Margin = New System.Windows.Forms.Padding(4)
-        Me.BBuscarEdi.Name = "BBuscarEdi"
-        Me.BBuscarEdi.Size = New System.Drawing.Size(70, 43)
-        Me.BBuscarEdi.TabIndex = 2
-        Me.BBuscarEdi.UseVisualStyleBackColor = True
-        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(198, 42)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.MaxLength = 15
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(478, 22)
         Me.TextBox1.TabIndex = 1
@@ -210,6 +178,39 @@ Partial Class Editar_Mercancia
         Me.LCodigoBusc.Size = New System.Drawing.Size(108, 16)
         Me.LCodigoBusc.TabIndex = 0
         Me.LCodigoBusc.Text = "Codigo Barras"
+        '
+        'BActualizar
+        '
+        Me.BActualizar.BackgroundImage = CType(resources.GetObject("BActualizar.BackgroundImage"), System.Drawing.Image)
+        Me.BActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BActualizar.Location = New System.Drawing.Point(759, 290)
+        Me.BActualizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BActualizar.Name = "BActualizar"
+        Me.BActualizar.Size = New System.Drawing.Size(70, 43)
+        Me.BActualizar.TabIndex = 13
+        Me.BActualizar.UseVisualStyleBackColor = True
+        '
+        'BEditar
+        '
+        Me.BEditar.BackgroundImage = CType(resources.GetObject("BEditar.BackgroundImage"), System.Drawing.Image)
+        Me.BEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BEditar.Location = New System.Drawing.Point(759, 146)
+        Me.BEditar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BEditar.Name = "BEditar"
+        Me.BEditar.Size = New System.Drawing.Size(70, 57)
+        Me.BEditar.TabIndex = 12
+        Me.BEditar.UseVisualStyleBackColor = True
+        '
+        'BBuscarEdi
+        '
+        Me.BBuscarEdi.BackgroundImage = CType(resources.GetObject("BBuscarEdi.BackgroundImage"), System.Drawing.Image)
+        Me.BBuscarEdi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BBuscarEdi.Location = New System.Drawing.Point(759, 31)
+        Me.BBuscarEdi.Margin = New System.Windows.Forms.Padding(4)
+        Me.BBuscarEdi.Name = "BBuscarEdi"
+        Me.BBuscarEdi.Size = New System.Drawing.Size(70, 43)
+        Me.BBuscarEdi.TabIndex = 2
+        Me.BBuscarEdi.UseVisualStyleBackColor = True
         '
         'Editar_Mercancia
         '
