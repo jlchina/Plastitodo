@@ -124,6 +124,12 @@
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
     <Compile Include="Controllers\VentasMod.vb" />
+    <Compile Include="Reportes\Historico_costos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Historico_costos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\Inventarios.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +140,12 @@
       <DependentUpon>Rep_Grid.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Rep_Grid.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Rep_HisCtos.Designer.vb">
+      <DependentUpon>Rep_HisCtos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Rep_HisCtos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Rep_Inv.Designer.vb">
@@ -334,6 +346,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\Historico_costos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Historico_costos.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Inventarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inventarios.vb</LastGenOutput>
@@ -343,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rep_Grid.resx">
       <DependentUpon>Rep_Grid.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rep_HisCtos.resx">
+      <DependentUpon>Rep_HisCtos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rep_Inv.resx">
       <DependentUpon>Rep_Inv.vb</DependentUpon>

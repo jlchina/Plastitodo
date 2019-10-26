@@ -35,6 +35,7 @@ Partial Class Rep_Grid
         Me.Txt_codigo_HC = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Lbl_reporte = New System.Windows.Forms.Label()
+        Me.Btn_report = New System.Windows.Forms.Button()
         CType(Me.DGV_Reporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Inv.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,11 +164,23 @@ Partial Class Rep_Grid
         Me.Lbl_reporte.TabIndex = 11
         Me.Lbl_reporte.Text = "Generar Reportes"
         '
+        'Btn_report
+        '
+        Me.Btn_report.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_report.BackgroundImage = CType(resources.GetObject("Btn_report.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_report.Location = New System.Drawing.Point(728, 36)
+        Me.Btn_report.Name = "Btn_report"
+        Me.Btn_report.Size = New System.Drawing.Size(60, 59)
+        Me.Btn_report.TabIndex = 12
+        Me.Btn_report.UseVisualStyleBackColor = True
+        '
         'Rep_Grid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Btn_report)
         Me.Controls.Add(Me.Panel_hist_cto)
         Me.Controls.Add(Me.Lbl_reporte)
         Me.Controls.Add(Me.Panel_Inv)
@@ -198,4 +211,5 @@ Partial Class Rep_Grid
     Friend WithEvents Txt_codigo_HC As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Lbl_reporte As Label
+    Friend WithEvents Btn_report As Button
 End Class
