@@ -98,7 +98,7 @@ Partial Class OfertaVentaForm
         Me.TxtNombre.Location = New System.Drawing.Point(69, 59)
         Me.TxtNombre.Name = "TxtNombre"
         Me.TxtNombre.Size = New System.Drawing.Size(291, 22)
-        Me.TxtNombre.TabIndex = 10
+        Me.TxtNombre.TabIndex = 2
         '
         'Label2
         '
@@ -106,7 +106,7 @@ Partial Class OfertaVentaForm
         Me.Label2.Location = New System.Drawing.Point(7, 60)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 16)
-        Me.Label2.TabIndex = 2
+        Me.Label2.TabIndex = 15
         Me.Label2.Text = "Nombre"
         '
         'CmbCliente
@@ -142,7 +142,7 @@ Partial Class OfertaVentaForm
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(0)
         Me.GroupBox5.Size = New System.Drawing.Size(293, 90)
-        Me.GroupBox5.TabIndex = 31
+        Me.GroupBox5.TabIndex = 17
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Información general"
         '
@@ -151,7 +151,7 @@ Partial Class OfertaVentaForm
         Me.TxtFecha.Location = New System.Drawing.Point(165, 51)
         Me.TxtFecha.Name = "TxtFecha"
         Me.TxtFecha.Size = New System.Drawing.Size(113, 22)
-        Me.TxtFecha.TabIndex = 18
+        Me.TxtFecha.TabIndex = 5
         '
         'TxtFolio
         '
@@ -159,7 +159,7 @@ Partial Class OfertaVentaForm
         Me.TxtFolio.Location = New System.Drawing.Point(165, 24)
         Me.TxtFolio.Name = "TxtFolio"
         Me.TxtFolio.Size = New System.Drawing.Size(113, 20)
-        Me.TxtFolio.TabIndex = 6
+        Me.TxtFolio.TabIndex = 4
         '
         'Label13
         '
@@ -167,7 +167,7 @@ Partial Class OfertaVentaForm
         Me.Label13.Location = New System.Drawing.Point(6, 51)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(159, 16)
-        Me.Label13.TabIndex = 5
+        Me.Label13.TabIndex = 19
         Me.Label13.Text = "Fecha del Documento"
         '
         'Label10
@@ -176,7 +176,7 @@ Partial Class OfertaVentaForm
         Me.Label10.Location = New System.Drawing.Point(116, 24)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(43, 16)
-        Me.Label10.TabIndex = 0
+        Me.Label10.TabIndex = 18
         Me.Label10.Text = "Folio"
         '
         'DgvLista
@@ -187,7 +187,7 @@ Partial Class OfertaVentaForm
         Me.DgvLista.Location = New System.Drawing.Point(9, 188)
         Me.DgvLista.Name = "DgvLista"
         Me.DgvLista.Size = New System.Drawing.Size(944, 187)
-        Me.DgvLista.TabIndex = 32
+        Me.DgvLista.TabIndex = 6
         '
         'codigo
         '
@@ -279,7 +279,7 @@ Partial Class OfertaVentaForm
         Me.BtnCancelar.Location = New System.Drawing.Point(429, 62)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnCancelar.TabIndex = 9
+        Me.BtnCancelar.TabIndex = 11
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
@@ -288,7 +288,7 @@ Partial Class OfertaVentaForm
         Me.BtnCrear.Location = New System.Drawing.Point(429, 19)
         Me.BtnCrear.Name = "BtnCrear"
         Me.BtnCrear.Size = New System.Drawing.Size(75, 23)
-        Me.BtnCrear.TabIndex = 8
+        Me.BtnCrear.TabIndex = 9
         Me.BtnCrear.Text = "Crear"
         Me.BtnCrear.UseVisualStyleBackColor = True
         '
@@ -298,7 +298,7 @@ Partial Class OfertaVentaForm
         Me.TxtComentarios.Multiline = True
         Me.TxtComentarios.Name = "TxtComentarios"
         Me.TxtComentarios.Size = New System.Drawing.Size(185, 40)
-        Me.TxtComentarios.TabIndex = 6
+        Me.TxtComentarios.TabIndex = 8
         '
         'Label6
         '
@@ -308,7 +308,7 @@ Partial Class OfertaVentaForm
         Me.Label6.Location = New System.Drawing.Point(228, 16)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 13)
-        Me.Label6.TabIndex = 5
+        Me.Label6.TabIndex = 21
         Me.Label6.Text = "Comentarios"
         '
         'TxtVendedor
@@ -316,7 +316,7 @@ Partial Class OfertaVentaForm
         Me.TxtVendedor.Location = New System.Drawing.Point(6, 35)
         Me.TxtVendedor.Name = "TxtVendedor"
         Me.TxtVendedor.Size = New System.Drawing.Size(203, 20)
-        Me.TxtVendedor.TabIndex = 4
+        Me.TxtVendedor.TabIndex = 7
         '
         'Label8
         '
@@ -326,7 +326,7 @@ Partial Class OfertaVentaForm
         Me.Label8.Location = New System.Drawing.Point(7, 16)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(123, 13)
-        Me.Label8.TabIndex = 1
+        Me.Label8.TabIndex = 20
         Me.Label8.Text = "Empleado de Ventas"
         '
         'GroupBox1
@@ -351,7 +351,7 @@ Partial Class OfertaVentaForm
         Me.BtnCopiara.Location = New System.Drawing.Point(18, 19)
         Me.BtnCopiara.Name = "BtnCopiara"
         Me.BtnCopiara.Size = New System.Drawing.Size(127, 23)
-        Me.BtnCopiara.TabIndex = 11
+        Me.BtnCopiara.TabIndex = 10
         Me.BtnCopiara.Text = "Copiar a"
         Me.BtnCopiara.UseVisualStyleBackColor = True
         '
@@ -360,7 +360,7 @@ Partial Class OfertaVentaForm
         Me.TxtTotal.Location = New System.Drawing.Point(284, 69)
         Me.TxtTotal.Name = "TxtTotal"
         Me.TxtTotal.Size = New System.Drawing.Size(100, 20)
-        Me.TxtTotal.TabIndex = 6
+        Me.TxtTotal.TabIndex = 14
         '
         'Label5
         '
@@ -370,7 +370,7 @@ Partial Class OfertaVentaForm
         Me.Label5.Location = New System.Drawing.Point(192, 72)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(86, 13)
-        Me.Label5.TabIndex = 5
+        Me.Label5.TabIndex = 24
         Me.Label5.Text = "Importe Total:"
         '
         'TxtImpuestoTotal
@@ -378,7 +378,7 @@ Partial Class OfertaVentaForm
         Me.TxtImpuestoTotal.Location = New System.Drawing.Point(284, 42)
         Me.TxtImpuestoTotal.Name = "TxtImpuestoTotal"
         Me.TxtImpuestoTotal.Size = New System.Drawing.Size(100, 20)
-        Me.TxtImpuestoTotal.TabIndex = 4
+        Me.TxtImpuestoTotal.TabIndex = 13
         '
         'Label4
         '
@@ -388,7 +388,7 @@ Partial Class OfertaVentaForm
         Me.Label4.Location = New System.Drawing.Point(183, 45)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(95, 13)
-        Me.Label4.TabIndex = 3
+        Me.Label4.TabIndex = 23
         Me.Label4.Text = "Impuesto Total:"
         '
         'TxtSubTotal
@@ -396,7 +396,7 @@ Partial Class OfertaVentaForm
         Me.TxtSubTotal.Location = New System.Drawing.Point(284, 13)
         Me.TxtSubTotal.Name = "TxtSubTotal"
         Me.TxtSubTotal.Size = New System.Drawing.Size(100, 20)
-        Me.TxtSubTotal.TabIndex = 2
+        Me.TxtSubTotal.TabIndex = 12
         '
         'Label3
         '
@@ -406,7 +406,7 @@ Partial Class OfertaVentaForm
         Me.Label3.Location = New System.Drawing.Point(204, 16)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(74, 13)
-        Me.Label3.TabIndex = 1
+        Me.Label3.TabIndex = 22
         Me.Label3.Text = "Sub - Total:"
         '
         'GroupBox3
@@ -420,7 +420,7 @@ Partial Class OfertaVentaForm
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(0)
         Me.GroupBox3.Size = New System.Drawing.Size(502, 59)
-        Me.GroupBox3.TabIndex = 35
+        Me.GroupBox3.TabIndex = 16
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Buscar Producto"
         '
@@ -432,7 +432,7 @@ Partial Class OfertaVentaForm
         Me.CmbProducto.MaxLength = 200
         Me.CmbProducto.Name = "CmbProducto"
         Me.CmbProducto.Size = New System.Drawing.Size(450, 24)
-        Me.CmbProducto.TabIndex = 23
+        Me.CmbProducto.TabIndex = 3
         '
         'ContextMenuStrip1
         '

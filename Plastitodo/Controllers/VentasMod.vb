@@ -365,7 +365,7 @@ Module VentasMod
                 End If
                 cmd3.ExecuteScalar()
 
-                cmd2 = New MySqlCommand("Update inventario SET existencia = (Select (i.existencia-@cantidad) from inventario i where i.codigo_barras = @codigo Limit 1)  WHERE codigo_barras = @codigo", conn)
+                cmd2 = New MySqlCommand("Update inventario SET existencia = (Select * from (select (i.existencia-@cantidad) from inventario i where i.codigo_barras = @codigo Limit 1)t)  WHERE codigo_barras = @codigo", conn)
                 cmd2.Parameters.Add(New MySqlParameter("@codigo", dr(1)))
                 cmd2.Parameters.Add(New MySqlParameter("@cantidad", dr(2)))
                 cmd2.ExecuteScalar()
