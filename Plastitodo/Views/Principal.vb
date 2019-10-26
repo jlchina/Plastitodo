@@ -187,4 +187,16 @@ Public Class Principal
         newform.MdiParent = Me
         newform.Show()
     End Sub
+
+    Private Sub CuentaPorCobrarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuentaPorCobrarToolStripMenuItem.Click
+        Dim newcuentasxcobrar As New CuentasCobrar()
+        newcuentasxcobrar.MdiParent = Me
+        newcuentasxcobrar.Show()
+    End Sub
+
+    Private Sub CuentasPorPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuentasPorPagarToolStripMenuItem.Click
+        Dim newcuentasxpagar As New cuentasxpagar()
+        newcuentasxpagar.MdiParent = Me
+        newcuentasxpagar.Show()
+    End Sub
 End Class
