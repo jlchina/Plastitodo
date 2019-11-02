@@ -22,6 +22,8 @@ Public Class Principal
                     InventariosToolStripMenuItem.Enabled = True
                 Case 7 'Modulos de ventas
                     VentasToolStripMenuItem.Enabled = True
+                Case 8 'Modulo de gastos operativos
+                    GastosOperativosToolStripMenuItem.Enabled = True
             End Select
         Next
 
