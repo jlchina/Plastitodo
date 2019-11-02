@@ -171,6 +171,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Cuentas por Cobrar\BusquedaCliente.Designer.vb">
+      <DependentUpon>BusquedaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cuentas por Cobrar\BusquedaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Cuentas por Cobrar\Cuentas por Cobrar.Designer.vb">
       <DependentUpon>Cuentas por Cobrar.vb</DependentUpon>
     </Compile>
@@ -380,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Clientes\Cat_Clientes.resx">
       <DependentUpon>Cat_Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cuentas por Cobrar\BusquedaCliente.resx">
+      <DependentUpon>BusquedaCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Cuentas por Cobrar\Cuentas por Cobrar.resx">
       <DependentUpon>Cuentas por Cobrar.vb</DependentUpon>
