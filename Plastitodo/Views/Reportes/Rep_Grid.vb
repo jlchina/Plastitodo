@@ -242,15 +242,13 @@ Public Class Rep_Grid
                 Dim mostrarform As New Rep_Inv()
                 mostrarform.Show()
             Case "ventas"
-                Panel_Inv.Visible = False
-                Panel_hist_cto.Visible = False
-                DGV_Reporte.Visible = False
+                Dim mostrarform As New Repo_HisVta()
+                mostrarform.Show()
             Case "historico_c"
                 Dim mostrarform As New Rep_HisCtos()
                 mostrarform.Show()
             Case "historico_v"
-                Panel_Inv.Visible = False
-                Panel_hist_cto.Visible = False
+                'ingresa codigo aqui
         End Select
     End Sub
 
