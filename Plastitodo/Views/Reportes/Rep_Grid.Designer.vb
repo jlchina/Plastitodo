@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Rep_Grid
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Rep_Grid
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Rep_Grid))
         Me.DGV_Reporte = New System.Windows.Forms.DataGridView()
@@ -36,11 +36,18 @@ Partial Class Rep_Grid
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Lbl_reporte = New System.Windows.Forms.Label()
         Me.Btn_report = New System.Windows.Forms.Button()
+        Me.Panel_RepVtas = New System.Windows.Forms.Panel()
+        Me.Btn_BusqVtas = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DTP_Hasta = New System.Windows.Forms.DateTimePicker()
+        Me.DTP_Desde = New System.Windows.Forms.DateTimePicker()
         CType(Me.DGV_Reporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Inv.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_hist_cto.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_RepVtas.SuspendLayout()
         Me.SuspendLayout()
         '
         'DGV_Reporte
@@ -175,11 +182,74 @@ Partial Class Rep_Grid
         Me.Btn_report.TabIndex = 12
         Me.Btn_report.UseVisualStyleBackColor = True
         '
+        'Panel_RepVtas
+        '
+        Me.Panel_RepVtas.Controls.Add(Me.Btn_BusqVtas)
+        Me.Panel_RepVtas.Controls.Add(Me.Label4)
+        Me.Panel_RepVtas.Controls.Add(Me.Label3)
+        Me.Panel_RepVtas.Controls.Add(Me.DTP_Hasta)
+        Me.Panel_RepVtas.Controls.Add(Me.DTP_Desde)
+        Me.Panel_RepVtas.Location = New System.Drawing.Point(12, 41)
+        Me.Panel_RepVtas.Name = "Panel_RepVtas"
+        Me.Panel_RepVtas.Size = New System.Drawing.Size(481, 63)
+        Me.Panel_RepVtas.TabIndex = 15
+        '
+        'Btn_BusqVtas
+        '
+        Me.Btn_BusqVtas.BackgroundImage = CType(resources.GetObject("Btn_BusqVtas.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_BusqVtas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_BusqVtas.Location = New System.Drawing.Point(234, 8)
+        Me.Btn_BusqVtas.Name = "Btn_BusqVtas"
+        Me.Btn_BusqVtas.Size = New System.Drawing.Size(59, 49)
+        Me.Btn_BusqVtas.TabIndex = 18
+        Me.Btn_BusqVtas.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(3, 37)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 16)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Hasta: "
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label3.Location = New System.Drawing.Point(3, 11)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(62, 16)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Desde: "
+        '
+        'DTP_Hasta
+        '
+        Me.DTP_Hasta.CustomFormat = "yyyy-MM-dd"
+        Me.DTP_Hasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.DTP_Hasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTP_Hasta.Location = New System.Drawing.Point(89, 35)
+        Me.DTP_Hasta.Name = "DTP_Hasta"
+        Me.DTP_Hasta.Size = New System.Drawing.Size(128, 22)
+        Me.DTP_Hasta.TabIndex = 1
+        '
+        'DTP_Desde
+        '
+        Me.DTP_Desde.CustomFormat = "yyyy-MM-dd"
+        Me.DTP_Desde.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.DTP_Desde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTP_Desde.Location = New System.Drawing.Point(89, 9)
+        Me.DTP_Desde.Name = "DTP_Desde"
+        Me.DTP_Desde.Size = New System.Drawing.Size(128, 22)
+        Me.DTP_Desde.TabIndex = 0
+        '
         'Rep_Grid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Panel_RepVtas)
         Me.Controls.Add(Me.Btn_report)
         Me.Controls.Add(Me.Panel_hist_cto)
         Me.Controls.Add(Me.Lbl_reporte)
@@ -194,6 +264,8 @@ Partial Class Rep_Grid
         Me.Panel_hist_cto.ResumeLayout(False)
         Me.Panel_hist_cto.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_RepVtas.ResumeLayout(False)
+        Me.Panel_RepVtas.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -212,4 +284,10 @@ Partial Class Rep_Grid
     Friend WithEvents Label2 As Label
     Friend WithEvents Lbl_reporte As Label
     Friend WithEvents Btn_report As Button
+    Friend WithEvents Panel_RepVtas As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents DTP_Hasta As DateTimePicker
+    Friend WithEvents DTP_Desde As DateTimePicker
+    Friend WithEvents Btn_BusqVtas As Button
 End Class
