@@ -124,40 +124,40 @@
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
     <Compile Include="Controllers\VentasMod.vb" />
-    <Compile Include="Reportes\Historico_costos.vb">
+    <Compile Include="Views\Reportes\Historico_costos.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Historico_costos.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\Inventarios.vb">
+    <Compile Include="Views\Reportes\Inventarios.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Inventarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\Rep_Grid.Designer.vb">
+    <Compile Include="Views\Reportes\Rep_Grid.Designer.vb">
       <DependentUpon>Rep_Grid.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Rep_Grid.vb">
+    <Compile Include="Views\Reportes\Rep_Grid.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Rep_HisCtos.Designer.vb">
+    <Compile Include="Views\Reportes\Rep_HisCtos.Designer.vb">
       <DependentUpon>Rep_HisCtos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Rep_HisCtos.vb">
+    <Compile Include="Views\Reportes\Rep_HisCtos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Rep_Inv.Designer.vb">
+    <Compile Include="Views\Reportes\Rep_Inv.Designer.vb">
       <DependentUpon>Rep_Inv.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Rep_Inv.vb">
+    <Compile Include="Views\Reportes\Rep_Inv.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Reportes.Designer.vb">
+    <Compile Include="Views\Reportes\Reportes.Designer.vb">
       <DependentUpon>Reportes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Reportes.vb">
+    <Compile Include="Views\Reportes\Reportes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Clientes\Cat_Clientes.Designer.vb">
@@ -364,24 +364,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\Historico_costos.rpt">
+    <EmbeddedResource Include="Views\Reportes\Historico_costos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Historico_costos.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Inventarios.rpt">
+    <EmbeddedResource Include="Views\Reportes\Inventarios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Inventarios.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Reportes.resx">
+    <EmbeddedResource Include="Views\Reportes\Reportes.resx">
       <DependentUpon>Reportes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Rep_Grid.resx">
+    <EmbeddedResource Include="Views\Reportes\Rep_Grid.resx">
       <DependentUpon>Rep_Grid.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Rep_HisCtos.resx">
+    <EmbeddedResource Include="Views\Reportes\Rep_HisCtos.resx">
       <DependentUpon>Rep_HisCtos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Rep_Inv.resx">
+    <EmbeddedResource Include="Views\Reportes\Rep_Inv.resx">
       <DependentUpon>Rep_Inv.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Clientes\Cat_Clientes.resx">
