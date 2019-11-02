@@ -4,23 +4,17 @@ Imports Plastitodo.Globales
 Imports Plastitodo.conexion
 
 Public Class CuentasCobrar
-    Dim miDataTable As New DataTable
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
+        'Dim newbusquedacliente As New BusquedaCliente()
+        'newbusquedacliente.MdiParent = Me
+        'newbusquedacliente.ShowDialog()
 
+        Dim newbusquedacliente As New BusquedaCliente()
+        newbusquedacliente.ShowDialog()
+    End Sub
 
-    Private Sub listacliente()
-        Dim conexion As New MySqlConnection(ConnectionString2)
-        conexion.Open()
-
-        Dim consulta As String
-        consulta = "select * from cliente"
-        Dim adaptador = New MySqlDataAdapter(consulta, conexion)
-        Dim datos = New DataSet
-        datos.Tables.Add("cliente")
-        adaptador.Fill(datos.Tables("cliente"))
-        ComboBoxcliente.DataSource = datos.Tables("cliente")
-        ComboBoxcliente.DisplayMember = "Nombre"
-        conexion.Close()
+    Private Sub CuentasCobrar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
