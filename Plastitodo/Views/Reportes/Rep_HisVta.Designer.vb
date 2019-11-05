@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Repo_HisVta
+Partial Class Rep_HisVta
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,7 +23,7 @@ Partial Class Repo_HisVta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.Rpt_HistVta1 = New Plastitodo.Rpt_HistVta()
+        Me.Historico_Vtas1 = New Plastitodo.Historico_Vtas()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -34,22 +34,22 @@ Partial Class Repo_HisVta
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.Rpt_HistVta1
+        Me.CrystalReportViewer1.ReportSource = Me.Historico_Vtas1
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.CrystalReportViewer1.TabIndex = 0
         '
-        'Repo_HisVta
+        'Rep_HisVta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.CrystalReportViewer1)
-        Me.Name = "Repo_HisVta"
-        Me.Text = "Repo_HisVta"
+        Me.Name = "Rep_HisVta"
+        Me.Text = "Rep_HisVta"
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents Rpt_HistVta1 As Rpt_HistVta
+    Friend WithEvents Historico_Vtas1 As Historico_Vtas
 End Class

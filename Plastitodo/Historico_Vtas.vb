@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class Rpt_HistVta
+Public Class Historico_Vtas
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class Rpt_HistVta
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "Rpt_HistVta.rpt"
+            Return "Historico_Vtas.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class Rpt_HistVta
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "Plastitodo.Rpt_HistVta.rpt"
+            Return "Plastitodo.Historico_Vtas.rpt"
         End Get
         Set
             'Do nothing
@@ -110,7 +110,7 @@ Public Class Rpt_HistVta
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedRpt_HistVta
+Public Class CachedHistorico_Vtas
     Inherits Component
     Implements ICachedReport
     
@@ -152,7 +152,7 @@ Public Class CachedRpt_HistVta
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As Rpt_HistVta = New Rpt_HistVta()
+        Dim rpt As Historico_Vtas = New Historico_Vtas()
         rpt.Site = Me.Site
         Return rpt
     End Function

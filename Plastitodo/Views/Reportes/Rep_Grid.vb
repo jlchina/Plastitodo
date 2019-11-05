@@ -116,21 +116,25 @@ Public Class Rep_Grid
                     Panel_Inv.Visible = True
                     Panel_hist_cto.Visible = False
                     Panel_RepVtas.Visible = False
+                    Me.Text = "01- REPORTE DE INVENTARIOS"
                 Case "ventas"
                     Lbl_reporte.Text = "REPORTE VENTAS EN UN RANGO DE FECHAS"
                     Panel_Inv.Visible = False
                     Panel_hist_cto.Visible = False
                     Panel_RepVtas.Visible = True
+                    Me.Text = "02- REPORTE VENTAS EN UN RANGO DE FECHAS"
                 Case "historico_c"
                     Lbl_reporte.Text = "REPORTE DE HISTORICO DE COSTOS"
                     Panel_Inv.Visible = False
                     Panel_hist_cto.Visible = True
                     Panel_RepVtas.Visible = False
-                Case "historico_v"
+                    Me.Text = "03- REPORTE DE HISTORICO DE COSTOS"
+                Case "historico_PV"
                     Lbl_reporte.Text = "HISTORICO DE PRECIOS AL PUBLICO POR CODIGO"
                     Panel_Inv.Visible = False
                     Panel_hist_cto.Visible = False
                     Panel_RepVtas.Visible = False
+                    Me.Text = "04- HISTORICO DE PRECIOS AL PUBLICO POR CODIGO"
             End Select
         End If
         Btn_report.Enabled = False
@@ -242,26 +246,24 @@ Public Class Rep_Grid
                 Dim mostrarform As New Rep_Inv()
                 mostrarform.Show()
             Case "ventas"
-                Dim mostrarform As New Repo_HisVta()
+                Dim mostrarform As New Rep_HisVta()
                 mostrarform.Show()
             Case "historico_c"
                 Dim mostrarform As New Rep_HisCtos()
                 mostrarform.Show()
-            Case "historico_v"
+            Case "historico_PV"
                 'ingresa codigo aqui
         End Select
     End Sub
 
     Private Sub DTP_Desde_ValueChanged(sender As Object, e As EventArgs) Handles DTP_Desde.ValueChanged
-        fechaini = Format(DTP_Desde.Value.ToShortDateString, "Short Date")
-        fechaini = Format(CDate(fechaini), "yyyy-MM-dd")
-        'fechaini = String.Format(DTP_Desde.Value, "yyyy-MM-dd")
-        'MsgBox(fechaini)
+        fechaini = Format(DTP_Desde.Value.ToShortDateString, "Short Date") 'convierte el formato de fecha a uno corto
+        fechaini = Format(CDate(fechaini), "yyyy-MM-dd") 'cambia el orden del formato de fecha corto
     End Sub
 
     Private Sub DTP_Hasta_ValueChanged(sender As Object, e As EventArgs) Handles DTP_Hasta.ValueChanged
-        fechafin = Format(DTP_Hasta.Value.ToShortDateString, "Short Date")
-        fechafin = Format(CDate(fechafin), "yyyy-MM-dd")
+        fechafin = Format(DTP_Hasta.Value.ToShortDateString, "Short Date") 'convierte el formato de fecha a uno corto
+        fechafin = Format(CDate(fechafin), "yyyy-MM-dd") 'cambia el orden del formato de fecha corto
     End Sub
 
     Private Sub Btn_BusqVtas_Click(sender As Object, e As EventArgs) Handles Btn_BusqVtas.Click
@@ -282,6 +284,7 @@ Public Class Rep_Grid
                     con_string = New MySqlConnection
                     con_string.ConnectionString = ConnectionString2
                     con_string.Open()
+                    'la consulta genera la informacion solo de documentos de venta (documento tipo 2) en el rango de fechas establecidos
                     sql = "Select * From lineas_documento 
                             left join catalogo_productos on lineas_documento.id_producto = catalogo_productos.id 
                             left join presentacion_prod on lineas_documento.id_presentacion = presentacion_prod.id_pp 
@@ -297,11 +300,11 @@ Public Class Rep_Grid
                     'se declararan las columnas para el data grid
                     dt.Columns.Add("Tipo de venta", GetType(String)) '1
                     dt.Columns.Add("Vendedor", GetType(String)) '2
-                    dt.Columns.Add("Codigo de barras", GetType(Int64)) '3
+                    dt.Columns.Add("Codigo de barras", GetType(String)) '3
                     dt.Columns.Add("Descripción", GetType(String)) '4
                     dt.Columns.Add("Presentación", GetType(String)) '5
-                    dt.Columns.Add("Cantidad") '6
-                    dt.Columns.Add("Total Vta") '7
+                    dt.Columns.Add("Cantidad", GetType(Double)) '6
+                    dt.Columns.Add("Total Vta", GetType(Double)) '7
                     dt.Columns.Add("Fecha") '8
 
                     For Each dr As DataRow In datse.Tables(0).Rows
@@ -312,7 +315,7 @@ Public Class Rep_Grid
                         DataRow("Descripción") = dr(18)
                         DataRow("Presentación") = dr(24)
                         DataRow("Cantidad") = Format(CDec(dr(4)), "#,###,##0.00")
-                        DataRow("Total Vta") = Format(CDec(dr(9)), "$ #,###,##0.00")
+                        DataRow("Total Vta") = Format(CDec(dr(9)), "#,###,##0.00")
                         fechaR = dr(13)
                         DataRow("Fecha") = fechaR.ToString("yyyy-MM-dd")
 

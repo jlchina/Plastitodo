@@ -124,10 +124,10 @@
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
     <Compile Include="Controllers\VentasMod.vb" />
-    <Compile Include="Rpt_HistVta.vb">
+    <Compile Include="Historico_Vtas.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Rpt_HistVta.rpt</DependentUpon>
+      <DependentUpon>Historico_Vtas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Reportes\Historico_costos.vb">
@@ -142,12 +142,6 @@
       <DependentUpon>Inventarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\Reportes\Repo_HisVta.Designer.vb">
-      <DependentUpon>Repo_HisVta.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Reportes\Repo_HisVta.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Views\Reportes\Rep_Grid.Designer.vb">
       <DependentUpon>Rep_Grid.vb</DependentUpon>
     </Compile>
@@ -158,6 +152,12 @@
       <DependentUpon>Rep_HisCtos.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Reportes\Rep_HisCtos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reportes\Rep_HisVta.Designer.vb">
+      <DependentUpon>Rep_HisVta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reportes\Rep_HisVta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Reportes\Rep_Inv.Designer.vb">
@@ -370,9 +370,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Rpt_HistVta.rpt">
+    <EmbeddedResource Include="Historico_Vtas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Rpt_HistVta.vb</LastGenOutput>
+      <LastGenOutput>Historico_Vtas.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Historico_costos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -385,14 +385,14 @@
     <EmbeddedResource Include="Views\Reportes\Reportes.resx">
       <DependentUpon>Reportes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reportes\Repo_HisVta.resx">
-      <DependentUpon>Repo_HisVta.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Rep_Grid.resx">
       <DependentUpon>Rep_Grid.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Rep_HisCtos.resx">
       <DependentUpon>Rep_HisCtos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reportes\Rep_HisVta.resx">
+      <DependentUpon>Rep_HisVta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Rep_Inv.resx">
       <DependentUpon>Rep_Inv.vb</DependentUpon>
