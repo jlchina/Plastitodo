@@ -25,29 +25,36 @@ Partial Class Rep_Grid
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Rep_Grid))
         Me.DGV_Reporte = New System.Windows.Forms.DataGridView()
         Me.Panel_Inv = New System.Windows.Forms.Panel()
-        Me.Btn_Busq_Inv = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Txt_CodBar_Inv = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel_hist_cto = New System.Windows.Forms.Panel()
-        Me.Btn_Hist_Cto_busq = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Txt_codigo_HC = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Lbl_reporte = New System.Windows.Forms.Label()
-        Me.Btn_report = New System.Windows.Forms.Button()
         Me.Panel_RepVtas = New System.Windows.Forms.Panel()
-        Me.Btn_BusqVtas = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DTP_Hasta = New System.Windows.Forms.DateTimePicker()
         Me.DTP_Desde = New System.Windows.Forms.DateTimePicker()
+        Me.Panel_HisPP = New System.Windows.Forms.Panel()
+        Me.Txt_codigoPP = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Btn_BusqVtas = New System.Windows.Forms.Button()
+        Me.Btn_HisPP = New System.Windows.Forms.Button()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Btn_report = New System.Windows.Forms.Button()
+        Me.Btn_Hist_Cto_busq = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Btn_Busq_Inv = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.DGV_Reporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Inv.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_hist_cto.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_RepVtas.SuspendLayout()
+        Me.Panel_HisPP.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DGV_Reporte
@@ -71,26 +78,6 @@ Partial Class Rep_Grid
         Me.Panel_Inv.Name = "Panel_Inv"
         Me.Panel_Inv.Size = New System.Drawing.Size(470, 43)
         Me.Panel_Inv.TabIndex = 10
-        '
-        'Btn_Busq_Inv
-        '
-        Me.Btn_Busq_Inv.BackgroundImage = CType(resources.GetObject("Btn_Busq_Inv.BackgroundImage"), System.Drawing.Image)
-        Me.Btn_Busq_Inv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_Busq_Inv.Location = New System.Drawing.Point(383, 7)
-        Me.Btn_Busq_Inv.Name = "Btn_Busq_Inv"
-        Me.Btn_Busq_Inv.Size = New System.Drawing.Size(48, 33)
-        Me.Btn_Busq_Inv.TabIndex = 13
-        Me.Btn_Busq_Inv.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(134, 14)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(56, 22)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
         '
         'Txt_CodBar_Inv
         '
@@ -122,26 +109,6 @@ Partial Class Rep_Grid
         Me.Panel_hist_cto.Size = New System.Drawing.Size(470, 50)
         Me.Panel_hist_cto.TabIndex = 11
         '
-        'Btn_Hist_Cto_busq
-        '
-        Me.Btn_Hist_Cto_busq.BackgroundImage = CType(resources.GetObject("Btn_Hist_Cto_busq.BackgroundImage"), System.Drawing.Image)
-        Me.Btn_Hist_Cto_busq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_Hist_Cto_busq.Location = New System.Drawing.Point(383, 9)
-        Me.Btn_Hist_Cto_busq.Name = "Btn_Hist_Cto_busq"
-        Me.Btn_Hist_Cto_busq.Size = New System.Drawing.Size(48, 33)
-        Me.Btn_Hist_Cto_busq.TabIndex = 17
-        Me.Btn_Hist_Cto_busq.UseVisualStyleBackColor = True
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(134, 16)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(56, 22)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 16
-        Me.PictureBox2.TabStop = False
-        '
         'Txt_codigo_HC
         '
         Me.Txt_codigo_HC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
@@ -171,17 +138,6 @@ Partial Class Rep_Grid
         Me.Lbl_reporte.TabIndex = 11
         Me.Lbl_reporte.Text = "Generar Reportes"
         '
-        'Btn_report
-        '
-        Me.Btn_report.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Btn_report.BackgroundImage = CType(resources.GetObject("Btn_report.BackgroundImage"), System.Drawing.Image)
-        Me.Btn_report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_report.Location = New System.Drawing.Point(728, 36)
-        Me.Btn_report.Name = "Btn_report"
-        Me.Btn_report.Size = New System.Drawing.Size(60, 59)
-        Me.Btn_report.TabIndex = 12
-        Me.Btn_report.UseVisualStyleBackColor = True
-        '
         'Panel_RepVtas
         '
         Me.Panel_RepVtas.Controls.Add(Me.Btn_BusqVtas)
@@ -189,20 +145,10 @@ Partial Class Rep_Grid
         Me.Panel_RepVtas.Controls.Add(Me.Label3)
         Me.Panel_RepVtas.Controls.Add(Me.DTP_Hasta)
         Me.Panel_RepVtas.Controls.Add(Me.DTP_Desde)
-        Me.Panel_RepVtas.Location = New System.Drawing.Point(12, 41)
+        Me.Panel_RepVtas.Location = New System.Drawing.Point(12, 39)
         Me.Panel_RepVtas.Name = "Panel_RepVtas"
         Me.Panel_RepVtas.Size = New System.Drawing.Size(481, 63)
         Me.Panel_RepVtas.TabIndex = 15
-        '
-        'Btn_BusqVtas
-        '
-        Me.Btn_BusqVtas.BackgroundImage = CType(resources.GetObject("Btn_BusqVtas.BackgroundImage"), System.Drawing.Image)
-        Me.Btn_BusqVtas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_BusqVtas.Location = New System.Drawing.Point(234, 8)
-        Me.Btn_BusqVtas.Name = "Btn_BusqVtas"
-        Me.Btn_BusqVtas.Size = New System.Drawing.Size(59, 49)
-        Me.Btn_BusqVtas.TabIndex = 18
-        Me.Btn_BusqVtas.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -244,12 +190,124 @@ Partial Class Rep_Grid
         Me.DTP_Desde.Size = New System.Drawing.Size(128, 22)
         Me.DTP_Desde.TabIndex = 0
         '
+        'Panel_HisPP
+        '
+        Me.Panel_HisPP.Controls.Add(Me.Btn_HisPP)
+        Me.Panel_HisPP.Controls.Add(Me.PictureBox3)
+        Me.Panel_HisPP.Controls.Add(Me.Txt_codigoPP)
+        Me.Panel_HisPP.Controls.Add(Me.Label5)
+        Me.Panel_HisPP.Location = New System.Drawing.Point(12, 41)
+        Me.Panel_HisPP.Name = "Panel_HisPP"
+        Me.Panel_HisPP.Size = New System.Drawing.Size(470, 59)
+        Me.Panel_HisPP.TabIndex = 18
+        '
+        'Txt_codigoPP
+        '
+        Me.Txt_codigoPP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Txt_codigoPP.Location = New System.Drawing.Point(196, 16)
+        Me.Txt_codigoPP.MaxLength = 15
+        Me.Txt_codigoPP.Name = "Txt_codigoPP"
+        Me.Txt_codigoPP.Size = New System.Drawing.Size(181, 22)
+        Me.Txt_codigoPP.TabIndex = 15
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Location = New System.Drawing.Point(3, 18)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(133, 16)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Codigo de barras:"
+        '
+        'Btn_BusqVtas
+        '
+        Me.Btn_BusqVtas.BackgroundImage = CType(resources.GetObject("Btn_BusqVtas.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_BusqVtas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_BusqVtas.Location = New System.Drawing.Point(234, 8)
+        Me.Btn_BusqVtas.Name = "Btn_BusqVtas"
+        Me.Btn_BusqVtas.Size = New System.Drawing.Size(59, 49)
+        Me.Btn_BusqVtas.TabIndex = 18
+        Me.Btn_BusqVtas.UseVisualStyleBackColor = True
+        '
+        'Btn_HisPP
+        '
+        Me.Btn_HisPP.BackgroundImage = CType(resources.GetObject("Btn_HisPP.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_HisPP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_HisPP.Location = New System.Drawing.Point(383, 9)
+        Me.Btn_HisPP.Name = "Btn_HisPP"
+        Me.Btn_HisPP.Size = New System.Drawing.Size(48, 33)
+        Me.Btn_HisPP.TabIndex = 17
+        Me.Btn_HisPP.UseVisualStyleBackColor = True
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(134, 16)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(56, 22)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 16
+        Me.PictureBox3.TabStop = False
+        '
+        'Btn_report
+        '
+        Me.Btn_report.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_report.BackgroundImage = CType(resources.GetObject("Btn_report.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_report.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_report.Location = New System.Drawing.Point(728, 36)
+        Me.Btn_report.Name = "Btn_report"
+        Me.Btn_report.Size = New System.Drawing.Size(60, 59)
+        Me.Btn_report.TabIndex = 12
+        Me.Btn_report.UseVisualStyleBackColor = True
+        '
+        'Btn_Hist_Cto_busq
+        '
+        Me.Btn_Hist_Cto_busq.BackgroundImage = CType(resources.GetObject("Btn_Hist_Cto_busq.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Hist_Cto_busq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_Hist_Cto_busq.Location = New System.Drawing.Point(383, 9)
+        Me.Btn_Hist_Cto_busq.Name = "Btn_Hist_Cto_busq"
+        Me.Btn_Hist_Cto_busq.Size = New System.Drawing.Size(48, 33)
+        Me.Btn_Hist_Cto_busq.TabIndex = 17
+        Me.Btn_Hist_Cto_busq.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(134, 16)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(56, 22)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 16
+        Me.PictureBox2.TabStop = False
+        '
+        'Btn_Busq_Inv
+        '
+        Me.Btn_Busq_Inv.BackgroundImage = CType(resources.GetObject("Btn_Busq_Inv.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Busq_Inv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_Busq_Inv.Location = New System.Drawing.Point(383, 7)
+        Me.Btn_Busq_Inv.Name = "Btn_Busq_Inv"
+        Me.Btn_Busq_Inv.Size = New System.Drawing.Size(48, 33)
+        Me.Btn_Busq_Inv.TabIndex = 13
+        Me.Btn_Busq_Inv.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(134, 14)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(56, 22)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
         'Rep_Grid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Panel_RepVtas)
+        Me.Controls.Add(Me.Panel_HisPP)
         Me.Controls.Add(Me.Btn_report)
         Me.Controls.Add(Me.Panel_hist_cto)
         Me.Controls.Add(Me.Lbl_reporte)
@@ -260,12 +318,15 @@ Partial Class Rep_Grid
         CType(Me.DGV_Reporte, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Inv.ResumeLayout(False)
         Me.Panel_Inv.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_hist_cto.ResumeLayout(False)
         Me.Panel_hist_cto.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_RepVtas.ResumeLayout(False)
         Me.Panel_RepVtas.PerformLayout()
+        Me.Panel_HisPP.ResumeLayout(False)
+        Me.Panel_HisPP.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -290,4 +351,9 @@ Partial Class Rep_Grid
     Friend WithEvents DTP_Hasta As DateTimePicker
     Friend WithEvents DTP_Desde As DateTimePicker
     Friend WithEvents Btn_BusqVtas As Button
+    Friend WithEvents Panel_HisPP As Panel
+    Friend WithEvents Btn_HisPP As Button
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Txt_codigoPP As TextBox
+    Friend WithEvents Label5 As Label
 End Class

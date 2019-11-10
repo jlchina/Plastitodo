@@ -76,13 +76,13 @@ Public Class Existencias
 
     Private Sub Btn_report_Click(sender As Object, e As EventArgs) Handles Btn_report.Click
         Dim mostrarform As New Rep_Inv()
-        Dim nom_rep As String
-        Dim dir_rep As String
+        'Dim nom_rep As String
+        'Dim dir_rep As String
 
         'envía el nombre del reporte al formulario
-        nom_rep = "Inventario"
-        dir_rep = "c:\XML\inventario.xml"
-        mostrarform.obt_reporte(nom_rep, dir_rep)  'envia el nombre del reporte al formulario y el directorio del reporte, a la funcion publica del formulario de reportes
+        'nom_rep = "Inventario"
+        'dir_rep = "c:\XML\inventario.xml"
+        'mostrarform.obt_reporte(nom_rep, dir_rep)  'envia el nombre del reporte al formulario y el directorio del reporte, a la funcion publica del formulario de reportes
         mostrarform.Show()
     End Sub
 

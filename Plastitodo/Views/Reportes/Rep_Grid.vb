@@ -56,7 +56,7 @@ Public Class Rep_Grid
             datafull.Columns.Add("codigo_barras", GetType(String))
             datafull.Columns.Add("descripcion", GetType(String))
             datafull.Columns.Add("presentacion", GetType(String))
-            datafull.Columns.Add("precio")
+            datafull.Columns.Add("precio", GetType(Double))
             datafull.Columns.Add("marca", GetType(String))
             datafull.Columns.Add("existencia", GetType(Int32))
             datafull.Columns.Add("Inv Cto")
@@ -72,11 +72,11 @@ Public Class Rep_Grid
                         dr("codigo_barras") = CP(1)
                         dr("descripcion") = CP(4)
                         dr("presentacion") = CP(12)
-                        dr("precio") = Format(CDec(CP(6)), "$ #,###,##0.00")
+                        dr("precio") = Format(CDec(CP(6)), "#,###,##0.00")
                         dr("marca") = CP(10)
                         dr("existencia") = DE("existencia")
                         invcto = DE("existencia") * CP(6)
-                        dr("Inv Cto") = Format(CDec(invcto), "$ #,###,##0.00")
+                        dr("Inv Cto") = Format(CDec(invcto), "#,###,##0.00")
                         datafull.Rows.Add(dr)
                     End If
                 Next
@@ -95,6 +95,8 @@ Public Class Rep_Grid
             dsxml.Tables.Add(datafull)
             dsxml.WriteXml("c:\XML\inventario.xml", XmlWriteMode.WriteSchema)
 
+            Btn_report.Enabled = True
+
             If dt.Rows.Count > 0 Then
                 DGV_Reporte.DataSource = dt
                 DGV_Reporte.DataSource = datafull
@@ -105,7 +107,7 @@ Public Class Rep_Grid
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-        Btn_report.Enabled = True
+
     End Sub
 
     Private Sub Rep_Grid_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -116,24 +118,28 @@ Public Class Rep_Grid
                     Panel_Inv.Visible = True
                     Panel_hist_cto.Visible = False
                     Panel_RepVtas.Visible = False
+                    Panel_HisPP.Visible = False
                     Me.Text = "01- REPORTE DE INVENTARIOS"
                 Case "ventas"
                     Lbl_reporte.Text = "REPORTE VENTAS EN UN RANGO DE FECHAS"
                     Panel_Inv.Visible = False
                     Panel_hist_cto.Visible = False
                     Panel_RepVtas.Visible = True
+                    Panel_HisPP.Visible = False
                     Me.Text = "02- REPORTE VENTAS EN UN RANGO DE FECHAS"
                 Case "historico_c"
                     Lbl_reporte.Text = "REPORTE DE HISTORICO DE COSTOS"
                     Panel_Inv.Visible = False
                     Panel_hist_cto.Visible = True
                     Panel_RepVtas.Visible = False
+                    Panel_HisPP.Visible = False
                     Me.Text = "03- REPORTE DE HISTORICO DE COSTOS"
                 Case "historico_PV"
                     Lbl_reporte.Text = "HISTORICO DE PRECIOS AL PUBLICO POR CODIGO"
                     Panel_Inv.Visible = False
                     Panel_hist_cto.Visible = False
                     Panel_RepVtas.Visible = False
+                    Panel_HisPP.Visible = True
                     Me.Text = "04- HISTORICO DE PRECIOS AL PUBLICO POR CODIGO"
             End Select
         End If
@@ -187,12 +193,12 @@ Public Class Rep_Grid
                     con_string.Close()
 
                     'se declararan las columnas para el data grid
-                    dt.Columns.Add("Codigo de barras", GetType(Int64)) '1
+                    dt.Columns.Add("Codigo de barras", GetType(String)) '1
                     dt.Columns.Add("Marca", GetType(String)) '2
                     dt.Columns.Add("Modelo", GetType(String)) '3
                     dt.Columns.Add("Descripcion", GetType(String)) '4
-                    dt.Columns.Add("Costo") '5
-                    dt.Columns.Add("Fecha") '6
+                    dt.Columns.Add("Costo", GetType(Double)) '5
+                    dt.Columns.Add("Fecha") '6   
                     dt.Columns.Add("Razon Social", GetType(String)) '7
                     'dt.Columns.Add("Fecha2") '8
 
@@ -202,12 +208,11 @@ Public Class Rep_Grid
                         DataRow("Marca") = dr(25)
                         DataRow("Modelo") = dr(9)
                         DataRow("Descripcion") = dr(10)
-                        DataRow("Costo") = Format(CDec(dr(3)), "$ #,###,##0.00")
+                        DataRow("Costo") = Format(CDec(dr(3)), "#,###,##0.00")
                         'DataRow("Fecha") = dr(4)
                         fechac = dr(4)
                         DataRow("Fecha") = Format(CDate(fechac), "yyyy-MM-dd")
                         DataRow("Razon Social") = dr(16)
-
                         dt.Rows.Add(DataRow)
 
                         If DGV_Reporte.ColumnCount < 7 Then  'Condición para no desplegar otra columna
@@ -228,6 +233,8 @@ Public Class Rep_Grid
                     dsxml.Tables.Add(dt)
                     dsxml.WriteXml("c:\XML\Rep_HistCtos.xml", XmlWriteMode.WriteSchema)
 
+                    Btn_report.Enabled = True
+
                 Catch ex As Exception
                     MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error al conectarse a la base de datos")
                 End Try
@@ -237,7 +244,7 @@ Public Class Rep_Grid
         Else
             MsgBox("Ingrese el codigo a buscar")   'si no se ingreso un codigo a buscar envia mensaje
         End If
-        Btn_report.Enabled = True
+
     End Sub
 
     Private Sub Btn_report_Click(sender As Object, e As EventArgs) Handles Btn_report.Click
@@ -252,7 +259,8 @@ Public Class Rep_Grid
                 Dim mostrarform As New Rep_HisCtos()
                 mostrarform.Show()
             Case "historico_PV"
-                'ingresa codigo aqui
+                Dim mostrarform As New Rep_HisPP()
+                mostrarform.Show()
         End Select
     End Sub
 
@@ -318,7 +326,6 @@ Public Class Rep_Grid
                         DataRow("Total Vta") = Format(CDec(dr(9)), "#,###,##0.00")
                         fechaR = dr(13)
                         DataRow("Fecha") = fechaR.ToString("yyyy-MM-dd")
-
                         dt.Rows.Add(DataRow)
 
                         If DGV_Reporte.ColumnCount < 6 Then  'Condición para no desplegar otra columna
@@ -339,6 +346,8 @@ Public Class Rep_Grid
                     dsxml.Tables.Add(dt)
                     dsxml.WriteXml("c:\XML\Rep_Vtas.xml", XmlWriteMode.WriteSchema)
 
+                    Btn_report.Enabled = True
+
                 Catch ex As Exception
                     MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error al conectarse a la base de datos")
                 End Try
@@ -348,7 +357,106 @@ Public Class Rep_Grid
         Else
             MsgBox("No se obtuvieron ambos valores de fecha, asegurese de haber seleccionado un rango valido")   'si no se seleccionaron fechas arroja mensaje
         End If
-        Btn_report.Enabled = True
+
+    End Sub
+
+    Private Sub Btn_HisPP_Click(sender As Object, e As EventArgs) Handles Btn_HisPP.Click
+        Dim cons1 As String = Nothing
+        Dim cons2 As String = Nothing
+        Dim daad1 As New MySqlDataAdapter
+        Dim daad2 As New MySqlDataAdapter
+        Dim dase1 As DataSet = New DataSet
+        Dim dase2 As DataSet = New DataSet
+        Dim datab As New DataTable()
+        Dim codprod As Integer = Nothing
+        Dim fechaPP As String = Nothing
+
+        Try
+            If Txt_codigoPP.Text <> "" Then  'corrobora si se ingreso un codigo de barras para la busqueda
+
+                'obtener el id de producto para generar la consulta en la tabla de historico de costos
+                Try
+                    con_string = New MySqlConnection
+                    con_string.ConnectionString = ConnectionString2
+                    con_string.Open()
+                    cons1 = "SELECT id FROM catalogo_productos where codigo_barras ='" & Txt_codigoPP.Text & "'"
+                    daad1 = New MySqlDataAdapter(cons1, con_string)
+                    dase1 = New DataSet
+                    daad1.Fill(dase1)
+                    con_string.Close()
+                    For Each drcod As DataRow In dase1.Tables(0).Rows
+                        codprod = drcod(0)
+                    Next
+                Catch ex As Exception
+                    MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error al conectarse a la base de datos")
+                End Try
+
+                If (codprod) Then   'verifica si se obtuvo un ID de codigo de producto
+
+                    Try
+                        con_string = New MySqlConnection
+                        con_string.ConnectionString = ConnectionString2
+                        con_string.Open()
+                        cons2 = "SELECT * FROM historico_preciopublico LEFT JOIN catalogo_productos ON historico_preciopublico.`id_catalogo` = catalogo_productos.id LEFT JOIN proveedor on catalogo_productos.id_prov = proveedor.idProveedor LEFT JOIN marcas on catalogo_productos.marca = marcas.id WHERE `id_catalogo` = '" & codprod.ToString & "'"
+                        daad2 = New MySqlDataAdapter(cons2, con_string)
+                        dase2 = New DataSet
+                        daad2.Fill(dase2)
+                        con_string.Close()
+
+                        'se declararan las columnas para el data grid
+                        datab.Columns.Add("Marca", GetType(String)) '1
+                        datab.Columns.Add("Codigo de barras", GetType(String)) '2
+                        datab.Columns.Add("Modelo", GetType(String)) '3
+                        datab.Columns.Add("Descripcion", GetType(String)) '4
+                        datab.Columns.Add("Costo", GetType(Double)) '5
+                        datab.Columns.Add("Precio Vta", GetType(Double)) '6
+                        datab.Columns.Add("Fecha") '7
+                        datab.Columns.Add("Razon Social", GetType(String)) '8
+                        'dt.Columns.Add("Fecha2") '8
+
+                        For Each dr As DataRow In dase2.Tables(0).Rows
+                            Dim DataRow As DataRow = datab.NewRow()
+                            DataRow("Marca") = dr(25)
+                            DataRow("Codigo de barras") = dr(7)
+                            DataRow("Modelo") = dr(9)
+                            DataRow("Descripcion") = dr(10)
+                            DataRow("Costo") = Format(CDec(dr(12)), "#,###,##0.00")
+                            DataRow("Precio Vta") = Format(CDec(dr(3)), "#,###,##0.00")
+                            fechaPP = dr(4)
+                            DataRow("Fecha") = Format(CDate(fechaPP), "yyyy-MM-dd")
+                            DataRow("Razon Social") = dr(16)
+
+                            datab.Rows.Add(DataRow)
+
+                            If DGV_Reporte.ColumnCount < 8 Then  'Condición para no desplegar otra columna
+                            End If
+
+                            DGV_Reporte.DataSource = datab
+                            'Determinar el alto de las filas
+                            DGV_Reporte.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+                            DGV_Reporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+                            'Configurar aspectos visuales
+                            DGV_Reporte.BackgroundColor = Color.AliceBlue
+                            DGV_Reporte.AllowUserToAddRows = False
+                            DGV_Reporte.ReadOnly = True       'El control DataGridView será de sólo lectura
+                        Next
+
+                        'crear archivo XML para generar reporte
+                        Dim dsxml As New DataSet
+                        dsxml.Tables.Add(datab)
+                        dsxml.WriteXml("c:\XML\Rep_HistPrecioPublico.xml", XmlWriteMode.WriteSchema)
+
+                        Btn_report.Enabled = True 'Habilita el boton para generar el reporte
+                    Catch ex As Exception
+                        MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error al conectarse a la base de datos")
+                    End Try
+                Else
+                    MsgBox("No se obtuvo un id de producto")
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox("Ingresa un codigo a buscar")
+        End Try
 
     End Sub
 End Class

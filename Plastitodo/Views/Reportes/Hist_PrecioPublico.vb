@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class Inventarios
+Public Class Hist_PrecioPublico
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class Inventarios
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "Inventarios.rpt"
+            Return "Hist_PrecioPublico.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class Inventarios
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "Plastitodo.Inventarios.rpt"
+            Return "Plastitodo.Hist_PrecioPublico.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class Inventarios
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedInventarios
+Public Class CachedHist_PrecioPublico
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +136,7 @@ Public Class CachedInventarios
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As Inventarios = New Inventarios()
+        Dim rpt As Hist_PrecioPublico = New Hist_PrecioPublico()
         rpt.Site = Me.Site
         Return rpt
     End Function

@@ -124,7 +124,19 @@
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
     <Compile Include="Controllers\VentasMod.vb" />
-    <Compile Include="Historico_Vtas.vb">
+    <Compile Include="Views\Reportes\Hist_PrecioPublico.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hist_PrecioPublico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Reportes\Inventarios.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inventarios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Reportes\Historico_Vtas.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Historico_Vtas.rpt</DependentUpon>
@@ -134,12 +146,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Historico_costos.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\Reportes\Inventarios.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Inventarios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Reportes\Rep_Grid.Designer.vb">
@@ -154,16 +160,16 @@
     <Compile Include="Views\Reportes\Rep_HisCtos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Reportes\Rep_HisPP.Designer.vb">
+      <DependentUpon>Rep_HisPP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reportes\Rep_HisPP.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Reportes\Rep_HisVta.Designer.vb">
       <DependentUpon>Rep_HisVta.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Reportes\Rep_HisVta.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Reportes\Rep_Inv.Designer.vb">
-      <DependentUpon>Rep_Inv.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Reportes\Rep_Inv.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Reportes\Reportes.Designer.vb">
@@ -338,6 +344,12 @@
     <Compile Include="Views\Proveedores\CatalogoProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Reportes\Rep_Inv.Designer.vb">
+      <DependentUpon>Rep_Inv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reportes\Rep_Inv.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Usuarios\EditarUsuariosForm.Designer.vb">
       <DependentUpon>EditarUsuariosForm.vb</DependentUpon>
     </Compile>
@@ -370,17 +382,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Historico_Vtas.rpt">
+    <EmbeddedResource Include="Views\Reportes\Hist_PrecioPublico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Hist_PrecioPublico.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reportes\Inventarios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Inventarios.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reportes\Historico_Vtas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Historico_Vtas.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Historico_costos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Historico_costos.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reportes\Inventarios.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Inventarios.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Reportes.resx">
       <DependentUpon>Reportes.vb</DependentUpon>
@@ -391,11 +407,11 @@
     <EmbeddedResource Include="Views\Reportes\Rep_HisCtos.resx">
       <DependentUpon>Rep_HisCtos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reportes\Rep_HisPP.resx">
+      <DependentUpon>Rep_HisPP.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Rep_HisVta.resx">
       <DependentUpon>Rep_HisVta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reportes\Rep_Inv.resx">
-      <DependentUpon>Rep_Inv.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Clientes\Cat_Clientes.resx">
       <DependentUpon>Cat_Clientes.vb</DependentUpon>
@@ -477,6 +493,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Proveedores\CatalogoProveedor.resx">
       <DependentUpon>CatalogoProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reportes\Rep_Inv.resx">
+      <DependentUpon>Rep_Inv.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Usuarios\EditarUsuariosForm.resx">
       <DependentUpon>EditarUsuariosForm.vb</DependentUpon>
