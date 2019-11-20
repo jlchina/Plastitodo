@@ -22,6 +22,7 @@ Partial Class CuentasCobrar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CuentasCobrar))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -51,14 +52,6 @@ Partial Class CuentasCobrar
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.AbonoCuenta = New System.Windows.Forms.GroupBox()
-        Me.TxtAbono = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Txtnofactura = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.DataGridViewabonos = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
@@ -68,16 +61,24 @@ Partial Class CuentasCobrar
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.ButtonBuscarFactura = New System.Windows.Forms.Button()
+        Me.DataGridViewabonos = New System.Windows.Forms.DataGridView()
+        Me.AbonoCuenta = New System.Windows.Forms.GroupBox()
         Me.ButtonGuardarAbono = New System.Windows.Forms.Button()
+        Me.ButtonBuscarFactura = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtAbono = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Txtnofactura = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.AbonoCuenta.SuspendLayout()
-        CType(Me.DataGridViewabonos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.DataGridViewabonos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AbonoCuenta.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -352,79 +353,6 @@ Partial Class CuentasCobrar
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'AbonoCuenta
-        '
-        Me.AbonoCuenta.Controls.Add(Me.ButtonGuardarAbono)
-        Me.AbonoCuenta.Controls.Add(Me.ButtonBuscarFactura)
-        Me.AbonoCuenta.Controls.Add(Me.TextBox2)
-        Me.AbonoCuenta.Controls.Add(Me.Label10)
-        Me.AbonoCuenta.Controls.Add(Me.TxtAbono)
-        Me.AbonoCuenta.Controls.Add(Me.Label11)
-        Me.AbonoCuenta.Controls.Add(Me.Txtnofactura)
-        Me.AbonoCuenta.Controls.Add(Me.Label14)
-        Me.AbonoCuenta.Location = New System.Drawing.Point(4, 20)
-        Me.AbonoCuenta.Name = "AbonoCuenta"
-        Me.AbonoCuenta.Size = New System.Drawing.Size(268, 183)
-        Me.AbonoCuenta.TabIndex = 0
-        Me.AbonoCuenta.TabStop = False
-        Me.AbonoCuenta.Text = "Abono a Cuenta"
-        '
-        'TxtAbono
-        '
-        Me.TxtAbono.Location = New System.Drawing.Point(95, 96)
-        Me.TxtAbono.Name = "TxtAbono"
-        Me.TxtAbono.Size = New System.Drawing.Size(140, 20)
-        Me.TxtAbono.TabIndex = 14
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 99)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 13)
-        Me.Label11.TabIndex = 13
-        Me.Label11.Text = "Abono"
-        '
-        'Txtnofactura
-        '
-        Me.Txtnofactura.Location = New System.Drawing.Point(95, 36)
-        Me.Txtnofactura.Name = "Txtnofactura"
-        Me.Txtnofactura.Size = New System.Drawing.Size(140, 20)
-        Me.Txtnofactura.TabIndex = 8
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(6, 39)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(63, 13)
-        Me.Label14.TabIndex = 7
-        Me.Label14.Text = "No. Factura"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 125)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(59, 13)
-        Me.Label10.TabIndex = 15
-        Me.Label10.Text = "Saldo Final"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(95, 122)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox2.TabIndex = 16
-        '
-        'DataGridViewabonos
-        '
-        Me.DataGridViewabonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewabonos.Location = New System.Drawing.Point(4, 219)
-        Me.DataGridViewabonos.Name = "DataGridViewabonos"
-        Me.DataGridViewabonos.Size = New System.Drawing.Size(692, 150)
-        Me.DataGridViewabonos.TabIndex = 1
-        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.TextBox4)
@@ -506,14 +434,30 @@ Partial Class CuentasCobrar
         Me.Label18.TabIndex = 2
         Me.Label18.Text = "RFC"
         '
-        'ButtonBuscarFactura
+        'DataGridViewabonos
         '
-        Me.ButtonBuscarFactura.Location = New System.Drawing.Point(170, 63)
-        Me.ButtonBuscarFactura.Name = "ButtonBuscarFactura"
-        Me.ButtonBuscarFactura.Size = New System.Drawing.Size(65, 23)
-        Me.ButtonBuscarFactura.TabIndex = 17
-        Me.ButtonBuscarFactura.Text = "Buscar"
-        Me.ButtonBuscarFactura.UseVisualStyleBackColor = True
+        Me.DataGridViewabonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewabonos.Location = New System.Drawing.Point(4, 219)
+        Me.DataGridViewabonos.Name = "DataGridViewabonos"
+        Me.DataGridViewabonos.Size = New System.Drawing.Size(692, 150)
+        Me.DataGridViewabonos.TabIndex = 1
+        '
+        'AbonoCuenta
+        '
+        Me.AbonoCuenta.Controls.Add(Me.ButtonGuardarAbono)
+        Me.AbonoCuenta.Controls.Add(Me.ButtonBuscarFactura)
+        Me.AbonoCuenta.Controls.Add(Me.TextBox2)
+        Me.AbonoCuenta.Controls.Add(Me.Label10)
+        Me.AbonoCuenta.Controls.Add(Me.TxtAbono)
+        Me.AbonoCuenta.Controls.Add(Me.Label11)
+        Me.AbonoCuenta.Controls.Add(Me.Txtnofactura)
+        Me.AbonoCuenta.Controls.Add(Me.Label14)
+        Me.AbonoCuenta.Location = New System.Drawing.Point(4, 20)
+        Me.AbonoCuenta.Name = "AbonoCuenta"
+        Me.AbonoCuenta.Size = New System.Drawing.Size(268, 183)
+        Me.AbonoCuenta.TabIndex = 0
+        Me.AbonoCuenta.TabStop = False
+        Me.AbonoCuenta.Text = "Abono a Cuenta"
         '
         'ButtonGuardarAbono
         '
@@ -524,12 +468,70 @@ Partial Class CuentasCobrar
         Me.ButtonGuardarAbono.Text = "Guardar"
         Me.ButtonGuardarAbono.UseVisualStyleBackColor = True
         '
+        'ButtonBuscarFactura
+        '
+        Me.ButtonBuscarFactura.Location = New System.Drawing.Point(170, 63)
+        Me.ButtonBuscarFactura.Name = "ButtonBuscarFactura"
+        Me.ButtonBuscarFactura.Size = New System.Drawing.Size(65, 23)
+        Me.ButtonBuscarFactura.TabIndex = 17
+        Me.ButtonBuscarFactura.Text = "Buscar"
+        Me.ButtonBuscarFactura.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(95, 122)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(140, 20)
+        Me.TextBox2.TabIndex = 16
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 125)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(59, 13)
+        Me.Label10.TabIndex = 15
+        Me.Label10.Text = "Saldo Final"
+        '
+        'TxtAbono
+        '
+        Me.TxtAbono.Location = New System.Drawing.Point(95, 96)
+        Me.TxtAbono.Name = "TxtAbono"
+        Me.TxtAbono.Size = New System.Drawing.Size(140, 20)
+        Me.TxtAbono.TabIndex = 14
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 99)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(38, 13)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "Abono"
+        '
+        'Txtnofactura
+        '
+        Me.Txtnofactura.Location = New System.Drawing.Point(95, 36)
+        Me.Txtnofactura.Name = "Txtnofactura"
+        Me.Txtnofactura.Size = New System.Drawing.Size(140, 20)
+        Me.Txtnofactura.TabIndex = 8
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 39)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(63, 13)
+        Me.Label14.TabIndex = 7
+        Me.Label14.Text = "No. Factura"
+        '
         'CuentasCobrar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(766, 413)
         Me.Controls.Add(Me.TabControl1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CuentasCobrar"
         Me.Text = "CuentasCobrar"
         Me.TabControl1.ResumeLayout(False)
@@ -539,11 +541,11 @@ Partial Class CuentasCobrar
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        Me.AbonoCuenta.ResumeLayout(False)
-        Me.AbonoCuenta.PerformLayout()
-        CType(Me.DataGridViewabonos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.DataGridViewabonos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AbonoCuenta.ResumeLayout(False)
+        Me.AbonoCuenta.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

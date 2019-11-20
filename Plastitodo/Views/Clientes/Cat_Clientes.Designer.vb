@@ -64,8 +64,7 @@ Partial Class Cat_Clientes
         '
         'Tab_proveedor
         '
-        Me.Tab_proveedor.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.Tab_proveedor.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tab_proveedor.Controls.Add(Me.Tab_alta_p)
         Me.Tab_proveedor.Controls.Add(Me.TabEditCatProv)
@@ -73,7 +72,7 @@ Partial Class Cat_Clientes
         Me.Tab_proveedor.Location = New System.Drawing.Point(1, 12)
         Me.Tab_proveedor.Name = "Tab_proveedor"
         Me.Tab_proveedor.SelectedIndex = 0
-        Me.Tab_proveedor.Size = New System.Drawing.Size(759, 394)
+        Me.Tab_proveedor.Size = New System.Drawing.Size(769, 396)
         Me.Tab_proveedor.TabIndex = 33
         '
         'Tab_alta_p
@@ -86,7 +85,7 @@ Partial Class Cat_Clientes
         Me.Tab_alta_p.Location = New System.Drawing.Point(4, 25)
         Me.Tab_alta_p.Name = "Tab_alta_p"
         Me.Tab_alta_p.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_alta_p.Size = New System.Drawing.Size(751, 365)
+        Me.Tab_alta_p.Size = New System.Drawing.Size(761, 367)
         Me.Tab_alta_p.TabIndex = 1
         Me.Tab_alta_p.Text = "Alta"
         Me.Tab_alta_p.UseVisualStyleBackColor = True
@@ -115,31 +114,31 @@ Partial Class Cat_Clientes
         Me.GroupBox2.Controls.Add(Me.Text_tel)
         Me.GroupBox2.Location = New System.Drawing.Point(7, 6)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(476, 130)
+        Me.GroupBox2.Size = New System.Drawing.Size(476, 159)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Informacion general"
         '
         'TxtRazon
         '
-        Me.TxtRazon.Location = New System.Drawing.Point(268, 88)
+        Me.TxtRazon.Location = New System.Drawing.Point(83, 55)
         Me.TxtRazon.Name = "TxtRazon"
-        Me.TxtRazon.Size = New System.Drawing.Size(187, 22)
-        Me.TxtRazon.TabIndex = 22
+        Me.TxtRazon.Size = New System.Drawing.Size(372, 22)
+        Me.TxtRazon.TabIndex = 2
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(36, 91)
+        Me.Label3.Location = New System.Drawing.Point(35, 122)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 16)
+        Me.Label3.Size = New System.Drawing.Size(42, 16)
         Me.Label3.TabIndex = 23
-        Me.Label3.Text = "Rfc:"
+        Me.Label3.Text = "RFC:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(198, 91)
+        Me.Label5.Location = New System.Drawing.Point(3, 60)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(74, 16)
         Me.Label5.TabIndex = 24
@@ -147,15 +146,16 @@ Partial Class Cat_Clientes
         '
         'TxtRfc
         '
-        Me.TxtRfc.Location = New System.Drawing.Point(83, 88)
+        Me.TxtRfc.Location = New System.Drawing.Point(83, 119)
+        Me.TxtRfc.MaxLength = 13
         Me.TxtRfc.Name = "TxtRfc"
         Me.TxtRfc.Size = New System.Drawing.Size(113, 22)
-        Me.TxtRfc.TabIndex = 21
+        Me.TxtRfc.TabIndex = 4
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(4, 27)
+        Me.Label10.Location = New System.Drawing.Point(10, 27)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(67, 16)
         Me.Label10.TabIndex = 11
@@ -164,21 +164,23 @@ Partial Class Cat_Clientes
         'Text_nomb
         '
         Me.Text_nomb.Location = New System.Drawing.Point(83, 24)
+        Me.Text_nomb.MaxLength = 45
         Me.Text_nomb.Name = "Text_nomb"
         Me.Text_nomb.Size = New System.Drawing.Size(372, 22)
-        Me.Text_nomb.TabIndex = 2
+        Me.Text_nomb.TabIndex = 1
         '
         'Text_mail
         '
-        Me.Text_mail.Location = New System.Drawing.Point(268, 57)
+        Me.Text_mail.Location = New System.Drawing.Point(83, 87)
+        Me.Text_mail.MaxLength = 50
         Me.Text_mail.Name = "Text_mail"
-        Me.Text_mail.Size = New System.Drawing.Size(187, 22)
-        Me.Text_mail.TabIndex = 8
+        Me.Text_mail.Size = New System.Drawing.Size(372, 22)
+        Me.Text_mail.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(-3, 60)
+        Me.Label1.Location = New System.Drawing.Point(217, 122)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(74, 16)
         Me.Label1.TabIndex = 18
@@ -187,7 +189,7 @@ Partial Class Cat_Clientes
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(211, 58)
+        Me.Label2.Location = New System.Drawing.Point(26, 88)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(51, 16)
         Me.Label2.TabIndex = 20
@@ -195,10 +197,11 @@ Partial Class Cat_Clientes
         '
         'Text_tel
         '
-        Me.Text_tel.Location = New System.Drawing.Point(83, 57)
+        Me.Text_tel.Location = New System.Drawing.Point(297, 119)
+        Me.Text_tel.MaxLength = 10
         Me.Text_tel.Name = "Text_tel"
-        Me.Text_tel.Size = New System.Drawing.Size(113, 22)
-        Me.Text_tel.TabIndex = 7
+        Me.Text_tel.Size = New System.Drawing.Size(158, 22)
+        Me.Text_tel.TabIndex = 5
         '
         'GroupBox1
         '
@@ -210,7 +213,7 @@ Partial Class Cat_Clientes
         Me.GroupBox1.Controls.Add(Me.Text_cd)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Text_cp)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 142)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 185)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(477, 136)
         Me.GroupBox1.TabIndex = 21
@@ -231,7 +234,7 @@ Partial Class Cat_Clientes
         Me.Text_dir.Location = New System.Drawing.Point(94, 21)
         Me.Text_dir.Name = "Text_dir"
         Me.Text_dir.Size = New System.Drawing.Size(362, 22)
-        Me.Text_dir.TabIndex = 3
+        Me.Text_dir.TabIndex = 6
         '
         'Label8
         '
@@ -247,7 +250,7 @@ Partial Class Cat_Clientes
         Me.Text_col.Location = New System.Drawing.Point(94, 58)
         Me.Text_col.Name = "Text_col"
         Me.Text_col.Size = New System.Drawing.Size(362, 22)
-        Me.Text_col.TabIndex = 4
+        Me.Text_col.TabIndex = 7
         '
         'Label7
         '
@@ -263,7 +266,7 @@ Partial Class Cat_Clientes
         Me.Text_cd.Location = New System.Drawing.Point(94, 96)
         Me.Text_cd.Name = "Text_cd"
         Me.Text_cd.Size = New System.Drawing.Size(135, 22)
-        Me.Text_cd.TabIndex = 5
+        Me.Text_cd.TabIndex = 8
         '
         'Label6
         '
@@ -277,15 +280,16 @@ Partial Class Cat_Clientes
         'Text_cp
         '
         Me.Text_cp.Location = New System.Drawing.Point(351, 93)
+        Me.Text_cp.MaxLength = 6
         Me.Text_cp.Name = "Text_cp"
         Me.Text_cp.Size = New System.Drawing.Size(105, 22)
-        Me.Text_cp.TabIndex = 6
+        Me.Text_cp.TabIndex = 9
         '
         'Btn_cancelarp
         '
         Me.Btn_cancelarp.BackgroundImage = CType(resources.GetObject("Btn_cancelarp.BackgroundImage"), System.Drawing.Image)
         Me.Btn_cancelarp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_cancelarp.Location = New System.Drawing.Point(19, 284)
+        Me.Btn_cancelarp.Location = New System.Drawing.Point(587, 307)
         Me.Btn_cancelarp.Name = "Btn_cancelarp"
         Me.Btn_cancelarp.Size = New System.Drawing.Size(67, 52)
         Me.Btn_cancelarp.TabIndex = 9
@@ -296,7 +300,7 @@ Partial Class Cat_Clientes
         Me.Btn_agregarc.BackgroundImage = CType(resources.GetObject("Btn_agregarc.BackgroundImage"), System.Drawing.Image)
         Me.Btn_agregarc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_agregarc.FlatAppearance.BorderSize = 0
-        Me.Btn_agregarc.Location = New System.Drawing.Point(381, 284)
+        Me.Btn_agregarc.Location = New System.Drawing.Point(678, 307)
         Me.Btn_agregarc.Name = "Btn_agregarc"
         Me.Btn_agregarc.Size = New System.Drawing.Size(67, 52)
         Me.Btn_agregarc.TabIndex = 8
@@ -311,7 +315,7 @@ Partial Class Cat_Clientes
         Me.TabEditCatProv.Location = New System.Drawing.Point(4, 25)
         Me.TabEditCatProv.Name = "TabEditCatProv"
         Me.TabEditCatProv.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabEditCatProv.Size = New System.Drawing.Size(751, 365)
+        Me.TabEditCatProv.Size = New System.Drawing.Size(761, 367)
         Me.TabEditCatProv.TabIndex = 2
         Me.TabEditCatProv.Text = "Consulta"
         Me.TabEditCatProv.UseVisualStyleBackColor = True
@@ -355,14 +359,14 @@ Partial Class Cat_Clientes
         Me.DGV_Edit_CP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV_Edit_CP.Location = New System.Drawing.Point(6, 57)
         Me.DGV_Edit_CP.Name = "DGV_Edit_CP"
-        Me.DGV_Edit_CP.Size = New System.Drawing.Size(739, 261)
+        Me.DGV_Edit_CP.Size = New System.Drawing.Size(749, 304)
         Me.DGV_Edit_CP.TabIndex = 1
         '
         'Cat_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(772, 465)
+        Me.ClientSize = New System.Drawing.Size(772, 413)
         Me.Controls.Add(Me.Tab_proveedor)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Cat_Clientes"

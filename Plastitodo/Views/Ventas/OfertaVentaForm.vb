@@ -30,6 +30,7 @@ Public Class OfertaVentaForm
         '--------->Establecer valores obtenidos del GridViewForm
         id_tipo_documento = tipo
     End Sub
+
     Dim ImpuestoTotal, Subtotal, Sumtotal As Decimal
     Private Sub OfertaVentaForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtFecha.Text = DateTime.Now.ToString("yyyy-MM-dd")

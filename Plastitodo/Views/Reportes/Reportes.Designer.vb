@@ -151,6 +151,7 @@ Partial Class Reportes
         Me.Controls.Add(Me.Btn_Hist_Cto)
         Me.Controls.Add(Me.Btn_Inv)
         Me.Controls.Add(Me.Btn_Vtas)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Reportes"
         Me.Text = "Reportes"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

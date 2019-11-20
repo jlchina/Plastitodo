@@ -9,68 +9,87 @@ Public Class CatalogoProveedor
         Dim ds1 As DataSet = New DataSet
         Dim sql As String
         Dim BusReg As String = Nothing
-        Dim band As Integer = Nothing
+        Dim band As Boolean
+        Dim cmd As MySqlCommand
+        Dim val As Integer = Nothing
+
         Try
             'buscar duplicidad de registros 16-11-2019
             If Txt_rfc.Text <> "" Then
                 con_string = New MySqlConnection
                 con_string.ConnectionString = ConnectionString2
                 con_string.Open()
-                sql = "SELECT rfc FROM catalogo_productos WHERE rfc =" & Txt_rfc.Text
-                da = New MySqlDataAdapter(Sql, con_string)
+                sql = "SELECT rfc FROM proveedor WHERE rfc ='" & Txt_rfc.Text & "'"
+                da = New MySqlDataAdapter(sql, con_string)
                 da.Fill(ds1)
                 con_string.Close()
                 For Each datar As DataRow In ds1.Tables(0).Rows
                     BusReg = datar(0)
                 Next
-                If BusReg <> "" Then
-                    band = True
+                If BusReg = "" Then
+                    val = 1
                 Else
-                    band = False
+                    val = 0
                 End If
+            Else MessageBox.Show("Favor de ingresar el RFC")
             End If
         Catch ex As Exception
             MsgBox("Error")
         End Try
 
-        'If (idmarca.ToString <= 0 And Txt_mod.Text IsNot "" And Txt_desc.Text IsNot "" And idpresp.ToString <= 0 And Txt_Cto.Text IsNot "" And idf.ToString <= 0 And idprov.ToString <= 0) Then
-        '    Val = True
-        'End If
+        If val > 0 Then
+            band = False
+        ElseIf band = True Then
+        End If
 
-        Try
-            Dim email As String
-            email = Textcorreo.Text
-            If Len(email) > 0 Then
-                If (validar_mail(email) = True) Then
-                    Dim conexion As New MySqlConnection(ConnectionString2)
+        If (Textnombre.Text IsNot "" And Textdire.Text IsNot "" And Textcol.Text IsNot "" And Textcuidad.Text IsNot "" And Textcp.Text IsNot "" And Texttel.Text IsNot "" And Textcorreo.Text IsNot "" And Textcontacto.Text IsNot "" And Textcontacto2.Text IsNot "" And Textcorreo.Text IsNot "" And Txt_rfc.Text IsNot "") Then
+            band = True
+        End If
 
-                    Dim CONSULTA As New StringBuilder
-                    CONSULTA.Clear()
-                    CONSULTA.AppendLine("insert into proveedor(Nombre, Direccion, Colonia,")
-                    CONSULTA.AppendLine("Ciudad,Codigo_postal,telefono,correo, contacto)")
-                    CONSULTA.AppendLine($"values ('{Textnombre.Text}',")
-                    CONSULTA.AppendLine($"'{Textdire.Text}', '{Textcol.Text}','{Textcuidad.Text}',")
-                    CONSULTA.AppendLine($"'{Textcp.Text}' , '{Texttel.Text}',")
-                    CONSULTA.AppendLine($"'{Textcorreo.Text}','{Textcontacto.Text}')")
+        If band = False Then
+            Try
+                Dim email As String
+                email = Textcorreo.Text
+                If Len(email) > 0 Then
+                    If (validar_mail(email) = True) Then
 
-                    Dim COMANDO As New MySqlCommand(CONSULTA.ToString(), conexion)
+                        'Se inicializa la conexion a la BD 19-11-19
+                        con_string = New MySqlConnection
+                        con_string.ConnectionString = ConnectionString2
+                        con_string.Open()
+                        cmd = New MySqlCommand("INSERT INTO proveedor(Nombre, Direccion, Colonia, Ciudad, Codigo_postal, telefono, correo, contacto, contacto2, correo2, rfc)" & Chr(13) &
+                                       "VALUES(@Nombre, @Direccion, @Colonia, @Ciudad, @Codigo_postal, @telefono, @correo, @contacto, @contacto2, @correo2, @rfc)", con_string)
 
-                    conexion.Open()
-                    COMANDO.ExecuteNonQuery()
+                        cmd.Parameters.AddWithValue("@Nombre", Textnombre.Text)
+                        cmd.Parameters.AddWithValue("@Direccion", Textdire.Text)
+                        cmd.Parameters.AddWithValue("@Colonia", Textcol.Text)
+                        cmd.Parameters.AddWithValue("@Ciudad", Textcuidad.Text)
+                        cmd.Parameters.AddWithValue("@Codigo_postal", Textcp.Text)
+                        cmd.Parameters.AddWithValue("@telefono", Texttel.Text)
+                        cmd.Parameters.AddWithValue("@correo", Textcorreo.Text)
+                        cmd.Parameters.AddWithValue("@contacto", Textcontacto.Text)
+                        cmd.Parameters.AddWithValue("@contacto2", Textcontacto2.Text)
+                        cmd.Parameters.AddWithValue("@correo2", Textcorreo2.Text)
+                        cmd.Parameters.AddWithValue("@rfc", Txt_rfc.Text)
+                        cmd.ExecuteNonQuery()
+                        con_string.Close()
 
-                    conexion.Close()
-                    MsgBox("DATOS GUARDADOS CORRECTAMENTE!!")
-                    limpiar()
+                        MsgBox("DATOS GUARDADOS CORRECTAMENTE!!")
+                        limpiar()
+                    Else
+                        MessageBox.Show("Verificar Correo")
+                    End If
                 Else
-                    MessageBox.Show("Verificar Correo")
+                    MessageBox.Show("Favor de Ingresar un Correo")
                 End If
-            Else
-                MessageBox.Show("Favor de Ingresar un Correo")
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else MessageBox.Show("El RFC ingresado ya existe o no se han llenado todos los datos, verifique la informacion")
+        End If
+        val = Nothing
+        band = Nothing
     End Sub
 
 
@@ -83,6 +102,10 @@ Public Class CatalogoProveedor
         Texttel.Text = String.Empty
         Textcorreo.Text = String.Empty
         Textcontacto.Text = String.Empty
+        Textcorreo2.Text = String.Empty
+        Textcontacto2.Text = String.Empty
+        Txt_rfc.Text = String.Empty
+
     End Sub
 
     Private Sub Blimpiar_Click(sender As Object, e As EventArgs) Handles Blimpiar.Click
@@ -90,7 +113,7 @@ Public Class CatalogoProveedor
     End Sub
 
 
-    Private Sub BConsultaProvee_Click(sender As Object, e As EventArgs) Handles BConsultaProvee.Click
+    Private Sub BConsultaProvee_Click(sender As Object, e As EventArgs)
 
         Dim datatable As New DataTable()
         Dim dataset As DataSet = New DataSet
@@ -158,7 +181,7 @@ Public Class CatalogoProveedor
         DGV_Prov.DataSource = String.Empty
     End Sub
 
-    Private Sub BConsultaLimpi_Click(sender As Object, e As EventArgs) Handles BConsultaLimpi.Click
+    Private Sub BConsultaLimpi_Click(sender As Object, e As EventArgs)
         limpiarconsulta()
     End Sub
 

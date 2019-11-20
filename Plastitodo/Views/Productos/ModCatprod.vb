@@ -122,6 +122,7 @@ Public Class ModCatprod
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)
         End Try
+        Return 0
     End Function
     Private Sub Btn_agregarp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_agregarp.Click
         Dim sql As String = Nothing

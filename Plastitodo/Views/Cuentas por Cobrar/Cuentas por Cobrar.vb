@@ -9,11 +9,9 @@ Public Class CuentasCobrar
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Globales.text = TextBoxCliente.Text
 
-
         'Dim newbusquedacliente As New BusquedaCliente()
         'newbusquedacliente.MdiParent = Me
         'newbusquedacliente.ShowDialog()
-
 
         Dim newbusquedacliente As New BusquedaCliente()
         newbusquedacliente.ShowDialog()
@@ -111,7 +109,7 @@ Public Class CuentasCobrar
         If String.IsNullOrEmpty(TxtAbono.Text) Then
             abono = 0
         Else
-            abono = Convert.ToDecimal(TxtAbono.Text)w
+            abono = Convert.ToDecimal(TxtAbono.Text)
         End If
 
         total = anticipo + monto

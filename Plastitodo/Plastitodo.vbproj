@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="Config\conexion.vb" />
     <Compile Include="Config\Globales.vb" />
+    <Compile Include="Controllers\ComprasMod.vb" />
     <Compile Include="Controllers\PerfilesMod.vb" />
     <Compile Include="Controllers\PrincipalMod.vb" />
     <Compile Include="Controllers\Productos_Precios.vb" />
@@ -225,10 +226,10 @@
     <Compile Include="Views\Productos\AltaMarca.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Cat_Prov.Designer.vb">
-      <DependentUpon>Cat_Prov.vb</DependentUpon>
+    <Compile Include="Views\Inventarios\OrdenCompra.Designer.vb">
+      <DependentUpon>OrdenCompra.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Cat_Prov.vb">
+    <Compile Include="Views\Inventarios\OrdenCompra.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Login.Designer.vb">
@@ -434,8 +435,8 @@
     <EmbeddedResource Include="Views\Productos\AltaMarca.resx">
       <DependentUpon>AltaMarca.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Cat_Prov.resx">
-      <DependentUpon>Cat_Prov.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Inventarios\OrdenCompra.resx">
+      <DependentUpon>OrdenCompra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
