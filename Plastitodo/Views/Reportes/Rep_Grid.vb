@@ -328,7 +328,7 @@ Public Class Rep_Grid
                         DataRow("Fecha") = fechaR.ToString("yyyy-MM-dd")
                         dt.Rows.Add(DataRow)
 
-                        If DGV_Reporte.ColumnCount < 6 Then  'Condición para no desplegar otra columna
+                        If DGV_Reporte.ColumnCount < 8 Then  'Condición para no desplegar otra columna
                         End If
 
                         DGV_Reporte.DataSource = dt

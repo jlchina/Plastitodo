@@ -9,13 +9,12 @@ Public Class CuentasCobrar
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Globales.text = TextBoxCliente.Text
 
-
         'Dim newbusquedacliente As New BusquedaCliente()
         'newbusquedacliente.MdiParent = Me
         'newbusquedacliente.ShowDialog()
 
 
-        Dim newbusquedacliente As New BusquedaCliente2()
+        Dim newbusquedacliente As New BusquedaCliente()
         newbusquedacliente.ShowDialog()
         TextBoxRazonSocial.Text = BusquedaCliente2.RazonSocial
         TextBoxEmail.Text = BusquedaCliente2.email
