@@ -125,6 +125,12 @@
     <Compile Include="Controllers\solo_num_let.vb" />
     <Compile Include="Controllers\UsuariosMod.vb" />
     <Compile Include="Controllers\VentasMod.vb" />
+    <Compile Include="Views\Cuentas por Cobrar\BisquedaCliente3.Designer.vb">
+      <DependentUpon>BisquedaCliente3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cuentas por Cobrar\BisquedaCliente3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Reportes\Hist_PrecioPublico.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -383,6 +389,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\Cuentas por Cobrar\BisquedaCliente3.resx">
+      <DependentUpon>BisquedaCliente3.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Hist_PrecioPublico.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Hist_PrecioPublico.vb</LastGenOutput>

@@ -14,12 +14,12 @@ Public Class CuentasCobrar
         'newbusquedacliente.ShowDialog()
 
 
-        Dim newbusquedacliente As New BusquedaCliente()
+        Dim newbusquedacliente As New BisquedaCliente3()
         newbusquedacliente.ShowDialog()
-        TextBoxRazonSocial.Text = BusquedaCliente.RazonSocial
-        TextBoxEmail.Text = BusquedaCliente.email
-        TextBoxRfc.Text = BusquedaCliente.rfc
-        TextBoxTelefono.Text = BusquedaCliente.telefono
+        TextBoxRazonSocial.Text = BisquedaCliente3.RazonSocial
+        TextBoxEmail.Text = BisquedaCliente3.email
+        TextBoxRfc.Text = BisquedaCliente3.rfc
+        TextBoxTelefono.Text = BisquedaCliente3.telefono
     End Sub
 
     Private Sub listametodopago()
@@ -49,10 +49,10 @@ Public Class CuentasCobrar
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Txtmonto.TextChanged
 
         Dim total, saldoanterior, monto, abono As Decimal
-        If String.IsNullOrEmpty(TxtSaldoAnterior.Text) Then
+        If String.IsNullOrEmpty(Txtmonto.Text) Then
             saldoanterior = 0
         Else
-            saldoanterior = Convert.ToDecimal(TxtSaldoAnterior.Text)
+            saldoanterior = Convert.ToDecimal(Txtmonto.Text)
         End If
 
         If String.IsNullOrEmpty(Txtmonto.Text) Then
@@ -110,7 +110,7 @@ Public Class CuentasCobrar
         If String.IsNullOrEmpty(TxtAbono.Text) Then
             abono = 0
         Else
-            abono = Convert.ToDecimal(TxtAbono.Text)w
+            abono = Convert.ToDecimal(TxtAbono.Text)
         End If
 
         total = anticipo + monto
