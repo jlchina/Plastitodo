@@ -9,17 +9,16 @@ Public Class BisquedaCliente3
             Try
                 Dim conexion As New MySqlConnection(ConnectionString2)
 
-                'Dim query = "Select Nombre,telefono,email,rfc,razon_social from cliente where Nombre like ?"
-                'Dim adap As New MySqlDataAdapter(query, conexion)
-                'adap.SelectCommand.Parameters.AddWithValue("@p1", "%" & Globales.text & "%")
+            'Dim query = "Select Nombre,telefono,email,rfc,razon_social from cliente where Nombre like ?"
+            'Dim adap As New MySqlDataAdapter(query, conexion)
+            'adap.SelectCommand.Parameters.AddWithValue("@p1", "%" & Globales.text & "%")
 
-                Dim query = "select Nombre,telefono,email,cc.rfc,razon_social from cliente c join cuenta_cobrar cc on c.rfc = cc.rfc where cc.No_factura = ' ' "
+            Dim query = "select Nombre,telefono,email,cc.rfc,razon_social from cliente c join cuenta_cobrar cc on c.rfc = cc.rfc where cc.No_factura = ' ' "
 
+            Dim dt As New DataTable
+            Dim adap As New MySqlDataAdapter
 
-
-                Dim dt As New DataTable
-
-                adap.Fill(dt)
+            adap.Fill(dt)
 
                 If dt.Rows.Count > 0 Then
                     dgViewbusquedacliente.DataSource = dt
