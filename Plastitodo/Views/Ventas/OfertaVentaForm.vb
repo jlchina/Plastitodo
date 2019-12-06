@@ -290,6 +290,5 @@ Public Class OfertaVentaForm
             MessageBox.Show("Favor de llenar la informacion necesaria", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
-
     End Sub
 End Class

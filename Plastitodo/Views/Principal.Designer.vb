@@ -47,11 +47,12 @@ Partial Class Principal
         Me.NotaDeVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CuentaPorCobrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CuentasPorPagarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.StatusConexion = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Lblconexion = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.CuentaPorCobrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CuentasPorPagarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrdenDeCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -77,20 +78,20 @@ Partial Class Principal
         '
         Me.UsuariosToolStripMenuItem.Enabled = False
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'PerfilesToolStripMenuItem
         '
         Me.PerfilesToolStripMenuItem.Enabled = False
         Me.PerfilesToolStripMenuItem.Name = "PerfilesToolStripMenuItem"
-        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(119, 22)
         Me.PerfilesToolStripMenuItem.Text = "Perfiles"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(119, 22)
         Me.ToolStripMenuItem2.Text = "Salir"
         '
         'ModulosToolStripMenuItem
@@ -166,7 +167,7 @@ Partial Class Principal
         '
         'InventariosToolStripMenuItem
         '
-        Me.InventariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExistenciasToolStripMenuItem, Me.EntradasMercanciaToolStripMenuItem})
+        Me.InventariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExistenciasToolStripMenuItem, Me.EntradasMercanciaToolStripMenuItem, Me.OrdenDeCompraToolStripMenuItem})
         Me.InventariosToolStripMenuItem.Enabled = False
         Me.InventariosToolStripMenuItem.Name = "InventariosToolStripMenuItem"
         Me.InventariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
@@ -216,6 +217,18 @@ Partial Class Principal
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
+        'CuentaPorCobrarToolStripMenuItem
+        '
+        Me.CuentaPorCobrarToolStripMenuItem.Name = "CuentaPorCobrarToolStripMenuItem"
+        Me.CuentaPorCobrarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CuentaPorCobrarToolStripMenuItem.Text = "Cuentas por Cobrar"
+        '
+        'CuentasPorPagarToolStripMenuItem
+        '
+        Me.CuentasPorPagarToolStripMenuItem.Name = "CuentasPorPagarToolStripMenuItem"
+        Me.CuentasPorPagarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CuentasPorPagarToolStripMenuItem.Text = "Cuentas por Pagar"
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusConexion, Me.Lblconexion})
@@ -229,7 +242,7 @@ Partial Class Principal
         'StatusConexion
         '
         Me.StatusConexion.Name = "StatusConexion"
-        Me.StatusConexion.Size = New System.Drawing.Size(91, 17)
+        Me.StatusConexion.Size = New System.Drawing.Size(90, 17)
         Me.StatusConexion.Text = "Conexión a BD: "
         '
         'Lblconexion
@@ -239,17 +252,11 @@ Partial Class Principal
         Me.Lblconexion.Size = New System.Drawing.Size(107, 17)
         Me.Lblconexion.Text = "--------------------"
         '
-        'CuentaPorCobrarToolStripMenuItem
+        'OrdenDeCompraToolStripMenuItem
         '
-        Me.CuentaPorCobrarToolStripMenuItem.Name = "CuentaPorCobrarToolStripMenuItem"
-        Me.CuentaPorCobrarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.CuentaPorCobrarToolStripMenuItem.Text = "Cuentas por Cobrar"
-        '
-        'CuentasPorPagarToolStripMenuItem
-        '
-        Me.CuentasPorPagarToolStripMenuItem.Name = "CuentasPorPagarToolStripMenuItem"
-        Me.CuentasPorPagarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.CuentasPorPagarToolStripMenuItem.Text = "Cuentas por Pagar"
+        Me.OrdenDeCompraToolStripMenuItem.Name = "OrdenDeCompraToolStripMenuItem"
+        Me.OrdenDeCompraToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OrdenDeCompraToolStripMenuItem.Text = "Orden De Compra"
         '
         'Principal
         '
@@ -308,4 +315,5 @@ Partial Class Principal
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CuentaPorCobrarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CuentasPorPagarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OrdenDeCompraToolStripMenuItem As ToolStripMenuItem
 End Class
