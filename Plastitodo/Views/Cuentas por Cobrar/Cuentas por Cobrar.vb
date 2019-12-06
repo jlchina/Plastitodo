@@ -47,7 +47,7 @@ Public Class CuentasCobrar
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Txtmonto.TextChanged
+    Private Sub Txtmonto_TextChanged(sender As Object, e As EventArgs) Handles TxtAnticipo.TextChanged
 
         Dim total, anticipo, monto As Decimal
         If String.IsNullOrWhiteSpace(TxtSaldoTotal.Text) Then
@@ -72,7 +72,7 @@ Public Class CuentasCobrar
 
     End Sub
 
-    Private Sub TxtAbono_TextChanged(sender As Object, e As EventArgs)
+    Private Sub TxtAnticipo_TextChanged(sender As Object, e As EventArgs)
         Dim total, monto, anticipo As Decimal
         If String.IsNullOrWhiteSpace(TxtSaldoTotal.Text) Then
             total = 0
@@ -124,16 +124,26 @@ Public Class CuentasCobrar
             Dim conexion As New MySqlConnection(ConnectionString2)
 
             Dim consulta As New StringBuilder
+
             consulta.Clear()
             consulta.AppendLine("insert into cuenta_cobrar (rfc,monto,anticipo,No_factura,saldo_total,metodo_pago,plazo)")
             consulta.AppendLine($"values ('{TextBoxRfc.Text}','{Txtmonto.Text}',")
-            consulta.AppendLine($"'{ TxtAnticipo.Text}','{TxtNofacturaAbono.Text}','{TxtSaldoTotal.Text}','{ComboBoxmetodopago.Text}','{TxtPlazo.Text}')")
-
+            consulta.AppendLine($"'{TxtAnticipo.Text}','{txtNotaFactura.Text}','{TxtSaldoTotal.Text}','{ComboBoxmetodopago.Text}','{TxtPlazo.Text}')")
             Dim COMANDO As New MySqlCommand(consulta.ToString(), conexion)
 
             conexion.Open()
             COMANDO.ExecuteNonQuery()
             conexion.Close()
+
+            Dim consulta2 As New StringBuilder
+            consulta2.Clear()
+            consulta2.AppendLine("insert into abonos (No_factura, rfc, metodo_pago, saldo_final)")
+            consulta2.AppendLine($"values ('{txtNotaFactura.Text}','{TextBoxRfc.Text}','{ComboBoxmetodopago.Text}','{TxtSaldoTotal.Text}')")
+            Dim comando2 As New MySqlCommand(consulta2.ToString(), conexion)
+            conexion.Open()
+            comando2.ExecuteNonQuery()
+            conexion.Close()
+
 
 
 
@@ -147,8 +157,7 @@ Public Class CuentasCobrar
     Private Sub ButtonBuscarFactura_Click(sender As Object, e As EventArgs) Handles ButtonBuscarFactura.Click
         Try
             Dim conexion As New MySqlConnection(ConnectionString2)
-            Dim query = "select a.fecha_abono, Nombre, telefono, email, a.rfc, razon_social, a.saldo_final, a.saldo_anterior from cliente c join abonos a on  c.rfc = a.rfc where a.No_factura = ? order by a.fecha_abono desc "
-            'Dim query = "select cc.fecha_pago, Nombre,telefono,email,cc.rfc,razon_social,cc.saldo_total from cliente c join cuenta_cobrar cc on  c.rfc = cc.rfc where cc.No_factura = ? order by cc.fecha_pago desc "
+            Dim query = "select a.fecha_abono, Nombre, telefono, email, a.rfc, razon_social, a.saldo_final, a.saldo_anterior, a.abono from cliente c join abonos a on  c.rfc = a.rfc where a.No_factura = ? order by a.fecha_abono desc "
             Dim adap As New MySqlDataAdapter(query, conexion)
             adap.SelectCommand.Parameters.AddWithValue("@p1", TxtNofacturaAbono.Text)
 
@@ -163,6 +172,8 @@ Public Class CuentasCobrar
                 TxtTelefonoAbono.Text = dt.Rows(0).Item(2).ToString()
                 TxtEmailAbono.Text = dt.Rows(0).Item(3).ToString()
                 TxtRfcAbono.Text = dt.Rows(0).Item(4).ToString()
+                TxtAbonoAbono.Text = dt.Rows(0).Item(8).ToString
+
 
 
                 With DataGridViewabonos

@@ -75,6 +75,7 @@ Partial Class CuentasCobrar
         Me.Label14 = New System.Windows.Forms.Label()
         Me.fecha_abono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.saldo_anterior = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.abono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.saldo_final = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -469,7 +470,7 @@ Partial Class CuentasCobrar
         Me.DataGridViewabonos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DataGridViewabonos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridViewabonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewabonos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fecha_abono, Me.saldo_anterior, Me.saldo_final})
+        Me.DataGridViewabonos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fecha_abono, Me.saldo_anterior, Me.abono, Me.saldo_final})
         Me.DataGridViewabonos.Location = New System.Drawing.Point(6, 225)
         Me.DataGridViewabonos.Name = "DataGridViewabonos"
         Me.DataGridViewabonos.ReadOnly = True
@@ -574,21 +575,31 @@ Partial Class CuentasCobrar
         '
         Me.saldo_anterior.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.saldo_anterior.DataPropertyName = "saldo_anterior"
-        Me.saldo_anterior.HeaderText = "Ultimo abono"
+        Me.saldo_anterior.HeaderText = "Saldo Anterior"
         Me.saldo_anterior.Name = "saldo_anterior"
         Me.saldo_anterior.ReadOnly = True
         Me.saldo_anterior.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.saldo_anterior.Width = 87
+        Me.saldo_anterior.Width = 90
+        '
+        'abono
+        '
+        Me.abono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.abono.DataPropertyName = "abono"
+        Me.abono.HeaderText = "Ultimo abono"
+        Me.abono.Name = "abono"
+        Me.abono.ReadOnly = True
+        Me.abono.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.abono.Width = 87
         '
         'saldo_final
         '
         Me.saldo_final.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.saldo_final.DataPropertyName = "saldo_final"
-        Me.saldo_final.HeaderText = "Saldo final"
+        Me.saldo_final.HeaderText = "Saldo"
         Me.saldo_final.Name = "saldo_final"
         Me.saldo_final.ReadOnly = True
         Me.saldo_final.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.saldo_final.Width = 75
+        Me.saldo_final.Width = 59
         '
         'CuentasCobrar
         '
@@ -667,5 +678,6 @@ Partial Class CuentasCobrar
     Friend WithEvents ButtonGuardarAbono As Button
     Friend WithEvents fecha_abono As DataGridViewTextBoxColumn
     Friend WithEvents saldo_anterior As DataGridViewTextBoxColumn
+    Friend WithEvents abono As DataGridViewTextBoxColumn
     Friend WithEvents saldo_final As DataGridViewTextBoxColumn
 End Class
