@@ -71,6 +71,8 @@ Partial Class OrdenCompra
         '
         'GroupBox5
         '
+        Me.GroupBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox5.Controls.Add(Me.TxtFecha)
         Me.GroupBox5.Controls.Add(Me.TxtFolio)
@@ -182,7 +184,7 @@ Partial Class OrdenCompra
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.GroupBox1.Location = New System.Drawing.Point(9, 110)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(451, 78)
+        Me.GroupBox1.Size = New System.Drawing.Size(401, 78)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar producto"
@@ -192,14 +194,14 @@ Partial Class OrdenCompra
         Me.CmbProducto.FormattingEnabled = True
         Me.CmbProducto.Location = New System.Drawing.Point(21, 34)
         Me.CmbProducto.Name = "CmbProducto"
-        Me.CmbProducto.Size = New System.Drawing.Size(332, 24)
+        Me.CmbProducto.Size = New System.Drawing.Size(286, 24)
         Me.CmbProducto.TabIndex = 3
         '
         'BBuscarCodigo
         '
         Me.BBuscarCodigo.BackgroundImage = CType(resources.GetObject("BBuscarCodigo.BackgroundImage"), System.Drawing.Image)
         Me.BBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BBuscarCodigo.Location = New System.Drawing.Point(375, 22)
+        Me.BBuscarCodigo.Location = New System.Drawing.Point(328, 22)
         Me.BBuscarCodigo.Margin = New System.Windows.Forms.Padding(4)
         Me.BBuscarCodigo.Name = "BBuscarCodigo"
         Me.BBuscarCodigo.Size = New System.Drawing.Size(57, 45)
@@ -208,6 +210,7 @@ Partial Class OrdenCompra
         '
         'DgvPedido
         '
+        Me.DgvPedido.AllowUserToAddRows = False
         Me.DgvPedido.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -284,6 +287,8 @@ Partial Class OrdenCompra
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.TxtTot)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.TxtImpTot)
@@ -356,6 +361,7 @@ Partial Class OrdenCompra
         '
         'GroupBox4
         '
+        Me.GroupBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.BtnGuardar)
         Me.GroupBox4.Controls.Add(Me.TxtComentarios)
         Me.GroupBox4.Controls.Add(Me.Label7)

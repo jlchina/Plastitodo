@@ -245,6 +245,7 @@ Public Class OfertaVentaForm
                 End If
 
                 DgvLista.Rows(Filad).Cells(9).Value = CStr(Format(PrecioUnidad * CDec(Cantidad), "$ #,###,##0.00"))
+
                 Contar()
 
         End Select

@@ -39,7 +39,7 @@ Public Class CatalogoProveedor
 
         If val > 0 Then
             band = False
-        ElseIf band = True Then
+        Else band = True
         End If
 
         If (Textnombre.Text IsNot "" And Textdire.Text IsNot "" And Textcol.Text IsNot "" And Textcuidad.Text IsNot "" And Textcp.Text IsNot "" And Texttel.Text IsNot "" And Textcorreo.Text IsNot "" And Textcontacto.Text IsNot "" And Textcontacto2.Text IsNot "" And Textcorreo.Text IsNot "" And Txt_rfc.Text IsNot "") Then
