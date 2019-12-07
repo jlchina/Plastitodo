@@ -131,6 +131,12 @@
     <Compile Include="Views\Cuentas por Cobrar\BisquedaCliente3.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Cuentas por Cobrar\BusquedaFacturaAbono.Designer.vb">
+      <DependentUpon>BusquedaFacturaAbono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cuentas por Cobrar\BusquedaFacturaAbono.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Reportes\Hist_PrecioPublico.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -391,6 +397,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\Cuentas por Cobrar\BisquedaCliente3.resx">
       <DependentUpon>BisquedaCliente3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Cuentas por Cobrar\BusquedaFacturaAbono.resx">
+      <DependentUpon>BusquedaFacturaAbono.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Hist_PrecioPublico.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

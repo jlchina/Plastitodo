@@ -257,4 +257,6 @@ Public Class CatalogoProveedor
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
 End Class

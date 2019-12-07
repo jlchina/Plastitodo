@@ -52,33 +52,39 @@ Partial Class CuentasCobrar
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.AbonoCuenta = New System.Windows.Forms.GroupBox()
-        Me.TxtAbono = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Txtnofactura = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.DataGridViewabonos = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.ButtonBuscarFactura = New System.Windows.Forms.Button()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TxtRfcAbono = New System.Windows.Forms.TextBox()
+        Me.TxtEmailAbono = New System.Windows.Forms.TextBox()
+        Me.TxtSaldoFinalAbono = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtTelefonoAbono = New System.Windows.Forms.TextBox()
+        Me.TxtNombreAbono = New System.Windows.Forms.TextBox()
+        Me.DataGridViewabonos = New System.Windows.Forms.DataGridView()
+        Me.AbonoCuenta = New System.Windows.Forms.GroupBox()
         Me.ButtonGuardarAbono = New System.Windows.Forms.Button()
+        Me.ComboBoxMetodoPagoAbono = New System.Windows.Forms.ComboBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.ButtonBuscarFactura = New System.Windows.Forms.Button()
+        Me.TxtAbonoAbono = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TxtNofacturaAbono = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.fecha_abono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.saldo_anterior = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.abono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.saldo_final = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.AbonoCuenta.SuspendLayout()
-        CType(Me.DataGridViewabonos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.DataGridViewabonos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AbonoCuenta.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -88,7 +94,7 @@ Partial Class CuentasCobrar
         Me.TabControl1.Location = New System.Drawing.Point(13, 13)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(727, 402)
+        Me.TabControl1.Size = New System.Drawing.Size(747, 429)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -98,9 +104,9 @@ Partial Class CuentasCobrar
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(719, 376)
+        Me.TabPage1.Size = New System.Drawing.Size(739, 403)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.Text = "Alta de Cliente por Cobrar"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'GroupBox2
@@ -168,7 +174,7 @@ Partial Class CuentasCobrar
         '
         'TxtPlazo
         '
-        Me.TxtPlazo.Location = New System.Drawing.Point(425, 75)
+        Me.TxtPlazo.Location = New System.Drawing.Point(464, 74)
         Me.TxtPlazo.Name = "TxtPlazo"
         Me.TxtPlazo.Size = New System.Drawing.Size(133, 20)
         Me.TxtPlazo.TabIndex = 17
@@ -176,7 +182,7 @@ Partial Class CuentasCobrar
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(331, 81)
+        Me.Label13.Location = New System.Drawing.Point(370, 80)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(33, 13)
         Me.Label13.TabIndex = 16
@@ -185,7 +191,7 @@ Partial Class CuentasCobrar
         'ComboBoxmetodopago
         '
         Me.ComboBoxmetodopago.FormattingEnabled = True
-        Me.ComboBoxmetodopago.Location = New System.Drawing.Point(425, 34)
+        Me.ComboBoxmetodopago.Location = New System.Drawing.Point(464, 33)
         Me.ComboBoxmetodopago.Name = "ComboBoxmetodopago"
         Me.ComboBoxmetodopago.Size = New System.Drawing.Size(133, 21)
         Me.ComboBoxmetodopago.TabIndex = 15
@@ -193,7 +199,7 @@ Partial Class CuentasCobrar
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(331, 37)
+        Me.Label12.Location = New System.Drawing.Point(370, 36)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(86, 13)
         Me.Label12.TabIndex = 14
@@ -201,7 +207,7 @@ Partial Class CuentasCobrar
         '
         'TxtSaldoTotal
         '
-        Me.TxtSaldoTotal.Location = New System.Drawing.Point(425, 111)
+        Me.TxtSaldoTotal.Location = New System.Drawing.Point(464, 110)
         Me.TxtSaldoTotal.Name = "TxtSaldoTotal"
         Me.TxtSaldoTotal.Size = New System.Drawing.Size(133, 20)
         Me.TxtSaldoTotal.TabIndex = 13
@@ -209,7 +215,7 @@ Partial Class CuentasCobrar
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(331, 115)
+        Me.Label3.Location = New System.Drawing.Point(370, 114)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 4
@@ -260,7 +266,7 @@ Partial Class CuentasCobrar
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(373, 16)
+        Me.Button2.Location = New System.Drawing.Point(378, 18)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 10
@@ -348,188 +354,258 @@ Partial Class CuentasCobrar
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(719, 376)
+        Me.TabPage2.Size = New System.Drawing.Size(739, 403)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.Text = "Abonos a Cuenta"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'AbonoCuenta
-        '
-        Me.AbonoCuenta.Controls.Add(Me.ButtonGuardarAbono)
-        Me.AbonoCuenta.Controls.Add(Me.ButtonBuscarFactura)
-        Me.AbonoCuenta.Controls.Add(Me.TextBox2)
-        Me.AbonoCuenta.Controls.Add(Me.Label10)
-        Me.AbonoCuenta.Controls.Add(Me.TxtAbono)
-        Me.AbonoCuenta.Controls.Add(Me.Label11)
-        Me.AbonoCuenta.Controls.Add(Me.Txtnofactura)
-        Me.AbonoCuenta.Controls.Add(Me.Label14)
-        Me.AbonoCuenta.Location = New System.Drawing.Point(4, 20)
-        Me.AbonoCuenta.Name = "AbonoCuenta"
-        Me.AbonoCuenta.Size = New System.Drawing.Size(268, 183)
-        Me.AbonoCuenta.TabIndex = 0
-        Me.AbonoCuenta.TabStop = False
-        Me.AbonoCuenta.Text = "Abono a Cuenta"
-        '
-        'TxtAbono
-        '
-        Me.TxtAbono.Location = New System.Drawing.Point(95, 96)
-        Me.TxtAbono.Name = "TxtAbono"
-        Me.TxtAbono.Size = New System.Drawing.Size(140, 20)
-        Me.TxtAbono.TabIndex = 14
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 99)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 13)
-        Me.Label11.TabIndex = 13
-        Me.Label11.Text = "Abono"
-        '
-        'Txtnofactura
-        '
-        Me.Txtnofactura.Location = New System.Drawing.Point(95, 36)
-        Me.Txtnofactura.Name = "Txtnofactura"
-        Me.Txtnofactura.Size = New System.Drawing.Size(140, 20)
-        Me.Txtnofactura.TabIndex = 8
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(6, 39)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(63, 13)
-        Me.Label14.TabIndex = 7
-        Me.Label14.Text = "No. Factura"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(6, 125)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(59, 13)
-        Me.Label10.TabIndex = 15
-        Me.Label10.Text = "Saldo Final"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(95, 122)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox2.TabIndex = 16
-        '
-        'DataGridViewabonos
-        '
-        Me.DataGridViewabonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewabonos.Location = New System.Drawing.Point(4, 219)
-        Me.DataGridViewabonos.Name = "DataGridViewabonos"
-        Me.DataGridViewabonos.Size = New System.Drawing.Size(692, 150)
-        Me.DataGridViewabonos.TabIndex = 1
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.TextBox4)
-        Me.GroupBox3.Controls.Add(Me.TextBox5)
-        Me.GroupBox3.Controls.Add(Me.TextBox6)
-        Me.GroupBox3.Controls.Add(Me.TextBox7)
-        Me.GroupBox3.Controls.Add(Me.Label15)
-        Me.GroupBox3.Controls.Add(Me.Label16)
-        Me.GroupBox3.Controls.Add(Me.Label17)
         Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Location = New System.Drawing.Point(284, 20)
+        Me.GroupBox3.Controls.Add(Me.Label17)
+        Me.GroupBox3.Controls.Add(Me.Label16)
+        Me.GroupBox3.Controls.Add(Me.Label15)
+        Me.GroupBox3.Controls.Add(Me.TxtRfcAbono)
+        Me.GroupBox3.Controls.Add(Me.TxtEmailAbono)
+        Me.GroupBox3.Controls.Add(Me.TxtSaldoFinalAbono)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.TxtTelefonoAbono)
+        Me.GroupBox3.Controls.Add(Me.TxtNombreAbono)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(412, 183)
-        Me.GroupBox3.TabIndex = 11
+        Me.GroupBox3.Size = New System.Drawing.Size(703, 112)
+        Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Informacion del Cliente"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(81, 109)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(268, 20)
-        Me.TextBox4.TabIndex = 9
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(81, 140)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(268, 20)
-        Me.TextBox5.TabIndex = 8
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(81, 39)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(268, 20)
-        Me.TextBox6.TabIndex = 7
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Location = New System.Drawing.Point(81, 74)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(268, 20)
-        Me.TextBox7.TabIndex = 6
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(6, 112)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(49, 13)
-        Me.Label15.TabIndex = 5
-        Me.Label15.Text = "Telefono"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(3, 140)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(32, 13)
-        Me.Label16.TabIndex = 4
-        Me.Label16.Text = "Email"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(3, 39)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(70, 13)
-        Me.Label17.TabIndex = 3
-        Me.Label17.Text = "Razon Social"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(7, 75)
+        Me.Label18.Location = New System.Drawing.Point(407, 22)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(28, 13)
-        Me.Label18.TabIndex = 2
+        Me.Label18.TabIndex = 7
         Me.Label18.Text = "RFC"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(264, 55)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(32, 13)
+        Me.Label17.TabIndex = 6
+        Me.Label17.Text = "Email"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(12, 52)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(49, 13)
+        Me.Label16.TabIndex = 5
+        Me.Label16.Text = "Telefono"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(17, 22)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(44, 13)
+        Me.Label15.TabIndex = 4
+        Me.Label15.Text = "Nombre"
+        '
+        'TxtRfcAbono
+        '
+        Me.TxtRfcAbono.Location = New System.Drawing.Point(441, 22)
+        Me.TxtRfcAbono.Name = "TxtRfcAbono"
+        Me.TxtRfcAbono.ReadOnly = True
+        Me.TxtRfcAbono.Size = New System.Drawing.Size(156, 20)
+        Me.TxtRfcAbono.TabIndex = 3
+        '
+        'TxtEmailAbono
+        '
+        Me.TxtEmailAbono.Location = New System.Drawing.Point(302, 52)
+        Me.TxtEmailAbono.Name = "TxtEmailAbono"
+        Me.TxtEmailAbono.ReadOnly = True
+        Me.TxtEmailAbono.Size = New System.Drawing.Size(295, 20)
+        Me.TxtEmailAbono.TabIndex = 2
+        '
+        'TxtSaldoFinalAbono
+        '
+        Me.TxtSaldoFinalAbono.Location = New System.Drawing.Point(92, 78)
+        Me.TxtSaldoFinalAbono.Name = "TxtSaldoFinalAbono"
+        Me.TxtSaldoFinalAbono.ReadOnly = True
+        Me.TxtSaldoFinalAbono.Size = New System.Drawing.Size(140, 20)
+        Me.TxtSaldoFinalAbono.TabIndex = 16
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(15, 83)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(34, 13)
+        Me.Label10.TabIndex = 15
+        Me.Label10.Text = "Saldo"
+        '
+        'TxtTelefonoAbono
+        '
+        Me.TxtTelefonoAbono.Location = New System.Drawing.Point(92, 52)
+        Me.TxtTelefonoAbono.Name = "TxtTelefonoAbono"
+        Me.TxtTelefonoAbono.ReadOnly = True
+        Me.TxtTelefonoAbono.Size = New System.Drawing.Size(154, 20)
+        Me.TxtTelefonoAbono.TabIndex = 1
+        '
+        'TxtNombreAbono
+        '
+        Me.TxtNombreAbono.Location = New System.Drawing.Point(92, 22)
+        Me.TxtNombreAbono.Name = "TxtNombreAbono"
+        Me.TxtNombreAbono.ReadOnly = True
+        Me.TxtNombreAbono.Size = New System.Drawing.Size(307, 20)
+        Me.TxtNombreAbono.TabIndex = 0
+        '
+        'DataGridViewabonos
+        '
+        Me.DataGridViewabonos.AllowUserToAddRows = False
+        Me.DataGridViewabonos.AllowUserToDeleteRows = False
+        Me.DataGridViewabonos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridViewabonos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridViewabonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewabonos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fecha_abono, Me.saldo_anterior, Me.abono, Me.saldo_final})
+        Me.DataGridViewabonos.Location = New System.Drawing.Point(6, 225)
+        Me.DataGridViewabonos.Name = "DataGridViewabonos"
+        Me.DataGridViewabonos.ReadOnly = True
+        Me.DataGridViewabonos.Size = New System.Drawing.Size(703, 159)
+        Me.DataGridViewabonos.TabIndex = 1
+        '
+        'AbonoCuenta
+        '
+        Me.AbonoCuenta.Controls.Add(Me.ButtonGuardarAbono)
+        Me.AbonoCuenta.Controls.Add(Me.ComboBoxMetodoPagoAbono)
+        Me.AbonoCuenta.Controls.Add(Me.Label19)
+        Me.AbonoCuenta.Controls.Add(Me.ButtonBuscarFactura)
+        Me.AbonoCuenta.Controls.Add(Me.TxtAbonoAbono)
+        Me.AbonoCuenta.Controls.Add(Me.Label11)
+        Me.AbonoCuenta.Controls.Add(Me.TxtNofacturaAbono)
+        Me.AbonoCuenta.Controls.Add(Me.Label14)
+        Me.AbonoCuenta.Location = New System.Drawing.Point(6, 124)
+        Me.AbonoCuenta.Name = "AbonoCuenta"
+        Me.AbonoCuenta.Size = New System.Drawing.Size(703, 95)
+        Me.AbonoCuenta.TabIndex = 0
+        Me.AbonoCuenta.TabStop = False
+        Me.AbonoCuenta.Text = "Abono a Cuenta"
+        '
+        'ButtonGuardarAbono
+        '
+        Me.ButtonGuardarAbono.Location = New System.Drawing.Point(576, 58)
+        Me.ButtonGuardarAbono.Name = "ButtonGuardarAbono"
+        Me.ButtonGuardarAbono.Size = New System.Drawing.Size(107, 28)
+        Me.ButtonGuardarAbono.TabIndex = 23
+        Me.ButtonGuardarAbono.Text = "Aplicar Pago"
+        Me.ButtonGuardarAbono.UseVisualStyleBackColor = True
+        '
+        'ComboBoxMetodoPagoAbono
+        '
+        Me.ComboBoxMetodoPagoAbono.FormattingEnabled = True
+        Me.ComboBoxMetodoPagoAbono.Location = New System.Drawing.Point(543, 31)
+        Me.ComboBoxMetodoPagoAbono.Name = "ComboBoxMetodoPagoAbono"
+        Me.ComboBoxMetodoPagoAbono.Size = New System.Drawing.Size(140, 21)
+        Me.ComboBoxMetodoPagoAbono.TabIndex = 20
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(451, 34)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(86, 13)
+        Me.Label19.TabIndex = 19
+        Me.Label19.Text = "Metodo de Pago"
         '
         'ButtonBuscarFactura
         '
-        Me.ButtonBuscarFactura.Location = New System.Drawing.Point(170, 63)
+        Me.ButtonBuscarFactura.Location = New System.Drawing.Point(145, 58)
         Me.ButtonBuscarFactura.Name = "ButtonBuscarFactura"
         Me.ButtonBuscarFactura.Size = New System.Drawing.Size(65, 23)
         Me.ButtonBuscarFactura.TabIndex = 17
         Me.ButtonBuscarFactura.Text = "Buscar"
         Me.ButtonBuscarFactura.UseVisualStyleBackColor = True
         '
-        'ButtonGuardarAbono
+        'TxtAbonoAbono
         '
-        Me.ButtonGuardarAbono.Location = New System.Drawing.Point(170, 149)
-        Me.ButtonGuardarAbono.Name = "ButtonGuardarAbono"
-        Me.ButtonGuardarAbono.Size = New System.Drawing.Size(65, 23)
-        Me.ButtonGuardarAbono.TabIndex = 18
-        Me.ButtonGuardarAbono.Text = "Guardar"
-        Me.ButtonGuardarAbono.UseVisualStyleBackColor = True
+        Me.TxtAbonoAbono.Location = New System.Drawing.Point(305, 32)
+        Me.TxtAbonoAbono.Name = "TxtAbonoAbono"
+        Me.TxtAbonoAbono.Size = New System.Drawing.Size(113, 20)
+        Me.TxtAbonoAbono.TabIndex = 14
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(229, 35)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(70, 13)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "Monto abono"
+        '
+        'TxtNofacturaAbono
+        '
+        Me.TxtNofacturaAbono.Location = New System.Drawing.Point(99, 32)
+        Me.TxtNofacturaAbono.Name = "TxtNofacturaAbono"
+        Me.TxtNofacturaAbono.Size = New System.Drawing.Size(111, 20)
+        Me.TxtNofacturaAbono.TabIndex = 8
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(6, 35)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(63, 13)
+        Me.Label14.TabIndex = 7
+        Me.Label14.Text = "No. Factura"
+        '
+        'fecha_abono
+        '
+        Me.fecha_abono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.fecha_abono.DataPropertyName = "fecha_abono"
+        Me.fecha_abono.HeaderText = "Fecha de pago"
+        Me.fecha_abono.Name = "fecha_abono"
+        Me.fecha_abono.ReadOnly = True
+        Me.fecha_abono.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.fecha_abono.Width = 74
+        '
+        'saldo_anterior
+        '
+        Me.saldo_anterior.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.saldo_anterior.DataPropertyName = "saldo_anterior"
+        Me.saldo_anterior.HeaderText = "Saldo Anterior"
+        Me.saldo_anterior.Name = "saldo_anterior"
+        Me.saldo_anterior.ReadOnly = True
+        Me.saldo_anterior.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.saldo_anterior.Width = 90
+        '
+        'abono
+        '
+        Me.abono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.abono.DataPropertyName = "abono"
+        Me.abono.HeaderText = "Ultimo abono"
+        Me.abono.Name = "abono"
+        Me.abono.ReadOnly = True
+        Me.abono.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.abono.Width = 87
+        '
+        'saldo_final
+        '
+        Me.saldo_final.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.saldo_final.DataPropertyName = "saldo_final"
+        Me.saldo_final.HeaderText = "Saldo"
+        Me.saldo_final.Name = "saldo_final"
+        Me.saldo_final.ReadOnly = True
+        Me.saldo_final.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.saldo_final.Width = 59
         '
         'CuentasCobrar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(766, 413)
+        Me.ClientSize = New System.Drawing.Size(812, 476)
         Me.Controls.Add(Me.TabControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CuentasCobrar"
@@ -541,11 +617,11 @@ Partial Class CuentasCobrar
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
-        Me.AbonoCuenta.ResumeLayout(False)
-        Me.AbonoCuenta.PerformLayout()
-        CType(Me.DataGridViewabonos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        CType(Me.DataGridViewabonos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AbonoCuenta.ResumeLayout(False)
+        Me.AbonoCuenta.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -576,26 +652,32 @@ Partial Class CuentasCobrar
     Friend WithEvents ComboBoxmetodopago As ComboBox
     Friend WithEvents Label12 As Label
     Friend WithEvents AbonoCuenta As GroupBox
-    Friend WithEvents Txtnofactura As TextBox
+    Friend WithEvents TxtNofacturaAbono As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtAnticipo As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents txtNotaFactura As TextBox
-    Friend WithEvents TxtAbono As TextBox
+    Friend WithEvents TxtAbonoAbono As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents DataGridViewabonos As DataGridView
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtSaldoFinalAbono As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents ButtonGuardarAbono As Button
     Friend WithEvents ButtonBuscarFactura As Button
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents TxtRfcAbono As TextBox
+    Friend WithEvents TxtEmailAbono As TextBox
+    Friend WithEvents TxtTelefonoAbono As TextBox
+    Friend WithEvents TxtNombreAbono As TextBox
+    Friend WithEvents ComboBoxMetodoPagoAbono As ComboBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents ButtonGuardarAbono As Button
+    Friend WithEvents fecha_abono As DataGridViewTextBoxColumn
+    Friend WithEvents saldo_anterior As DataGridViewTextBoxColumn
+    Friend WithEvents abono As DataGridViewTextBoxColumn
+    Friend WithEvents saldo_final As DataGridViewTextBoxColumn
 End Class

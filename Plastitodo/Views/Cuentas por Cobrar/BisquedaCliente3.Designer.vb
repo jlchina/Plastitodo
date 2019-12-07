@@ -37,7 +37,7 @@ Partial Class BisquedaCliente3
         '
         'Aceptar
         '
-        Me.Aceptar.Location = New System.Drawing.Point(670, 357)
+        Me.Aceptar.Location = New System.Drawing.Point(713, 356)
         Me.Aceptar.Name = "Aceptar"
         Me.Aceptar.Size = New System.Drawing.Size(75, 23)
         Me.Aceptar.TabIndex = 1
