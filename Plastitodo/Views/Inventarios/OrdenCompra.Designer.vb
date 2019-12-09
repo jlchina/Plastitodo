@@ -29,7 +29,7 @@ Partial Class OrdenCompra
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TxtCiudad = New System.Windows.Forms.TextBox()
+        Me.TxtPlazo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CmbProv = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -99,11 +99,11 @@ Partial Class OrdenCompra
         '
         'TxtFolio
         '
-        Me.TxtFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.TxtFolio.Location = New System.Drawing.Point(165, 22)
         Me.TxtFolio.Name = "TxtFolio"
         Me.TxtFolio.ReadOnly = True
-        Me.TxtFolio.Size = New System.Drawing.Size(113, 20)
+        Me.TxtFolio.Size = New System.Drawing.Size(113, 22)
         Me.TxtFolio.TabIndex = 9
         '
         'Label13
@@ -127,7 +127,7 @@ Partial Class OrdenCompra
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.TxtCiudad)
+        Me.GroupBox2.Controls.Add(Me.TxtPlazo)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.CmbProv)
         Me.GroupBox2.Controls.Add(Me.Label1)
@@ -142,21 +142,22 @@ Partial Class OrdenCompra
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información del proveedor"
         '
-        'TxtCiudad
+        'TxtPlazo
         '
-        Me.TxtCiudad.Location = New System.Drawing.Point(94, 57)
-        Me.TxtCiudad.Name = "TxtCiudad"
-        Me.TxtCiudad.Size = New System.Drawing.Size(291, 22)
-        Me.TxtCiudad.TabIndex = 2
+        Me.TxtPlazo.Location = New System.Drawing.Point(94, 57)
+        Me.TxtPlazo.Name = "TxtPlazo"
+        Me.TxtPlazo.Size = New System.Drawing.Size(291, 22)
+        Me.TxtPlazo.TabIndex = 2
+        Me.TxtPlazo.Text = "Ingresar cantidad de dias"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 60)
+        Me.Label2.Location = New System.Drawing.Point(41, 60)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 16)
+        Me.Label2.Size = New System.Drawing.Size(47, 16)
         Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Ciudad"
+        Me.Label2.Text = "Plazo"
         '
         'CmbProv
         '
@@ -406,6 +407,7 @@ Partial Class OrdenCompra
         '
         Me.TxtUsuario.Location = New System.Drawing.Point(6, 35)
         Me.TxtUsuario.Name = "TxtUsuario"
+        Me.TxtUsuario.ReadOnly = True
         Me.TxtUsuario.Size = New System.Drawing.Size(203, 20)
         Me.TxtUsuario.TabIndex = 6
         '
@@ -433,6 +435,7 @@ Partial Class OrdenCompra
         Me.Controls.Add(Me.GroupBox5)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "OrdenCompra"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Orden_compra"
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
@@ -454,7 +457,7 @@ Partial Class OrdenCompra
     Friend WithEvents Label13 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TxtCiudad As TextBox
+    Friend WithEvents TxtPlazo As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents CmbProv As ComboBox
     Friend WithEvents Label1 As Label

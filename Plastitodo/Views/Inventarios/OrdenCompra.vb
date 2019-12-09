@@ -1,4 +1,6 @@
-﻿Public Class OrdenCompra
+﻿Imports MySql.Data.MySqlClient
+Imports Plastitodo.conexion
+Public Class OrdenCompra
     Dim ImpTotal As Decimal = Nothing
     Dim Subtot As Decimal = Nothing
     Dim Sumtot As Decimal = Nothing
@@ -18,6 +20,31 @@
 
     Private Sub OrdenCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtFecha.Text = DateTime.Now.ToString("yyyy-MM-dd")
+        TxtUsuario.Text = usuariolog
+        Me.Text = "GENERAR ORDEN DE COMPRA"
+
+        'extraer el numero maximo de folios creados
+        Try
+            Dim foliomax As String = Nothing
+
+            con_string = New MySqlConnection
+            con_string.ConnectionString = ConnectionString2
+            con_string.Open()
+            foliomax = "Select ifnull(max(folio)+1,1) as MaxFol From orden_compra"
+            cmd = New MySqlCommand(foliomax, con_string)
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                While dr.Read
+                    'obtener valores de la consulta
+                    TxtFolio.Text = dr.Item("MaxFol").ToString 'si quieres mostrar el resultado en este textbox
+                End While
+            End If
+            dr.Close()
+            con_string.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub CmbProducto_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles CmbProducto.KeyUp
@@ -151,4 +178,45 @@
         End Select
     End Sub
 
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+        Dim ds As DataSet = New DataSet
+        Dim valid As Boolean = False
+        Dim lineas As New DataTable
+        Dim documento As Integer = 3
+
+        lineas.Columns.Add("id")
+        lineas.Columns.Add("codigo")
+        lineas.Columns.Add("cantidad")
+        lineas.Columns.Add("precio")
+        lineas.Columns.Add("descuento")
+        lineas.Columns.Add("subtotal")
+        lineas.Columns.Add("iva")
+        lineas.Columns.Add("total")
+
+        For Each Dt_Row As DataGridViewRow In DgvPedido.Rows
+            Dim row As DataRow = lineas.NewRow()
+            row("id") = Dt_Row.Cells("id").Value
+            row("codigo") = Dt_Row.Cells("codigo").Value
+            row("cantidad") = Dt_Row.Cells("cantidad").Value
+            row("precio") = CDec(Dt_Row.Cells("precio").Value)
+            row("descuento") = CDec(Dt_Row.Cells("descuento").Value)
+            row("subtotal") = CDec(Dt_Row.Cells("subtotal").Value)
+            row("iva") = CDec(Dt_Row.Cells("iva").Value)
+            row("total") = CDec(Dt_Row.Cells("total").Value)
+
+            lineas.Rows.Add(row)
+            valid = True
+        Next
+
+        ds.Tables.Add(lineas)
+
+        If (CmbProv.SelectedValue > 0 And TxtUsuario.Text IsNot "" And TxtSubTot.Text IsNot "" And valid) Then
+            If (DocumentoCompras(TxtFolio.Text, documento, CmbProv.SelectedValue, TxtPlazo.Text, TxtUsuario.Text, TxtComentarios.Text, CDec(TxtSubTot.Text), CDec(TxtImpTot.Text), CDec(TxtTot.Text), ds)) Then
+                MessageBox.Show("se ha creado el documento de compras exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Close()
+            End If
+        Else
+            MessageBox.Show("Favor de llenar la informacion necesaria", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
 End Class
