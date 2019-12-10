@@ -136,7 +136,7 @@ Public Class Principal
     End Sub
 
     Private Sub EntradasMercanciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradasMercanciaToolStripMenuItem.Click
-        Dim newEntraMerca As New EntradasMerca()
+        Dim newEntraMerca As New DocsCompra()
         newEntraMerca.MdiParent = Me
         newEntraMerca.Show()
     End Sub

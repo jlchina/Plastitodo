@@ -184,4 +184,45 @@ Module ComprasMod
         End Try
         Return ultimo
     End Function
+
+    Function GetFolios(ByVal prov As String, fecha As String)
+        Dim ds As DataSet = New DataSet
+        Dim sql = "Select o.folio, td.descripcion as tipo_documento,p.Nombre as proveedor,o.id_prov,o.usuario_comp,o.total,o.fecha_creacion as fecha_documento
+                    from orden_compra o
+                    left join tipos_documento td on o.tipo = td.id
+                    left join proveedor p on o.id_prov = p.idProveedor"
+        Dim where = ""
+        If (prov IsNot "") Then
+            where = where & "Where d.nombre like '%" & prov & "%'"
+        End If
+
+        If (fecha IsNot "") Then
+            If (where IsNot "") Then
+                where = where & " and date(o.fecha_creacion) = '" & fecha & "'"
+            Else
+                where = where & " Where date(o.fecha_creacion) = '" & fecha & "'"
+            End If
+        End If
+
+        sql = sql & where
+
+        Try
+            '---Abir conexion
+            conn = New MySqlConnection
+            conn.ConnectionString = ConnectionString2
+            conn.Open()
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(sql, conn)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(ds)
+
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Return ds
+    End Function
+
 End Module

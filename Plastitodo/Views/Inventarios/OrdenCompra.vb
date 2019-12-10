@@ -219,4 +219,8 @@ Public Class OrdenCompra
             MessageBox.Show("Favor de llenar la informacion necesaria", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+    Private Sub TxtPlazo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPlazo.KeyPress
+        solonumeros(e)
+    End Sub
 End Class

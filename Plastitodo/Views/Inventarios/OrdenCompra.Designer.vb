@@ -35,7 +35,6 @@ Partial Class OrdenCompra
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CmbProducto = New System.Windows.Forms.ComboBox()
-        Me.BBuscarCodigo = New System.Windows.Forms.Button()
         Me.DgvPedido = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,6 +60,7 @@ Partial Class OrdenCompra
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.BBuscarCodigo = New System.Windows.Forms.Button()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -197,17 +197,6 @@ Partial Class OrdenCompra
         Me.CmbProducto.Name = "CmbProducto"
         Me.CmbProducto.Size = New System.Drawing.Size(286, 24)
         Me.CmbProducto.TabIndex = 3
-        '
-        'BBuscarCodigo
-        '
-        Me.BBuscarCodigo.BackgroundImage = CType(resources.GetObject("BBuscarCodigo.BackgroundImage"), System.Drawing.Image)
-        Me.BBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BBuscarCodigo.Location = New System.Drawing.Point(328, 22)
-        Me.BBuscarCodigo.Margin = New System.Windows.Forms.Padding(4)
-        Me.BBuscarCodigo.Name = "BBuscarCodigo"
-        Me.BBuscarCodigo.Size = New System.Drawing.Size(57, 45)
-        Me.BBuscarCodigo.TabIndex = 4
-        Me.BBuscarCodigo.UseVisualStyleBackColor = True
         '
         'DgvPedido
         '
@@ -377,12 +366,16 @@ Partial Class OrdenCompra
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(542, 35)
+        Me.BtnGuardar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnGuardar.BackgroundImage = CType(resources.GetObject("BtnGuardar.BackgroundImage"), System.Drawing.Image)
+        Me.BtnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnGuardar.ForeColor = System.Drawing.Color.Black
+        Me.BtnGuardar.Location = New System.Drawing.Point(544, 9)
         Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(75, 36)
+        Me.BtnGuardar.Size = New System.Drawing.Size(82, 71)
         Me.BtnGuardar.TabIndex = 8
-        Me.BtnGuardar.Text = "Crear Orden De Compra"
-        Me.BtnGuardar.UseVisualStyleBackColor = True
+        Me.BtnGuardar.UseVisualStyleBackColor = False
         '
         'TxtComentarios
         '
@@ -421,6 +414,17 @@ Partial Class OrdenCompra
         Me.Label8.Size = New System.Drawing.Size(119, 13)
         Me.Label8.TabIndex = 20
         Me.Label8.Text = "Usuario de compras"
+        '
+        'BBuscarCodigo
+        '
+        Me.BBuscarCodigo.BackgroundImage = CType(resources.GetObject("BBuscarCodigo.BackgroundImage"), System.Drawing.Image)
+        Me.BBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BBuscarCodigo.Location = New System.Drawing.Point(328, 22)
+        Me.BBuscarCodigo.Margin = New System.Windows.Forms.Padding(4)
+        Me.BBuscarCodigo.Name = "BBuscarCodigo"
+        Me.BBuscarCodigo.Size = New System.Drawing.Size(57, 45)
+        Me.BBuscarCodigo.TabIndex = 4
+        Me.BBuscarCodigo.UseVisualStyleBackColor = True
         '
         'OrdenCompra
         '
