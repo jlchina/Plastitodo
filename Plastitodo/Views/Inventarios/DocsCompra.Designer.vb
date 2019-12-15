@@ -109,6 +109,7 @@ Partial Class DocsCompra
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.DgvOC)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DocsCompra"
         Me.Text = "DocsCompra"
         CType(Me.DgvOC, System.ComponentModel.ISupportInitialize).EndInit()

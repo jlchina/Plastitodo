@@ -50,7 +50,9 @@ Partial Class Entrada_compra
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CmbProducto = New System.Windows.Forms.ComboBox()
+        Me.BBuscarCodigo = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TxtProv = New System.Windows.Forms.TextBox()
         Me.TxtPlazo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -59,8 +61,7 @@ Partial Class Entrada_compra
         Me.TxtFolio = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.BBuscarCodigo = New System.Windows.Forms.Button()
-        Me.TxtProv = New System.Windows.Forms.TextBox()
+        Me.Btn_Act_Compra = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DgvPedido, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +73,7 @@ Partial Class Entrada_compra
         'GroupBox4
         '
         Me.GroupBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.Controls.Add(Me.Btn_Act_Compra)
         Me.GroupBox4.Controls.Add(Me.BtnGuardar)
         Me.GroupBox4.Controls.Add(Me.TxtComentarios)
         Me.GroupBox4.Controls.Add(Me.Label7)
@@ -80,7 +82,7 @@ Partial Class Entrada_compra
         Me.GroupBox4.ForeColor = System.Drawing.Color.Black
         Me.GroupBox4.Location = New System.Drawing.Point(12, 391)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(635, 83)
+        Me.GroupBox4.Size = New System.Drawing.Size(827, 83)
         Me.GroupBox4.TabIndex = 48
         Me.GroupBox4.TabStop = False
         '
@@ -89,7 +91,7 @@ Partial Class Entrada_compra
         Me.BtnGuardar.BackColor = System.Drawing.Color.Transparent
         Me.BtnGuardar.BackgroundImage = CType(resources.GetObject("BtnGuardar.BackgroundImage"), System.Drawing.Image)
         Me.BtnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnGuardar.Location = New System.Drawing.Point(542, 9)
+        Me.BtnGuardar.Location = New System.Drawing.Point(726, 9)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(87, 71)
         Me.BtnGuardar.TabIndex = 8
@@ -305,6 +307,17 @@ Partial Class Entrada_compra
         Me.CmbProducto.Size = New System.Drawing.Size(286, 24)
         Me.CmbProducto.TabIndex = 3
         '
+        'BBuscarCodigo
+        '
+        Me.BBuscarCodigo.BackgroundImage = CType(resources.GetObject("BBuscarCodigo.BackgroundImage"), System.Drawing.Image)
+        Me.BBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BBuscarCodigo.Location = New System.Drawing.Point(328, 22)
+        Me.BBuscarCodigo.Margin = New System.Windows.Forms.Padding(4)
+        Me.BBuscarCodigo.Name = "BBuscarCodigo"
+        Me.BBuscarCodigo.Size = New System.Drawing.Size(57, 45)
+        Me.BBuscarCodigo.TabIndex = 4
+        Me.BBuscarCodigo.UseVisualStyleBackColor = True
+        '
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
@@ -322,6 +335,14 @@ Partial Class Entrada_compra
         Me.GroupBox2.TabIndex = 45
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información del proveedor"
+        '
+        'TxtProv
+        '
+        Me.TxtProv.Location = New System.Drawing.Point(94, 22)
+        Me.TxtProv.Name = "TxtProv"
+        Me.TxtProv.ReadOnly = True
+        Me.TxtProv.Size = New System.Drawing.Size(291, 22)
+        Me.TxtProv.TabIndex = 1
         '
         'TxtPlazo
         '
@@ -404,24 +425,16 @@ Partial Class Entrada_compra
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "Folio"
         '
-        'BBuscarCodigo
+        'Btn_Act_Compra
         '
-        Me.BBuscarCodigo.BackgroundImage = CType(resources.GetObject("BBuscarCodigo.BackgroundImage"), System.Drawing.Image)
-        Me.BBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BBuscarCodigo.Location = New System.Drawing.Point(328, 22)
-        Me.BBuscarCodigo.Margin = New System.Windows.Forms.Padding(4)
-        Me.BBuscarCodigo.Name = "BBuscarCodigo"
-        Me.BBuscarCodigo.Size = New System.Drawing.Size(57, 45)
-        Me.BBuscarCodigo.TabIndex = 4
-        Me.BBuscarCodigo.UseVisualStyleBackColor = True
-        '
-        'TxtProv
-        '
-        Me.TxtProv.Location = New System.Drawing.Point(94, 22)
-        Me.TxtProv.Name = "TxtProv"
-        Me.TxtProv.ReadOnly = True
-        Me.TxtProv.Size = New System.Drawing.Size(291, 22)
-        Me.TxtProv.TabIndex = 1
+        Me.Btn_Act_Compra.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_Act_Compra.BackgroundImage = CType(resources.GetObject("Btn_Act_Compra.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Act_Compra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_Act_Compra.Location = New System.Drawing.Point(572, 9)
+        Me.Btn_Act_Compra.Name = "Btn_Act_Compra"
+        Me.Btn_Act_Compra.Size = New System.Drawing.Size(87, 71)
+        Me.Btn_Act_Compra.TabIndex = 22
+        Me.Btn_Act_Compra.UseVisualStyleBackColor = False
         '
         'Entrada_compra
         '
@@ -488,4 +501,5 @@ Partial Class Entrada_compra
     Friend WithEvents Label13 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents TxtProv As TextBox
+    Friend WithEvents Btn_Act_Compra As Button
 End Class

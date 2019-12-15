@@ -6,11 +6,55 @@ Public Class Entrada_compra
     Dim Sumtot As Decimal = Nothing
     Dim folio As Integer
     Dim Id_TipoCompra As Integer
+    Dim idprov As Integer
     Private Sub Entrada_compra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Text = "ENTREADA DE MERCANCIAS POR ORDEN DE COMPRA"
+        Me.Text = "ENTRADA DE MERCANCIAS POR ORDEN DE COMPRA"
         TxtFolio.Text = folio
+        'BtnGuardar.Enabled = False
+
+        If (folio > 0 And Id_TipoCompra > 0) Then
+            Dim DatosPedido As DataSet = GetDocCompra(folio, Id_TipoCompra)
+            For Each dr As DataRow In DatosPedido.Tables(0).Rows
+                TxtFolio.Text = dr(1)
+                TxtProv.Text = dr(12)
+                TxtUsuario.Text = dr(5)
+                TxtPlazo.Text = dr(4)
+                TxtComentarios.Text = dr(6)
+                TxtSubTot.Text = Format(CDec(dr(7)), "$ #,###,##0.00")
+                TxtImpTot.Text = Format(CDec(dr(8)), "$ #,###,##0.00")
+                TxtTot.Text = Format(CDec(dr(9)), "$ #,###,##0.00") '
+                TxtFecha.Text = Format(CDate(dr(10)), "yyyy-MM-dd")
+                idprov = dr(3)
+            Next
+            DetalleOC()
+        End If
+
     End Sub
 
+    Private Sub DetalleOC()
+        Try
+            Dim ds As DataSet = GetDetalleOrdenCompra(folio, Id_TipoCompra)
+
+            For Each dr As DataRow In ds.Tables(0).Rows
+                DgvPedido.Rows.Add()
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(10).Value = dr(0) 'Id
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(0).Value = dr(1) 'Codigo
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(1).Value = dr(2) 'Descripcion
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(2).Value = dr(3) 'Presentacion
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(3).Value = dr(4) 'Cantidad
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(4).Value = dr(10) 'Stock
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(5).Value = Format(CDec(dr(5)), "$ #,###,##0.00") 'Precio
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(6).Value = Format(CDec(dr(6)), "$ #,###,##0.00") 'Sub-total
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(7).Value = Format(CDec(dr(7)), "##0.00") 'Descuento
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(8).Value = Format(CDec(dr(8)), "$ #,###,##0.00") 'Iva
+                DgvPedido.Rows(DgvPedido.Rows.Count - 1).Cells(9).Value = Format(CDec(dr(9)), "$ #,###,##0.00") 'Total
+            Next
+
+            DgvPedido.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Public Sub GetDatosFolio(ByVal folioComp As Integer, tipo As Integer)
         '--------->Establecer valores obtenidos del GridViewForm
         folio = folioComp
@@ -86,5 +130,46 @@ Public Class Entrada_compra
         TxtImpTot.Text = CStr(Format(CDec(ImpTotal), "$ #,###,##0.00"))
         TxtTot.Text = CStr(Format(Sumtot, "$ #,###,##0.00"))
 
+    End Sub
+
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+        Dim ds As DataSet = New DataSet
+        Dim valid As Boolean = False
+
+        Dim lineas As New DataTable
+        lineas.Columns.Add("id")
+        lineas.Columns.Add("codigo")
+        lineas.Columns.Add("cantidad")
+        lineas.Columns.Add("precio")
+        lineas.Columns.Add("descuento")
+        lineas.Columns.Add("subtotal")
+        lineas.Columns.Add("iva")
+        lineas.Columns.Add("total")
+
+        For Each Dt_Row As DataGridViewRow In DgvPedido.Rows
+            Dim row As DataRow = lineas.NewRow()
+            row("id") = Dt_Row.Cells("id").Value
+            row("codigo") = Dt_Row.Cells("codigo").Value
+            row("cantidad") = Dt_Row.Cells("cantidad").Value
+            row("precio") = CDec(Dt_Row.Cells("precio").Value)
+            row("descuento") = CDec(Dt_Row.Cells("descuento").Value)
+            row("subtotal") = CDec(Dt_Row.Cells("subtotal").Value)
+            row("iva") = CDec(Dt_Row.Cells("iva").Value)
+            row("total") = CDec(Dt_Row.Cells("total").Value)
+
+            lineas.Rows.Add(row)
+            valid = True
+        Next
+
+        ds.Tables.Add(lineas)
+
+        If (idprov > 0 And TxtPlazo.Text IsNot "" And TxtUsuario.Text IsNot "" And valid) Then
+            If (EntradaCompras(folio, Id_TipoCompra, idprov, TxtPlazo.Text, TxtUsuario.Text, TxtComentarios.Text, CDec(TxtSubTot.Text), CDec(TxtImpTot.Text), CDec(TxtTot.Text), ds)) Then
+                MessageBox.Show("Documento guardado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Close()
+            End If
+        Else
+            MessageBox.Show("Favor de llenar la informacion necesaria", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 End Class

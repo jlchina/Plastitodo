@@ -81,10 +81,12 @@ Module ComprasMod
 
         Try
             Dim sql As String = Nothing
+
             '---Abir conexion
             conn = New MySqlConnection
             conn.ConnectionString = ConnectionString2
             conn.Open()
+
             'Iniciar comando de conexion
             sql = "INSERT INTO orden_compra (folio, tipo, id_prov, plazo, usuario_comp, comentarios, subtotal, iva, total)" & Chr(13) &
                     "VALUES (@folio, @tipo, @id_prov, @plazo, @usuario_comp, @comentarios, @subtotal, @iva, @total)"
@@ -225,4 +227,168 @@ Module ComprasMod
         Return ds
     End Function
 
+    Function GetDocCompra(ByVal folio As Integer, tipo As Integer)
+        Dim ds As DataSet = New DataSet
+        Dim sql = "Select OC.*,p.Nombre as proveedor, date(oc.fecha_creacion) as fecha
+                    from orden_compra oc
+                    left join proveedor p on oc.id_prov = p.idProveedor
+                    Where oc.folio = @folio and oc.tipo = @tipo;"
+        Try
+            '---Abir conexion
+            conn = New MySqlConnection
+            conn.ConnectionString = ConnectionString2
+            conn.Open()
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(sql, conn)
+            cmd.Parameters.Add(New MySqlParameter("@folio", folio))
+            cmd.Parameters.Add(New MySqlParameter("@tipo", tipo))
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(ds)
+
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Return ds
+    End Function
+
+    Function GetDetalleOrdenCompra(ByVal folio As Integer, tipo As Integer)
+        Dim ds As DataSet = New DataSet
+        Dim sql = "Select od.id,cp.codigo_barras,cp.descripcion,pp.presentacion,od.cant,od.precio,od.subtotal,od.descuento,od.iva,od.total,ifnull(i.existencia,0) as stock
+                    From orden_detalle od
+                    left join catalogo_productos cp on od.id_prod = cp.id
+                    left join presentacion_prod pp on od.id_pres = pp.id_pp
+                    left join inventario i on cp.codigo_barras = i.codigo_barras
+                    Where od.folio = @folio"
+        Try
+            '---Abir conexion
+            conn = New MySqlConnection
+            conn.ConnectionString = ConnectionString2
+            conn.Open()
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(sql, conn)
+            cmd.Parameters.Add(New MySqlParameter("@folio", folio))
+            cmd.Parameters.Add(New MySqlParameter("@tipo", tipo))
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(ds)
+
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Return ds
+    End Function
+
+    Function EntradaCompras(ByVal folio As Integer, tipocompras As Integer, proveedor As Integer, plazo As Integer, usuario As String, comentarios As String, subtotal As Decimal, iva As Decimal, total As Decimal, lineas As DataSet)
+        Dim folio_compras As Integer
+        Dim tipo_compras As Integer
+        Dim sql = Nothing
+        Dim prov As Integer = proveedor
+        Dim user As String = usuario
+        tipo_compras = tipocompras
+
+        If tipo_compras = 3 Then
+            tipo_compras = 4
+        End If
+
+        If (folio) Then
+            folio_compras = folio
+            sql = "UPDATE orden_compra SET
+                    folio = @folio,
+                    tipo = @tipo,
+                    id_prov = @id_prov,
+                    plazo = @plazo,
+                    usuario_comp = @usuario_comp,
+                    comentarios = @comentarios,
+                    subtotal = @subtotal,
+                    iva = @iva,
+                    total = @total
+                    WHERE folio = @folio and tipo = @tipo;"
+        Else
+            MsgBox("No se ha podido actualizar la orden de compra, revise la información")
+        End If
+        Try
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(sql, conn)
+
+            '---Abir conexion
+            conn = New MySqlConnection
+            conn.ConnectionString = ConnectionString2
+            conn.Open()
+            'Iniciar comando de conexion
+            cmd = New MySqlCommand(sql, conn)
+            'Pasar parametros
+            cmd.Parameters.Add(New MySqlParameter("@folio", folio))
+            cmd.Parameters.Add(New MySqlParameter("@tipo", tipo_compras))
+            cmd.Parameters.Add(New MySqlParameter("@id_prov", prov))
+            cmd.Parameters.Add(New MySqlParameter("@plazo", plazo))
+            cmd.Parameters.Add(New MySqlParameter("@comentarios", comentarios))
+            cmd.Parameters.Add(New MySqlParameter("@usuario_comp", user))
+            cmd.Parameters.Add(New MySqlParameter("@subtotal", subtotal))
+            cmd.Parameters.Add(New MySqlParameter("@iva", iva))
+            cmd.Parameters.Add(New MySqlParameter("@total", total))
+            'cmd.Parameters.Add(New MySqlParameter("@id_usuario", Id_usuario))
+            'If (folio) Then
+            '    cmd.Parameters.Add(New MySqlParameter("@folio", folio))
+            'End If
+            cmd.ExecuteNonQuery()
+
+            If (folio) Then
+            Else
+                folio_compras = CInt(cmd.LastInsertedId)
+            End If
+
+            For Each dr As DataRow In lineas.Tables(0).Rows
+                Dim sql2 = ""
+
+                If (folio) Then
+                    sql2 = "UPDATE plastibolsas.orden_detalle SET
+                            folio = @folio,
+                            tipo = @tipo,
+                            id_prod = (Select cp.id from catalogo_productos cp where cp.codigo_barras = @codigo Limit 1),
+                            cant = @cant,
+                            id_pres = (Select cp.presentacion from catalogo_productos cp where cp.codigo_barras = @id_prod Limit 1),
+                            precio = @precio,
+                            descuento = @descuento,
+                            id_iva = 1,
+                            subtotal = @subtotal,
+                            iva = @iva,
+                            total = @total
+                            WHERE id = @id;"
+                End If
+
+                cmd3 = New MySqlCommand(sql2, conn)
+                cmd3.Parameters.Add(New MySqlParameter("@folio", folio_compras))
+                cmd3.Parameters.Add(New MySqlParameter("@tipo", tipo_compras))
+                cmd3.Parameters.Add(New MySqlParameter("@id_prod", dr(1)))
+                cmd3.Parameters.Add(New MySqlParameter("@cant", dr(2)))
+                cmd3.Parameters.Add(New MySqlParameter("@id_prod", dr(2)))
+                cmd3.Parameters.Add(New MySqlParameter("@precio", dr(3)))
+                cmd3.Parameters.Add(New MySqlParameter("@descuento", dr(4)))
+                cmd3.Parameters.Add(New MySqlParameter("@subtotal", dr(5)))
+                cmd3.Parameters.Add(New MySqlParameter("@iva", dr(6)))
+                cmd3.Parameters.Add(New MySqlParameter("@total", dr(7)))
+                'If (folio) Then
+                '    cmd3.Parameters.Add(New MySqlParameter("@id", dr(0)))
+                'End If
+                cmd3.ExecuteNonQuery()
+
+                cmd2 = New MySqlCommand("Update inventario SET existencia = (Select * from (select (i.existencia+@cantidad) from inventario i where i.codigo_barras = @codigo Limit 1)t)  WHERE codigo_barras = @codigo", conn)
+                cmd2.Parameters.Add(New MySqlParameter("@codigo", dr(1)))
+                cmd2.Parameters.Add(New MySqlParameter("@cantidad", dr(2)))
+                cmd2.ExecuteScalar()
+
+            Next
+            conn.Close()
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Return 0
+    End Function
 End Module

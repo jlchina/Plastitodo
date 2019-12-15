@@ -1,6 +1,7 @@
 ﻿Public Class DocsCompra
     Private Sub DocsCompra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtFecha.Text = DateTime.Now.ToString("yyyy-MM-dd")
+        Me.Text = "LISTADO DE DOCUMENTOS DE COMPRAS"
     End Sub
 
     Private Sub BtnBusq_Click(sender As Object, e As EventArgs) Handles BtnBusq.Click
