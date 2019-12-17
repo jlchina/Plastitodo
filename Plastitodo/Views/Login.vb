@@ -42,8 +42,7 @@ Public Class Login
                         UserName = dr.Item("username")
                     End While
                 End If
-                usuariolog = Nombre
-                iduser = Id_usuario
+
                 dr.Close()
                 conn.Close()
 
@@ -74,5 +73,4 @@ Public Class Login
             Btn_ingresar_Click(sender, e)
         End If
     End Sub
-
 End Class

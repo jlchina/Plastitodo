@@ -167,7 +167,7 @@ Public Class OfertaVentaForm
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(2).Value = dr(3) 'Presentacion
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(3).Value = dr(4) 'Cantidad
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(4).Value = dr(10) 'Stock
-                DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(5).Value = Format(-CDec(dr(5)), "$ #,###,##0.00") 'Precio
+                DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(5).Value = Format(CDec(dr(5)), "$ #,###,##0.00") 'Precio
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(6).Value = Format(CDec(dr(6)), "$ #,###,##0.00") 'Sub-total
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(7).Value = Format(CDec(dr(7)), "##0.00") 'Descuento
                 DgvLista.Rows(DgvLista.Rows.Count - 1).Cells(8).Value = Format(CDec(dr(8)), "$ #,###,##0.00") 'Iva
@@ -245,7 +245,6 @@ Public Class OfertaVentaForm
                 End If
 
                 DgvLista.Rows(Filad).Cells(9).Value = CStr(Format(PrecioUnidad * CDec(Cantidad), "$ #,###,##0.00"))
-
                 Contar()
 
         End Select

@@ -136,7 +136,7 @@ Public Class Principal
     End Sub
 
     Private Sub EntradasMercanciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradasMercanciaToolStripMenuItem.Click
-        Dim newEntraMerca As New DocsCompra()
+        Dim newEntraMerca As New EntradasMerca()
         newEntraMerca.MdiParent = Me
         newEntraMerca.Show()
     End Sub
@@ -197,11 +197,11 @@ Public Class Principal
         newcuentasxcobrar.Show()
     End Sub
 
-    Private Sub CuentasPorPagarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CuentasPorPagarToolStripMenuItem.Click
-        Dim newcuentasxpagar As New cuentasxpagar()
-        newcuentasxpagar.MdiParent = Me
-        newcuentasxpagar.Show()
-    End Sub
+    'Private Sub CuentasPorPagarToolStripMenuItem_Click(sender As Object, e As EventArgs)
+    '    Dim newcuentasxpagar As New cuentasxpagar()
+    '    newcuentasxpagar.MdiParent = Me
+    '    newcuentasxpagar.Show()
+    'End Sub
 
     Private Sub OrdenDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdenDeCompraToolStripMenuItem.Click
         Dim newOrdenCompra As New OrdenCompra()

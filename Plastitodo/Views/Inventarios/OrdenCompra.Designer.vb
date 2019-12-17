@@ -29,12 +29,13 @@ Partial Class OrdenCompra
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TxtPlazo = New System.Windows.Forms.TextBox()
+        Me.TxtCiudad = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CmbProv = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CmbProducto = New System.Windows.Forms.ComboBox()
+        Me.BBuscarCodigo = New System.Windows.Forms.Button()
         Me.DgvPedido = New System.Windows.Forms.DataGridView()
         Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,7 +61,6 @@ Partial Class OrdenCompra
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.BBuscarCodigo = New System.Windows.Forms.Button()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -71,8 +71,6 @@ Partial Class OrdenCompra
         '
         'GroupBox5
         '
-        Me.GroupBox5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox5.Controls.Add(Me.TxtFecha)
         Me.GroupBox5.Controls.Add(Me.TxtFolio)
@@ -99,11 +97,11 @@ Partial Class OrdenCompra
         '
         'TxtFolio
         '
-        Me.TxtFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.TxtFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtFolio.Location = New System.Drawing.Point(165, 22)
         Me.TxtFolio.Name = "TxtFolio"
         Me.TxtFolio.ReadOnly = True
-        Me.TxtFolio.Size = New System.Drawing.Size(113, 22)
+        Me.TxtFolio.Size = New System.Drawing.Size(113, 20)
         Me.TxtFolio.TabIndex = 9
         '
         'Label13
@@ -127,7 +125,7 @@ Partial Class OrdenCompra
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.TxtPlazo)
+        Me.GroupBox2.Controls.Add(Me.TxtCiudad)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.CmbProv)
         Me.GroupBox2.Controls.Add(Me.Label1)
@@ -142,22 +140,21 @@ Partial Class OrdenCompra
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información del proveedor"
         '
-        'TxtPlazo
+        'TxtCiudad
         '
-        Me.TxtPlazo.Location = New System.Drawing.Point(94, 57)
-        Me.TxtPlazo.Name = "TxtPlazo"
-        Me.TxtPlazo.Size = New System.Drawing.Size(291, 22)
-        Me.TxtPlazo.TabIndex = 2
-        Me.TxtPlazo.Text = "Ingresar cantidad de dias"
+        Me.TxtCiudad.Location = New System.Drawing.Point(94, 57)
+        Me.TxtCiudad.Name = "TxtCiudad"
+        Me.TxtCiudad.Size = New System.Drawing.Size(291, 22)
+        Me.TxtCiudad.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(41, 60)
+        Me.Label2.Location = New System.Drawing.Point(31, 60)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 16)
+        Me.Label2.Size = New System.Drawing.Size(57, 16)
         Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Plazo"
+        Me.Label2.Text = "Ciudad"
         '
         'CmbProv
         '
@@ -185,7 +182,7 @@ Partial Class OrdenCompra
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
         Me.GroupBox1.Location = New System.Drawing.Point(9, 110)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(401, 78)
+        Me.GroupBox1.Size = New System.Drawing.Size(451, 78)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar producto"
@@ -195,12 +192,22 @@ Partial Class OrdenCompra
         Me.CmbProducto.FormattingEnabled = True
         Me.CmbProducto.Location = New System.Drawing.Point(21, 34)
         Me.CmbProducto.Name = "CmbProducto"
-        Me.CmbProducto.Size = New System.Drawing.Size(286, 24)
+        Me.CmbProducto.Size = New System.Drawing.Size(332, 24)
         Me.CmbProducto.TabIndex = 3
+        '
+        'BBuscarCodigo
+        '
+        Me.BBuscarCodigo.BackgroundImage = CType(resources.GetObject("BBuscarCodigo.BackgroundImage"), System.Drawing.Image)
+        Me.BBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BBuscarCodigo.Location = New System.Drawing.Point(375, 22)
+        Me.BBuscarCodigo.Margin = New System.Windows.Forms.Padding(4)
+        Me.BBuscarCodigo.Name = "BBuscarCodigo"
+        Me.BBuscarCodigo.Size = New System.Drawing.Size(57, 45)
+        Me.BBuscarCodigo.TabIndex = 4
+        Me.BBuscarCodigo.UseVisualStyleBackColor = True
         '
         'DgvPedido
         '
-        Me.DgvPedido.AllowUserToAddRows = False
         Me.DgvPedido.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -277,8 +284,6 @@ Partial Class OrdenCompra
         '
         'GroupBox3
         '
-        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.TxtTot)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.TxtImpTot)
@@ -351,7 +356,6 @@ Partial Class OrdenCompra
         '
         'GroupBox4
         '
-        Me.GroupBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.BtnGuardar)
         Me.GroupBox4.Controls.Add(Me.TxtComentarios)
         Me.GroupBox4.Controls.Add(Me.Label7)
@@ -366,16 +370,12 @@ Partial Class OrdenCompra
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.BackColor = System.Drawing.Color.Transparent
-        Me.BtnGuardar.BackgroundImage = CType(resources.GetObject("BtnGuardar.BackgroundImage"), System.Drawing.Image)
-        Me.BtnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnGuardar.ForeColor = System.Drawing.Color.Black
-        Me.BtnGuardar.Location = New System.Drawing.Point(544, 9)
+        Me.BtnGuardar.Location = New System.Drawing.Point(542, 35)
         Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(82, 71)
+        Me.BtnGuardar.Size = New System.Drawing.Size(75, 36)
         Me.BtnGuardar.TabIndex = 8
-        Me.BtnGuardar.UseVisualStyleBackColor = False
+        Me.BtnGuardar.Text = "Crear Orden De Compra"
+        Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'TxtComentarios
         '
@@ -400,7 +400,6 @@ Partial Class OrdenCompra
         '
         Me.TxtUsuario.Location = New System.Drawing.Point(6, 35)
         Me.TxtUsuario.Name = "TxtUsuario"
-        Me.TxtUsuario.ReadOnly = True
         Me.TxtUsuario.Size = New System.Drawing.Size(203, 20)
         Me.TxtUsuario.TabIndex = 6
         '
@@ -415,17 +414,6 @@ Partial Class OrdenCompra
         Me.Label8.TabIndex = 20
         Me.Label8.Text = "Usuario de compras"
         '
-        'BBuscarCodigo
-        '
-        Me.BBuscarCodigo.BackgroundImage = CType(resources.GetObject("BBuscarCodigo.BackgroundImage"), System.Drawing.Image)
-        Me.BBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BBuscarCodigo.Location = New System.Drawing.Point(328, 22)
-        Me.BBuscarCodigo.Margin = New System.Windows.Forms.Padding(4)
-        Me.BBuscarCodigo.Name = "BBuscarCodigo"
-        Me.BBuscarCodigo.Size = New System.Drawing.Size(57, 45)
-        Me.BBuscarCodigo.TabIndex = 4
-        Me.BBuscarCodigo.UseVisualStyleBackColor = True
-        '
         'OrdenCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -439,7 +427,6 @@ Partial Class OrdenCompra
         Me.Controls.Add(Me.GroupBox5)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "OrdenCompra"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Orden_compra"
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
@@ -461,7 +448,7 @@ Partial Class OrdenCompra
     Friend WithEvents Label13 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TxtPlazo As TextBox
+    Friend WithEvents TxtCiudad As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents CmbProv As ComboBox
     Friend WithEvents Label1 As Label
