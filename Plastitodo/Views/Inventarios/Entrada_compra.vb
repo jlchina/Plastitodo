@@ -16,14 +16,14 @@ Public Class Entrada_compra
             Dim DatosPedido As DataSet = GetDocCompra(folio, Id_TipoCompra)
             For Each dr As DataRow In DatosPedido.Tables(0).Rows
                 TxtFolio.Text = dr(1)
-                TxtProv.Text = dr(12)
-                TxtUsuario.Text = dr(5)
+                TxtProv.Text = dr(13)
+                TxtUsuario.Text = dr(6)
                 TxtPlazo.Text = dr(4)
-                TxtComentarios.Text = dr(6)
-                TxtSubTot.Text = Format(CDec(dr(7)), "$ #,###,##0.00")
-                TxtImpTot.Text = Format(CDec(dr(8)), "$ #,###,##0.00")
-                TxtTot.Text = Format(CDec(dr(9)), "$ #,###,##0.00") '
-                TxtFecha.Text = Format(CDate(dr(10)), "yyyy-MM-dd")
+                TxtComentarios.Text = dr(7)
+                TxtSubTot.Text = Format(CDec(dr(8)), "$ #,###,##0.00")
+                TxtImpTot.Text = Format(CDec(dr(9)), "$ #,###,##0.00")
+                TxtTot.Text = Format(CDec(dr(10)), "$ #,###,##0.00") '
+                TxtFecha.Text = Format(CDate(dr(11)), "yyyy-MM-dd")
                 idprov = dr(3)
             Next
             DetalleOC()
@@ -61,7 +61,7 @@ Public Class Entrada_compra
         Id_TipoCompra = tipo
     End Sub
 
-    Private Sub CmbProducto_KeyUp(sender As Object, e As KeyEventArgs) Handles CmbProducto.KeyUp
+    Private Sub CmbProducto_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles CmbProducto.KeyUp
         Dim fila As Integer = Nothing
         Dim codigo As String = Nothing
         Dim dt As DataTable = New DataTable
@@ -132,6 +132,42 @@ Public Class Entrada_compra
 
     End Sub
 
+    Private Sub DgvPedido_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DgvPedido.CellEndEdit
+
+        'si se editan los valores del dgv, aqui se realizan calculos de acuerdo a los cambios ingresados
+        Dim Filad As Integer = e.RowIndex
+
+        Select Case DgvPedido.Columns(e.ColumnIndex).Name
+            Case "cantidad"
+                Dim Cantidad As String = DgvPedido.Rows(Filad).Cells(3).Value.ToString
+                If Cantidad <> "" And Cantidad <> "0" Then
+                    DgvPedido.Rows(Filad).Cells(6).Value = CStr(Format((CDec(DgvPedido.Rows(Filad).Cells(5).Value.ToString) * CDec(Cantidad)), "$ #,###,##0.00"))
+                    DgvPedido.Rows(Filad).Cells(8).Value = CStr(Format((CDec(DgvPedido.Rows(Filad).Cells(5).Value.ToString) * CDec(Cantidad)) * 0.16, "$ #,###,##0.00"))
+                    DgvPedido.Rows(Filad).Cells(9).Value = CStr(Format((CDec(DgvPedido.Rows(Filad).Cells(5).Value.ToString) * CDec(Cantidad)) * 1.16, "$ #,###,##0.00"))
+                    Sumar()
+                Else
+                    DgvPedido.Rows(Filad).Cells(3).Value = "1"
+                End If
+            Case "descuento"
+                Dim PrecioUnidad, Desc As Decimal
+                Dim Cantidad As Decimal = CDec(DgvPedido.Rows(Filad).Cells(3).Value.ToString)
+                Desc = CDec(DgvPedido.Rows(Filad).Cells(7).Value.ToString)
+
+                If Desc <> 0 Then
+                    PrecioUnidad = CDec(DgvPedido.Rows(Filad).Cells(5).Value.ToString) * (1 - (Desc / 100))
+                Else
+                    PrecioUnidad = CDec(DgvPedido.Rows(Filad).Cells(5).Value.ToString)
+                End If
+
+                DgvPedido.Rows(Filad).Cells(6).Value = CStr(Format(PrecioUnidad * CDec(Cantidad), "$ #,###,##0.00"))
+                DgvPedido.Rows(Filad).Cells(8).Value = CStr(Format((PrecioUnidad * 0.16) * CDec(Cantidad), "$ #,###,##0.00"))
+                DgvPedido.Rows(Filad).Cells(9).Value = CStr(Format((PrecioUnidad * 1.16) * CDec(Cantidad), "$ #,###,##0.00"))
+
+                Sumar()
+
+        End Select
+    End Sub
+
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         Dim ds As DataSet = New DataSet
         Dim valid As Boolean = False
@@ -163,8 +199,8 @@ Public Class Entrada_compra
 
         ds.Tables.Add(lineas)
 
-        If (idprov > 0 And TxtPlazo.Text IsNot "" And TxtUsuario.Text IsNot "" And valid) Then
-            If (EntradaCompras(folio, Id_TipoCompra, idprov, TxtPlazo.Text, TxtUsuario.Text, TxtComentarios.Text, CDec(TxtSubTot.Text), CDec(TxtImpTot.Text), CDec(TxtTot.Text), ds)) Then
+        If (idprov > 0 And TxtPlazo.Text IsNot "" And TxtFactura.Text IsNot "" And TxtUsuario.Text IsNot "" And valid) Then
+            If (EntradaCompras(folio, Id_TipoCompra, idprov, TxtPlazo.Text, TxtUsuario.Text, TxtComentarios.Text, CDec(TxtSubTot.Text), CDec(TxtImpTot.Text), CDec(TxtTot.Text), ds, TxtFactura.Text)) Then
                 MessageBox.Show("Documento guardado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Close()
             End If

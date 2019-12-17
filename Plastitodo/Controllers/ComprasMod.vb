@@ -200,9 +200,9 @@ Module ComprasMod
 
         If (fecha IsNot "") Then
             If (where IsNot "") Then
-                where = where & " and date(o.fecha_creacion) = '" & fecha & "'"
+                where = where & " and date(o.fecha_creacion) = '" & fecha & "' and tipo = 3"
             Else
-                where = where & " Where date(o.fecha_creacion) = '" & fecha & "'"
+                where = where & " Where date(o.fecha_creacion) = '" & fecha & "' and tipo = 3"
             End If
         End If
 
@@ -283,34 +283,34 @@ Module ComprasMod
         Return ds
     End Function
 
-    Function EntradaCompras(ByVal folio As Integer, tipocompras As Integer, proveedor As Integer, plazo As Integer, usuario As String, comentarios As String, subtotal As Decimal, iva As Decimal, total As Decimal, lineas As DataSet)
+    Function EntradaCompras(ByVal folio As Integer, tipocompras As Integer, proveedor As Integer, plazo As Integer, usuario As String, comentarios As String, subtotal As Decimal, iva As Decimal, total As Decimal, lineas As DataSet, fa_not As String)
         Dim folio_compras As Integer
         Dim tipo_compras As Integer
+        Dim fac_not As String
         Dim sql = Nothing
+        Dim sql2 = Nothing
         Dim prov As Integer = proveedor
         Dim user As String = usuario
+
         tipo_compras = tipocompras
+        fac_not = fa_not
 
         If tipo_compras = 3 Then
             tipo_compras = 4
         End If
 
-        If (folio) Then
-            folio_compras = folio
-            sql = "UPDATE orden_compra SET
+        sql = "UPDATE orden_compra SET
                     folio = @folio,
                     tipo = @tipo,
                     id_prov = @id_prov,
                     plazo = @plazo,
+                    factura_nota = @fn,
                     usuario_comp = @usuario_comp,
                     comentarios = @comentarios,
                     subtotal = @subtotal,
                     iva = @iva,
                     total = @total
-                    WHERE folio = @folio and tipo = @tipo;"
-        Else
-            MsgBox("No se ha podido actualizar la orden de compra, revise la información")
-        End If
+                    WHERE folio = @folio;"
         Try
             'Iniciar comando de conexion
             cmd = New MySqlCommand(sql, conn)
@@ -326,16 +326,23 @@ Module ComprasMod
             cmd.Parameters.Add(New MySqlParameter("@tipo", tipo_compras))
             cmd.Parameters.Add(New MySqlParameter("@id_prov", prov))
             cmd.Parameters.Add(New MySqlParameter("@plazo", plazo))
+            cmd.Parameters.Add(New MySqlParameter("@fn", fac_not))
             cmd.Parameters.Add(New MySqlParameter("@comentarios", comentarios))
             cmd.Parameters.Add(New MySqlParameter("@usuario_comp", user))
             cmd.Parameters.Add(New MySqlParameter("@subtotal", subtotal))
             cmd.Parameters.Add(New MySqlParameter("@iva", iva))
             cmd.Parameters.Add(New MySqlParameter("@total", total))
-            'cmd.Parameters.Add(New MySqlParameter("@id_usuario", Id_usuario))
-            'If (folio) Then
-            '    cmd.Parameters.Add(New MySqlParameter("@folio", folio))
-            'End If
-            cmd.ExecuteNonQuery()
+            cmd.ExecuteScalar()
+
+            conn.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MessageBox.Show("No se pudo conectar a la tabla que contiene la orden de compra", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        End Try
+
+        Try
 
             If (folio) Then
             Else
@@ -343,52 +350,54 @@ Module ComprasMod
             End If
 
             For Each dr As DataRow In lineas.Tables(0).Rows
-                Dim sql2 = ""
-
-                If (folio) Then
-                    sql2 = "UPDATE plastibolsas.orden_detalle SET
+                sql2 = "UPDATE orden_detalle SET
                             folio = @folio,
                             tipo = @tipo,
                             id_prod = (Select cp.id from catalogo_productos cp where cp.codigo_barras = @codigo Limit 1),
                             cant = @cant,
-                            id_pres = (Select cp.presentacion from catalogo_productos cp where cp.codigo_barras = @id_prod Limit 1),
-                            precio = @precio,
+                            id_pres = (Select cp.presentacion from catalogo_productos cp where cp.codigo_barras = @codigo Limit 1),
+                            precio = @precio,   
                             descuento = @descuento,
                             id_iva = 1,
                             subtotal = @subtotal,
                             iva = @iva,
                             total = @total
                             WHERE id = @id;"
-                End If
 
+                'Iniciar comando de conexion
+                cmd = New MySqlCommand(sql2, conn)
+
+                '---Abir conexion
+                conn = New MySqlConnection
+                conn.ConnectionString = ConnectionString2
+                conn.Open()
+                'Iniciar comando de conexion
                 cmd3 = New MySqlCommand(sql2, conn)
+
                 cmd3.Parameters.Add(New MySqlParameter("@folio", folio_compras))
                 cmd3.Parameters.Add(New MySqlParameter("@tipo", tipo_compras))
-                cmd3.Parameters.Add(New MySqlParameter("@id_prod", dr(1)))
+                cmd3.Parameters.Add(New MySqlParameter("@codigo", dr(1)))
                 cmd3.Parameters.Add(New MySqlParameter("@cant", dr(2)))
-                cmd3.Parameters.Add(New MySqlParameter("@id_prod", dr(2)))
                 cmd3.Parameters.Add(New MySqlParameter("@precio", dr(3)))
                 cmd3.Parameters.Add(New MySqlParameter("@descuento", dr(4)))
                 cmd3.Parameters.Add(New MySqlParameter("@subtotal", dr(5)))
                 cmd3.Parameters.Add(New MySqlParameter("@iva", dr(6)))
                 cmd3.Parameters.Add(New MySqlParameter("@total", dr(7)))
-                'If (folio) Then
-                '    cmd3.Parameters.Add(New MySqlParameter("@id", dr(0)))
-                'End If
-                cmd3.ExecuteNonQuery()
+                cmd3.Parameters.Add(New MySqlParameter("@id", dr(0)))
+                cmd3.ExecuteScalar()
 
-                cmd2 = New MySqlCommand("Update inventario SET existencia = (Select * from (select (i.existencia+@cantidad) from inventario i where i.codigo_barras = @codigo Limit 1)t)  WHERE codigo_barras = @codigo", conn)
+                cmd2 = New MySqlCommand("Update inventario SET existencia = (Select * from (select (i.existencia+@cant) from inventario i where i.codigo_barras = @codigo Limit 1)t)  WHERE codigo_barras = @codigo", conn)
                 cmd2.Parameters.Add(New MySqlParameter("@codigo", dr(1)))
-                cmd2.Parameters.Add(New MySqlParameter("@cantidad", dr(2)))
+                cmd2.Parameters.Add(New MySqlParameter("@cant", dr(2)))
                 cmd2.ExecuteScalar()
 
             Next
             conn.Close()
-            Return True
+            'Return True
         Catch ex As Exception
             MsgBox(ex.Message)
-            MessageBox.Show("No se pudo conectar a la Base de Datos", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("No se pudo conectar a la tabla que contiene el detalle de la orden de compra", "Error de Conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        Return 0
+        Return True
     End Function
 End Module
