@@ -137,18 +137,6 @@
     <Compile Include="Views\Cuentas por Cobrar\BusquedaFacturaAbono.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Inventarios\DocsCompra.Designer.vb">
-      <DependentUpon>DocsCompra.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Inventarios\DocsCompra.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Inventarios\Entrada_compra.Designer.vb">
-      <DependentUpon>Entrada_compra.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Inventarios\Entrada_compra.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Views\Reportes\Hist_PrecioPublico.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -218,12 +206,6 @@
       <DependentUpon>Cuentas por Cobrar.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Cuentas por Cobrar\Cuentas por Cobrar.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Cuentas por Pagar\Cuentas por Pagar.Designer.vb">
-      <DependentUpon>Cuentas por Pagar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Cuentas por Pagar\Cuentas por Pagar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Inventarios\Editar Mercancia.Designer.vb">
@@ -413,12 +395,6 @@
     <EmbeddedResource Include="Views\Cuentas por Cobrar\BusquedaFacturaAbono.resx">
       <DependentUpon>BusquedaFacturaAbono.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Inventarios\DocsCompra.resx">
-      <DependentUpon>DocsCompra.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Inventarios\Entrada_compra.resx">
-      <DependentUpon>Entrada_compra.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reportes\Hist_PrecioPublico.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Hist_PrecioPublico.vb</LastGenOutput>
@@ -455,9 +431,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Cuentas por Cobrar\Cuentas por Cobrar.resx">
       <DependentUpon>Cuentas por Cobrar.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Cuentas por Pagar\Cuentas por Pagar.resx">
-      <DependentUpon>Cuentas por Pagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Inventarios\Editar Mercancia.resx">
       <DependentUpon>Editar Mercancia.vb</DependentUpon>

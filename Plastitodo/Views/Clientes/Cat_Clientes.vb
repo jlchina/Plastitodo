@@ -23,30 +23,28 @@ Public Class Cat_Clientes
             conn.Close()
 
             'Declarar columnas para data gridview
-            DataTable.Columns.Add("RFC", GetType(String)) '1
             DataTable.Columns.Add("Nombre", GetType(String)) '2
-            DataTable.Columns.Add("Razon", GetType(String)) '3
-            DataTable.Columns.Add("Direccion", GetType(String)) '4
-            DataTable.Columns.Add("Colonia", GetType(String)) '5
-            DataTable.Columns.Add("Ciudad", GetType(String)) '6
-            DataTable.Columns.Add("Codigo postal", GetType(String)) '7
-            DataTable.Columns.Add("Telefono", GetType(String)) '8
-            DataTable.Columns.Add("Email", GetType(String)) '9
-            DataTable.Columns.Add("Id", GetType(String)) '10
+            DataTable.Columns.Add("Direccion", GetType(String)) '3
+            DataTable.Columns.Add("Colonia", GetType(String)) '4
+            DataTable.Columns.Add("Ciudad", GetType(String)) '5
+            DataTable.Columns.Add("Codigo postal", GetType(String)) '6
+            DataTable.Columns.Add("Telefono", GetType(String)) '7
+            DataTable.Columns.Add("Email", GetType(String)) '8
+            DataTable.Columns.Add("RFC", GetType(String)) '9
+            DataTable.Columns.Add("Razon", GetType(String)) '10
 
 
             For Each dr As DataRow In ds.Tables(0).Rows
                 Dim DataRow As DataRow = DataTable.NewRow()
-                DataRow("RFC") = dr(8)
                 DataRow("Nombre") = dr(1)
-                DataRow("Razon") = dr(9)
                 DataRow("Direccion") = dr(2)
                 DataRow("Colonia") = dr(3)
                 DataRow("Ciudad") = dr(4)
                 DataRow("Codigo postal") = dr(5)
                 DataRow("Telefono") = dr(6)
                 DataRow("Email") = dr(7)
-                DataRow("Id") = dr(0)
+                DataRow("RFC") = dr(8)
+                DataRow("Razon") = dr(9)
 
                 DataTable.Rows.Add(DataRow)
             Next
@@ -78,20 +76,14 @@ Public Class Cat_Clientes
         Return 0
     End Function
     Private Sub Btn_agregarc_Click(sender As Object, e As EventArgs) Handles Btn_agregarc.Click
-        Dim sql As String = Nothing
-        Dim busreg As String = Nothing
-        Dim ds1 As DataSet = New DataSet
-        Dim val As Integer = Nothing
-        Dim band As Boolean
-
         Try
-                If (Text_nomb.Text IsNot "" And Text_dir.Text IsNot "" And Text_col.Text IsNot "" And
-                    Text_cd.Text IsNot "" And Text_cp.Text IsNot "" And Text_cp.Text IsNot "" And Text_tel.Text And TxtRfc.Text IsNot "") Then
+            If (Text_nomb.Text IsNot "" And Text_dir.Text IsNot "" And Text_col.Text IsNot "" And
+                Text_cd.Text IsNot "" And Text_cp.Text IsNot "" And Text_cp.Text IsNot "" And Text_tel.Text And TxtRfc.Text IsNot "") Then
 
-                    Dim sql2 = ""
+                Dim sql = ""
 
-                    If (id_cliente > 0) Then
-                        sql2 = "UPDATE cliente
+                If (id_cliente > 0) Then
+                    sql = "UPDATE cliente
                             SET
                             Nombre = @Nombre,
                             Direccion = @Direccion,
@@ -103,78 +95,40 @@ Public Class Cat_Clientes
                             rfc = @rfc,
                             razon_social = @razon_social
                             WHERE idCliente = @id;"
-                    Else
-                        sql2 = "INSERT INTO cliente(Nombre, Direccion, Colonia, Ciudad, Codigo_postal, telefono, email, rfc, razon_social) " & Chr(13) &
-                               "VALUES(@Nombre, @Direccion, @Colonia, @Ciudad, @Codigo_postal, @telefono, @email, @rfc, @razon_social)"
-                    End If
-
-                    Try
-                        'buscar duplicidad de registros 23-11-2019
-                        If TxtRfc.Text <> "" Then
-                            con_string = New MySqlConnection
-                            con_string.ConnectionString = ConnectionString2
-                            con_string.Open()
-                            sql = "SELECT rfc FROM cliente WHERE rfc ='" & TxtRfc.Text & "'"
-                            da = New MySqlDataAdapter(sql, con_string)
-                            da.Fill(ds1)
-                            con_string.Close()
-                            For Each datar As DataRow In ds1.Tables(0).Rows
-                                busreg = datar(0)
-                            Next
-                            If busreg = "" Then
-                                val = 1
-                            Else
-                                val = 0
-                            End If
-                        Else MessageBox.Show("Favor de ingresar el RFC")
-                        End If
-                    Catch ex As Exception
-                        MsgBox("Error")
-                    End Try
-
-                    If val > 0 Then
-                        band = False
-                    Else band = True
-
-                    End If
-
-                    If band = False Then
-
-                        conn = New MySqlConnection
-                        conn.ConnectionString = ConnectionString2
-                        conn.Open()
-
-                        cmd = New MySqlCommand(sql2, conn)
-                        If (id_cliente > 0) Then
-                            cmd.Parameters.AddWithValue("@id", id_cliente)
-                        End If
-                        cmd.Parameters.AddWithValue("@Nombre", Text_nomb.Text)
-                        cmd.Parameters.AddWithValue("@Direccion", Text_dir.Text)
-                        cmd.Parameters.AddWithValue("@Colonia", Text_col.Text)
-                        cmd.Parameters.AddWithValue("@Ciudad", Text_cd.Text)
-                        cmd.Parameters.AddWithValue("@Codigo_postal", Text_cp.Text)
-                        cmd.Parameters.AddWithValue("@telefono", Text_tel.Text)
-                        cmd.Parameters.AddWithValue("@email", Text_mail.Text)
-                        cmd.Parameters.AddWithValue("@rfc", TxtRfc.Text)
-                        cmd.Parameters.AddWithValue("@razon_social", TxtRazon.Text)
-                        cmd.ExecuteNonQuery()
-                        conn.Close()
-                        MsgBox("Cliente guardado con exito")
-                        id_cliente = 0
-                        Tab_proveedor.TabPages(0).Text = "Alta"
-                        limpiar()
-                    Else
-                        MsgBox("El RFC ingresado ya existe, verifique la informacion")
-                    End If
-
                 Else
-                        MessageBox.Show("Favor de llenar la informacion necesaria", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    sql = "INSERT INTO cliente(Nombre, Direccion, Colonia, Ciudad, Codigo_postal, telefono, email, rfc, razon_social) " & Chr(13) &
+                           "VALUES(@Nombre, @Direccion, @Colonia, @Ciudad, @Codigo_postal, @telefono, @email, @rfc, @razon_social)"
                 End If
-            Catch ex As Exception
-                MsgBox(ex.Message, "Hubo un error al guardar el Cliente, verifique los datos")
-                limpiar()
-            End Try
+                conn = New MySqlConnection
+                conn.ConnectionString = ConnectionString2
+                conn.Open()
 
+                cmd = New MySqlCommand(sql, conn)
+                If (id_cliente > 0) Then
+                    cmd.Parameters.AddWithValue("@id", id_cliente)
+                End If
+                cmd.Parameters.AddWithValue("@Nombre", Text_nomb.Text)
+                cmd.Parameters.AddWithValue("@Direccion", Text_dir.Text)
+                cmd.Parameters.AddWithValue("@Colonia", Text_col.Text)
+                cmd.Parameters.AddWithValue("@Ciudad", Text_cd.Text)
+                cmd.Parameters.AddWithValue("@Codigo_postal", Text_cp.Text)
+                cmd.Parameters.AddWithValue("@telefono", Text_tel.Text)
+                cmd.Parameters.AddWithValue("@email", Text_mail.Text)
+                cmd.Parameters.AddWithValue("@rfc", TxtRfc.Text)
+                cmd.Parameters.AddWithValue("@razon_social", TxtRazon.Text)
+                cmd.ExecuteNonQuery()
+                conn.Close()
+                MsgBox("Cliente guardado con exito")
+                id_cliente = 0
+                Tab_proveedor.TabPages(0).Text = "Alta"
+                limpiar()
+            Else
+                MessageBox.Show("Favor de llenar la informacion necesaria", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, "Hubo un error al guardar el Cliente, verifique los datos")
+            limpiar()
+        End Try
     End Sub
 
     Private Sub limpiar()
@@ -256,5 +210,4 @@ Public Class Cat_Clientes
     Private Sub Cat_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BusquedaClientes()
     End Sub
-
 End Class
