@@ -141,7 +141,7 @@ Public Class Principal
         newEntraMerca.Show()
     End Sub
 
-    Private Sub EditarEliminarMercanciaToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub EditarEliminarMercanciaToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim newEdiMerca As New Editar_Mercancia()
         newEdiMerca.MdiParent = Me
         newEdiMerca.Show()

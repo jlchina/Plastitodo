@@ -56,11 +56,11 @@ Partial Class DocsCompra
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(24, 48)
+        Me.Label1.Location = New System.Drawing.Point(9, 45)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 13)
+        Me.Label1.Size = New System.Drawing.Size(59, 13)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Nombre"
+        Me.Label1.Text = "Razón S."
         '
         'Label2
         '
@@ -90,12 +90,14 @@ Partial Class DocsCompra
         '
         'BtnBusq
         '
-        Me.BtnBusq.Location = New System.Drawing.Point(580, 43)
+        Me.BtnBusq.BackColor = System.Drawing.Color.Transparent
+        Me.BtnBusq.BackgroundImage = CType(resources.GetObject("BtnBusq.BackgroundImage"), System.Drawing.Image)
+        Me.BtnBusq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnBusq.Location = New System.Drawing.Point(581, 35)
         Me.BtnBusq.Name = "BtnBusq"
-        Me.BtnBusq.Size = New System.Drawing.Size(75, 23)
+        Me.BtnBusq.Size = New System.Drawing.Size(49, 38)
         Me.BtnBusq.TabIndex = 4
-        Me.BtnBusq.Text = "BtnBusq"
-        Me.BtnBusq.UseVisualStyleBackColor = True
+        Me.BtnBusq.UseVisualStyleBackColor = False
         '
         'DocsCompra
         '

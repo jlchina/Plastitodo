@@ -386,6 +386,8 @@ Module ComprasMod
                 cmd3.Parameters.Add(New MySqlParameter("@id", dr(0)))
                 cmd3.ExecuteScalar()
 
+                'aqui se insertara una funcion que mande llamar a una consulta para saber si ya existe o no 
+                'el codigo en la tabla de inventarios, ya que como esta actualmente no inserta si no existe
                 cmd2 = New MySqlCommand("Update inventario SET existencia = (Select * from (select (i.existencia+@cant) from inventario i where i.codigo_barras = @codigo Limit 1)t)  WHERE codigo_barras = @codigo", conn)
                 cmd2.Parameters.Add(New MySqlParameter("@codigo", dr(1)))
                 cmd2.Parameters.Add(New MySqlParameter("@cant", dr(2)))

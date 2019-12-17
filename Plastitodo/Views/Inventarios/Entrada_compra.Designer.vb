@@ -297,6 +297,7 @@ Partial Class Entrada_compra
         Me.GroupBox1.TabIndex = 46
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar producto"
+        Me.GroupBox1.Visible = False
         '
         'CmbProducto
         '
@@ -452,6 +453,7 @@ Partial Class Entrada_compra
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox5)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Entrada_compra"
         Me.Text = "Entrada_compra"
         Me.GroupBox4.ResumeLayout(False)
